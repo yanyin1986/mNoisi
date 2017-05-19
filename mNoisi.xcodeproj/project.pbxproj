@@ -20,26 +20,7 @@
 		F7FB6ED81EC8F8DA0086E576 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FB6ED61EC8F8DA0086E576 /* Main.storyboard */; };
 		F7FB6EDA1EC8F8DA0086E576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */; };
 		F7FB6EDD1EC8F8DA0086E576 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FB6EDB1EC8F8DA0086E576 /* LaunchScreen.storyboard */; };
-		F7FB6EE81EC8F8DA0086E576 /* mNoisiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6EE71EC8F8DA0086E576 /* mNoisiTests.swift */; };
-		F7FB6EF31EC8F8DA0086E576 /* mNoisiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6EF21EC8F8DA0086E576 /* mNoisiUITests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		F7FB6EE41EC8F8DA0086E576 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F7FB6EC71EC8F8DA0086E576 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F7FB6ECE1EC8F8DA0086E576;
-			remoteInfo = mNoisi;
-		};
-		F7FB6EEF1EC8F8DA0086E576 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F7FB6EC71EC8F8DA0086E576 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F7FB6ECE1EC8F8DA0086E576;
-			remoteInfo = mNoisi;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		061546CF2EB2617C79F9CBD2 /* Pods_mNoisi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mNoisi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,12 +40,6 @@
 		F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7FB6EDC1EC8F8DA0086E576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7FB6EDE1EC8F8DA0086E576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F7FB6EE31EC8F8DA0086E576 /* mNoisiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mNoisiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7FB6EE71EC8F8DA0086E576 /* mNoisiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mNoisiTests.swift; sourceTree = "<group>"; };
-		F7FB6EE91EC8F8DA0086E576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F7FB6EEE1EC8F8DA0086E576 /* mNoisiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mNoisiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7FB6EF21EC8F8DA0086E576 /* mNoisiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mNoisiUITests.swift; sourceTree = "<group>"; };
-		F7FB6EF41EC8F8DA0086E576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,20 +48,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				659D868629E656A5440F44EB /* Pods_mNoisi.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F7FB6EE01EC8F8DA0086E576 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F7FB6EEB1EC8F8DA0086E576 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,8 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				F7FB6ED11EC8F8DA0086E576 /* mNoisi */,
-				F7FB6EE61EC8F8DA0086E576 /* mNoisiTests */,
-				F7FB6EF11EC8F8DA0086E576 /* mNoisiUITests */,
 				F7FB6ED01EC8F8DA0086E576 /* Products */,
 				85628D67DAFE44ED826F9C81 /* Pods */,
 				5AA3342AD27E2AEE039A548F /* Frameworks */,
@@ -126,8 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				F7FB6ECF1EC8F8DA0086E576 /* mNoisi.app */,
-				F7FB6EE31EC8F8DA0086E576 /* mNoisiTests.xctest */,
-				F7FB6EEE1EC8F8DA0086E576 /* mNoisiUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,24 +107,6 @@
 				F70FB89B1ECDB68F00E125F5 /* 4.jpg */,
 			);
 			path = mNoisi;
-			sourceTree = "<group>";
-		};
-		F7FB6EE61EC8F8DA0086E576 /* mNoisiTests */ = {
-			isa = PBXGroup;
-			children = (
-				F7FB6EE71EC8F8DA0086E576 /* mNoisiTests.swift */,
-				F7FB6EE91EC8F8DA0086E576 /* Info.plist */,
-			);
-			path = mNoisiTests;
-			sourceTree = "<group>";
-		};
-		F7FB6EF11EC8F8DA0086E576 /* mNoisiUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F7FB6EF21EC8F8DA0086E576 /* mNoisiUITests.swift */,
-				F7FB6EF41EC8F8DA0086E576 /* Info.plist */,
-			);
-			path = mNoisiUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,42 +132,6 @@
 			productReference = F7FB6ECF1EC8F8DA0086E576 /* mNoisi.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F7FB6EE21EC8F8DA0086E576 /* mNoisiTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F7FB6EFA1EC8F8DA0086E576 /* Build configuration list for PBXNativeTarget "mNoisiTests" */;
-			buildPhases = (
-				F7FB6EDF1EC8F8DA0086E576 /* Sources */,
-				F7FB6EE01EC8F8DA0086E576 /* Frameworks */,
-				F7FB6EE11EC8F8DA0086E576 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F7FB6EE51EC8F8DA0086E576 /* PBXTargetDependency */,
-			);
-			name = mNoisiTests;
-			productName = mNoisiTests;
-			productReference = F7FB6EE31EC8F8DA0086E576 /* mNoisiTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		F7FB6EED1EC8F8DA0086E576 /* mNoisiUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F7FB6EFD1EC8F8DA0086E576 /* Build configuration list for PBXNativeTarget "mNoisiUITests" */;
-			buildPhases = (
-				F7FB6EEA1EC8F8DA0086E576 /* Sources */,
-				F7FB6EEB1EC8F8DA0086E576 /* Frameworks */,
-				F7FB6EEC1EC8F8DA0086E576 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F7FB6EF01EC8F8DA0086E576 /* PBXTargetDependency */,
-			);
-			name = mNoisiUITests;
-			productName = mNoisiUITests;
-			productReference = F7FB6EEE1EC8F8DA0086E576 /* mNoisiUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -243,18 +146,6 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = BA96H9FD2B;
 						ProvisioningStyle = Automatic;
-					};
-					F7FB6EE21EC8F8DA0086E576 = {
-						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = BA96H9FD2B;
-						ProvisioningStyle = Automatic;
-						TestTargetID = F7FB6ECE1EC8F8DA0086E576;
-					};
-					F7FB6EED1EC8F8DA0086E576 = {
-						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = BA96H9FD2B;
-						ProvisioningStyle = Automatic;
-						TestTargetID = F7FB6ECE1EC8F8DA0086E576;
 					};
 				};
 			};
@@ -272,8 +163,6 @@
 			projectRoot = "";
 			targets = (
 				F7FB6ECE1EC8F8DA0086E576 /* mNoisi */,
-				F7FB6EE21EC8F8DA0086E576 /* mNoisiTests */,
-				F7FB6EED1EC8F8DA0086E576 /* mNoisiUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -290,20 +179,6 @@
 				F70FB89E1ECDB69500E125F5 /* Ocean Wave.jpeg in Resources */,
 				F70FB8A01ECDB69A00E125F5 /* Spring Walk.jpeg in Resources */,
 				F7FB6ED81EC8F8DA0086E576 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F7FB6EE11EC8F8DA0086E576 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F7FB6EEC1EC8F8DA0086E576 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,36 +245,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F7FB6EDF1EC8F8DA0086E576 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F7FB6EE81EC8F8DA0086E576 /* mNoisiTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F7FB6EEA1EC8F8DA0086E576 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F7FB6EF31EC8F8DA0086E576 /* mNoisiUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F7FB6EE51EC8F8DA0086E576 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F7FB6ECE1EC8F8DA0086E576 /* mNoisi */;
-			targetProxy = F7FB6EE41EC8F8DA0086E576 /* PBXContainerItemProxy */;
-		};
-		F7FB6EF01EC8F8DA0086E576 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F7FB6ECE1EC8F8DA0086E576 /* mNoisi */;
-			targetProxy = F7FB6EEF1EC8F8DA0086E576 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F7FB6ED61EC8F8DA0086E576 /* Main.storyboard */ = {
@@ -546,64 +392,6 @@
 			};
 			name = Release;
 		};
-		F7FB6EFB1EC8F8DA0086E576 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = BA96H9FD2B;
-				INFOPLIST_FILE = mNoisiTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.mNoisiTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mNoisi.app/mNoisi";
-			};
-			name = Debug;
-		};
-		F7FB6EFC1EC8F8DA0086E576 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = BA96H9FD2B;
-				INFOPLIST_FILE = mNoisiTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.mNoisiTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mNoisi.app/mNoisi";
-			};
-			name = Release;
-		};
-		F7FB6EFE1EC8F8DA0086E576 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = BA96H9FD2B;
-				INFOPLIST_FILE = mNoisiUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.mNoisiUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = mNoisi;
-			};
-			name = Debug;
-		};
-		F7FB6EFF1EC8F8DA0086E576 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = BA96H9FD2B;
-				INFOPLIST_FILE = mNoisiUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.mNoisiUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = mNoisi;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -621,24 +409,6 @@
 			buildConfigurations = (
 				F7FB6EF81EC8F8DA0086E576 /* Debug */,
 				F7FB6EF91EC8F8DA0086E576 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F7FB6EFA1EC8F8DA0086E576 /* Build configuration list for PBXNativeTarget "mNoisiTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F7FB6EFB1EC8F8DA0086E576 /* Debug */,
-				F7FB6EFC1EC8F8DA0086E576 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F7FB6EFD1EC8F8DA0086E576 /* Build configuration list for PBXNativeTarget "mNoisiUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F7FB6EFE1EC8F8DA0086E576 /* Debug */,
-				F7FB6EFF1EC8F8DA0086E576 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

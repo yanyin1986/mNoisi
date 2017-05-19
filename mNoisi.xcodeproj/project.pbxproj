@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		659D868629E656A5440F44EB /* Pods_mNoisi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061546CF2EB2617C79F9CBD2 /* Pods_mNoisi.framework */; };
 		F70FB8981ECD94CF00E125F5 /* MNTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */; };
 		F70FB89A1ECDB5BA00E125F5 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F70FB8991ECDB5BA00E125F5 /* 3.jpg */; };
 		F70FB89C1ECDB68F00E125F5 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F70FB89B1ECDB68F00E125F5 /* 4.jpg */; };
@@ -41,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		061546CF2EB2617C79F9CBD2 /* Pods_mNoisi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mNoisi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90F86AF6D27D3C5C7A4BAC5 /* Pods-mNoisi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mNoisi.release.xcconfig"; path = "Pods/Target Support Files/Pods-mNoisi/Pods-mNoisi.release.xcconfig"; sourceTree = "<group>"; };
+		F5DDE4AC5ED0EFE5290114B3 /* Pods-mNoisi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mNoisi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mNoisi/Pods-mNoisi.debug.xcconfig"; sourceTree = "<group>"; };
 		F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTableViewController.swift; sourceTree = "<group>"; };
 		F70FB8991ECDB5BA00E125F5 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		F70FB89B1ECDB68F00E125F5 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659D868629E656A5440F44EB /* Pods_mNoisi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AA3342AD27E2AEE039A548F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				061546CF2EB2617C79F9CBD2 /* Pods_mNoisi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85628D67DAFE44ED826F9C81 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F5DDE4AC5ED0EFE5290114B3 /* Pods-mNoisi.debug.xcconfig */,
+				C90F86AF6D27D3C5C7A4BAC5 /* Pods-mNoisi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F7FB6EC61EC8F8DA0086E576 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +117,8 @@
 				F7FB6EE61EC8F8DA0086E576 /* mNoisiTests */,
 				F7FB6EF11EC8F8DA0086E576 /* mNoisiUITests */,
 				F7FB6ED01EC8F8DA0086E576 /* Products */,
+				85628D67DAFE44ED826F9C81 /* Pods */,
+				5AA3342AD27E2AEE039A548F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,9 +177,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7FB6EF71EC8F8DA0086E576 /* Build configuration list for PBXNativeTarget "mNoisi" */;
 			buildPhases = (
+				A69B4C968E957D7D9D426FC4 /* [CP] Check Pods Manifest.lock */,
 				F7FB6ECB1EC8F8DA0086E576 /* Sources */,
 				F7FB6ECC1EC8F8DA0086E576 /* Frameworks */,
 				F7FB6ECD1EC8F8DA0086E576 /* Resources */,
+				E9D1CAEA6EB7DF76A36F8CA5 /* [CP] Embed Pods Frameworks */,
+				D77DA1E10DCF771EB8B2CC93 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -281,6 +308,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A69B4C968E957D7D9D426FC4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D77DA1E10DCF771EB8B2CC93 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mNoisi/Pods-mNoisi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9D1CAEA6EB7DF76A36F8CA5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mNoisi/Pods-mNoisi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F7FB6ECB1EC8F8DA0086E576 /* Sources */ = {
@@ -443,10 +518,12 @@
 		};
 		F7FB6EF81EC8F8DA0086E576 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5DDE4AC5ED0EFE5290114B3 /* Pods-mNoisi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = BA96H9FD2B;
 				INFOPLIST_FILE = mNoisi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.mNoisi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -456,10 +533,12 @@
 		};
 		F7FB6EF91EC8F8DA0086E576 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C90F86AF6D27D3C5C7A4BAC5 /* Pods-mNoisi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = BA96H9FD2B;
 				INFOPLIST_FILE = mNoisi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.mNoisi;
 				PRODUCT_NAME = "$(TARGET_NAME)";

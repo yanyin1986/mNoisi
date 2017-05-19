@@ -14,7 +14,6 @@
 		F70FB8A01ECDB69A00E125F5 /* Spring Walk.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F70FB89F1ECDB69A00E125F5 /* Spring Walk.jpeg */; };
 		F78722D81ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78722D71ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift */; };
 		F7B5539B1EC8F9BE005CC15A /* MNTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B5539A1EC8F9BE005CC15A /* MNTabBarController.swift */; };
-		F7B553A21EC8FD20005CC15A /* Sounds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7B553A11EC8FD20005CC15A /* Sounds.storyboard */; };
 		F7B553A41EC8FE67005CC15A /* MNRelaxPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B553A31EC8FE67005CC15A /* MNRelaxPlayerViewController.swift */; };
 		F7FB6ED31EC8F8DA0086E576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6ED21EC8F8DA0086E576 /* AppDelegate.swift */; };
 		F7FB6ED81EC8F8DA0086E576 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FB6ED61EC8F8DA0086E576 /* Main.storyboard */; };
@@ -49,7 +48,6 @@
 		F70FB89F1ECDB69A00E125F5 /* Spring Walk.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spring Walk.jpeg"; sourceTree = "<group>"; };
 		F78722D71ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNSoundTrackTableViewCell.swift; sourceTree = "<group>"; };
 		F7B5539A1EC8F9BE005CC15A /* MNTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTabBarController.swift; sourceTree = "<group>"; };
-		F7B553A11EC8FD20005CC15A /* Sounds.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sounds.storyboard; sourceTree = "<group>"; };
 		F7B553A31EC8FE67005CC15A /* MNRelaxPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNRelaxPlayerViewController.swift; sourceTree = "<group>"; };
 		F7FB6ECF1EC8F8DA0086E576 /* mNoisi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mNoisi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FB6ED21EC8F8DA0086E576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 				F78722D71ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift */,
 				F7FB6ED61EC8F8DA0086E576 /* Main.storyboard */,
 				F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */,
-				F7B553A11EC8FD20005CC15A /* Sounds.storyboard */,
 				F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */,
 				F7FB6EDB1EC8F8DA0086E576 /* LaunchScreen.storyboard */,
 				F7FB6EDE1EC8F8DA0086E576 /* Info.plist */,
@@ -262,7 +259,6 @@
 				F70FB89C1ECDB68F00E125F5 /* 4.jpg in Resources */,
 				F70FB89A1ECDB5BA00E125F5 /* 3.jpg in Resources */,
 				F7FB6EDD1EC8F8DA0086E576 /* LaunchScreen.storyboard in Resources */,
-				F7B553A21EC8FD20005CC15A /* Sounds.storyboard in Resources */,
 				F7FB6EDA1EC8F8DA0086E576 /* Assets.xcassets in Resources */,
 				F70FB89E1ECDB69500E125F5 /* Ocean Wave.jpeg in Resources */,
 				F70FB8A01ECDB69A00E125F5 /* Spring Walk.jpeg in Resources */,

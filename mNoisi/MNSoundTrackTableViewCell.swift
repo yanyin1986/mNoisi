@@ -10,9 +10,17 @@ import UIKit
 
 class MNSoundTrackTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var soundImageView: UIImageView!
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.soundImageView.layer.cornerRadius = 6.0
+        self.soundImageView.layer.masksToBounds = true
+        self.backgroundColor = UIColor.clear
+        self.selectionStyle = UITableViewCellSelectionStyle.none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

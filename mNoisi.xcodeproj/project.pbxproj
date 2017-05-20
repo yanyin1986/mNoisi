@@ -14,6 +14,9 @@
 		F70FB89E1ECDB69500E125F5 /* Ocean Wave.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F70FB89D1ECDB69500E125F5 /* Ocean Wave.jpeg */; };
 		F70FB8A01ECDB69A00E125F5 /* Spring Walk.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F70FB89F1ECDB69A00E125F5 /* Spring Walk.jpeg */; };
 		F78722D81ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78722D71ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift */; };
+		F78722DA1ECFD7F400A60FB1 /* MNMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78722D91ECFD7F400A60FB1 /* MNMineViewController.swift */; };
+		F7A133EC1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A133EB1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift */; };
+		F7A133EE1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A133ED1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift */; };
 		F7B5539B1EC8F9BE005CC15A /* MNTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B5539A1EC8F9BE005CC15A /* MNTabBarController.swift */; };
 		F7B553A41EC8FE67005CC15A /* MNRelaxPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B553A31EC8FE67005CC15A /* MNRelaxPlayerViewController.swift */; };
 		F7FB6ED31EC8F8DA0086E576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6ED21EC8F8DA0086E576 /* AppDelegate.swift */; };
@@ -32,6 +35,9 @@
 		F70FB89D1ECDB69500E125F5 /* Ocean Wave.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ocean Wave.jpeg"; sourceTree = "<group>"; };
 		F70FB89F1ECDB69A00E125F5 /* Spring Walk.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spring Walk.jpeg"; sourceTree = "<group>"; };
 		F78722D71ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNSoundTrackTableViewCell.swift; sourceTree = "<group>"; };
+		F78722D91ECFD7F400A60FB1 /* MNMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNMineViewController.swift; sourceTree = "<group>"; };
+		F7A133EB1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNCalendarTableViewCell.swift; sourceTree = "<group>"; };
+		F7A133ED1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNStaticsInfoTableViewCell.swift; sourceTree = "<group>"; };
 		F7B5539A1EC8F9BE005CC15A /* MNTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTabBarController.swift; sourceTree = "<group>"; };
 		F7B553A31EC8FE67005CC15A /* MNRelaxPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNRelaxPlayerViewController.swift; sourceTree = "<group>"; };
 		F7FB6ECF1EC8F8DA0086E576 /* mNoisi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mNoisi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,9 +104,12 @@
 				F78722D71ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift */,
 				F7FB6ED61EC8F8DA0086E576 /* Main.storyboard */,
 				F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */,
-				F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */,
+				F78722D91ECFD7F400A60FB1 /* MNMineViewController.swift */,
+				F7A133EB1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift */,
+				F7A133ED1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift */,
 				F7FB6EDB1EC8F8DA0086E576 /* LaunchScreen.storyboard */,
 				F7FB6EDE1EC8F8DA0086E576 /* Info.plist */,
+				F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */,
 				F70FB89F1ECDB69A00E125F5 /* Spring Walk.jpeg */,
 				F70FB89D1ECDB69500E125F5 /* Ocean Wave.jpeg */,
 				F70FB8991ECDB5BA00E125F5 /* 3.jpg */,
@@ -237,10 +246,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7A133EE1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift in Sources */,
 				F70FB8981ECD94CF00E125F5 /* MNTableViewController.swift in Sources */,
 				F7B553A41EC8FE67005CC15A /* MNRelaxPlayerViewController.swift in Sources */,
 				F7B5539B1EC8F9BE005CC15A /* MNTabBarController.swift in Sources */,
 				F7FB6ED31EC8F8DA0086E576 /* AppDelegate.swift in Sources */,
+				F78722DA1ECFD7F400A60FB1 /* MNMineViewController.swift in Sources */,
+				F7A133EC1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift in Sources */,
 				F78722D81ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

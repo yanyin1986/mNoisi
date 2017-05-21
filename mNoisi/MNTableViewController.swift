@@ -23,11 +23,17 @@ class MNTableViewController: UIViewController, UITableViewDataSource, UITableVie
         SoundTrackName(soundTitleName: "3", soundImageName: "3.jpg"),
         SoundTrackName(soundTitleName: "4", soundImageName: "4.jpg"),
     ]
+
+    @IBAction func close(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+
 //    var soundNames = ["Ocean Wave.jpeg", "Spring Walk.jpeg", "3.jpg", "4.jpg"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor(red: 0x15/255.0, green: 0x23/255.0, blue: 0x3c/255.0, alpha: 1.0)// UIColor.red
+        //self.view.backgroundColor = UIColor(red: 0x15/255.0, green: 0x23/255.0, blue: 0x3c/255.0, alpha: 1.0)// UIColor.red
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -76,7 +82,7 @@ class MNTableViewController: UIViewController, UITableViewDataSource, UITableVie
         let soundLabel: SoundTrackName = soundTrackNames[indexPath.row]
         let soundCell = tableView.dequeueReusableCell(withIdentifier: "soundTrackCell", for: indexPath) as! MNSoundTrackTableViewCell
         soundCell.soundImageView.image = UIImage(named: soundLabel.soundImageName)
-        
+        soundCell.backgroundColor = UIColor.clear
 
         return soundCell
     }

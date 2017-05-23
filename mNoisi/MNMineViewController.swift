@@ -9,7 +9,13 @@
 import UIKit
 import FSCalendar
 
+protocol MNMineViewControllerDelegate: NSObjectProtocol {
+    func mineViewControllerWillDismiss()
+}
+
 class MNMineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    weak var delegate: MNMineViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +54,12 @@ class MNMineViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
 
+    @IBAction
+    func dismiss(_ sender: Any) {
+        self.delegate?.mineViewControllerWillDismiss()
+        self.dismiss(animated: true, completion: nil)
+    }
+
     /*
     // MARK: - FNCalendar
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
@@ -59,14 +71,16 @@ class MNMineViewController: UIViewController, UITableViewDataSource, UITableView
     }
  */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        print(segue)
     }
-    */
 
+    override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
+        print(unwindSegue)
+    }
 }

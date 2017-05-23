@@ -10,8 +10,26 @@ import UIKit
 
 class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MNMineViewControllerDelegate {
 
-    @IBOutlet weak var maskView: UIVisualEffectView!
-    @IBOutlet weak var collectionView: UICollectionView!
+    //
+
+    @IBOutlet
+    private weak var topView: UIView!
+
+    @IBOutlet
+    private weak var maskView: UIVisualEffectView!
+
+    @IBOutlet
+    private weak var bottomView: UIView!
+
+    @IBOutlet
+    private weak var bottomViewBottomConst: NSLayoutConstraint!
+
+    @IBOutlet
+    private weak var playerView: UIView!
+
+    @IBOutlet
+    private weak var collectionView: UICollectionView!
+
     let images: [String] = [
         "2817564516891261945",
         "Spring Walk.jpeg",
@@ -21,6 +39,8 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     ]
 
     var collapse: Bool = false
+    var toggleFullScreenAnimating = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
@@ -36,10 +56,44 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-    
-    @IBAction func modalFullScreen(_ sender: UIBarButtonItem) {
 
+    @IBAction
+    func toggleFullScreen(_ sender: UIButton) {
+        guard toggleFullScreenAnimating == false else { return }
+        toggleFullScreenAnimating = true
+
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            // enter full screen
+
+            self.hideStatusBar = true
+            self.bottomViewBottomConst.constant = -70
+            UIView.animate(withDuration: 0.5, animations: {
+                self.topView.alpha = 0.0
+                self.bottomView.alpha = 0.0
+                self.playerView.alpha = 0.0
+                self.view.layoutIfNeeded()
+                self.setNeedsStatusBarAppearanceUpdate()
+            }, completion: { (finish) in
+                self.toggleFullScreenAnimating = false
+            })
+        } else {
+            // quit full screen
+
+            self.hideStatusBar = false
+            self.bottomViewBottomConst.constant = 0
+            UIView.animate(withDuration: 0.5, animations: { 
+                self.topView.alpha = 1.0
+                self.bottomView.alpha = 1.0
+                self.playerView.alpha = 1.0
+                self.view.layoutIfNeeded()
+                self.setNeedsStatusBarAppearanceUpdate()
+            }, completion: { (finish) in
+                self.toggleFullScreenAnimating = false
+            })
+        }
     }
+
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.images.count
@@ -81,4 +135,20 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         })
 
     }
+
+    // MARK: status
+    private var hideStatusBar: Bool = false
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
+    override var prefersStatusBarHidden: Bool {
+        return hideStatusBar
+    }
+
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return UIStatusBarAnimation.fade
+    }
 }
+

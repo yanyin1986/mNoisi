@@ -15,12 +15,15 @@ protocol MNMineViewControllerDelegate: NSObjectProtocol {
 
 class MNMineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet
+    private weak var tableView: UITableView!
+
     weak var delegate: MNMineViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +32,7 @@ class MNMineViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 5
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,9 +40,17 @@ class MNMineViewController: UIViewController, UITableViewDataSource, UITableView
             let cell = tableView.dequeueReusableCell(withIdentifier: MNCalendarTableViewCell.reuseIdentifier, for: indexPath) as! MNCalendarTableViewCell
             cell.backgroundColor = UIColor.clear
             return cell
-        } else {
+        } else if indexPath.row == 1 {
             // 1
             let cell = tableView.dequeueReusableCell(withIdentifier: MNStaticsInfoTableViewCell.reuseIdentifier, for: indexPath) as! MNStaticsInfoTableViewCell
+            cell.backgroundColor = UIColor.clear
+            return cell
+        } else if indexPath.row == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: MNSwitchTableViewCell.reuseIdentifier, for: indexPath) as! MNSwitchTableViewCell
+            cell.backgroundColor = UIColor.clear
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: MNTextTableViewCell.reuseIdentifier, for: indexPath)
             cell.backgroundColor = UIColor.clear
             return cell
         }
@@ -48,9 +59,11 @@ class MNMineViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 300
-        } else {
+        } else if indexPath.row == 1 {
             // 1
             return 120
+        } else {
+            return 50
         }
     }
 

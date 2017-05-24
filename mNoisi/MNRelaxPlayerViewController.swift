@@ -9,7 +9,11 @@
 import UIKit
 import AVFoundation
 
-class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MNMineViewControllerDelegate {
+extension Notification.Name {
+    public static let MNRelaxPlayerViewWillAppear: Notification.Name = Notification.Name.init("dev.mmd.mNoisi.relaxPlayerViewWillAppear")
+}
+
+class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     //
     @IBOutlet
@@ -50,9 +54,14 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
-        
+
         // Do any additional setup after loading the view.
         let track0 = MNTrack(name: "Spring Walk", thumbnail: "null", fullScreen: "Spring Walk.jpeg", isFavorite: false)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(hideBlurView(_:)),
+            name: Notification.Name.MNRelaxPlayerViewWillAppear,
+            object: nil)
 
         self.tracks.append(track0)
     }
@@ -174,9 +183,6 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         //self.maskView.alpha = 0.0
         if let identifier: String = segue.identifier {
             switch identifier {
-            case "showMine":
-                let vc = segue.destination as! MNMineViewController
-                vc.delegate = self
             default:
                 break
             }
@@ -185,16 +191,15 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     }
 
     // MARK: MNMineViewControllerDelegate
-    func mineViewControllerWillDismiss() {
+    func hideBlurView(_ sender: Any) {
         UIView.animate(withDuration: 0.3, animations: {
             self.maskView.alpha = 0.0
         }, completion: { (finished) in
             self.maskView.isHidden = true
             self.maskView.alpha = 1.0
         })
-
     }
-
+    
     // MARK: status
     private var hideStatusBar: Bool = false
 

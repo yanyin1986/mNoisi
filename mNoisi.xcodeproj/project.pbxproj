@@ -14,6 +14,7 @@
 		F70FB89E1ECDB69500E125F5 /* Ocean Wave.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F70FB89D1ECDB69500E125F5 /* Ocean Wave.jpeg */; };
 		F70FB8A01ECDB69A00E125F5 /* Spring Walk.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F70FB89F1ECDB69A00E125F5 /* Spring Walk.jpeg */; };
 		F74E4F391ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74E4F381ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift */; };
+		F762B9CB1ED63E7B002C2FB0 /* MNBreathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762B9CA1ED63E7B002C2FB0 /* MNBreathViewController.swift */; };
 		F78722D81ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78722D71ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift */; };
 		F78722DA1ECFD7F400A60FB1 /* MNMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78722D91ECFD7F400A60FB1 /* MNMineViewController.swift */; };
 		F78B60D51ED4FB2800D5468F /* MNSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78B60D41ED4FB2800D5468F /* MNSwitchTableViewCell.swift */; };
@@ -39,6 +40,7 @@
 		F70FB89D1ECDB69500E125F5 /* Ocean Wave.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ocean Wave.jpeg"; sourceTree = "<group>"; };
 		F70FB89F1ECDB69A00E125F5 /* Spring Walk.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spring Walk.jpeg"; sourceTree = "<group>"; };
 		F74E4F381ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTrackCollectionViewCell.swift; sourceTree = "<group>"; };
+		F762B9CA1ED63E7B002C2FB0 /* MNBreathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNBreathViewController.swift; sourceTree = "<group>"; };
 		F78722D71ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNSoundTrackTableViewCell.swift; sourceTree = "<group>"; };
 		F78722D91ECFD7F400A60FB1 /* MNMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNMineViewController.swift; sourceTree = "<group>"; };
 		F78B60D41ED4FB2800D5468F /* MNSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNSwitchTableViewCell.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				F78722D71ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift */,
 				F74E4F381ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift */,
 				F7FB6ED61EC8F8DA0086E576 /* Main.storyboard */,
+				F762B9CA1ED63E7B002C2FB0 /* MNBreathViewController.swift */,
 				F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */,
 				F78722D91ECFD7F400A60FB1 /* MNMineViewController.swift */,
 				F78B60D41ED4FB2800D5468F /* MNSwitchTableViewCell.swift */,
@@ -266,6 +269,7 @@
 				F78B60D71ED4FB9000D5468F /* MNTextTableViewCell.swift in Sources */,
 				F7B553A41EC8FE67005CC15A /* MNRelaxPlayerViewController.swift in Sources */,
 				F7B5539B1EC8F9BE005CC15A /* MNTabBarController.swift in Sources */,
+				F762B9CB1ED63E7B002C2FB0 /* MNBreathViewController.swift in Sources */,
 				F7FB6ED31EC8F8DA0086E576 /* AppDelegate.swift in Sources */,
 				F78722DA1ECFD7F400A60FB1 /* MNMineViewController.swift in Sources */,
 				F7A133EC1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift in Sources */,

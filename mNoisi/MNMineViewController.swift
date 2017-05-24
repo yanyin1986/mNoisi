@@ -9,16 +9,10 @@
 import UIKit
 import FSCalendar
 
-protocol MNMineViewControllerDelegate: NSObjectProtocol {
-    func mineViewControllerWillDismiss()
-}
-
 class MNMineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet
     private weak var tableView: UITableView!
-
-    weak var delegate: MNMineViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +63,7 @@ class MNMineViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBAction
     func dismiss(_ sender: Any) {
-        self.delegate?.mineViewControllerWillDismiss()
+        NotificationCenter.default.post(name: Notification.Name.MNRelaxPlayerViewWillAppear, object: nil)
         self.dismiss(animated: true, completion: nil)
     }
 

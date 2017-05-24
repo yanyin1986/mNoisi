@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bsc-hD-UbC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bsc-hD-UbC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -32,7 +32,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPc-lT-riI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2887" y="718"/>
+            <point key="canvasLocation" x="-2895" y="716"/>
         </scene>
         <!--Title-->
         <scene sceneID="tm4-b3-gbM">
@@ -158,21 +158,21 @@
                                         <state key="normal" title="NaturalSound"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q35-Y0-jSP">
-                                        <rect key="frame" x="94" y="0.0" width="94" height="70"/>
+                                        <rect key="frame" x="94" y="0.0" width="93" height="70"/>
                                         <state key="normal" title="Breath"/>
                                         <connections>
-                                            <segue destination="0em-1N-C1M" kind="presentation" modalPresentationStyle="overFullScreen" id="NY0-g1-uYe"/>
+                                            <segue destination="7cl-xA-yfb" kind="presentation" identifier="showBreath" modalPresentationStyle="overFullScreen" id="8u2-vf-bAc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjd-2I-mVk">
-                                        <rect key="frame" x="188" y="0.0" width="94" height="70"/>
+                                        <rect key="frame" x="187" y="0.0" width="94" height="70"/>
                                         <state key="normal" title="Meditation"/>
                                         <connections>
                                             <segue destination="ZhN-wE-9Mw" kind="presentation" modalPresentationStyle="overFullScreen" id="5fU-SH-j2d"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7H-ge-9c9">
-                                        <rect key="frame" x="282" y="0.0" width="93.5" height="70"/>
+                                        <rect key="frame" x="281" y="0.0" width="93.5" height="70"/>
                                         <state key="normal" title="Mine"/>
                                         <connections>
                                             <segue destination="5Ld-QA-INQ" kind="presentation" identifier="showMine" modalPresentationStyle="overFullScreen" id="TfG-pR-RoG"/>
@@ -288,7 +288,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Cz-Y8-ij6">
-                                                    <rect key="frame" x="0.0" y="8" width="375" height="152"/>
+                                                    <rect key="frame" x="0.0" y="8" width="320" height="152"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -326,22 +326,80 @@
             </objects>
             <point key="canvasLocation" x="-649" y="717"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="miW-RZ-zVo">
+        <!--Navigation Controller-->
+        <scene sceneID="JVC-YD-W1e">
             <objects>
-                <viewController id="0em-1N-C1M" sceneMemberID="viewController">
+                <navigationController id="7cl-xA-yfb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="0eL-hg-jfJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="L9s-ZI-VCD" kind="relationship" relationship="rootViewController" id="Q0y-YI-8vy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cyo-cx-ck7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2665" y="1582"/>
+        </scene>
+        <!--Breath-->
+        <scene sceneID="E0E-QO-x24">
+            <objects>
+                <viewController id="L9s-ZI-VCD" customClass="MNBreathViewController" customModule="mNoisi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="R6h-qR-dNH"/>
-                        <viewControllerLayoutGuide type="bottom" id="qkK-2t-zj3"/>
+                        <viewControllerLayoutGuide type="top" id="be5-df-fMM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pmn-F1-p3O"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bGc-UR-6ip">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="WqX-Bl-dlr">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Moon" translatesAutoresizingMaskIntoConstraints="NO" id="kby-V0-tW0">
+                                <rect key="frame" x="67.5" y="80" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="HY1-we-LnH"/>
+                                    <constraint firstAttribute="height" constant="240" id="Spt-7O-ZNq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="kby-V0-tW0" firstAttribute="top" secondItem="be5-df-fMM" secondAttribute="bottom" constant="80" id="Ji0-3w-H8M"/>
+                            <constraint firstItem="kby-V0-tW0" firstAttribute="centerX" secondItem="WqX-Bl-dlr" secondAttribute="centerX" id="Pxr-fo-m0l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Breath" id="jbh-gI-Raw">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="Qy7-gT-J3K">
+                            <connections>
+                                <action selector="dismiss:" destination="L9s-ZI-VCD" id="Mit-mH-O6w"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="time" id="3sC-O2-pqM">
+                            <connections>
+                                <segue destination="cb8-EM-xKS" kind="show" id="mvG-ri-ido"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ltm-Gb-62B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2666" y="2365"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yam-FI-i6a">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" id="cb8-EM-xKS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i2i-dX-sXD"/>
+                        <viewControllerLayoutGuide type="bottom" id="YYq-g8-GjP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Eb1-ce-VBn">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sLd-2E-neX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7et-dm-w0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2887" y="1591"/>
+            <point key="canvasLocation" x="-1882" y="2364"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="R7C-L9-sA1">
@@ -486,23 +544,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVG-E4-kBP">
-                                                    <rect key="frame" x="8" y="8" width="125" height="104"/>
+                                                    <rect key="frame" x="8" y="8" width="106.5" height="104"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yB0-xv-PSY">
-                                                    <rect key="frame" x="125" y="0.0" width="125" height="120"/>
+                                                    <rect key="frame" x="106.5" y="0.0" width="107" height="120"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDH-eh-nFz">
-                                                    <rect key="frame" x="242" y="8" width="125" height="104"/>
+                                                    <rect key="frame" x="205.5" y="8" width="106.5" height="104"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kuP-V2-9Nc">
-                                                    <rect key="frame" x="250" y="28" width="1" height="64"/>
+                                                    <rect key="frame" x="213.5" y="28" width="1" height="64"/>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="1" id="MfI-Ln-oj3"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbK-Og-Jp0">
-                                                    <rect key="frame" x="124" y="28" width="1" height="64"/>
+                                                    <rect key="frame" x="105.5" y="28" width="1" height="64"/>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="1" id="GRT-kh-894"/>
@@ -539,7 +597,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5yY-Yc-HmA">
-                                                    <rect key="frame" x="318" y="10" width="51" height="31"/>
+                                                    <rect key="frame" x="263" y="10" width="51" height="31"/>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQ4-Fn-xDX">
                                                     <rect key="frame" x="8" y="15" width="130" height="21"/>
@@ -611,4 +669,7 @@
             <point key="canvasLocation" x="-650.39999999999998" y="1590.8545727136434"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Moon" width="625" height="625"/>
+    </resources>
 </document>

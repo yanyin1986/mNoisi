@@ -18,6 +18,7 @@
 		F78722DA1ECFD7F400A60FB1 /* MNMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78722D91ECFD7F400A60FB1 /* MNMineViewController.swift */; };
 		F78B60D51ED4FB2800D5468F /* MNSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78B60D41ED4FB2800D5468F /* MNSwitchTableViewCell.swift */; };
 		F78B60D71ED4FB9000D5468F /* MNTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78B60D61ED4FB9000D5468F /* MNTextTableViewCell.swift */; };
+		F78B60D91ED5BC3500D5468F /* MNTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78B60D81ED5BC3500D5468F /* MNTrack.swift */; };
 		F7A133EC1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A133EB1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift */; };
 		F7A133EE1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A133ED1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift */; };
 		F7B5539B1EC8F9BE005CC15A /* MNTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B5539A1EC8F9BE005CC15A /* MNTabBarController.swift */; };
@@ -42,6 +43,7 @@
 		F78722D91ECFD7F400A60FB1 /* MNMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNMineViewController.swift; sourceTree = "<group>"; };
 		F78B60D41ED4FB2800D5468F /* MNSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		F78B60D61ED4FB9000D5468F /* MNTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTextTableViewCell.swift; sourceTree = "<group>"; };
+		F78B60D81ED5BC3500D5468F /* MNTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTrack.swift; sourceTree = "<group>"; };
 		F7A133EB1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNCalendarTableViewCell.swift; sourceTree = "<group>"; };
 		F7A133ED1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNStaticsInfoTableViewCell.swift; sourceTree = "<group>"; };
 		F7B5539A1EC8F9BE005CC15A /* MNTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTabBarController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				F78B60D61ED4FB9000D5468F /* MNTextTableViewCell.swift */,
 				F7A133EB1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift */,
 				F7A133ED1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift */,
+				F78B60D81ED5BC3500D5468F /* MNTrack.swift */,
 				F7FB6EDB1EC8F8DA0086E576 /* LaunchScreen.storyboard */,
 				F7FB6EDE1EC8F8DA0086E576 /* Info.plist */,
 				F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */,
@@ -162,7 +165,7 @@
 				TargetAttributes = {
 					F7FB6ECE1EC8F8DA0086E576 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = BA96H9FD2B;
+						DevelopmentTeam = 3Z3K367TN7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F78B60D91ED5BC3500D5468F /* MNTrack.swift in Sources */,
 				F78B60D51ED4FB2800D5468F /* MNSwitchTableViewCell.swift in Sources */,
 				F74E4F391ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift in Sources */,
 				F7A133EE1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift in Sources */,
@@ -391,7 +395,7 @@
 			baseConfigurationReference = F5DDE4AC5ED0EFE5290114B3 /* Pods-mNoisi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = BA96H9FD2B;
+				DEVELOPMENT_TEAM = 3Z3K367TN7;
 				INFOPLIST_FILE = mNoisi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -406,7 +410,7 @@
 			baseConfigurationReference = C90F86AF6D27D3C5C7A4BAC5 /* Pods-mNoisi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = BA96H9FD2B;
+				DEVELOPMENT_TEAM = 3Z3K367TN7;
 				INFOPLIST_FILE = mNoisi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -11,7 +11,6 @@ import UIKit
 class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MNMineViewControllerDelegate {
 
     //
-
     @IBOutlet
     private weak var topView: UIView!
 
@@ -29,6 +28,8 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
 
     @IBOutlet
     private weak var collectionView: UICollectionView!
+
+    var tracks: [MNTrack] = []
 
     let images: [String] = [
         "2817564516891261945",

@@ -7,5 +7,5 @@ target 'mNoisi' do
 
   # Pods for mNoisi
   pod 'FSCalendar'
-  pod 'RealmSwift'
+  pod 'SQLite.swift'
 end

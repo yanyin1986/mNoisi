@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MNMineViewControllerDelegate {
 
@@ -29,7 +30,11 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     @IBOutlet
     private weak var collectionView: UICollectionView!
 
-    var tracks: [MNTrack] = []
+    private var tracks: [MNTrack] = []
+    private var _selectedIndex: Int = -1
+    private var _currentIndex: Int = -1
+
+    private var _audioPlayer: AVAudioPlayer?
 
     let images: [String] = [
         "2817564516891261945",
@@ -47,6 +52,9 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         self.automaticallyAdjustsScrollViewInsets = false
         
         // Do any additional setup after loading the view.
+        let track0 = MNTrack(name: "Spring Walk", thumbnail: "null", fullScreen: "Spring Walk.jpeg", isFavorite: false)
+
+        self.tracks.append(track0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -95,6 +103,32 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         }
     }
 
+    @IBAction
+    func playButtonPressed(_ sender: UIButton) {
+        
+    }
+
+    private func resetPlayer() {
+        guard _currentIndex > 0 else {
+            return
+        }
+
+        // TODO: resource
+        guard let audioUrl = Bundle.main.url(forResource: "", withExtension: "mp3") else {
+            return
+        }
+
+        _audioPlayer?.pause()
+        do {
+            _audioPlayer = try AVAudioPlayer(contentsOf: audioUrl)
+            _audioPlayer!.prepareToPlay()
+            _audioPlayer!.play(atTime: _audioPlayer!.deviceCurrentTime + 1.0)
+        } catch {
+            debugPrint(error)
+        }
+    }
+
+    // MARK: collection view
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.images.count
@@ -111,6 +145,30 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         return self.view.frame.size
     }
 
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.calculateIndex(scrollView)
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            self.calculateIndex(scrollView)
+        }
+    }
+
+    private func calculateIndex(_ scrollView: UIScrollView) {
+        let x = scrollView.contentOffset.x
+        let index = Int(x / scrollView.frame.width)
+        print(index)
+
+        guard _currentIndex != index, index >= 0 else {
+            return
+        }
+
+        _currentIndex = index
+        self.resetPlayer()
+    }
+
+    // MARK: page jump
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.maskView.isHidden = false
         //self.maskView.alpha = 0.0

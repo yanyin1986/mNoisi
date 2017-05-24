@@ -126,6 +126,9 @@
                                             <constraint firstAttribute="width" constant="50" id="xXj-cY-kxI"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="playButtonPressed:" destination="IKj-3D-V1M" eventType="touchUpInside" id="hW1-3N-EiP"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOI-Em-ZTQ">
                                         <rect key="frame" x="295" y="8" width="50" height="50"/>

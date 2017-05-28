@@ -1,5 +1,5 @@
 //
-//  MNBreathViewController.swift
+//  MNAnimationViewController.swift
 //  mNoisi
 //
 //  Created by Leon.yan on 25/05/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MNBreathViewController: UIViewController {
+class MNAnimationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,18 @@ class MNBreathViewController: UIViewController {
     }
     
     @IBAction func dismiss(_ sender: Any) {
-        NotificationCenter.default.post(name: Notification.Name.MNRelaxPlayerViewWillAppear, object: nil)
+//        self.dismiss(animated: true, completion: nil)
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }

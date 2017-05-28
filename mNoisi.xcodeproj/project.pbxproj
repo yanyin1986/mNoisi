@@ -13,8 +13,12 @@
 		F70FB89C1ECDB68F00E125F5 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F70FB89B1ECDB68F00E125F5 /* 4.jpg */; };
 		F70FB89E1ECDB69500E125F5 /* Ocean Wave.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F70FB89D1ECDB69500E125F5 /* Ocean Wave.jpeg */; };
 		F70FB8A01ECDB69A00E125F5 /* Spring Walk.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F70FB89F1ECDB69A00E125F5 /* Spring Walk.jpeg */; };
+		F7442F451ED7130A008FFF3D /* MNAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442F441ED7130A008FFF3D /* MNAnimationViewController.swift */; };
+		F7442F471ED718A4008FFF3D /* MNFadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */; };
+		F7442F491EDB82E9008FFF3D /* MNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442F481EDB82E9008FFF3D /* MNButton.swift */; };
 		F74E4F391ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74E4F381ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift */; };
 		F762B9CB1ED63E7B002C2FB0 /* MNBreathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762B9CA1ED63E7B002C2FB0 /* MNBreathViewController.swift */; };
+		F762B9CD1ED708BE002C2FB0 /* MNTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762B9CC1ED708BE002C2FB0 /* MNTimerViewController.swift */; };
 		F78722D81ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78722D71ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift */; };
 		F78722DA1ECFD7F400A60FB1 /* MNMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78722D91ECFD7F400A60FB1 /* MNMineViewController.swift */; };
 		F78B60D51ED4FB2800D5468F /* MNSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78B60D41ED4FB2800D5468F /* MNSwitchTableViewCell.swift */; };
@@ -39,8 +43,12 @@
 		F70FB89B1ECDB68F00E125F5 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		F70FB89D1ECDB69500E125F5 /* Ocean Wave.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ocean Wave.jpeg"; sourceTree = "<group>"; };
 		F70FB89F1ECDB69A00E125F5 /* Spring Walk.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spring Walk.jpeg"; sourceTree = "<group>"; };
+		F7442F441ED7130A008FFF3D /* MNAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNAnimationViewController.swift; sourceTree = "<group>"; };
+		F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNFadeSegue.swift; sourceTree = "<group>"; };
+		F7442F481EDB82E9008FFF3D /* MNButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNButton.swift; sourceTree = "<group>"; };
 		F74E4F381ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTrackCollectionViewCell.swift; sourceTree = "<group>"; };
 		F762B9CA1ED63E7B002C2FB0 /* MNBreathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNBreathViewController.swift; sourceTree = "<group>"; };
+		F762B9CC1ED708BE002C2FB0 /* MNTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTimerViewController.swift; sourceTree = "<group>"; };
 		F78722D71ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNSoundTrackTableViewCell.swift; sourceTree = "<group>"; };
 		F78722D91ECFD7F400A60FB1 /* MNMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNMineViewController.swift; sourceTree = "<group>"; };
 		F78B60D41ED4FB2800D5468F /* MNSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNSwitchTableViewCell.swift; sourceTree = "<group>"; };
@@ -114,7 +122,9 @@
 				F78722D71ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift */,
 				F74E4F381ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift */,
 				F7FB6ED61EC8F8DA0086E576 /* Main.storyboard */,
+				F762B9CC1ED708BE002C2FB0 /* MNTimerViewController.swift */,
 				F762B9CA1ED63E7B002C2FB0 /* MNBreathViewController.swift */,
+				F7442F441ED7130A008FFF3D /* MNAnimationViewController.swift */,
 				F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */,
 				F78722D91ECFD7F400A60FB1 /* MNMineViewController.swift */,
 				F78B60D41ED4FB2800D5468F /* MNSwitchTableViewCell.swift */,
@@ -123,12 +133,14 @@
 				F7A133ED1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift */,
 				F78B60D81ED5BC3500D5468F /* MNTrack.swift */,
 				F7FB6EDB1EC8F8DA0086E576 /* LaunchScreen.storyboard */,
+				F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */,
 				F7FB6EDE1EC8F8DA0086E576 /* Info.plist */,
 				F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */,
 				F70FB89F1ECDB69A00E125F5 /* Spring Walk.jpeg */,
 				F70FB89D1ECDB69500E125F5 /* Ocean Wave.jpeg */,
 				F70FB8991ECDB5BA00E125F5 /* 3.jpg */,
 				F70FB89B1ECDB68F00E125F5 /* 4.jpg */,
+				F7442F481EDB82E9008FFF3D /* MNButton.swift */,
 			);
 			path = mNoisi;
 			sourceTree = "<group>";
@@ -261,9 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7442F471ED718A4008FFF3D /* MNFadeSegue.swift in Sources */,
+				F7442F451ED7130A008FFF3D /* MNAnimationViewController.swift in Sources */,
 				F78B60D91ED5BC3500D5468F /* MNTrack.swift in Sources */,
 				F78B60D51ED4FB2800D5468F /* MNSwitchTableViewCell.swift in Sources */,
 				F74E4F391ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift in Sources */,
+				F762B9CD1ED708BE002C2FB0 /* MNTimerViewController.swift in Sources */,
 				F7A133EE1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift in Sources */,
 				F70FB8981ECD94CF00E125F5 /* MNTableViewController.swift in Sources */,
 				F78B60D71ED4FB9000D5468F /* MNTextTableViewCell.swift in Sources */,
@@ -272,6 +287,7 @@
 				F762B9CB1ED63E7B002C2FB0 /* MNBreathViewController.swift in Sources */,
 				F7FB6ED31EC8F8DA0086E576 /* AppDelegate.swift in Sources */,
 				F78722DA1ECFD7F400A60FB1 /* MNMineViewController.swift in Sources */,
+				F7442F491EDB82E9008FFF3D /* MNButton.swift in Sources */,
 				F7A133EC1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift in Sources */,
 				F78722D81ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift in Sources */,
 			);

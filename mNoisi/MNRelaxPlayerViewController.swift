@@ -14,7 +14,6 @@ extension Notification.Name {
 }
 
 class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
     //
     @IBOutlet
     private weak var topView: UIView!

@@ -117,12 +117,12 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     }
 
     private func resetPlayer() {
-        guard _currentIndex > 0 else {
+        guard _currentIndex >= 0 else {
             return
         }
 
         // TODO: resource
-        guard let audioUrl = Bundle.main.url(forResource: "", withExtension: "mp3") else {
+        guard let audioUrl = Bundle.main.url(forResource: "a01_mountain_lake", withExtension: "ogg") else {
             return
         }
 

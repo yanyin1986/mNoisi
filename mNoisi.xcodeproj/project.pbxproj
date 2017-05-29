@@ -13,6 +13,9 @@
 		F70FB89C1ECDB68F00E125F5 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F70FB89B1ECDB68F00E125F5 /* 4.jpg */; };
 		F70FB89E1ECDB69500E125F5 /* Ocean Wave.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F70FB89D1ECDB69500E125F5 /* Ocean Wave.jpeg */; };
 		F70FB8A01ECDB69A00E125F5 /* Spring Walk.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F70FB89F1ECDB69A00E125F5 /* Spring Walk.jpeg */; };
+		F713DD391EDCE356004D3436 /* a01_mountain_lake.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F713DD361EDCE356004D3436 /* a01_mountain_lake.m4a */; };
+		F713DD3A1EDCE356004D3436 /* a03_rain_leaves.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F713DD371EDCE356004D3436 /* a03_rain_leaves.m4a */; };
+		F713DD3B1EDCE356004D3436 /* a05_fireplace.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F713DD381EDCE356004D3436 /* a05_fireplace.m4a */; };
 		F7442F451ED7130A008FFF3D /* MNAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442F441ED7130A008FFF3D /* MNAnimationViewController.swift */; };
 		F7442F471ED718A4008FFF3D /* MNFadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */; };
 		F7442F491EDB82E9008FFF3D /* MNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442F481EDB82E9008FFF3D /* MNButton.swift */; };
@@ -43,6 +46,9 @@
 		F70FB89B1ECDB68F00E125F5 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		F70FB89D1ECDB69500E125F5 /* Ocean Wave.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ocean Wave.jpeg"; sourceTree = "<group>"; };
 		F70FB89F1ECDB69A00E125F5 /* Spring Walk.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spring Walk.jpeg"; sourceTree = "<group>"; };
+		F713DD361EDCE356004D3436 /* a01_mountain_lake.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = a01_mountain_lake.m4a; sourceTree = "<group>"; };
+		F713DD371EDCE356004D3436 /* a03_rain_leaves.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = a03_rain_leaves.m4a; sourceTree = "<group>"; };
+		F713DD381EDCE356004D3436 /* a05_fireplace.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = a05_fireplace.m4a; sourceTree = "<group>"; };
 		F7442F441ED7130A008FFF3D /* MNAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNAnimationViewController.swift; sourceTree = "<group>"; };
 		F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNFadeSegue.swift; sourceTree = "<group>"; };
 		F7442F481EDB82E9008FFF3D /* MNButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNButton.swift; sourceTree = "<group>"; };
@@ -136,6 +142,9 @@
 				F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */,
 				F7FB6EDE1EC8F8DA0086E576 /* Info.plist */,
 				F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */,
+				F713DD361EDCE356004D3436 /* a01_mountain_lake.m4a */,
+				F713DD371EDCE356004D3436 /* a03_rain_leaves.m4a */,
+				F713DD381EDCE356004D3436 /* a05_fireplace.m4a */,
 				F70FB89F1ECDB69A00E125F5 /* Spring Walk.jpeg */,
 				F70FB89D1ECDB69500E125F5 /* Ocean Wave.jpeg */,
 				F70FB8991ECDB5BA00E125F5 /* 3.jpg */,
@@ -211,8 +220,11 @@
 				F70FB89C1ECDB68F00E125F5 /* 4.jpg in Resources */,
 				F70FB89A1ECDB5BA00E125F5 /* 3.jpg in Resources */,
 				F7FB6EDD1EC8F8DA0086E576 /* LaunchScreen.storyboard in Resources */,
+				F713DD3B1EDCE356004D3436 /* a05_fireplace.m4a in Resources */,
 				F7FB6EDA1EC8F8DA0086E576 /* Assets.xcassets in Resources */,
+				F713DD3A1EDCE356004D3436 /* a03_rain_leaves.m4a in Resources */,
 				F70FB89E1ECDB69500E125F5 /* Ocean Wave.jpeg in Resources */,
+				F713DD391EDCE356004D3436 /* a01_mountain_lake.m4a in Resources */,
 				F70FB8A01ECDB69A00E125F5 /* Spring Walk.jpeg in Resources */,
 				F7FB6ED81EC8F8DA0086E576 /* Main.storyboard in Resources */,
 			);

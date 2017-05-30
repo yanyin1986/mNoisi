@@ -33,19 +33,12 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     @IBOutlet
     private weak var collectionView: UICollectionView!
 
-    private var tracks: [MNTrack] = []
     private var _selectedIndex: Int = -1
     private var _currentIndex: Int = -1
 
     private var _audioPlayer: AVAudioPlayer?
-
-    let images: [String] = [
-        "2817564516891261945",
-        "Spring Walk.jpeg",
-        "Ocean Wave.jpeg",
-        "3.jpg",
-        "4.jpg",
-    ]
+    private var _timer: Timer?
+    private var _executedStep: Int = -1
 
     var collapse: Bool = false
     var toggleFullScreenAnimating = false
@@ -55,14 +48,12 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         self.automaticallyAdjustsScrollViewInsets = false
 
         // Do any additional setup after loading the view.
-        let track0 = MNTrack(name: "Spring Walk", thumbnail: "null", fullScreen: "Spring Walk.jpeg", isFavorite: false)
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(hideBlurView(_:)),
             name: Notification.Name.MNRelaxPlayerViewWillAppear,
             object: nil)
-
-        self.tracks.append(track0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,31 +111,82 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         guard _currentIndex >= 0 else {
             return
         }
+        let track = tracks[_currentIndex]
 
-        // TODO: resource
-        guard let audioUrl = Bundle.main.url(forResource: "a01_mountain_lake", withExtension: "ogg") else {
-            return
+        if #available(iOS 10, *) {
+            if _audioPlayer != nil {
+//                _audioPlayer?.setVolume(0.0, fadeDuration: 1.0)
+                self.fade(audioPlayer: _audioPlayer!, toVolume: 0.0, withCompletion: { 
+                    print("complete")
+                })
+            } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { 
+                do {
+                    self._audioPlayer?.pause()
+                    self._audioPlayer = try AVAudioPlayer(contentsOf: track.audioUrl)
+                    self._audioPlayer?.volume = 0.0
+                    self._audioPlayer?.setVolume(1.0, fadeDuration: 1.0)
+                    self._audioPlayer!.prepareToPlay()
+                    self._audioPlayer!.play()
+                } catch {
+                    debugPrint(error)
+                }
+            })
+            }
+        } else {
+            if (track.audioUrl.isFileURL) {
+                _audioPlayer?.pause()
+                do {
+                    _audioPlayer = try AVAudioPlayer(contentsOf: track.audioUrl)
+                    _audioPlayer!.prepareToPlay()
+                    _audioPlayer!.play()
+                } catch {
+                    debugPrint(error)
+                }
+            }
+        }
+    }
+
+    func fade(audioPlayer: AVAudioPlayer, toVolume: Float, duration: TimeInterval = 1.0, withCompletion: @escaping ()->Void) {
+        let volumn = toVolume - audioPlayer.volume
+        let step = Int(duration / 0.1)
+        let stepValue = volumn / Float(step)
+        _executedStep = 0
+        let userInfo: [String : Any] = [
+            "step" : step,
+            "stepValue" : stepValue,
+            "completion" : withCompletion ]
+        _timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(repeatCheck), userInfo: userInfo, repeats: true)
+    }
+
+    func repeatCheck() {
+        guard let timer = self._timer else { return }
+        guard let userInfo = timer.userInfo as? [String : Any] else { return }
+        guard let audioPlayer = _audioPlayer else { return }
+
+        let step = userInfo["step"] as! Int
+        let stepValue = userInfo["stepValue"] as! Float
+
+        audioPlayer.volume += stepValue
+        _executedStep += 1
+        if _executedStep >= step {
+            _timer?.invalidate()
+            let completion = userInfo["completion"] as! ()->Void
+            completion()
         }
 
-        _audioPlayer?.pause()
-        do {
-            _audioPlayer = try AVAudioPlayer(contentsOf: audioUrl)
-            _audioPlayer!.prepareToPlay()
-            _audioPlayer!.play(atTime: _audioPlayer!.deviceCurrentTime + 1.0)
-        } catch {
-            debugPrint(error)
-        }
     }
 
     // MARK: collection view
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.images.count
+        return tracks.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "trackCell", for: indexPath) as! MNTrackCollectionViewCell
-        cell.imageView.image = UIImage(named: self.images[indexPath.row])
+        let track = tracks[indexPath.row]
+        cell.imageView.image = UIImage(named: track.fullScreen)
         return cell
     }
 
@@ -211,7 +253,7 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     }
 
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return UIStatusBarAnimation.fade
+        return UIStatusBarAnimation.slide
     }
 }
 

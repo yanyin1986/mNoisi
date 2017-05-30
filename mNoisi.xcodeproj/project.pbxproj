@@ -138,6 +138,7 @@
 				F7A133EB1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift */,
 				F7A133ED1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift */,
 				F78B60D81ED5BC3500D5468F /* MNTrack.swift */,
+				F7442F481EDB82E9008FFF3D /* MNButton.swift */,
 				F7FB6EDB1EC8F8DA0086E576 /* LaunchScreen.storyboard */,
 				F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */,
 				F7FB6EDE1EC8F8DA0086E576 /* Info.plist */,
@@ -149,7 +150,6 @@
 				F70FB89D1ECDB69500E125F5 /* Ocean Wave.jpeg */,
 				F70FB8991ECDB5BA00E125F5 /* 3.jpg */,
 				F70FB89B1ECDB68F00E125F5 /* 4.jpg */,
-				F7442F481EDB82E9008FFF3D /* MNButton.swift */,
 			);
 			path = mNoisi;
 			sourceTree = "<group>";
@@ -429,7 +429,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3Z3K367TN7;
 				INFOPLIST_FILE = mNoisi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.mNoisi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,7 +444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3Z3K367TN7;
 				INFOPLIST_FILE = mNoisi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.mNoisi;
 				PRODUCT_NAME = "$(TARGET_NAME)";

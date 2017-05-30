@@ -1,0 +1,17 @@
+PODS:
+  - FSCalendar (2.7.7)
+  - SQLite.swift (0.11.2):
+    - SQLite.swift/standard (= 0.11.2)
+  - SQLite.swift/standard (0.11.2)
+
+DEPENDENCIES:
+  - FSCalendar
+  - SQLite.swift
+
+SPEC CHECKSUMS:
+  FSCalendar: 8bda3534e8590b87124af9a236887314e0359a27
+  SQLite.swift: 670c3e9e0a806bbfd56a3de5d530768dc0e6fe7c
+
+PODFILE CHECKSUM: db4b077b0fa305ae4b7850890958817d5551fc0f
+
+COCOAPODS: 1.2.1

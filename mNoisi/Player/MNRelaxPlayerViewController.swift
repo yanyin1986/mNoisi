@@ -34,7 +34,7 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     private weak var collectionView: UICollectionView!
 
     private var _selectedIndex: Int = -1
-    private var _currentIndex: Int = -1
+    private var _currentIndex: Int = 0
 
     private var _audioPlayer: AVAudioPlayer?
     private var _timer: Timer?
@@ -104,59 +104,67 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
 
     @IBAction
     func playButtonPressed(_ sender: UIButton) {
-        
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            // paused, wanna play
+            if _audioPlayer == nil {
+                self.fadeInPlayer()
+            } else {
+                _audioPlayer?.play()
+            }
+        } else {
+            // is playing, wanna pause
+            _audioPlayer?.pause()
+        }
     }
 
     private func resetPlayer() {
         guard _currentIndex >= 0 else {
             return
         }
-        let track = tracks[_currentIndex]
 
-        if #available(iOS 10, *) {
-            if _audioPlayer != nil {
-//                _audioPlayer?.setVolume(0.0, fadeDuration: 1.0)
-                self.fade(audioPlayer: _audioPlayer!, toVolume: 0.0, withCompletion: { 
-                    print("complete")
-                })
-            } else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { 
-                do {
-                    self._audioPlayer?.pause()
-                    self._audioPlayer = try AVAudioPlayer(contentsOf: track.audioUrl)
-                    self._audioPlayer?.volume = 0.0
-                    self._audioPlayer?.setVolume(1.0, fadeDuration: 1.0)
-                    self._audioPlayer!.prepareToPlay()
-                    self._audioPlayer!.play()
-                } catch {
-                    debugPrint(error)
+        if _audioPlayer == nil {
+            self.fadeInPlayer()
+        } else {
+            _timer?.invalidate()
+            NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.fadeInPlayer), object: nil)
+
+            self.fade(audioPlayer: _audioPlayer!, toVolume: 0.0, duration: 1.75, withCompletion: {
+                self._audioPlayer?.pause()
+                DispatchQueue.main.async {
+                    self.perform(#selector(self.fadeInPlayer), with: nil, afterDelay: 0.1)
                 }
             })
-            }
-        } else {
-            if (track.audioUrl.isFileURL) {
-                _audioPlayer?.pause()
-                do {
-                    _audioPlayer = try AVAudioPlayer(contentsOf: track.audioUrl)
-                    _audioPlayer!.prepareToPlay()
-                    _audioPlayer!.play()
-                } catch {
-                    debugPrint(error)
-                }
-            }
         }
+    }
+
+    dynamic func fadeInPlayer() {
+        let track = tracks[_currentIndex]
+        let url = track.audioUrl
+        do {
+            self._audioPlayer = try AVAudioPlayer(contentsOf: url)
+            self._audioPlayer?.volume = 0.0
+            self._audioPlayer?.play()
+            self.fade(audioPlayer: self._audioPlayer!, toVolume: 1.0, duration: 1.25, withCompletion: {
+
+            })
+        } catch {
+            debugPrint(error)
+        }
+
     }
 
     func fade(audioPlayer: AVAudioPlayer, toVolume: Float, duration: TimeInterval = 1.0, withCompletion: @escaping ()->Void) {
         let volumn = toVolume - audioPlayer.volume
-        let step = Int(duration / 0.1)
+        let step = Int(duration / 0.05)
         let stepValue = volumn / Float(step)
         _executedStep = 0
         let userInfo: [String : Any] = [
             "step" : step,
             "stepValue" : stepValue,
             "completion" : withCompletion ]
-        _timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(repeatCheck), userInfo: userInfo, repeats: true)
+        _timer?.invalidate()
+        _timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(repeatCheck), userInfo: userInfo, repeats: true)
     }
 
     func repeatCheck() {

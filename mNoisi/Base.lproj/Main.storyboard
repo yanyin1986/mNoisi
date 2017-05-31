@@ -126,7 +126,8 @@
                                             <constraint firstAttribute="height" constant="50" id="Elq-z8-4GB"/>
                                             <constraint firstAttribute="width" constant="50" id="xXj-cY-kxI"/>
                                         </constraints>
-                                        <state key="normal" image="pause"/>
+                                        <state key="normal" image="play"/>
+                                        <state key="selected" image="pause"/>
                                         <connections>
                                             <action selector="playButtonPressed:" destination="IKj-3D-V1M" eventType="touchUpInside" id="hW1-3N-EiP"/>
                                         </connections>
@@ -302,7 +303,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H43-gQ-mMc" id="GlS-Go-Wkb">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Cz-Y8-ij6">
@@ -797,6 +798,7 @@
         <image name="mine" width="28" height="28"/>
         <image name="natrual sound" width="27" height="27"/>
         <image name="pause" width="31" height="31"/>
+        <image name="play" width="31" height="31"/>
         <image name="play list" width="22" height="22"/>
         <image name="volume-max" width="15" height="15"/>
         <image name="volume-min" width="15" height="15"/>

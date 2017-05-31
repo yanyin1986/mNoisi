@@ -20,6 +20,7 @@
 		F7442F471ED718A4008FFF3D /* MNFadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */; };
 		F7442F491EDB82E9008FFF3D /* MNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442F481EDB82E9008FFF3D /* MNButton.swift */; };
 		F74E4F391ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74E4F381ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift */; };
+		F75DC30C1EDE21AB001E5547 /* MNActivityRecords.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75DC30B1EDE21AB001E5547 /* MNActivityRecords.swift */; };
 		F762B9CB1ED63E7B002C2FB0 /* MNBreathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762B9CA1ED63E7B002C2FB0 /* MNBreathViewController.swift */; };
 		F762B9CD1ED708BE002C2FB0 /* MNTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762B9CC1ED708BE002C2FB0 /* MNTimerViewController.swift */; };
 		F78722D81ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78722D71ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift */; };
@@ -53,6 +54,7 @@
 		F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNFadeSegue.swift; sourceTree = "<group>"; };
 		F7442F481EDB82E9008FFF3D /* MNButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNButton.swift; sourceTree = "<group>"; };
 		F74E4F381ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTrackCollectionViewCell.swift; sourceTree = "<group>"; };
+		F75DC30B1EDE21AB001E5547 /* MNActivityRecords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNActivityRecords.swift; sourceTree = "<group>"; };
 		F762B9CA1ED63E7B002C2FB0 /* MNBreathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNBreathViewController.swift; sourceTree = "<group>"; };
 		F762B9CC1ED708BE002C2FB0 /* MNTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTimerViewController.swift; sourceTree = "<group>"; };
 		F78722D71ECDE1BB00A60FB1 /* MNSoundTrackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNSoundTrackTableViewCell.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				F78B60D61ED4FB9000D5468F /* MNTextTableViewCell.swift */,
 				F7A133EB1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift */,
 				F7A133ED1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift */,
+				F75DC30B1EDE21AB001E5547 /* MNActivityRecords.swift */,
 				F78B60D81ED5BC3500D5468F /* MNTrack.swift */,
 				F7442F481EDB82E9008FFF3D /* MNButton.swift */,
 				F7FB6EDB1EC8F8DA0086E576 /* LaunchScreen.storyboard */,
@@ -295,6 +298,7 @@
 				F70FB8981ECD94CF00E125F5 /* MNTableViewController.swift in Sources */,
 				F78B60D71ED4FB9000D5468F /* MNTextTableViewCell.swift in Sources */,
 				F7B553A41EC8FE67005CC15A /* MNRelaxPlayerViewController.swift in Sources */,
+				F75DC30C1EDE21AB001E5547 /* MNActivityRecords.swift in Sources */,
 				F7B5539B1EC8F9BE005CC15A /* MNTabBarController.swift in Sources */,
 				F762B9CB1ED63E7B002C2FB0 /* MNBreathViewController.swift in Sources */,
 				F7FB6ED31EC8F8DA0086E576 /* AppDelegate.swift in Sources */,

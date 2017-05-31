@@ -94,6 +94,24 @@
 			path = Player;
 			sourceTree = "<group>";
 		};
+		2C8DFEA11EDEBF7E0068540D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F7442F481EDB82E9008FFF3D /* MNButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C8DFEA21EDEBFD20068540D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F713DD361EDCE356004D3436 /* a01_mountain_lake.m4a */,
+				F713DD371EDCE356004D3436 /* a03_rain_leaves.m4a */,
+				F713DD381EDCE356004D3436 /* a05_fireplace.m4a */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		5AA3342AD27E2AEE039A548F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +150,8 @@
 		F7FB6ED11EC8F8DA0086E576 /* mNoisi */ = {
 			isa = PBXGroup;
 			children = (
+				2C8DFEA21EDEBFD20068540D /* Resources */,
+				2C8DFEA11EDEBF7E0068540D /* Views */,
 				2C24A4301EDEBEC2008CD172 /* Player */,
 				F7FB6ED21EC8F8DA0086E576 /* AppDelegate.swift */,
 				F7B5539A1EC8F9BE005CC15A /* MNTabBarController.swift */,
@@ -149,14 +169,10 @@
 				F7A133ED1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift */,
 				F75DC30B1EDE21AB001E5547 /* MNActivityRecords.swift */,
 				F78B60D81ED5BC3500D5468F /* MNTrack.swift */,
-				F7442F481EDB82E9008FFF3D /* MNButton.swift */,
 				F7FB6EDB1EC8F8DA0086E576 /* LaunchScreen.storyboard */,
 				F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */,
 				F7FB6EDE1EC8F8DA0086E576 /* Info.plist */,
 				F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */,
-				F713DD361EDCE356004D3436 /* a01_mountain_lake.m4a */,
-				F713DD371EDCE356004D3436 /* a03_rain_leaves.m4a */,
-				F713DD381EDCE356004D3436 /* a05_fireplace.m4a */,
 				F70FB89F1ECDB69A00E125F5 /* Spring Walk.jpeg */,
 				F70FB89D1ECDB69500E125F5 /* Ocean Wave.jpeg */,
 				F70FB8991ECDB5BA00E125F5 /* 3.jpg */,

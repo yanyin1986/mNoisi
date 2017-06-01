@@ -8,9 +8,10 @@
 
 import UIKit
 
-class MNSoundTrackTableViewCell: UITableViewCell {
+class MNSoundTrackCollectionViewCell: UICollectionViewCell {
 
-    
+    static public let reuseIdentifier: String = "soundTrackCell"
+
     @IBOutlet weak var soundImageView: UIImageView!
 
 
@@ -20,13 +21,6 @@ class MNSoundTrackTableViewCell: UITableViewCell {
         self.soundImageView.layer.cornerRadius = 6.0
         self.soundImageView.layer.masksToBounds = true
         self.backgroundColor = UIColor.clear
-        self.selectionStyle = UITableViewCellSelectionStyle.none
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

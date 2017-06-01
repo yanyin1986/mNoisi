@@ -38,7 +38,7 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.contentInset = UIEdgeInsetsMake(44, 10, 20, 10)
+        collectionView.contentInset = UIEdgeInsetsMake(70, 10, 20, 10)
         //self.view.backgroundColor = UIColor(red: 0x15/255.0, green: 0x23/255.0, blue: 0x3c/255.0, alpha: 1.0)// UIColor.red
 
         collectionView.dataSource = self
@@ -58,11 +58,21 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return soundTrackNames.count
+        return tracks.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MNSoundTrackCollectionViewCell.reuseIdentifier, for: indexPath) as! MNSoundTrackCollectionViewCell
+
+        let track = tracks[indexPath.row]
+        cell.soundImageView.image = UIImage(named: track.fullScreen)
+        return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+        let width = collectionView.frame.width - 10
+        let height = width / 3.0
+        return CGSize(width: width, height: height)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -72,38 +82,5 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let identifier = "cell"
-//        var soundCell = tableView.dequeueReusableCell(withIdentifier: "cell")
-//        if soundCell == nil {
-//            soundCell = UITableViewCell(style: .subtitle, reuseIdentifier: identifier)
-//        }
-//        let soundLabel: SoundTrackName = soundTrackNames[indexPath.row]
-//        soundCell?.textLabel?.text = soundLabel.soundTitleName
-//        soundCell?.backgroundColor = UIColor.clear
-//        soundCell?.backgroundView = UIImageView(image: UIImage(named: soundLabel.soundImageName))
-        //indexPath.row
-        //indexPath.section
-        print(indexPath)
-
-        let soundLabel: SoundTrackName = soundTrackNames[indexPath.row]
-        let soundCell = tableView.dequeueReusableCell(withIdentifier: "soundTrackCell", for: indexPath) as! MNSoundTrackTableViewCell
-        soundCell.soundImageView.image = UIImage(named: soundLabel.soundImageName)
-        soundCell.backgroundColor = UIColor.clear
-
-        return soundCell
-    }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

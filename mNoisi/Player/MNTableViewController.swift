@@ -8,9 +8,13 @@
 
 import UIKit
 
-class MNTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MNTableViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet
+    weak var topView: UIView!
+
+    @IBOutlet
+    weak var collectionView: UICollectionView!
 
     struct SoundTrackName {
         var soundTitleName: String
@@ -25,6 +29,7 @@ class MNTableViewController: UIViewController, UITableViewDataSource, UITableVie
     ]
 
     @IBAction func close(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name.MNRelaxPlayerViewWillAppear, object: nil)
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -33,18 +38,18 @@ class MNTableViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        collectionView.contentInset = UIEdgeInsetsMake(44, 10, 20, 10)
         //self.view.backgroundColor = UIColor(red: 0x15/255.0, green: 0x23/255.0, blue: 0x3c/255.0, alpha: 1.0)// UIColor.red
 
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.separatorStyle = .none
+        collectionView.dataSource = self
+        collectionView.delegate = self
         //tableView.separatorInset = UIEdgeInsetsMake(100, 20, 100, 10)
-        tableView.allowsSelection = true
-        tableView.allowsMultipleSelection = true
-        tableView.backgroundColor = UIColor.clear
+        collectionView.backgroundColor = UIColor.clear
 
-        self.view.addSubview(tableView)
-        // Do any additional setup after loading the view.
+        topView.layer.shadowOpacity = 1.0
+        topView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        topView.layer.shadowRadius = 8.0
+        topView.layer.shadowColor = UIColor(white: 0, alpha: 57.0).cgColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,17 +57,20 @@ class MNTableViewController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return soundTrackNames.count
     }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

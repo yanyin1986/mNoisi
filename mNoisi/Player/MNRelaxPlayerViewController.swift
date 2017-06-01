@@ -18,8 +18,12 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     @IBOutlet
     private weak var topView: UIView!
 
-    @IBOutlet
-    private weak var maskView: UIVisualEffectView!
+    private lazy var maskView: UIVisualEffectView = {
+        let view = UIVisualEffectView()
+        view.effect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        self.view.addSubview(view)
+        return view
+    }()
 
     @IBOutlet
     private weak var bottomView: UIView!
@@ -228,7 +232,10 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
 
     // MARK: page jump
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.maskView.frame = self.view.bounds
         self.maskView.isHidden = false
+        self.maskView.alpha = 1.0
+
         //self.maskView.alpha = 0.0
         if let identifier: String = segue.identifier {
             switch identifier {

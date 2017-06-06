@@ -7,8 +7,9 @@
 //
 
 import Foundation
-import SQLite
+import SQLite3
 
+/*
 struct MNDatabase {
     static public let shared: MNDatabase = MNDatabase()
     private var db: Connection
@@ -68,3 +69,4 @@ struct ActivityRecords {
         MNDatabase.shared.insert(insert)
     }
 }
+ */

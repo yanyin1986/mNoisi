@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppear.shadowImage = UIImage()
         navigationBarAppear.backgroundColor = UIColor.clear
         navigationBarAppear.isTranslucent = true
-        navigationBarAppear.titleTextAttributes = [ NSForegroundColorAttributeName : UIColor.white ]
+        navigationBarAppear.titleTextAttributes = [ NSAttributedStringKey.foregroundColor.rawValue : UIColor.white ]
         navigationBarAppear.tintColor = UIColor.white
         
         return true

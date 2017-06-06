@@ -142,7 +142,7 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         }
     }
 
-    dynamic func fadeInPlayer() {
+    @objc dynamic func fadeInPlayer() {
         let track = tracks[_currentIndex]
         let url = track.audioUrl
         do {
@@ -171,7 +171,7 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         _timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(repeatCheck), userInfo: userInfo, repeats: true)
     }
 
-    func repeatCheck() {
+    @objc func repeatCheck() {
         guard let timer = self._timer else { return }
         guard let userInfo = timer.userInfo as? [String : Any] else { return }
         guard let audioPlayer = _audioPlayer else { return }
@@ -247,7 +247,7 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     }
 
     // MARK: MNMineViewControllerDelegate
-    func hideBlurView(_ sender: Any) {
+    @objc func hideBlurView(_ sender: Any) {
         UIView.animate(withDuration: 0.3, animations: {
             self.maskView.alpha = 0.0
         }, completion: { (finished) in

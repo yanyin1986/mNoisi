@@ -38,7 +38,7 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.contentInset = UIEdgeInsetsMake(70, 10, 20, 10)
+        collectionView.contentInset = UIEdgeInsetsMake(70, 10, 6, 10)
         //self.view.backgroundColor = UIColor(red: 0x15/255.0, green: 0x23/255.0, blue: 0x3c/255.0, alpha: 1.0)// UIColor.red
 
         collectionView.dataSource = self
@@ -70,9 +70,8 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width - 10
-        let height = width / 3.0
-        return CGSize(width: width, height: height)
+        let frame = UIEdgeInsetsInsetRect(collectionView.frame, collectionView.contentInset)
+        return CGSize(width: frame.width, height: frame.width / 3.0)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -81,6 +80,11 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let track = tracks[indexPath.row]
+        print(track)
     }
 
 }

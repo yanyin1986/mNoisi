@@ -23,7 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppear.isTranslucent = true
         navigationBarAppear.titleTextAttributes = [ NSAttributedStringKey.foregroundColor.rawValue : UIColor.white ]
         navigationBarAppear.tintColor = UIColor.white
-        
+
+        do {
+            let data = try JSONEncoder().encode(tracks)
+            let str = String(data: data, encoding: .utf8)
+            print(str)
+        } catch {
+            print(error)
+        }
+
+
         return true
     }
 

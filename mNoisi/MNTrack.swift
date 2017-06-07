@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct MNTrack {
+public struct MNTrack: Codable {
     var id: Int64
     var name: String
     var thumbnail: String

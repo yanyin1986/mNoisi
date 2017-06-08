@@ -55,7 +55,7 @@ class MNTimerViewController: UIViewController, UIPickerViewDataSource, UIPickerV
 
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let title = "\(times[row]) m"
-        return NSAttributedString(string: title, attributes: [ NSAttributedStringKey.foregroundColor : UIColor.white ])
+        return NSAttributedString(string: title, attributes: [ NSForegroundColorAttributeName : UIColor.white ])
     }
 
 

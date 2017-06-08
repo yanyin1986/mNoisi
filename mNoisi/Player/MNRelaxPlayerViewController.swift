@@ -18,6 +18,9 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     @IBOutlet
     private weak var topView: UIView!
 
+    @IBOutlet
+    private weak var likeButton: UIButton!
+
     private lazy var maskView: UIVisualEffectView = {
         let view = UIVisualEffectView()
         view.effect = UIBlurEffect(style: UIBlurEffectStyle.light)
@@ -38,7 +41,7 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     private weak var collectionView: UICollectionView!
 
     private var _selectedIndex: Int = -1
-    private var _currentIndex: Int = 0
+    private var _currentIndex: Int = -1
 
     private var _audioPlayer: AVAudioPlayer?
     private var _timer: Timer?
@@ -58,6 +61,8 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
             selector: #selector(hideBlurView(_:)),
             name: Notification.Name.MNRelaxPlayerViewWillAppear,
             object: nil)
+
+        self.calculateIndex(self.collectionView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -122,6 +127,21 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         }
     }
 
+    @IBAction
+    func likeButtonPressed(_ sender: UIButton) {
+        guard _currentIndex >= 0 else {
+            return
+        }
+        let track = tracks[_currentIndex]
+
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            MNTrackManager.shared.like(track: track)
+        } else {
+            MNTrackManager.shared.unlike(track: track)
+        }
+    }
+
     private func resetPlayer() {
         guard _currentIndex >= 0 else {
             return
@@ -144,6 +164,8 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
 
     @objc dynamic func fadeInPlayer() {
         let track = tracks[_currentIndex]
+        let like = MNTrackManager.shared.isTrackLiked(track)
+        likeButton.isSelected = like
         let url = track.audioUrl
         do {
             self._audioPlayer = try AVAudioPlayer(contentsOf: url)

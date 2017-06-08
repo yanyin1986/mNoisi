@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct MNTrack: Codable {
+public struct MNTrack /*: Codable*/ {
     var id: Int64
     var name: String
     var thumbnail: String
@@ -23,3 +23,37 @@ public let tracks: [MNTrack] = [
     MNTrack(id: 4, name: "Fire Place", thumbnail: "", fullScreen: "4", audioUrl: Bundle.main.url(forResource: "a05_fireplace", withExtension: "m4a")!),
     MNTrack(id: 5, name: "Fire Place", thumbnail: "", fullScreen: "Spring Walk", audioUrl: Bundle.main.url(forResource: "a05_fireplace", withExtension: "m4a")!),
 ]
+
+public class MNTrackManager {
+    public static let shared: MNTrackManager = MNTrackManager()
+    private static let kLikedTracks = "likedTracks"
+    private var likedTracks: [Int64] = []
+    private init() {
+        if let array = UserDefaults.standard.array(forKey: MNTrackManager.kLikedTracks) as? [Int64] {
+            self.likedTracks.append(contentsOf: array)
+        }
+    }
+
+    public func like(track: MNTrack) {
+        guard self.isTrackLiked(track) == false else {
+            return
+        }
+        self.likedTracks.append(track.id)
+        UserDefaults.standard.set(self.likedTracks, forKey: MNTrackManager.kLikedTracks)
+        UserDefaults.standard.synchronize()
+    }
+
+
+    public func unlike(track: MNTrack) {
+        guard let index = self.likedTracks.index(of: track.id) else {
+            return
+        }
+        self.likedTracks.remove(at: index)
+        UserDefaults.standard.set(self.likedTracks, forKey: MNTrackManager.kLikedTracks)
+        UserDefaults.standard.synchronize()
+    }
+
+    public func isTrackLiked(_ track: MNTrack) -> Bool {
+        return self.likedTracks.first(where: { $0 == track.id }) != nil
+    }
+}

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bsc-hD-UbC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G12b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bsc-hD-UbC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,11 +20,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="vOH-tl-bwS">
-                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.66666666666666663" green="1" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                    </toolbar>
                     <connections>
                         <segue destination="IKj-3D-V1M" kind="relationship" relationship="rootViewController" id="Ry9-Oa-VTv"/>
                     </connections>
@@ -139,6 +134,10 @@
                                             <constraint firstAttribute="width" constant="50" id="vmD-n8-Qyj"/>
                                         </constraints>
                                         <state key="normal" image="favor"/>
+                                        <state key="selected" image="favor-on"/>
+                                        <connections>
+                                            <action selector="likeButtonPressed:" destination="IKj-3D-V1M" eventType="touchUpInside" id="R21-wg-awk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -275,6 +274,7 @@
                         <outlet property="bottomView" destination="D7R-g4-NIe" id="X9X-xJ-yL5"/>
                         <outlet property="bottomViewBottomConst" destination="Rld-Td-5U6" id="z2S-5S-wVa"/>
                         <outlet property="collectionView" destination="gBK-Oc-qp3" id="teT-sg-9bE"/>
+                        <outlet property="likeButton" destination="SOI-Em-ZTQ" id="EIW-wj-gco"/>
                         <outlet property="playerView" destination="fsv-MM-9U7" id="qeH-Fc-61N"/>
                         <outlet property="topView" destination="4do-Rv-S51" id="mOn-pM-6K4"/>
                     </connections>
@@ -297,35 +297,21 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QMN-n3-qzZ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.062745098040000002" green="0.10980392160000001" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Yzk-Qw-21P">
-                                    <size key="itemSize" width="372" height="224"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yzk-Qw-21P">
+                                    <size key="itemSize" width="369" height="222"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="soundTrackCell" id="g8b-jY-ziP" customClass="MNSoundTrackCollectionViewCell" customModule="mNoisi" customModuleProvider="target">
-                                        <rect key="frame" x="1.5" y="0.0" width="372" height="224"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="g8b-jY-ziP">
+                                        <rect key="frame" x="3" y="0.0" width="369" height="222"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="372" height="224"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="369" height="222"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N5j-YB-xcj">
-                                                    <rect key="frame" x="0.0" y="0.0" width="372" height="224"/>
-                                                </imageView>
-                                            </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="N5j-YB-xcj" secondAttribute="trailing" id="31e-98-S6f"/>
-                                            <constraint firstItem="N5j-YB-xcj" firstAttribute="leading" secondItem="g8b-jY-ziP" secondAttribute="leading" id="Bri-ac-Mrg"/>
-                                            <constraint firstItem="N5j-YB-xcj" firstAttribute="top" secondItem="g8b-jY-ziP" secondAttribute="top" id="RMO-fw-OTP"/>
-                                            <constraint firstAttribute="bottom" secondItem="N5j-YB-xcj" secondAttribute="bottom" id="mY4-gV-unq"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="soundImageView" destination="N5j-YB-xcj" id="nuj-o6-COd"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -352,7 +338,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.062745098039215685" green="0.10980392156862745" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="LML-f3-E4a" secondAttribute="trailing" id="29m-PA-7IU"/>
                             <constraint firstItem="LML-f3-E4a" firstAttribute="leading" secondItem="pu8-cf-DxP" secondAttribute="leading" id="HsU-Hs-16H"/>
@@ -824,6 +809,7 @@
         <image name="exit-white" width="24" height="24"/>
         <image name="expand" width="23" height="22"/>
         <image name="favor" width="23" height="22"/>
+        <image name="favor-on" width="22" height="22"/>
         <image name="meditation" width="27" height="27"/>
         <image name="mine" width="28" height="28"/>
         <image name="natrual sound" width="27" height="27"/>
@@ -834,7 +820,7 @@
         <image name="volume-min" width="15" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TfG-pR-RoG"/>
         <segue reference="8u2-vf-bAc"/>
+        <segue reference="TfG-pR-RoG"/>
     </inferredMetricsTieBreakers>
 </document>

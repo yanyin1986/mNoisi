@@ -23,6 +23,7 @@ class MNAnimationViewController: UIViewController {
     
     @IBAction func dismiss(_ sender: Any) {
 //        self.dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: Notification.Name.MNRelaxPlayerViewWillAppear, object: nil)
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
 

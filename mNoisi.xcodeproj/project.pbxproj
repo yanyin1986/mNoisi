@@ -27,6 +27,7 @@
 		F7A133EC1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A133EB1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift */; };
 		F7A133EE1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A133ED1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift */; };
 		F7B553A41EC8FE67005CC15A /* MNRelaxPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B553A31EC8FE67005CC15A /* MNRelaxPlayerViewController.swift */; };
+		F7C991BB1EE8E9F300A60BC4 /* MNPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C991BA1EE8E9F300A60BC4 /* MNPlayer.swift */; };
 		F7FB6ED31EC8F8DA0086E576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6ED21EC8F8DA0086E576 /* AppDelegate.swift */; };
 		F7FB6ED81EC8F8DA0086E576 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FB6ED61EC8F8DA0086E576 /* Main.storyboard */; };
 		F7FB6EDA1EC8F8DA0086E576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		F7A133EB1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNCalendarTableViewCell.swift; sourceTree = "<group>"; };
 		F7A133ED1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNStaticsInfoTableViewCell.swift; sourceTree = "<group>"; };
 		F7B553A31EC8FE67005CC15A /* MNRelaxPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNRelaxPlayerViewController.swift; sourceTree = "<group>"; };
+		F7C991BA1EE8E9F300A60BC4 /* MNPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNPlayer.swift; sourceTree = "<group>"; };
 		F7FB6ECF1EC8F8DA0086E576 /* mNoisi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mNoisi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FB6ED21EC8F8DA0086E576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7FB6ED71EC8F8DA0086E576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				F74E4F381ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift */,
 				F78722D71ECDE1BB00A60FB1 /* MNSoundTrackCollectionViewCell.swift */,
 				F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */,
+				F7C991BA1EE8E9F300A60BC4 /* MNPlayer.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				F7A133EE1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift in Sources */,
 				F70FB8981ECD94CF00E125F5 /* MNTableViewController.swift in Sources */,
 				F78B60D71ED4FB9000D5468F /* MNTextTableViewCell.swift in Sources */,
+				F7C991BB1EE8E9F300A60BC4 /* MNPlayer.swift in Sources */,
 				F7B553A41EC8FE67005CC15A /* MNRelaxPlayerViewController.swift in Sources */,
 				F75DC30C1EDE21AB001E5547 /* MNActivityRecords.swift in Sources */,
 				F762B9CB1ED63E7B002C2FB0 /* MNBreathViewController.swift in Sources */,

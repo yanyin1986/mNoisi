@@ -16,6 +16,8 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet
     weak var collectionView: UICollectionView!
 
+
+
     struct SoundTrackName {
         var soundTitleName: String
         var soundImageName: String
@@ -66,6 +68,15 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
 
         let track = tracks[indexPath.row]
         cell.soundImageView.image = UIImage(named: track.fullScreen)
+
+        let isTrackLiked = MNTrackManager.shared.isTrackLiked(track)
+
+        if isTrackLiked == true {
+            cell.isFavorite.alpha = 0
+        } else {
+            cell.isFavorite.alpha = 1
+        }
+        cell.isFavorite.center = cell.center
         return cell
     }
 
@@ -86,5 +97,7 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
         let track = tracks[indexPath.row]
         print(track)
     }
+
+
 
 }

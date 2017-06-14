@@ -315,15 +315,24 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d5k-VV-qV7">
                                                     <rect key="frame" x="0.0" y="0.0" width="369" height="222"/>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="favor-on" translatesAutoresizingMaskIntoConstraints="NO" id="RkC-gh-uYf">
+                                                    <rect key="frame" x="319" y="101" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="4v8-qk-GIp"/>
+                                                        <constraint firstAttribute="width" constant="30" id="lqD-Ml-cUb"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="d5k-VV-qV7" secondAttribute="trailing" id="37w-6k-oDt"/>
                                             <constraint firstItem="d5k-VV-qV7" firstAttribute="top" secondItem="g8b-jY-ziP" secondAttribute="top" id="MrD-yk-DDL"/>
                                             <constraint firstAttribute="bottom" secondItem="d5k-VV-qV7" secondAttribute="bottom" id="evU-HJ-tjQ"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="RkC-gh-uYf" secondAttribute="trailing" constant="12" id="mQv-Ys-qcM"/>
                                             <constraint firstItem="d5k-VV-qV7" firstAttribute="leading" secondItem="g8b-jY-ziP" secondAttribute="leading" id="sAe-o7-R7V"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="isFavorite" destination="RkC-gh-uYf" id="FFO-VK-07l"/>
                                             <outlet property="soundImageView" destination="d5k-VV-qV7" id="8Nb-NI-fkG"/>
                                         </connections>
                                     </collectionViewCell>
@@ -343,6 +352,14 @@
                                             <action selector="close:" destination="Mtq-up-aLb" eventType="touchUpInside" id="ab1-dz-EJp"/>
                                         </connections>
                                     </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GPy-qb-DhJ">
+                                        <rect key="frame" x="50" y="25" width="273" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.062745098039215685" green="0.10980392156862745" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SQLite
 
 public struct MNTrack /*: Codable*/ {
     var id: Int64
@@ -15,8 +16,6 @@ public struct MNTrack /*: Codable*/ {
     var fullScreen: String
     var audioUrl: URL
 }
-
-
 
 public class MNTrackManager {
     public static let shared: MNTrackManager = MNTrackManager()

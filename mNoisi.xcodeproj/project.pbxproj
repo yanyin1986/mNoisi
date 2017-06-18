@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		659D868629E656A5440F44EB /* Pods_mNoisi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061546CF2EB2617C79F9CBD2 /* Pods_mNoisi.framework */; };
+		F709DC9F1EF54B8E0016C409 /* MNDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709DC9E1EF54B8E0016C409 /* MNDB.swift */; };
+		F709DCA11EF54CB10016C409 /* MNDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709DCA01EF54CB10016C409 /* MNDefaults.swift */; };
 		F70FB8981ECD94CF00E125F5 /* MNTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */; };
 		F713DD391EDCE356004D3436 /* a01_mountain_lake.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F713DD361EDCE356004D3436 /* a01_mountain_lake.m4a */; };
 		F713DD3A1EDCE356004D3436 /* a03_rain_leaves.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F713DD371EDCE356004D3436 /* a03_rain_leaves.m4a */; };
@@ -55,6 +57,8 @@
 		F709101B1EE696B600B7A699 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
 		F70910301EE696B600B7A699 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F70910641EE82E7B00B7A699 /* mNoisi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mNoisi.entitlements; sourceTree = "<group>"; };
+		F709DC9E1EF54B8E0016C409 /* MNDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNDB.swift; sourceTree = "<group>"; };
+		F709DCA01EF54CB10016C409 /* MNDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNDefaults.swift; sourceTree = "<group>"; };
 		F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTableViewController.swift; sourceTree = "<group>"; };
 		F713DD361EDCE356004D3436 /* a01_mountain_lake.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = a01_mountain_lake.m4a; sourceTree = "<group>"; };
 		F713DD371EDCE356004D3436 /* a03_rain_leaves.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = a03_rain_leaves.m4a; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 				F7FB6EDE1EC8F8DA0086E576 /* Info.plist */,
 				F70910641EE82E7B00B7A699 /* mNoisi.entitlements */,
 				F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */,
+				F709DC9E1EF54B8E0016C409 /* MNDB.swift */,
+				F709DCA01EF54CB10016C409 /* MNDefaults.swift */,
 			);
 			path = mNoisi;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 				F78B60D51ED4FB2800D5468F /* MNSwitchTableViewCell.swift in Sources */,
 				F74E4F391ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift in Sources */,
 				F762B9CD1ED708BE002C2FB0 /* MNTimerViewController.swift in Sources */,
+				F709DCA11EF54CB10016C409 /* MNDefaults.swift in Sources */,
 				F7A133EE1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift in Sources */,
 				F70FB8981ECD94CF00E125F5 /* MNTableViewController.swift in Sources */,
 				F78B60D71ED4FB9000D5468F /* MNTextTableViewCell.swift in Sources */,
@@ -348,6 +355,7 @@
 				F7B553A41EC8FE67005CC15A /* MNRelaxPlayerViewController.swift in Sources */,
 				F75DC30C1EDE21AB001E5547 /* MNActivityRecords.swift in Sources */,
 				F762B9CB1ED63E7B002C2FB0 /* MNBreathViewController.swift in Sources */,
+				F709DC9F1EF54B8E0016C409 /* MNDB.swift in Sources */,
 				F7FB6ED31EC8F8DA0086E576 /* AppDelegate.swift in Sources */,
 				F78722DA1ECFD7F400A60FB1 /* MNMineViewController.swift in Sources */,
 				F7442F491EDB82E9008FFF3D /* MNButton.swift in Sources */,
@@ -496,7 +504,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3Z3K367TN7;
 				INFOPLIST_FILE = mNoisi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.mNoisi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -514,7 +522,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3Z3K367TN7;
 				INFOPLIST_FILE = mNoisi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.mNoisi;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -60,13 +60,13 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tracks.count
+        return MNTrackManager.shared.tracks.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MNSoundTrackCollectionViewCell.reuseIdentifier, for: indexPath) as! MNSoundTrackCollectionViewCell
 
-        let track = tracks[indexPath.row]
+        let track = MNTrackManager.shared.tracks[indexPath.row]
         cell.soundImageView.image = UIImage(named: track.fullScreen)
 
         let isTrackLiked = MNTrackManager.shared.isTrackLiked(track)
@@ -94,7 +94,7 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let track = tracks[indexPath.row]
+        let track = MNTrackManager.shared.tracks[indexPath.row]
         print(track)
     }
 

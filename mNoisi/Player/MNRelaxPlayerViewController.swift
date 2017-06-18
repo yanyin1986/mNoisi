@@ -124,7 +124,7 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         guard _currentIndex >= 0 else {
             return
         }
-        let track = tracks[_currentIndex]
+        let track = MNTrackManager.shared.tracks[_currentIndex]
 
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
@@ -136,12 +136,12 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
 
     // MARK: collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tracks.count
+        return MNTrackManager.shared.tracks.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "trackCell", for: indexPath) as! MNTrackCollectionViewCell
-        let track = tracks[indexPath.row]
+        let track = MNTrackManager.shared.tracks[indexPath.row]
         cell.imageView.image = UIImage(named: track.fullScreen)
         return cell
     }
@@ -171,7 +171,7 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         }
 
         _currentIndex = index
-        let track = tracks[_currentIndex]
+        let track = MNTrackManager.shared.tracks[_currentIndex]
         MNPlayer.shared.reset(withAudioUrl: track.audioUrl)
     }
 

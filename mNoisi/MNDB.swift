@@ -36,8 +36,9 @@ public struct MNDB {
 
     private func initialize() {
         do {
+            //// initial track table
             let create = trackTable.create(temporary: false, ifNotExists: true, block: { (t) in
-                t.column(Expression<Int64>("id"), primaryKey: true)
+                t.column(Expression<Int64>("id"), primaryKey: PrimaryKey.autoincrement)
                 t.column(Expression<String>("name"))
                 t.column(Expression<String>("thumb_image"))
                 t.column(Expression<String>("full_image"))
@@ -47,7 +48,8 @@ public struct MNDB {
 
             try _db.execute(create)
 
-            trackTable.insert(<#T##values: [Setter]##[Setter]#>)
+//            let sql =
+            try _db.run(trackTable.insert(Expression<String>("name") <- "a"))
         } catch {
             fatalError("Error when initialize db: \(error)")
         }

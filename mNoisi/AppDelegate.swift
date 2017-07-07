@@ -24,7 +24,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppear.titleTextAttributes = [ NSForegroundColorAttributeName : UIColor.white ]
         navigationBarAppear.tintColor = UIColor.white
 
+        window = UIWindow(frame: UIScreen.main.bounds)
 
+        let relaxVC = MNRelaxPlayerViewController()
+        let nav = MNNavigationController(rootViewController: relaxVC)
+        nav.isNavigationBarHidden = true
+        if !Defaults[.firstLaunch] {
+            Defaults[.firstLaunch] = true
+            relaxVC.showList = true
+        } else {
+            relaxVC.showList = false
+        }
+
+        window?.rootViewController = nav
+        window?.makeKeyAndVisible()
 
         return true
     }

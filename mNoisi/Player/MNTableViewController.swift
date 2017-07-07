@@ -8,15 +8,20 @@
 
 import UIKit
 
+protocol MNTableViewDelegate: NSObjectProtocol {
+
+    func playerListViewWillHide()
+}
+
 class MNTableViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+    weak var delegate: MNTableViewDelegate?
 
     @IBOutlet
     weak var topView: UIView!
 
     @IBOutlet
     weak var collectionView: UICollectionView!
-
-
 
     struct SoundTrackName {
         var soundTitleName: String
@@ -31,10 +36,8 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
     ]
 
     @IBAction func close(_ sender: Any) {
-        NotificationCenter.default.post(name: Notification.Name.MNRelaxPlayerViewWillAppear, object: nil)
-        self.dismiss(animated: true, completion: nil)
+        self.delegate?.playerListViewWillHide()
     }
-
 
 //    var soundNames = ["Ocean Wave.jpeg", "Spring Walk.jpeg", "3.jpg", "4.jpg"]
     override func viewDidLoad() {
@@ -45,6 +48,7 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
 
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.register(UINib(nibName: "MNSoundTrackCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "soundTrackCell")
         //tableView.separatorInset = UIEdgeInsetsMake(100, 20, 100, 10)
         collectionView.backgroundColor = UIColor.clear
 

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MNTableViewController" customModule="mNoisi" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="o2X-9p-Xfr" id="aYT-KU-whD"/>
+                <outlet property="topView" destination="BIf-Ch-nwP" id="CZ1-Gx-yuJ"/>
+                <outlet property="view" destination="9B5-Eq-djk" id="edr-LX-P9q"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="9B5-Eq-djk">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="o2X-9p-Xfr">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gAi-ZC-IlT">
+                        <size key="itemSize" width="369" height="222"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <cells/>
+                </collectionView>
+                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIf-Ch-nwP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xja-ME-EGB">
+                            <rect key="frame" x="10" y="25" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="TU6-lZ-32y"/>
+                                <constraint firstAttribute="height" constant="32" id="ar0-2L-AWA"/>
+                            </constraints>
+                            <state key="normal" image="exit-white"/>
+                            <connections>
+                                <action selector="close:" destination="-1" eventType="touchUpInside" id="WxG-cc-iYc"/>
+                            </connections>
+                        </button>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ymg-ic-51l">
+                            <rect key="frame" x="50" y="25" width="273" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                            </segments>
+                        </segmentedControl>
+                    </subviews>
+                    <color key="backgroundColor" red="0.062745098040000002" green="0.10980392160000001" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Xja-ME-EGB" firstAttribute="leading" secondItem="BIf-Ch-nwP" secondAttribute="leading" constant="10" id="Gqs-gb-E0y"/>
+                        <constraint firstAttribute="height" constant="64" id="Smk-q0-ARv"/>
+                        <constraint firstAttribute="bottom" secondItem="Xja-ME-EGB" secondAttribute="bottom" constant="7" id="yka-Q5-L29"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.062745098040000002" green="0.10980392160000001" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="o2X-9p-Xfr" firstAttribute="leading" secondItem="9B5-Eq-djk" secondAttribute="leading" id="CyH-XO-GAH"/>
+                <constraint firstItem="BIf-Ch-nwP" firstAttribute="leading" secondItem="9B5-Eq-djk" secondAttribute="leading" id="Fxs-Fa-xag"/>
+                <constraint firstAttribute="trailing" secondItem="BIf-Ch-nwP" secondAttribute="trailing" id="Hcu-lY-PtT"/>
+                <constraint firstAttribute="bottom" secondItem="o2X-9p-Xfr" secondAttribute="bottom" id="YjM-Zz-Rvd"/>
+                <constraint firstItem="o2X-9p-Xfr" firstAttribute="top" secondItem="9B5-Eq-djk" secondAttribute="top" id="h5d-bD-zEJ"/>
+                <constraint firstAttribute="trailing" secondItem="o2X-9p-Xfr" secondAttribute="trailing" id="k3p-ce-gZc"/>
+                <constraint firstItem="BIf-Ch-nwP" firstAttribute="top" secondItem="9B5-Eq-djk" secondAttribute="top" id="t78-x5-wa4"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="exit-white" width="24" height="24"/>
+    </resources>
+</document>

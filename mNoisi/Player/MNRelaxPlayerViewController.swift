@@ -13,7 +13,9 @@ extension Notification.Name {
     public static let MNRelaxPlayerViewWillAppear: Notification.Name = Notification.Name.init("dev.mmd.mNoisi.relaxPlayerViewWillAppear")
 }
 
-class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MNTableViewDelegate {
+
+    var showList: Bool = false
     //
     @IBOutlet
     private weak var topView: UIView!
@@ -21,6 +23,7 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     @IBOutlet
     private weak var likeButton: UIButton!
 
+    @IBOutlet weak var containerView: UIView!
     private lazy var maskView: UIVisualEffectView = {
         let view = UIVisualEffectView()
         view.effect = UIBlurEffect(style: UIBlurEffectStyle.light)
@@ -40,6 +43,12 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     @IBOutlet
     private weak var collectionView: UICollectionView!
 
+    lazy var playerListViewController: MNTableViewController = {
+        let vc = MNTableViewController()
+        vc.delegate = self
+        return vc
+    }()
+
     private var _selectedIndex: Int = -1
     private var _currentIndex: Int = -1
 
@@ -51,7 +60,8 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         self.automaticallyAdjustsScrollViewInsets = false
 
         // Do any additional setup after loading the view.
-        
+
+        self.collectionView.register(UINib(nibName: "MNTrackCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "trackCell")
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(hideBlurView(_:)),
@@ -68,6 +78,32 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+
+    func playerListViewWillHide() {
+        UIView.animate(withDuration: 0.35, animations: { 
+            self.playerListViewController.view.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.view.frame.height)
+        }, completion: { (finish) in
+            self.playerListViewController.view.removeFromSuperview()
+            self.playerListViewController.removeFromParentViewController()
+            self.playerListViewController.didMove(toParentViewController: nil)
+            self.containerView.isHidden = true
+        })
+    }
+
+    @IBAction
+    func showPlayerList(_ sender: UIButton) {
+        self.addChildViewController(self.playerListViewController)
+        self.playerListViewController.willMove(toParentViewController: self)
+        self.containerView.isHidden = false
+        self.containerView.addSubview(self.playerListViewController.view)
+        self.playerListViewController.view.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.view.frame.height)
+        self.playerListViewController.didMove(toParentViewController: self)
+        UIView.animate(withDuration: 0.35, animations: {
+            self.playerListViewController.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        }, completion: { (finish) in
+
+        })
     }
 
     @IBAction

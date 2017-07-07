@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CB0215D1F0F700800470AD3 /* MNRelaxPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0215C1F0F700800470AD3 /* MNRelaxPlayerViewController.xib */; };
 		659D868629E656A5440F44EB /* Pods_mNoisi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061546CF2EB2617C79F9CBD2 /* Pods_mNoisi.framework */; };
 		F709DC9F1EF54B8E0016C409 /* MNDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709DC9E1EF54B8E0016C409 /* MNDB.swift */; };
 		F709DCA11EF54CB10016C409 /* MNDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709DCA01EF54CB10016C409 /* MNDefaults.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		061546CF2EB2617C79F9CBD2 /* Pods_mNoisi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mNoisi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CB0215C1F0F700800470AD3 /* MNRelaxPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNRelaxPlayerViewController.xib; sourceTree = "<group>"; };
 		C90F86AF6D27D3C5C7A4BAC5 /* Pods-mNoisi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mNoisi.release.xcconfig"; path = "Pods/Target Support Files/Pods-mNoisi/Pods-mNoisi.release.xcconfig"; sourceTree = "<group>"; };
 		F5DDE4AC5ED0EFE5290114B3 /* Pods-mNoisi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mNoisi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mNoisi/Pods-mNoisi.debug.xcconfig"; sourceTree = "<group>"; };
 		F7090FF81EE6953500B7A699 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
@@ -107,6 +109,7 @@
 				F78722D71ECDE1BB00A60FB1 /* MNSoundTrackCollectionViewCell.swift */,
 				F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */,
 				F7C991BA1EE8E9F300A60BC4 /* MNPlayer.swift */,
+				2CB0215C1F0F700800470AD3 /* MNRelaxPlayerViewController.xib */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -127,6 +130,14 @@
 				F713DD381EDCE356004D3436 /* a05_fireplace.m4a */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2CB0215E1F0F706500470AD3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F709DCA01EF54CB10016C409 /* MNDefaults.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		2CC2C9D81EDEC20A004C115C /* Mine */ = {
@@ -183,6 +194,7 @@
 		F7FB6ED11EC8F8DA0086E576 /* mNoisi */ = {
 			isa = PBXGroup;
 			children = (
+				2CB0215E1F0F706500470AD3 /* Utils */,
 				2C8DFEA21EDEBFD20068540D /* Resources */,
 				2CC2C9D81EDEC20A004C115C /* Mine */,
 				2C8DFEA11EDEBF7E0068540D /* Views */,
@@ -199,7 +211,6 @@
 				F70910641EE82E7B00B7A699 /* mNoisi.entitlements */,
 				F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */,
 				F709DC9E1EF54B8E0016C409 /* MNDB.swift */,
-				F709DCA01EF54CB10016C409 /* MNDefaults.swift */,
 			);
 			path = mNoisi;
 			sourceTree = "<group>";
@@ -282,6 +293,7 @@
 				F7FB6EDA1EC8F8DA0086E576 /* Assets.xcassets in Resources */,
 				F713DD3A1EDCE356004D3436 /* a03_rain_leaves.m4a in Resources */,
 				F713DD391EDCE356004D3436 /* a01_mountain_lake.m4a in Resources */,
+				2CB0215D1F0F700800470AD3 /* MNRelaxPlayerViewController.xib in Resources */,
 				F7FB6ED81EC8F8DA0086E576 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

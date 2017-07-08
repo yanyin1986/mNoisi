@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FSCalendar
 
 class MNMineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 

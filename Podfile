@@ -6,6 +6,6 @@ target 'mNoisi' do
   use_frameworks!
 
   # Pods for mNoisi
-  pod 'FSCalendar'
+#  pod 'FSCalendar'
   pod 'SQLite.swift'
 end

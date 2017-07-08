@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FSCalendar
 
 class MNCalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDelegate {
     public static let reuseIdentifier: String = "calendarCell"

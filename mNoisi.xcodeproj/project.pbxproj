@@ -51,6 +51,7 @@
 		F7BD9DFA1F10796200DD6932 /* FSCalendarTransitionCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BD9DE91F10796100DD6932 /* FSCalendarTransitionCoordinator.m */; };
 		F7BD9DFB1F10796200DD6932 /* FSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BD9DEB1F10796100DD6932 /* FSCalendarWeekdayView.m */; };
 		F7C991BB1EE8E9F300A60BC4 /* MNPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C991BA1EE8E9F300A60BC4 /* MNPlayer.swift */; };
+		F7DE642B1F12724900079BA6 /* MNSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE642A1F12724900079BA6 /* MNSegmentControl.swift */; };
 		F7FB6ED31EC8F8DA0086E576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6ED21EC8F8DA0086E576 /* AppDelegate.swift */; };
 		F7FB6ED81EC8F8DA0086E576 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FB6ED61EC8F8DA0086E576 /* Main.storyboard */; };
 		F7FB6EDA1EC8F8DA0086E576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */; };
@@ -138,6 +139,7 @@
 		F7BD9DEA1F10796100DD6932 /* FSCalendarWeekdayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarWeekdayView.h; sourceTree = "<group>"; };
 		F7BD9DEB1F10796100DD6932 /* FSCalendarWeekdayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarWeekdayView.m; sourceTree = "<group>"; };
 		F7C991BA1EE8E9F300A60BC4 /* MNPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNPlayer.swift; sourceTree = "<group>"; };
+		F7DE642A1F12724900079BA6 /* MNSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNSegmentControl.swift; sourceTree = "<group>"; };
 		F7FB6ECF1EC8F8DA0086E576 /* mNoisi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mNoisi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FB6ED21EC8F8DA0086E576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7FB6ED71EC8F8DA0086E576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				F7442F481EDB82E9008FFF3D /* MNButton.swift */,
+				F7DE642A1F12724900079BA6 /* MNSegmentControl.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				F7BD9DED1F10796200DD6932 /* FSCalendar+Deprecated.m in Sources */,
 				F7BD9DF91F10796200DD6932 /* FSCalendarStickyHeader.m in Sources */,
 				F7BD9DFA1F10796200DD6932 /* FSCalendarTransitionCoordinator.m in Sources */,
+				F7DE642B1F12724900079BA6 /* MNSegmentControl.swift in Sources */,
 				F7B553A41EC8FE67005CC15A /* MNRelaxPlayerViewController.swift in Sources */,
 				F7BD9DF61F10796200DD6932 /* FSCalendarExtensions.m in Sources */,
 				F7BD9DEF1F10796200DD6932 /* FSCalendarCalculator.m in Sources */,

@@ -28,6 +28,8 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
         var soundImageName: String
     }
 
+    var tracks: [MNTrack] = []
+
     var soundTrackNames = [
         SoundTrackName(soundTitleName: "Ocean Wave", soundImageName: "Ocean Wave.jpeg"),
         SoundTrackName(soundTitleName: "Spring Walk", soundImageName: "Spring Walk.jpeg"),
@@ -39,13 +41,22 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
         self.delegate?.playerListViewWillHide()
     }
 
+    @IBAction func selectedTagChanged(_ sender: MNSegmentControl) {
+        if sender.selectedItem == 0 {
+            tracks = MNTrackManager.shared.tracks
+        } else {
+            // selectedItem = 1
+            tracks = MNTrackManager.shared.liked
+        }
+        collectionView.reloadData()
+    }
+    
 //    var soundNames = ["Ocean Wave.jpeg", "Spring Walk.jpeg", "3.jpg", "4.jpg"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.contentInset = UIEdgeInsetsMake(70, 10, 6, 10)
-        //self.view.backgroundColor = UIColor(red: 0x15/255.0, green: 0x23/255.0, blue: 0x3c/255.0, alpha: 1.0)// UIColor.red
-
+        tracks = MNTrackManager.shared.tracks
+        collectionView.contentInset = UIEdgeInsetsMake(70, 10, 66, 10)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "MNSoundTrackCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "soundTrackCell")
@@ -64,7 +75,7 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MNTrackManager.shared.tracks.count
+        return tracks.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

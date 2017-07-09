@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G23a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,11 +18,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="9B5-Eq-djk">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="o2X-9p-Xfr">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gAi-ZC-IlT">
                         <size key="itemSize" width="369" height="222"/>
@@ -33,7 +33,7 @@
                     <cells/>
                 </collectionView>
                 <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIf-Ch-nwP">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xja-ME-EGB">
                             <rect key="frame" x="10" y="25" width="32" height="32"/>
@@ -46,19 +46,24 @@
                                 <action selector="close:" destination="-1" eventType="touchUpInside" id="WxG-cc-iYc"/>
                             </connections>
                         </button>
-                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ymg-ic-51l">
-                            <rect key="frame" x="50" y="25" width="273" height="29"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
-                            </segments>
-                        </segmentedControl>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDB-iS-mmc" customClass="MNSegmentControl" customModule="mNoisi" customModuleProvider="target">
+                            <rect key="frame" x="87" y="29" width="240" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" priority="750" constant="240" id="Zhw-7d-hYT"/>
+                                <constraint firstAttribute="height" constant="24" id="aP6-Io-KQs"/>
+                            </constraints>
+                            <connections>
+                                <action selector="selectedTagChanged:" destination="-1" eventType="valueChanged" id="tBJ-as-ktN"/>
+                            </connections>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.062745098040000002" green="0.10980392160000001" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="Xja-ME-EGB" firstAttribute="leading" secondItem="BIf-Ch-nwP" secondAttribute="leading" constant="10" id="Gqs-gb-E0y"/>
+                        <constraint firstItem="GDB-iS-mmc" firstAttribute="centerY" secondItem="Xja-ME-EGB" secondAttribute="centerY" id="O4c-g3-Vlo"/>
                         <constraint firstAttribute="height" constant="64" id="Smk-q0-ARv"/>
+                        <constraint firstItem="GDB-iS-mmc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xja-ME-EGB" secondAttribute="trailing" constant="10" id="V3U-61-Wbd"/>
+                        <constraint firstItem="GDB-iS-mmc" firstAttribute="centerX" secondItem="BIf-Ch-nwP" secondAttribute="centerX" id="pY5-Pe-Ec0"/>
                         <constraint firstAttribute="bottom" secondItem="Xja-ME-EGB" secondAttribute="bottom" constant="7" id="yka-Q5-L29"/>
                     </constraints>
                 </view>

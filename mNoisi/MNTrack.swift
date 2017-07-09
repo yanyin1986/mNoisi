@@ -65,6 +65,6 @@ public class MNTrackManager {
     }
 
     public func isTrackLiked(_ track: MNTrack) -> Bool {
-        return self.likedTracks.first(where: { $0 == track.id }) != nil
+        return likedTracks.contains(track.id)
     }
 }

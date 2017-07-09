@@ -85,13 +85,7 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
         cell.soundImageView.image = UIImage(named: track.fullScreen)
 
         let isTrackLiked = MNTrackManager.shared.isTrackLiked(track)
-
-        if isTrackLiked == true {
-            cell.isFavorite.alpha = 0
-        } else {
-            cell.isFavorite.alpha = 1
-        }
-        cell.isFavorite.center = cell.center
+        cell.isFavorite.isHidden = !isTrackLiked
         return cell
     }
 

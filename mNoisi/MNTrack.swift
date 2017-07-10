@@ -21,11 +21,30 @@ public class MNTrackManager {
     public static let shared: MNTrackManager = MNTrackManager()
     private static let kLikedTracks = "likedTracks"
     public let tracks: [MNTrack] = [
-        MNTrack(id: 1, name: "Mountain", thumbnail: "", fullScreen: "2817564516891261945", audioUrl: Bundle.main.url(forResource: "a01_mountain_lake", withExtension: "m4a")!),
-        MNTrack(id: 2, name: "Rain leaves", thumbnail: "", fullScreen: "Ocean Wave.jpeg", audioUrl: Bundle.main.url(forResource: "a03_rain_leaves", withExtension: "m4a")!),
-        MNTrack(id: 3, name: "Fire Place", thumbnail: "", fullScreen: "3", audioUrl: Bundle.main.url(forResource: "a05_fireplace", withExtension: "m4a")!),
-        MNTrack(id: 4, name: "Fire Place", thumbnail: "", fullScreen: "4", audioUrl: Bundle.main.url(forResource: "a05_fireplace", withExtension: "m4a")!),
-        MNTrack(id: 5, name: "Fire Place", thumbnail: "", fullScreen: "Spring Walk", audioUrl: Bundle.main.url(forResource: "a05_fireplace", withExtension: "m4a")!),
+        MNTrack(id: 1, name: "White Rain",
+                thumbnail: "",
+                fullScreen: "whiterain.jpg",
+                audioUrl: Bundle.main.url(forResource: "whiterain", withExtension: "mp3")!),
+        MNTrack(id: 2, name: "Tropical Rain",
+                thumbnail: "",
+                fullScreen: "tropicalrain.jpg",
+                audioUrl: Bundle.main.url(forResource: "tropicalrain", withExtension: "mp3")!),
+        MNTrack(id: 3, name: "Skywalker",
+                thumbnail: "",
+                fullScreen: "skywalker.jpg",
+                audioUrl: Bundle.main.url(forResource: "skywalker", withExtension: "mp3")!),
+        MNTrack(id: 4, name: "Fairypond",
+                thumbnail: "",
+                fullScreen: "fairypond.jpg",
+                audioUrl: Bundle.main.url(forResource: "fairypond", withExtension: "mp3")!),
+        MNTrack(id: 5, name: "Distant Thunder",
+                thumbnail: "",
+                fullScreen: "distantthunder.jpg",
+                audioUrl: Bundle.main.url(forResource: "distantthunder", withExtension: "mp3")!),
+        MNTrack(id: 6, name: "Crackling Fire Sound",
+                thumbnail: "",
+                fullScreen: "crackling_fire_sound.jpg",
+                audioUrl: Bundle.main.url(forResource: "crackling_fire_sound", withExtension: "mp3")!),
         ]
 
     public var liked: [MNTrack] {

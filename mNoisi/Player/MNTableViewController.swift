@@ -11,6 +11,10 @@ import UIKit
 protocol MNTableViewDelegate: NSObjectProtocol {
 
     func playerListViewWillHide()
+
+    func playerListWannaHideBottomView()
+
+    func playerListWannaShowBottomView()
 }
 
 class MNTableViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -29,6 +33,7 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
     }
 
     var tracks: [MNTrack] = []
+    private var _lastContentOffsetY: CGFloat?
 
     var soundTrackNames = [
         SoundTrackName(soundTitleName: "Ocean Wave", soundImageName: "Ocean Wave.jpeg"),
@@ -38,6 +43,7 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
     ]
 
     @IBAction func close(_ sender: Any) {
+        self.delegate?.playerListWannaShowBottomView()
         self.delegate?.playerListViewWillHide()
     }
 
@@ -56,7 +62,7 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
         super.viewDidLoad()
 
         tracks = MNTrackManager.shared.tracks
-        collectionView.contentInset = UIEdgeInsetsMake(70, 10, 66, 10)
+        collectionView.contentInset = UIEdgeInsetsMake(70, 10, 10, 10)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "MNSoundTrackCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "soundTrackCell")
@@ -107,6 +113,39 @@ class MNTableViewController: UIViewController, UICollectionViewDataSource, UICol
         print(track)
     }
 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let lastContentOffsetY = self._lastContentOffsetY else {
+            _lastContentOffsetY = scrollView.contentOffset.y
+            return
+        }
 
+        var scrollOffsetY = max(0, scrollView.contentOffset.y)
+        scrollOffsetY = min(scrollView.contentSize.height - scrollView.frame.height, scrollOffsetY)
+
+        if scrollOffsetY > lastContentOffsetY {
+            // scroll to down, hide bottom view
+            self.delegate?.playerListWannaHideBottomView()
+            
+        } else if scrollOffsetY < lastContentOffsetY {
+            // scroll to up, show bottom view
+            self.delegate?.playerListWannaShowBottomView()
+        }
+
+        _lastContentOffsetY = scrollOffsetY
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self._lastContentOffsetY = nil
+    }
+
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        self._lastContentOffsetY = nil
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            self._lastContentOffsetY = nil
+        }
+    }
 
 }

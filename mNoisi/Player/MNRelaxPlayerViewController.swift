@@ -80,6 +80,7 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         super.viewDidAppear(animated)
     }
 
+    // MARK: MNTableViewDelegate
     func playerListViewWillHide() {
         UIView.animate(withDuration: 0.35, animations: { 
             self.playerListViewController.view.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.view.frame.height)
@@ -89,6 +90,24 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
             self.playerListViewController.didMove(toParentViewController: nil)
             self.containerView.isHidden = true
         })
+    }
+
+    func playerListWannaHideBottomView() {
+        self.bottomViewBottomConst.constant = -70
+        UIView.animate(withDuration: 0.35, delay: 0, options: .curveEaseIn, animations: {
+            self.bottomView.alpha = 0.0
+            self.view.layoutIfNeeded()
+            self.setNeedsStatusBarAppearanceUpdate()
+        }, completion: nil)
+    }
+
+    func playerListWannaShowBottomView() {
+        self.bottomViewBottomConst.constant = 0
+        UIView.animate(withDuration: 0.35, delay: 0, options: .curveEaseIn, animations: {
+            self.bottomView.alpha = 1.0
+            self.view.layoutIfNeeded()
+            self.setNeedsStatusBarAppearanceUpdate()
+        }, completion: nil)
     }
 
     @IBAction

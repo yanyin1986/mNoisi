@@ -21,6 +21,7 @@ final class MNPlayer: NSObject {
     }
 
     public func reset(withAudioUrl url: URL) {
+        _audioUrl = url
         self.resetPlayer()
     }
 
@@ -47,7 +48,7 @@ final class MNPlayer: NSObject {
             _timer?.invalidate()
             NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.fadeInPlayer), object: nil)
 
-            self.fade(audioPlayer: _audioPlayer!, toVolume: 0.0, duration: 1.75, withCompletion: {
+            self.fade(audioPlayer: _audioPlayer!, toVolume: 0.0, duration: 0.75, withCompletion: {
                 self._audioPlayer?.pause()
                 DispatchQueue.main.async {
                     self.perform(#selector(self.fadeInPlayer), with: nil, afterDelay: 0.1)
@@ -66,8 +67,9 @@ final class MNPlayer: NSObject {
             _audioPlayer = try AVAudioPlayer(contentsOf: url)
             _audioPlayer?.volume = 0.0
             _audioPlayer?.play()
-            self.fade(audioPlayer: _audioPlayer!, toVolume: 1.0, duration: 1.25, withCompletion: {
-
+            _audioPlayer?.numberOfLoops = -1
+            self.fade(audioPlayer: _audioPlayer!, toVolume: 1.0, duration: 0.75, withCompletion: {
+                self._audioPlayer?.numberOfLoops = -1
             })
         } catch {
             debugPrint(error)

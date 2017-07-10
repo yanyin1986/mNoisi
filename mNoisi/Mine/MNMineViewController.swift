@@ -16,7 +16,15 @@ class MNMineViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0)
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0)
+        tableView.register(UINib(nibName: "MNCalendarTableViewCell", bundle: nil), forCellReuseIdentifier: "calendarCell")
+        tableView.register(UINib(nibName: "MNStaticsInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "staticsInfoCell")
+        tableView.register(UINib(nibName: "MNSwitchTableViewCell", bundle: nil), forCellReuseIdentifier: "switchCell")
+        tableView.register(UINib(nibName: "MNTextTableViewCell", bundle: nil), forCellReuseIdentifier: "textCell")
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +33,7 @@ class MNMineViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 7
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,8 +51,23 @@ class MNMineViewController: UIViewController, UITableViewDataSource, UITableView
             cell.backgroundColor = UIColor.clear
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: MNTextTableViewCell.reuseIdentifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: MNTextTableViewCell.reuseIdentifier, for: indexPath) as! MNTextTableViewCell
             cell.backgroundColor = UIColor.clear
+            switch indexPath.row {
+            case 3:
+                // share with your friends
+                cell.titleLabel.text = "Share with your friends"
+            case 4:
+                // rate us with 5 stars
+                cell.titleLabel.text = "Rate us with 5 starts"
+            case 5:
+                // feedback
+                cell.titleLabel.text = "Feedback"
+            case 6:
+                // privacy policy
+                cell.titleLabel.text = "Privacy Policy"
+            default: break
+            }
             return cell
         }
     }
@@ -62,8 +85,8 @@ class MNMineViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBAction
     func dismiss(_ sender: Any) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
         NotificationCenter.default.post(name: Notification.Name.MNRelaxPlayerViewWillAppear, object: nil)
-        self.dismiss(animated: true, completion: nil)
     }
 
     /*

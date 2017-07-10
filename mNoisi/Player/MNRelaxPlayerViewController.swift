@@ -170,6 +170,23 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         }
     }
 
+    @IBAction
+    func breathButtonPressed(_ sender: Any) {
+        
+    }
+
+    @IBAction
+    func meditationButtonPressed(_ sender: Any) {
+
+    }
+
+    @IBAction
+    func mineButtonPressed(_ sender: Any) {
+        let vc = MNNavigationController(rootViewController: MNMineViewController())
+        vc.isNavigationBarHidden = true
+        self.navigationController?.present(vc, animated: true, completion: nil)
+    }
+
     // MARK: collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return MNTrackManager.shared.tracks.count

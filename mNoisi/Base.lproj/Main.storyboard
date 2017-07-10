@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bsc-hD-UbC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,129 +11,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="91O-jB-MPj">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Bsc-hD-UbC" sceneMemberID="viewController">
-                    <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XC1-et-eCz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sPc-lT-riI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2895" y="716"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="ibo-19-62g">
-            <objects>
-                <viewController id="Mtq-up-aLb" customClass="MNTableViewController" customModule="mNoisi" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hSM-aa-iEY"/>
-                        <viewControllerLayoutGuide type="bottom" id="g2f-vr-LOp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pu8-cf-DxP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QMN-n3-qzZ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yzk-Qw-21P">
-                                    <size key="itemSize" width="369" height="222"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="soundTrackCell" id="g8b-jY-ziP" customClass="MNSoundTrackCollectionViewCell" customModule="mNoisi" customModuleProvider="target">
-                                        <rect key="frame" x="3" y="0.0" width="369" height="222"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="369" height="222"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d5k-VV-qV7">
-                                                    <rect key="frame" x="0.0" y="0.0" width="369" height="222"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="favor-on" translatesAutoresizingMaskIntoConstraints="NO" id="RkC-gh-uYf">
-                                                    <rect key="frame" x="319" y="101" width="30" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="4v8-qk-GIp"/>
-                                                        <constraint firstAttribute="width" constant="30" id="lqD-Ml-cUb"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="d5k-VV-qV7" secondAttribute="trailing" id="37w-6k-oDt"/>
-                                            <constraint firstItem="d5k-VV-qV7" firstAttribute="top" secondItem="g8b-jY-ziP" secondAttribute="top" id="MrD-yk-DDL"/>
-                                            <constraint firstAttribute="bottom" secondItem="d5k-VV-qV7" secondAttribute="bottom" id="evU-HJ-tjQ"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="RkC-gh-uYf" secondAttribute="trailing" constant="12" id="mQv-Ys-qcM"/>
-                                            <constraint firstItem="d5k-VV-qV7" firstAttribute="leading" secondItem="g8b-jY-ziP" secondAttribute="leading" id="sAe-o7-R7V"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="isFavorite" destination="RkC-gh-uYf" id="FFO-VK-07l"/>
-                                            <outlet property="soundImageView" destination="d5k-VV-qV7" id="8Nb-NI-fkG"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LML-f3-E4a">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amZ-fJ-9qa">
-                                        <rect key="frame" x="10" y="25" width="32" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="32" id="GAF-nb-nHo"/>
-                                            <constraint firstAttribute="height" constant="32" id="XmB-TO-5x8"/>
-                                        </constraints>
-                                        <state key="normal" image="exit-white"/>
-                                        <connections>
-                                            <action selector="close:" destination="Mtq-up-aLb" eventType="touchUpInside" id="ab1-dz-EJp"/>
-                                        </connections>
-                                    </button>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GPy-qb-DhJ">
-                                        <rect key="frame" x="50" y="25" width="273" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <segments>
-                                            <segment title="First"/>
-                                            <segment title="Second"/>
-                                        </segments>
-                                    </segmentedControl>
-                                </subviews>
-                                <color key="backgroundColor" red="0.062745098039215685" green="0.10980392156862745" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="amZ-fJ-9qa" secondAttribute="bottom" constant="7" id="BFh-Pc-9VP"/>
-                                    <constraint firstAttribute="height" constant="64" id="uhN-oJ-hpd"/>
-                                    <constraint firstItem="amZ-fJ-9qa" firstAttribute="leading" secondItem="LML-f3-E4a" secondAttribute="leading" constant="10" id="vRC-gm-XEU"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.062745098040000002" green="0.10980392160000001" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="LML-f3-E4a" secondAttribute="trailing" id="29m-PA-7IU"/>
-                            <constraint firstItem="g2f-vr-LOp" firstAttribute="top" secondItem="QMN-n3-qzZ" secondAttribute="bottom" id="HOX-j6-tKT"/>
-                            <constraint firstItem="LML-f3-E4a" firstAttribute="leading" secondItem="pu8-cf-DxP" secondAttribute="leading" id="HsU-Hs-16H"/>
-                            <constraint firstItem="LML-f3-E4a" firstAttribute="top" secondItem="pu8-cf-DxP" secondAttribute="top" id="HxS-oM-4f8"/>
-                            <constraint firstItem="QMN-n3-qzZ" firstAttribute="leading" secondItem="pu8-cf-DxP" secondAttribute="leading" id="b32-qe-0It"/>
-                            <constraint firstAttribute="trailing" secondItem="QMN-n3-qzZ" secondAttribute="trailing" id="d3C-eg-TF7"/>
-                            <constraint firstItem="QMN-n3-qzZ" firstAttribute="top" secondItem="pu8-cf-DxP" secondAttribute="top" id="qzr-O3-aV7"/>
-                        </constraints>
-                    </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <connections>
-                        <outlet property="collectionView" destination="QMN-n3-qzZ" id="yea-3o-DgS"/>
-                        <outlet property="topView" destination="LML-f3-E4a" id="7gK-ay-11P"/>
-                        <outlet property="view" destination="pu8-cf-DxP" id="mxk-GC-Xsw"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uwh-KJ-mVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-650.39999999999998" y="716.49175412293857"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="JVC-YD-W1e">
             <objects>
@@ -667,13 +544,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.34244504437500001" blue="0.93929036458333337" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="S7e-mB-sCS" firstAttribute="top" secondItem="LXx-7r-Tkq" secondAttribute="bottom" id="0cY-O9-IVA"/>
                             <constraint firstAttribute="trailing" secondItem="YyY-3e-oEH" secondAttribute="trailing" id="5gY-eJ-35F"/>
-                            <constraint firstItem="S7e-mB-sCS" firstAttribute="top" secondItem="LXx-7r-Tkq" secondAttribute="bottom" id="LXO-6P-B10"/>
+                            <constraint firstItem="YyY-3e-oEH" firstAttribute="top" secondItem="Laq-sE-NtO" secondAttribute="bottom" id="TYe-Nu-uUO"/>
                             <constraint firstItem="YyY-3e-oEH" firstAttribute="leading" secondItem="AzN-HS-CGj" secondAttribute="leading" id="Xc4-M3-ZAn"/>
                             <constraint firstItem="LXx-7r-Tkq" firstAttribute="leading" secondItem="AzN-HS-CGj" secondAttribute="leading" id="Xc8-gN-Bfc"/>
                             <constraint firstAttribute="trailing" secondItem="LXx-7r-Tkq" secondAttribute="trailing" id="Xvm-F7-Amo"/>
-                            <constraint firstItem="YyY-3e-oEH" firstAttribute="top" secondItem="Laq-sE-NtO" secondAttribute="bottom" id="tAZ-ZJ-6CV"/>
-                            <constraint firstItem="LXx-7r-Tkq" firstAttribute="top" secondItem="Laq-sE-NtO" secondAttribute="bottom" constant="50" id="yai-bx-hpA"/>
+                            <constraint firstItem="LXx-7r-Tkq" firstAttribute="top" secondItem="Laq-sE-NtO" secondAttribute="bottom" constant="50" id="h64-2o-GJp"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
@@ -691,7 +568,6 @@
         <image name="arrow_right" width="8" height="13"/>
         <image name="breath" width="27" height="27"/>
         <image name="exit-white" width="24" height="24"/>
-        <image name="favor-on" width="22" height="22"/>
         <image name="meditation" width="27" height="27"/>
         <image name="natrual sound" width="27" height="27"/>
     </resources>

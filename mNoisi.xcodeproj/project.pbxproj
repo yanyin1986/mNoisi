@@ -19,6 +19,11 @@
 		2C3F0A101F132B2800CCB177 /* skywalker.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A0A1F132B2800CCB177 /* skywalker.jpg */; };
 		2C3F0A111F132B2800CCB177 /* tropicalrain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A0B1F132B2800CCB177 /* tropicalrain.jpg */; };
 		2C3F0A121F132B2800CCB177 /* whiterain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A0C1F132B2800CCB177 /* whiterain.jpg */; };
+		2C3F0A141F134F4C00CCB177 /* MNMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A131F134F4C00CCB177 /* MNMineViewController.xib */; };
+		2C3F0A161F1356AD00CCB177 /* MNCalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A151F1356AD00CCB177 /* MNCalendarTableViewCell.xib */; };
+		2C3F0A181F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A171F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib */; };
+		2C3F0A1A1F13573600CCB177 /* MNSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A191F13573600CCB177 /* MNSwitchTableViewCell.xib */; };
+		2C3F0A1C1F13576700CCB177 /* MNTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A1B1F13576700CCB177 /* MNTextTableViewCell.xib */; };
 		2C6F51FF1F0F8BAA006D2387 /* MNTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6F51FE1F0F8BAA006D2387 /* MNTableViewController.xib */; };
 		2C6F52011F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6F52001F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib */; };
 		2CB0215D1F0F700800470AD3 /* MNRelaxPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0215C1F0F700800470AD3 /* MNRelaxPlayerViewController.xib */; };
@@ -94,6 +99,11 @@
 		2C3F0A0A1F132B2800CCB177 /* skywalker.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = skywalker.jpg; sourceTree = "<group>"; };
 		2C3F0A0B1F132B2800CCB177 /* tropicalrain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tropicalrain.jpg; sourceTree = "<group>"; };
 		2C3F0A0C1F132B2800CCB177 /* whiterain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = whiterain.jpg; sourceTree = "<group>"; };
+		2C3F0A131F134F4C00CCB177 /* MNMineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNMineViewController.xib; sourceTree = "<group>"; };
+		2C3F0A151F1356AD00CCB177 /* MNCalendarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNCalendarTableViewCell.xib; sourceTree = "<group>"; };
+		2C3F0A171F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNStaticsInfoTableViewCell.xib; sourceTree = "<group>"; };
+		2C3F0A191F13573600CCB177 /* MNSwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNSwitchTableViewCell.xib; sourceTree = "<group>"; };
+		2C3F0A1B1F13576700CCB177 /* MNTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNTextTableViewCell.xib; sourceTree = "<group>"; };
 		2C6F51FE1F0F8BAA006D2387 /* MNTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNTableViewController.xib; sourceTree = "<group>"; };
 		2C6F52001F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNSoundTrackCollectionViewCell.xib; sourceTree = "<group>"; };
 		2CB0215C1F0F700800470AD3 /* MNRelaxPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNRelaxPlayerViewController.xib; sourceTree = "<group>"; };
@@ -235,10 +245,15 @@
 			children = (
 				F75DC30B1EDE21AB001E5547 /* MNActivityRecords.swift */,
 				F7A133EB1ECFDF3B001F9124 /* MNCalendarTableViewCell.swift */,
-				F7A133ED1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift */,
-				F78B60D61ED4FB9000D5468F /* MNTextTableViewCell.swift */,
+				2C3F0A151F1356AD00CCB177 /* MNCalendarTableViewCell.xib */,
 				F78722D91ECFD7F400A60FB1 /* MNMineViewController.swift */,
+				2C3F0A131F134F4C00CCB177 /* MNMineViewController.xib */,
+				F7A133ED1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift */,
+				2C3F0A171F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib */,
 				F78B60D41ED4FB2800D5468F /* MNSwitchTableViewCell.swift */,
+				2C3F0A191F13573600CCB177 /* MNSwitchTableViewCell.xib */,
+				F78B60D61ED4FB9000D5468F /* MNTextTableViewCell.swift */,
+				2C3F0A1B1F13576700CCB177 /* MNTextTableViewCell.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -433,6 +448,8 @@
 				2C3F0A011F132B1200CCB177 /* crackling_fire_sound.mp3 in Resources */,
 				2C3F0A021F132B1200CCB177 /* distantthunder.mp3 in Resources */,
 				2C6F52011F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib in Resources */,
+				2C3F0A181F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib in Resources */,
+				2C3F0A141F134F4C00CCB177 /* MNMineViewController.xib in Resources */,
 				F7FB6EDA1EC8F8DA0086E576 /* Assets.xcassets in Resources */,
 				2C3F0A111F132B2800CCB177 /* tropicalrain.jpg in Resources */,
 				2CB616481F0F88F700575747 /* MNTrackCollectionViewCell.xib in Resources */,
@@ -440,10 +457,13 @@
 				2C3F0A051F132B1200CCB177 /* tropicalrain.mp3 in Resources */,
 				2C3F0A0F1F132B2800CCB177 /* fairypond.jpg in Resources */,
 				2C3F0A101F132B2800CCB177 /* skywalker.jpg in Resources */,
+				2C3F0A1A1F13573600CCB177 /* MNSwitchTableViewCell.xib in Resources */,
+				2C3F0A161F1356AD00CCB177 /* MNCalendarTableViewCell.xib in Resources */,
 				2C3F0A0D1F132B2800CCB177 /* crackling_fire_sound.jpg in Resources */,
 				2CB0215D1F0F700800470AD3 /* MNRelaxPlayerViewController.xib in Resources */,
 				F7FB6ED81EC8F8DA0086E576 /* Main.storyboard in Resources */,
 				2C6F51FF1F0F8BAA006D2387 /* MNTableViewController.xib in Resources */,
+				2C3F0A1C1F13576700CCB177 /* MNTextTableViewCell.xib in Resources */,
 				2C3F0A031F132B1200CCB177 /* fairypond.mp3 in Resources */,
 				2C3F0A0E1F132B2800CCB177 /* distantthunder.jpg in Resources */,
 				2C3F0A041F132B1200CCB177 /* skywalker.mp3 in Resources */,

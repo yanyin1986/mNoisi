@@ -8,4 +8,6 @@ target 'mNoisi' do
   # Pods for mNoisi
 #  pod 'FSCalendar'
   pod 'SQLite.swift'
+  pod 'Fabric'
+  pod 'Crashlytics'
 end

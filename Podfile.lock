@@ -1,14 +1,21 @@
 PODS:
+  - Crashlytics (3.8.5):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.12)
   - SQLite.swift (0.11.2):
     - SQLite.swift/standard (= 0.11.2)
   - SQLite.swift/standard (0.11.2)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - SQLite.swift
 
 SPEC CHECKSUMS:
+  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
+  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
   SQLite.swift: 670c3e9e0a806bbfd56a3de5d530768dc0e6fe7c
 
-PODFILE CHECKSUM: ed4353a448fb4d9ce5fec53fc2391bd795a30433
+PODFILE CHECKSUM: a09b8f3df35e0b53e9161bdab5549aa3adfc1d0b
 
 COCOAPODS: 1.2.1

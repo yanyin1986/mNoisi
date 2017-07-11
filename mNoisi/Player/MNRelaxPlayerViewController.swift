@@ -21,15 +21,16 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     private weak var topView: UIView!
 
     @IBOutlet
+    weak var titleLabel: MNShadowLabel!
+
+    @IBOutlet
+    weak var maskView: UIView!
+
+    @IBOutlet
     private weak var likeButton: UIButton!
 
-    @IBOutlet weak var containerView: UIView!
-    private lazy var maskView: UIVisualEffectView = {
-        let view = UIVisualEffectView()
-        view.effect = UIBlurEffect(style: UIBlurEffectStyle.light)
-        self.view.addSubview(view)
-        return view
-    }()
+    @IBOutlet
+    weak var containerView: UIView!
 
     @IBOutlet
     private weak var bottomView: UIView!
@@ -60,6 +61,7 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         self.automaticallyAdjustsScrollViewInsets = false
 
         // Do any additional setup after loading the view.
+        
 
         self.collectionView.register(UINib(nibName: "MNTrackCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "trackCell")
         NotificationCenter.default.addObserver(
@@ -140,6 +142,7 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
                 self.topView.alpha = 0.0
                 self.bottomView.alpha = 0.0
                 self.playerView.alpha = 0.0
+                self.maskView.alpha = 0.0
                 self.view.layoutIfNeeded()
                 self.setNeedsStatusBarAppearanceUpdate()
             }, completion: { (finish) in
@@ -154,6 +157,7 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
                 self.topView.alpha = 1.0
                 self.bottomView.alpha = 1.0
                 self.playerView.alpha = 1.0
+                self.maskView.alpha = 1.0
                 self.view.layoutIfNeeded()
                 self.setNeedsStatusBarAppearanceUpdate()
             }, completion: { (finish) in
@@ -244,6 +248,7 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
 
         _currentIndex = index
         let track = MNTrackManager.shared.tracks[_currentIndex]
+        titleLabel.text = track.name
         MNPlayer.shared.reset(withAudioUrl: track.audioUrl)
     }
 

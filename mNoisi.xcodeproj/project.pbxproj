@@ -24,6 +24,9 @@
 		2C3F0A181F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A171F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib */; };
 		2C3F0A1A1F13573600CCB177 /* MNSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A191F13573600CCB177 /* MNSwitchTableViewCell.xib */; };
 		2C3F0A1C1F13576700CCB177 /* MNTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A1B1F13576700CCB177 /* MNTextTableViewCell.xib */; };
+		2C57AC721F146DA000C080A1 /* MNShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57AC711F146DA000C080A1 /* MNShadowButton.swift */; };
+		2C57AC741F14727B00C080A1 /* MNShadowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57AC731F14727B00C080A1 /* MNShadowLabel.swift */; };
+		2C57AC761F14742B00C080A1 /* MNGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57AC751F14742B00C080A1 /* MNGradientView.swift */; };
 		2C6F51FF1F0F8BAA006D2387 /* MNTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6F51FE1F0F8BAA006D2387 /* MNTableViewController.xib */; };
 		2C6F52011F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6F52001F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib */; };
 		2CB0215D1F0F700800470AD3 /* MNRelaxPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0215C1F0F700800470AD3 /* MNRelaxPlayerViewController.xib */; };
@@ -104,6 +107,9 @@
 		2C3F0A171F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNStaticsInfoTableViewCell.xib; sourceTree = "<group>"; };
 		2C3F0A191F13573600CCB177 /* MNSwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNSwitchTableViewCell.xib; sourceTree = "<group>"; };
 		2C3F0A1B1F13576700CCB177 /* MNTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNTextTableViewCell.xib; sourceTree = "<group>"; };
+		2C57AC711F146DA000C080A1 /* MNShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNShadowButton.swift; sourceTree = "<group>"; };
+		2C57AC731F14727B00C080A1 /* MNShadowLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNShadowLabel.swift; sourceTree = "<group>"; };
+		2C57AC751F14742B00C080A1 /* MNGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNGradientView.swift; sourceTree = "<group>"; };
 		2C6F51FE1F0F8BAA006D2387 /* MNTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNTableViewController.xib; sourceTree = "<group>"; };
 		2C6F52001F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNSoundTrackCollectionViewCell.xib; sourceTree = "<group>"; };
 		2CB0215C1F0F700800470AD3 /* MNRelaxPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNRelaxPlayerViewController.xib; sourceTree = "<group>"; };
@@ -209,6 +215,9 @@
 			children = (
 				F7442F481EDB82E9008FFF3D /* MNButton.swift */,
 				F7DE642A1F12724900079BA6 /* MNSegmentControl.swift */,
+				2C57AC711F146DA000C080A1 /* MNShadowButton.swift */,
+				2C57AC731F14727B00C080A1 /* MNShadowLabel.swift */,
+				2C57AC751F14742B00C080A1 /* MNGradientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -549,6 +558,7 @@
 				F7BD9DF71F10796200DD6932 /* FSCalendarHeaderView.m in Sources */,
 				F7BD9DF51F10796200DD6932 /* FSCalendarDelegationProxy.m in Sources */,
 				2CB6164A1F0F8A0F00575747 /* MNNavigationController.swift in Sources */,
+				2C57AC761F14742B00C080A1 /* MNGradientView.swift in Sources */,
 				F762B9CD1ED708BE002C2FB0 /* MNTimerViewController.swift in Sources */,
 				F709DCA11EF54CB10016C409 /* MNDefaults.swift in Sources */,
 				F7A133EE1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift in Sources */,
@@ -570,6 +580,8 @@
 				F75DC30C1EDE21AB001E5547 /* MNActivityRecords.swift in Sources */,
 				F762B9CB1ED63E7B002C2FB0 /* MNBreathViewController.swift in Sources */,
 				F709DC9F1EF54B8E0016C409 /* MNDB.swift in Sources */,
+				2C57AC741F14727B00C080A1 /* MNShadowLabel.swift in Sources */,
+				2C57AC721F146DA000C080A1 /* MNShadowButton.swift in Sources */,
 				F7FB6ED31EC8F8DA0086E576 /* AppDelegate.swift in Sources */,
 				F78722DA1ECFD7F400A60FB1 /* MNMineViewController.swift in Sources */,
 				F7BD9DF11F10796200DD6932 /* FSCalendarCollectionView.m in Sources */,

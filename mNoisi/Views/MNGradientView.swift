@@ -12,10 +12,24 @@ import UIKit
 class MNGradientView: UIView {
 
     @IBInspectable
-    var startColor: UIColor = UIColor.black
+    var startColor: UIColor = UIColor.black {
+        didSet {
+            _commonInit()
+        }
+    }
 
     @IBInspectable
-    var endColor: UIColor = UIColor.white
+    var endColor: UIColor = UIColor.white {
+        didSet {
+            _commonInit()
+        }
+    }
+
+    @IBInspectable
+    var startPoint: CGPoint = CGPoint(x: 0.5, y: 0)
+
+    @IBInspectable
+    var endPoint: CGPoint = CGPoint(x: 0.5, y: 1.0)
 
     open override class var layerClass: Swift.AnyClass {
         return CAGradientLayer.self

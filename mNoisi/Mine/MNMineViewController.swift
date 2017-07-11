@@ -86,7 +86,6 @@ class MNMineViewController: UIViewController, UITableViewDataSource, UITableView
     @IBAction
     func dismiss(_ sender: Any) {
         self.navigationController?.dismiss(animated: true, completion: nil)
-        NotificationCenter.default.post(name: Notification.Name.MNRelaxPlayerViewWillAppear, object: nil)
     }
 
     /*

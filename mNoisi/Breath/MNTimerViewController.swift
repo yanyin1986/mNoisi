@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol MNTimerDelegate: class {
+
+    func timerViewController(_ controller: MNTimerViewController, didChooseTime: Int)
+}
+
 class MNTimerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+
+    weak var delegate: MNTimerDelegate?
 
     @IBOutlet
     private weak var timePicker: UIPickerView!
@@ -33,11 +40,13 @@ class MNTimerViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
 
     @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func confirm(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        let selectedRow = timePicker.selectedRow(inComponent: 0)
+        self.delegate?.timerViewController(self, didChooseTime: times[selectedRow])
+        self.navigationController?.popViewController(animated: true)
     }
 
     // MARK: UIPickerViewDataSource

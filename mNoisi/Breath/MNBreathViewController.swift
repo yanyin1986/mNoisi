@@ -21,8 +21,17 @@ class MNBreathViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func dismiss(_ sender: Any) {
-        NotificationCenter.default.post(name: Notification.Name.MNRelaxPlayerViewWillAppear, object: nil)
+    @IBAction
+    func dismiss(_ sender: Any) {
         self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction
+    func timerButtonPressed(_ sender: Any) {
+        self.navigationController?.pushViewController(MNTimerViewController(), animated: true)
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }

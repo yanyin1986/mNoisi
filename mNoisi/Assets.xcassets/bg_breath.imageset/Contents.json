@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icon_settime.png",
+      "filename" : "bg_breath.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icon_settime-1.png",
+      "filename" : "bg_breath@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icon_settime-2.png",
+      "filename" : "bg_breath@3x.png",
       "scale" : "3x"
     }
   ],

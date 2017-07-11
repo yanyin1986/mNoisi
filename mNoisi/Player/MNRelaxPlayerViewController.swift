@@ -9,10 +9,6 @@
 import UIKit
 import AVFoundation
 
-extension Notification.Name {
-    public static let MNRelaxPlayerViewWillAppear: Notification.Name = Notification.Name.init("dev.mmd.mNoisi.relaxPlayerViewWillAppear")
-}
-
 class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MNTableViewDelegate {
 
     var showList: Bool = false
@@ -61,15 +57,7 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
         self.automaticallyAdjustsScrollViewInsets = false
 
         // Do any additional setup after loading the view.
-        
-
         self.collectionView.register(UINib(nibName: "MNTrackCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "trackCell")
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(hideBlurView(_:)),
-            name: Notification.Name.MNRelaxPlayerViewWillAppear,
-            object: nil)
-
         self.calculateIndex(self.collectionView)
     }
 
@@ -195,7 +183,9 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
 
     @IBAction
     func breathButtonPressed(_ sender: Any) {
-        
+        let vc = MNNavigationController(rootViewController: MNBreathViewController())
+        vc.isNavigationBarHidden = true
+        self.navigationController?.present(vc, animated: true, completion: nil)
     }
 
     @IBAction

@@ -27,11 +27,14 @@
 		2C57AC721F146DA000C080A1 /* MNShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57AC711F146DA000C080A1 /* MNShadowButton.swift */; };
 		2C57AC741F14727B00C080A1 /* MNShadowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57AC731F14727B00C080A1 /* MNShadowLabel.swift */; };
 		2C57AC761F14742B00C080A1 /* MNGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57AC751F14742B00C080A1 /* MNGradientView.swift */; };
+		2C6A72F91F14C601006B9D6F /* MNTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6A72F81F14C601006B9D6F /* MNTimerViewController.xib */; };
 		2C6F51FF1F0F8BAA006D2387 /* MNTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6F51FE1F0F8BAA006D2387 /* MNTableViewController.xib */; };
 		2C6F52011F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6F52001F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib */; };
 		2CB0215D1F0F700800470AD3 /* MNRelaxPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0215C1F0F700800470AD3 /* MNRelaxPlayerViewController.xib */; };
 		2CB616481F0F88F700575747 /* MNTrackCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB616471F0F88F700575747 /* MNTrackCollectionViewCell.xib */; };
 		2CB6164A1F0F8A0F00575747 /* MNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB616491F0F8A0F00575747 /* MNNavigationController.swift */; };
+		2CE447F51F14BBDE007AD3CD /* MNMeditationCountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE447F41F14BBDE007AD3CD /* MNMeditationCountDownView.swift */; };
+		2CE447F71F14BE72007AD3CD /* MNBreathViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CE447F61F14BE72007AD3CD /* MNBreathViewController.xib */; };
 		659D868629E656A5440F44EB /* Pods_mNoisi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061546CF2EB2617C79F9CBD2 /* Pods_mNoisi.framework */; };
 		F709DC9F1EF54B8E0016C409 /* MNDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709DC9E1EF54B8E0016C409 /* MNDB.swift */; };
 		F709DCA11EF54CB10016C409 /* MNDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709DCA01EF54CB10016C409 /* MNDefaults.swift */; };
@@ -70,7 +73,6 @@
 		F7C991BB1EE8E9F300A60BC4 /* MNPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C991BA1EE8E9F300A60BC4 /* MNPlayer.swift */; };
 		F7DE642B1F12724900079BA6 /* MNSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE642A1F12724900079BA6 /* MNSegmentControl.swift */; };
 		F7FB6ED31EC8F8DA0086E576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6ED21EC8F8DA0086E576 /* AppDelegate.swift */; };
-		F7FB6ED81EC8F8DA0086E576 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FB6ED61EC8F8DA0086E576 /* Main.storyboard */; };
 		F7FB6EDA1EC8F8DA0086E576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */; };
 		F7FB6EDD1EC8F8DA0086E576 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FB6EDB1EC8F8DA0086E576 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -110,11 +112,14 @@
 		2C57AC711F146DA000C080A1 /* MNShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNShadowButton.swift; sourceTree = "<group>"; };
 		2C57AC731F14727B00C080A1 /* MNShadowLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNShadowLabel.swift; sourceTree = "<group>"; };
 		2C57AC751F14742B00C080A1 /* MNGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNGradientView.swift; sourceTree = "<group>"; };
+		2C6A72F81F14C601006B9D6F /* MNTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNTimerViewController.xib; sourceTree = "<group>"; };
 		2C6F51FE1F0F8BAA006D2387 /* MNTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNTableViewController.xib; sourceTree = "<group>"; };
 		2C6F52001F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNSoundTrackCollectionViewCell.xib; sourceTree = "<group>"; };
 		2CB0215C1F0F700800470AD3 /* MNRelaxPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNRelaxPlayerViewController.xib; sourceTree = "<group>"; };
 		2CB616471F0F88F700575747 /* MNTrackCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNTrackCollectionViewCell.xib; sourceTree = "<group>"; };
 		2CB616491F0F8A0F00575747 /* MNNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNNavigationController.swift; sourceTree = "<group>"; };
+		2CE447F41F14BBDE007AD3CD /* MNMeditationCountDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNMeditationCountDownView.swift; sourceTree = "<group>"; };
+		2CE447F61F14BE72007AD3CD /* MNBreathViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNBreathViewController.xib; sourceTree = "<group>"; };
 		C90F86AF6D27D3C5C7A4BAC5 /* Pods-mNoisi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mNoisi.release.xcconfig"; path = "Pods/Target Support Files/Pods-mNoisi/Pods-mNoisi.release.xcconfig"; sourceTree = "<group>"; };
 		F5DDE4AC5ED0EFE5290114B3 /* Pods-mNoisi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mNoisi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mNoisi/Pods-mNoisi.debug.xcconfig"; sourceTree = "<group>"; };
 		F7090FF81EE6953500B7A699 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
@@ -176,7 +181,6 @@
 		F7DE642A1F12724900079BA6 /* MNSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNSegmentControl.swift; sourceTree = "<group>"; };
 		F7FB6ECF1EC8F8DA0086E576 /* mNoisi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mNoisi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FB6ED21EC8F8DA0086E576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F7FB6ED71EC8F8DA0086E576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7FB6EDC1EC8F8DA0086E576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7FB6EDE1EC8F8DA0086E576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 				2C57AC711F146DA000C080A1 /* MNShadowButton.swift */,
 				2C57AC731F14727B00C080A1 /* MNShadowLabel.swift */,
 				2C57AC751F14742B00C080A1 /* MNGradientView.swift */,
+				2CE447F41F14BBDE007AD3CD /* MNMeditationCountDownView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -265,6 +270,17 @@
 				2C3F0A1B1F13576700CCB177 /* MNTextTableViewCell.xib */,
 			);
 			path = Mine;
+			sourceTree = "<group>";
+		};
+		2CE447F31F14AB4E007AD3CD /* Breath */ = {
+			isa = PBXGroup;
+			children = (
+				F762B9CA1ED63E7B002C2FB0 /* MNBreathViewController.swift */,
+				2CE447F61F14BE72007AD3CD /* MNBreathViewController.xib */,
+				F762B9CC1ED708BE002C2FB0 /* MNTimerViewController.swift */,
+				2C6A72F81F14C601006B9D6F /* MNTimerViewController.xib */,
+			);
+			path = Breath;
 			sourceTree = "<group>";
 		};
 		5AA3342AD27E2AEE039A548F /* Frameworks */ = {
@@ -355,6 +371,7 @@
 		F7FB6ED11EC8F8DA0086E576 /* mNoisi */ = {
 			isa = PBXGroup;
 			children = (
+				2CE447F31F14AB4E007AD3CD /* Breath */,
 				F7BD9DC91F10793300DD6932 /* Vendor */,
 				2CB0215E1F0F706500470AD3 /* Utils */,
 				2C8DFEA21EDEBFD20068540D /* Resources */,
@@ -363,11 +380,8 @@
 				2C24A4301EDEBEC2008CD172 /* Player */,
 				F7FB6ED21EC8F8DA0086E576 /* AppDelegate.swift */,
 				F7BD9DCB1F10796100DD6932 /* mNoisi-Bridging-Header.h */,
-				F762B9CC1ED708BE002C2FB0 /* MNTimerViewController.swift */,
-				F762B9CA1ED63E7B002C2FB0 /* MNBreathViewController.swift */,
 				F7442F441ED7130A008FFF3D /* MNAnimationViewController.swift */,
 				F78B60D81ED5BC3500D5468F /* MNTrack.swift */,
-				F7FB6ED61EC8F8DA0086E576 /* Main.storyboard */,
 				F7FB6EDB1EC8F8DA0086E576 /* LaunchScreen.storyboard */,
 				F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */,
 				F7FB6EDE1EC8F8DA0086E576 /* Info.plist */,
@@ -455,8 +469,10 @@
 			files = (
 				F7FB6EDD1EC8F8DA0086E576 /* LaunchScreen.storyboard in Resources */,
 				2C3F0A011F132B1200CCB177 /* crackling_fire_sound.mp3 in Resources */,
+				2CE447F71F14BE72007AD3CD /* MNBreathViewController.xib in Resources */,
 				2C3F0A021F132B1200CCB177 /* distantthunder.mp3 in Resources */,
 				2C6F52011F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib in Resources */,
+				2C6A72F91F14C601006B9D6F /* MNTimerViewController.xib in Resources */,
 				2C3F0A181F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib in Resources */,
 				2C3F0A141F134F4C00CCB177 /* MNMineViewController.xib in Resources */,
 				F7FB6EDA1EC8F8DA0086E576 /* Assets.xcassets in Resources */,
@@ -470,7 +486,6 @@
 				2C3F0A161F1356AD00CCB177 /* MNCalendarTableViewCell.xib in Resources */,
 				2C3F0A0D1F132B2800CCB177 /* crackling_fire_sound.jpg in Resources */,
 				2CB0215D1F0F700800470AD3 /* MNRelaxPlayerViewController.xib in Resources */,
-				F7FB6ED81EC8F8DA0086E576 /* Main.storyboard in Resources */,
 				2C6F51FF1F0F8BAA006D2387 /* MNTableViewController.xib in Resources */,
 				2C3F0A1C1F13576700CCB177 /* MNTextTableViewCell.xib in Resources */,
 				2C3F0A031F132B1200CCB177 /* fairypond.mp3 in Resources */,
@@ -559,6 +574,7 @@
 				F7BD9DF51F10796200DD6932 /* FSCalendarDelegationProxy.m in Sources */,
 				2CB6164A1F0F8A0F00575747 /* MNNavigationController.swift in Sources */,
 				2C57AC761F14742B00C080A1 /* MNGradientView.swift in Sources */,
+				2CE447F51F14BBDE007AD3CD /* MNMeditationCountDownView.swift in Sources */,
 				F762B9CD1ED708BE002C2FB0 /* MNTimerViewController.swift in Sources */,
 				F709DCA11EF54CB10016C409 /* MNDefaults.swift in Sources */,
 				F7A133EE1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift in Sources */,
@@ -595,14 +611,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F7FB6ED61EC8F8DA0086E576 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F7FB6ED71EC8F8DA0086E576 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F7FB6EDB1EC8F8DA0086E576 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

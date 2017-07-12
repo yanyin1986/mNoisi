@@ -24,16 +24,22 @@
 		2C3F0A181F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A171F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib */; };
 		2C3F0A1A1F13573600CCB177 /* MNSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A191F13573600CCB177 /* MNSwitchTableViewCell.xib */; };
 		2C3F0A1C1F13576700CCB177 /* MNTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A1B1F13576700CCB177 /* MNTextTableViewCell.xib */; };
+		2C4CC2B21F15E70A00FED7A7 /* MNTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4CC2B11F15E70A00FED7A7 /* MNTimer.m */; };
+		2C4CC2B51F15F14A00FED7A7 /* MNTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4CC2B41F15F14A00FED7A7 /* MNTimerViewController.m */; };
+		2C4CC2B71F16059300FED7A7 /* MNAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4CC2B61F16059300FED7A7 /* MNAnimationViewController.xib */; };
 		2C57AC721F146DA000C080A1 /* MNShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57AC711F146DA000C080A1 /* MNShadowButton.swift */; };
 		2C57AC741F14727B00C080A1 /* MNShadowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57AC731F14727B00C080A1 /* MNShadowLabel.swift */; };
 		2C57AC761F14742B00C080A1 /* MNGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57AC751F14742B00C080A1 /* MNGradientView.swift */; };
 		2C6A72F91F14C601006B9D6F /* MNTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6A72F81F14C601006B9D6F /* MNTimerViewController.xib */; };
 		2C6F51FF1F0F8BAA006D2387 /* MNTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6F51FE1F0F8BAA006D2387 /* MNTableViewController.xib */; };
 		2C6F52011F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6F52001F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib */; };
+		2C9D41EA1F161A83005901CD /* MNBreathResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D41E81F161A83005901CD /* MNBreathResultViewController.swift */; };
+		2C9D41EB1F161A83005901CD /* MNBreathResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9D41E91F161A83005901CD /* MNBreathResultViewController.xib */; };
+		2C9D41ED1F1623E1005901CD /* MNBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D41EC1F1623E1005901CD /* MNBaseViewController.swift */; };
 		2CB0215D1F0F700800470AD3 /* MNRelaxPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0215C1F0F700800470AD3 /* MNRelaxPlayerViewController.xib */; };
 		2CB616481F0F88F700575747 /* MNTrackCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB616471F0F88F700575747 /* MNTrackCollectionViewCell.xib */; };
 		2CB6164A1F0F8A0F00575747 /* MNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB616491F0F8A0F00575747 /* MNNavigationController.swift */; };
-		2CE447F51F14BBDE007AD3CD /* MNMeditationCountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE447F41F14BBDE007AD3CD /* MNMeditationCountDownView.swift */; };
+		2CE447F51F14BBDE007AD3CD /* MNCountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE447F41F14BBDE007AD3CD /* MNCountDownView.swift */; };
 		2CE447F71F14BE72007AD3CD /* MNBreathViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CE447F61F14BE72007AD3CD /* MNBreathViewController.xib */; };
 		659D868629E656A5440F44EB /* Pods_mNoisi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061546CF2EB2617C79F9CBD2 /* Pods_mNoisi.framework */; };
 		F709DC9F1EF54B8E0016C409 /* MNDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709DC9E1EF54B8E0016C409 /* MNDB.swift */; };
@@ -45,7 +51,6 @@
 		F74E4F391ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74E4F381ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift */; };
 		F75DC30C1EDE21AB001E5547 /* MNActivityRecords.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75DC30B1EDE21AB001E5547 /* MNActivityRecords.swift */; };
 		F762B9CB1ED63E7B002C2FB0 /* MNBreathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762B9CA1ED63E7B002C2FB0 /* MNBreathViewController.swift */; };
-		F762B9CD1ED708BE002C2FB0 /* MNTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762B9CC1ED708BE002C2FB0 /* MNTimerViewController.swift */; };
 		F78722D81ECDE1BB00A60FB1 /* MNSoundTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78722D71ECDE1BB00A60FB1 /* MNSoundTrackCollectionViewCell.swift */; };
 		F78722DA1ECFD7F400A60FB1 /* MNMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78722D91ECFD7F400A60FB1 /* MNMineViewController.swift */; };
 		F78B60D51ED4FB2800D5468F /* MNSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78B60D41ED4FB2800D5468F /* MNSwitchTableViewCell.swift */; };
@@ -109,16 +114,24 @@
 		2C3F0A171F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNStaticsInfoTableViewCell.xib; sourceTree = "<group>"; };
 		2C3F0A191F13573600CCB177 /* MNSwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNSwitchTableViewCell.xib; sourceTree = "<group>"; };
 		2C3F0A1B1F13576700CCB177 /* MNTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNTextTableViewCell.xib; sourceTree = "<group>"; };
+		2C4CC2B01F15E70A00FED7A7 /* MNTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTimer.h; sourceTree = "<group>"; };
+		2C4CC2B11F15E70A00FED7A7 /* MNTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNTimer.m; sourceTree = "<group>"; };
+		2C4CC2B31F15F14A00FED7A7 /* MNTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTimerViewController.h; sourceTree = "<group>"; };
+		2C4CC2B41F15F14A00FED7A7 /* MNTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNTimerViewController.m; sourceTree = "<group>"; };
+		2C4CC2B61F16059300FED7A7 /* MNAnimationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNAnimationViewController.xib; sourceTree = "<group>"; };
 		2C57AC711F146DA000C080A1 /* MNShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNShadowButton.swift; sourceTree = "<group>"; };
 		2C57AC731F14727B00C080A1 /* MNShadowLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNShadowLabel.swift; sourceTree = "<group>"; };
 		2C57AC751F14742B00C080A1 /* MNGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNGradientView.swift; sourceTree = "<group>"; };
 		2C6A72F81F14C601006B9D6F /* MNTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNTimerViewController.xib; sourceTree = "<group>"; };
 		2C6F51FE1F0F8BAA006D2387 /* MNTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNTableViewController.xib; sourceTree = "<group>"; };
 		2C6F52001F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNSoundTrackCollectionViewCell.xib; sourceTree = "<group>"; };
+		2C9D41E81F161A83005901CD /* MNBreathResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNBreathResultViewController.swift; sourceTree = "<group>"; };
+		2C9D41E91F161A83005901CD /* MNBreathResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNBreathResultViewController.xib; sourceTree = "<group>"; };
+		2C9D41EC1F1623E1005901CD /* MNBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNBaseViewController.swift; sourceTree = "<group>"; };
 		2CB0215C1F0F700800470AD3 /* MNRelaxPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNRelaxPlayerViewController.xib; sourceTree = "<group>"; };
 		2CB616471F0F88F700575747 /* MNTrackCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNTrackCollectionViewCell.xib; sourceTree = "<group>"; };
 		2CB616491F0F8A0F00575747 /* MNNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNNavigationController.swift; sourceTree = "<group>"; };
-		2CE447F41F14BBDE007AD3CD /* MNMeditationCountDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNMeditationCountDownView.swift; sourceTree = "<group>"; };
+		2CE447F41F14BBDE007AD3CD /* MNCountDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNCountDownView.swift; sourceTree = "<group>"; };
 		2CE447F61F14BE72007AD3CD /* MNBreathViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNBreathViewController.xib; sourceTree = "<group>"; };
 		C90F86AF6D27D3C5C7A4BAC5 /* Pods-mNoisi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mNoisi.release.xcconfig"; path = "Pods/Target Support Files/Pods-mNoisi/Pods-mNoisi.release.xcconfig"; sourceTree = "<group>"; };
 		F5DDE4AC5ED0EFE5290114B3 /* Pods-mNoisi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mNoisi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mNoisi/Pods-mNoisi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,7 +148,6 @@
 		F74E4F381ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTrackCollectionViewCell.swift; sourceTree = "<group>"; };
 		F75DC30B1EDE21AB001E5547 /* MNActivityRecords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNActivityRecords.swift; sourceTree = "<group>"; };
 		F762B9CA1ED63E7B002C2FB0 /* MNBreathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNBreathViewController.swift; sourceTree = "<group>"; };
-		F762B9CC1ED708BE002C2FB0 /* MNTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTimerViewController.swift; sourceTree = "<group>"; };
 		F78722D71ECDE1BB00A60FB1 /* MNSoundTrackCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNSoundTrackCollectionViewCell.swift; sourceTree = "<group>"; };
 		F78722D91ECFD7F400A60FB1 /* MNMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNMineViewController.swift; sourceTree = "<group>"; };
 		F78B60D41ED4FB2800D5468F /* MNSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNSwitchTableViewCell.swift; sourceTree = "<group>"; };
@@ -222,7 +234,7 @@
 				2C57AC711F146DA000C080A1 /* MNShadowButton.swift */,
 				2C57AC731F14727B00C080A1 /* MNShadowLabel.swift */,
 				2C57AC751F14742B00C080A1 /* MNGradientView.swift */,
-				2CE447F41F14BBDE007AD3CD /* MNMeditationCountDownView.swift */,
+				2CE447F41F14BBDE007AD3CD /* MNCountDownView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,6 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				F709DCA01EF54CB10016C409 /* MNDefaults.swift */,
+				2C4CC2B01F15E70A00FED7A7 /* MNTimer.h */,
+				2C4CC2B11F15E70A00FED7A7 /* MNTimer.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -275,10 +289,15 @@
 		2CE447F31F14AB4E007AD3CD /* Breath */ = {
 			isa = PBXGroup;
 			children = (
+				F7442F441ED7130A008FFF3D /* MNAnimationViewController.swift */,
+				2C4CC2B61F16059300FED7A7 /* MNAnimationViewController.xib */,
 				F762B9CA1ED63E7B002C2FB0 /* MNBreathViewController.swift */,
 				2CE447F61F14BE72007AD3CD /* MNBreathViewController.xib */,
-				F762B9CC1ED708BE002C2FB0 /* MNTimerViewController.swift */,
+				2C4CC2B31F15F14A00FED7A7 /* MNTimerViewController.h */,
+				2C4CC2B41F15F14A00FED7A7 /* MNTimerViewController.m */,
 				2C6A72F81F14C601006B9D6F /* MNTimerViewController.xib */,
+				2C9D41E81F161A83005901CD /* MNBreathResultViewController.swift */,
+				2C9D41E91F161A83005901CD /* MNBreathResultViewController.xib */,
 			);
 			path = Breath;
 			sourceTree = "<group>";
@@ -380,7 +399,6 @@
 				2C24A4301EDEBEC2008CD172 /* Player */,
 				F7FB6ED21EC8F8DA0086E576 /* AppDelegate.swift */,
 				F7BD9DCB1F10796100DD6932 /* mNoisi-Bridging-Header.h */,
-				F7442F441ED7130A008FFF3D /* MNAnimationViewController.swift */,
 				F78B60D81ED5BC3500D5468F /* MNTrack.swift */,
 				F7FB6EDB1EC8F8DA0086E576 /* LaunchScreen.storyboard */,
 				F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */,
@@ -389,6 +407,7 @@
 				F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */,
 				F709DC9E1EF54B8E0016C409 /* MNDB.swift */,
 				2CB616491F0F8A0F00575747 /* MNNavigationController.swift */,
+				2C9D41EC1F1623E1005901CD /* MNBaseViewController.swift */,
 			);
 			path = mNoisi;
 			sourceTree = "<group>";
@@ -468,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7FB6EDD1EC8F8DA0086E576 /* LaunchScreen.storyboard in Resources */,
+				2C9D41EB1F161A83005901CD /* MNBreathResultViewController.xib in Resources */,
 				2C3F0A011F132B1200CCB177 /* crackling_fire_sound.mp3 in Resources */,
 				2CE447F71F14BE72007AD3CD /* MNBreathViewController.xib in Resources */,
 				2C3F0A021F132B1200CCB177 /* distantthunder.mp3 in Resources */,
@@ -483,6 +503,7 @@
 				2C3F0A0F1F132B2800CCB177 /* fairypond.jpg in Resources */,
 				2C3F0A101F132B2800CCB177 /* skywalker.jpg in Resources */,
 				2C3F0A1A1F13573600CCB177 /* MNSwitchTableViewCell.xib in Resources */,
+				2C4CC2B71F16059300FED7A7 /* MNAnimationViewController.xib in Resources */,
 				2C3F0A161F1356AD00CCB177 /* MNCalendarTableViewCell.xib in Resources */,
 				2C3F0A0D1F132B2800CCB177 /* crackling_fire_sound.jpg in Resources */,
 				2CB0215D1F0F700800470AD3 /* MNRelaxPlayerViewController.xib in Resources */,
@@ -574,9 +595,11 @@
 				F7BD9DF51F10796200DD6932 /* FSCalendarDelegationProxy.m in Sources */,
 				2CB6164A1F0F8A0F00575747 /* MNNavigationController.swift in Sources */,
 				2C57AC761F14742B00C080A1 /* MNGradientView.swift in Sources */,
-				2CE447F51F14BBDE007AD3CD /* MNMeditationCountDownView.swift in Sources */,
-				F762B9CD1ED708BE002C2FB0 /* MNTimerViewController.swift in Sources */,
+				2CE447F51F14BBDE007AD3CD /* MNCountDownView.swift in Sources */,
+				2C9D41EA1F161A83005901CD /* MNBreathResultViewController.swift in Sources */,
+				2C4CC2B51F15F14A00FED7A7 /* MNTimerViewController.m in Sources */,
 				F709DCA11EF54CB10016C409 /* MNDefaults.swift in Sources */,
+				2C9D41ED1F1623E1005901CD /* MNBaseViewController.swift in Sources */,
 				F7A133EE1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift in Sources */,
 				F7BD9DF81F10796200DD6932 /* FSCalendarScopeHandle.m in Sources */,
 				F70FB8981ECD94CF00E125F5 /* MNTableViewController.swift in Sources */,
@@ -591,6 +614,7 @@
 				F7BD9DFA1F10796200DD6932 /* FSCalendarTransitionCoordinator.m in Sources */,
 				F7DE642B1F12724900079BA6 /* MNSegmentControl.swift in Sources */,
 				F7B553A41EC8FE67005CC15A /* MNRelaxPlayerViewController.swift in Sources */,
+				2C4CC2B21F15E70A00FED7A7 /* MNTimer.m in Sources */,
 				F7BD9DF61F10796200DD6932 /* FSCalendarExtensions.m in Sources */,
 				F7BD9DEF1F10796200DD6932 /* FSCalendarCalculator.m in Sources */,
 				F75DC30C1EDE21AB001E5547 /* MNActivityRecords.swift in Sources */,

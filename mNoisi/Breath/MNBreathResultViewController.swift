@@ -1,14 +1,16 @@
 //
-//  MNAnimationViewController.swift
+//  MNBreathResultViewController.swift
 //  mNoisi
 //
-//  Created by Leon.yan on 25/05/2017.
+//  Created by yan on 2017/07/12.
 //  Copyright © 2017 Leon.yan. All rights reserved.
 //
 
 import UIKit
 
-class MNAnimationViewController: UIViewController {
+class MNBreathResultViewController: MNBaseViewController {
+
+    var time: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +23,14 @@ class MNAnimationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func dismiss(_ sender: Any) {
-//        self.dismiss(animated: true, completion: nil)
+    @IBAction func done(_ sender: Any) {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func redo(_ sender: Any) {
+        let breathViewController = MNBreathViewController()
+        self.navigationController?.setViewControllers([breathViewController], animated: true)
+    }
     /*
     // MARK: - Navigation
 

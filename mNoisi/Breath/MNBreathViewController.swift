@@ -8,7 +8,11 @@
 
 import UIKit
 
-class MNBreathViewController: UIViewController {
+class MNBreathViewController: MNBaseViewController, MNTimerViewControllerDelegate {
+
+    @IBOutlet weak var tip1Label: UILabel!
+    @IBOutlet weak var tip2Label: UILabel!
+    var time: Int = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +32,22 @@ class MNBreathViewController: UIViewController {
 
     @IBAction
     func timerButtonPressed(_ sender: Any) {
-        self.navigationController?.pushViewController(MNTimerViewController(), animated: true)
+        let timerViewController = MNTimerViewController()
+        timerViewController.times = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        timerViewController.currentTime = NSNumber(value: self.time)
+        timerViewController.delegate = self
+        self.navigationController?.pushViewController(timerViewController, animated: true)
     }
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+    @IBAction
+    func startBreath(_ sender: Any) {
+        let animationViewController = MNAnimationViewController()
+        self.navigationController?.pushViewController(animationViewController, animated: true)
+    }
+
+    // MARK: MNTimerViewControllerDelegate
+    func timerViewController(_ viewController: MNTimerViewController!, didChooseTime time: Int) {
+        self.time = time
+        self.tip2Label.text = "\(time) min"
     }
 }

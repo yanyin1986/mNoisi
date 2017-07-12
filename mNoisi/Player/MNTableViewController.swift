@@ -17,7 +17,7 @@ protocol MNTableViewDelegate: NSObjectProtocol {
     func playerListWannaShowBottomView()
 }
 
-class MNTableViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     weak var delegate: MNTableViewDelegate?
 

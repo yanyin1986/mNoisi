@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MNTableViewDelegate {
+class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MNTableViewDelegate {
 
     var showList: Bool = false
     //
@@ -270,10 +270,6 @@ class MNRelaxPlayerViewController: UIViewController, UICollectionViewDataSource,
     
     // MARK: status
     private var hideStatusBar: Bool = false
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
 
     override var prefersStatusBarHidden: Bool {
         return hideStatusBar

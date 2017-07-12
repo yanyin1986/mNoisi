@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MNTimerViewController" customModule="mNoisi" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MNTimerViewController">
             <connections>
                 <outlet property="timePicker" destination="2S1-pv-3ah" id="k66-gy-kgc"/>
                 <outlet property="view" destination="z0C-NQ-ivI" id="PVb-xe-7g6"/>
@@ -72,7 +72,7 @@
                     </constraints>
                     <state key="normal" title="Done"/>
                     <connections>
-                        <action selector="confirm:" destination="-1" eventType="touchUpInside" id="Lsz-r7-hpY"/>
+                        <action selector="comfirm:" destination="-1" eventType="touchUpInside" id="87t-UO-QPc"/>
                     </connections>
                 </button>
             </subviews>

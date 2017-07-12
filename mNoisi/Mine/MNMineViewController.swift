@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MNMineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet
     private weak var tableView: UITableView!
@@ -21,10 +21,6 @@ class MNMineViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.register(UINib(nibName: "MNStaticsInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "staticsInfoCell")
         tableView.register(UINib(nibName: "MNSwitchTableViewCell", bundle: nil), forCellReuseIdentifier: "switchCell")
         tableView.register(UINib(nibName: "MNTextTableViewCell", bundle: nil), forCellReuseIdentifier: "textCell")
-    }
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
 
     override func didReceiveMemoryWarning() {

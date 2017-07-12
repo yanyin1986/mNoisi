@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MNMeditationCountDownView: UIView {
+class MNCountDownView: UIView {
 
     var _unspentTimeLayer: CAShapeLayer = CAShapeLayer()
     var _spentTimeLayer: CAShapeLayer = CAShapeLayer()
@@ -34,15 +34,18 @@ class MNMeditationCountDownView: UIView {
         let path: UIBezierPath = UIBezierPath.init(arcCenter: center, radius: radius, startAngle: CGFloat(-Double.pi / 2.0), endAngle: CGFloat(Double.pi / 2.0 * 3.0), clockwise: true)
         print(path)
         _unspentTimeLayer.path = path.cgPath
+        _unspentTimeLayer.fillRule = kCAFillRuleNonZero
+        _unspentTimeLayer.fillColor = UIColor.clear.cgColor
         _unspentTimeLayer.frame = self.bounds
         _unspentTimeLayer.lineWidth = borderWidth
-        _unspentTimeLayer.strokeColor = UIColor.red.cgColor
+        _unspentTimeLayer.strokeColor = UIColor(white: 0.77, alpha: 1.0).cgColor
 
         _spentTimeLayer.path = path.cgPath
-
+        _spentTimeLayer.fillRule = kCAFillRuleNonZero
+        _spentTimeLayer.fillColor = UIColor.clear.cgColor
         _spentTimeLayer.frame = self.bounds
         _spentTimeLayer.lineWidth = borderWidth
-        _spentTimeLayer.strokeColor = UIColor.yellow.cgColor
+        _spentTimeLayer.strokeColor = UIColor(white: 0.9, alpha: 1.0).cgColor
 
         self.layer.addSublayer(_unspentTimeLayer)
         self.layer.addSublayer(_spentTimeLayer)

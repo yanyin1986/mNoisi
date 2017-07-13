@@ -8,7 +8,15 @@
 
 import UIKit
 
+@IBDesignable
 class MNShadowButton: UIButton {
+
+    @IBInspectable
+    var shadowOpacity: Float = 0.75 {
+        didSet {
+            _commonInit()
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +33,7 @@ class MNShadowButton: UIButton {
     }
 
     private func _commonInit() {
-        layer.shadowOpacity = 0.75
+        layer.shadowOpacity = shadowOpacity
         layer.shadowRadius = 2.0
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize.init(width: 0, height: 2)

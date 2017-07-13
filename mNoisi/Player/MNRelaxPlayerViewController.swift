@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MNTableViewDelegate {
+class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MNTableViewDelegate, MNPlayerDelegate {
 
     var showList: Bool = false
     //
@@ -35,6 +35,9 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     private weak var bottomViewBottomConst: NSLayoutConstraint!
 
     @IBOutlet
+    weak var volumeSlider: UISlider!
+
+    @IBOutlet
     private weak var playerView: UIView!
 
     @IBOutlet
@@ -57,6 +60,8 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         self.automaticallyAdjustsScrollViewInsets = false
 
         // Do any additional setup after loading the view.
+        volumeSlider.value = MNPlayer.shared.volume
+        MNPlayer.shared.delegate = self
         self.collectionView.register(UINib(nibName: "MNTrackCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "trackCell")
         self.calculateIndex(self.collectionView)
     }
@@ -66,8 +71,18 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        volumeSlider.value = MNPlayer.shared.volume
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+
+    // MARK: MNPlayerDelegate
+    func volumeDidChanged(_ volume: Float) {
+        volumeSlider.value = volume
     }
 
     // MARK: MNTableViewDelegate
@@ -200,6 +215,10 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         self.navigationController?.present(vc, animated: true, completion: nil)
     }
 
+    @IBAction func volumeChanged(_ sender: UISlider) {
+        MNPlayer.shared.volume = sender.value
+    }
+
     // MARK: collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return MNTrackManager.shared.tracks.count
@@ -239,7 +258,7 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         _currentIndex = index
         let track = MNTrackManager.shared.tracks[_currentIndex]
         titleLabel.text = track.name
-        MNPlayer.shared.reset(withAudioUrl: track.audioUrl)
+        MNPlayer.shared.reset(withTrack: track)
     }
 
     // MARK: page jump

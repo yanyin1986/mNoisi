@@ -8,20 +8,57 @@
 
 import Foundation
 import AVFoundation
+import MediaPlayer
+
+protocol MNPlayerDelegate: class {
+
+    func volumeDidChanged(_ volume: Float)
+}
 
 final class MNPlayer: NSObject {
     public static let shared: MNPlayer = MNPlayer()
-    private var _audioUrl: URL?
+    public weak var delegate: MNPlayerDelegate?
+
+    private var _track: MNTrack?
     private var _audioPlayer: AVAudioPlayer?
     private var _timer: Timer?
     private var _executedStep: Int = -1
 
-    private override init() {
-        super.init()
+    private var _volume: Float = 0.0
+    var volume: Float {
+        get {
+            _volume = AVAudioSession.sharedInstance().outputVolume
+            return _volume
+        }
+
+        set {
+            _volume = newValue
+            (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(_volume, animated: false)
+        }
     }
 
-    public func reset(withAudioUrl url: URL) {
-        _audioUrl = url
+    private override init() {
+        super.init()
+
+        AVAudioSession.sharedInstance().addObserver(self, forKeyPath: "outputVolume", options: [NSKeyValueObservingOptions.old, NSKeyValueObservingOptions.new], context: nil)
+    }
+
+    deinit {
+        AVAudioSession.sharedInstance().removeObserver(self, forKeyPath: "outputVolume")
+    }
+
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        guard let key = keyPath else { return }
+
+        if key == "outputVolume" && AVAudioSession.sharedInstance().isEqual(object) {
+            let newVolume = AVAudioSession.sharedInstance().outputVolume
+            _volume = newVolume
+            delegate?.volumeDidChanged(newVolume)
+        }
+    }
+
+    public func reset(withTrack track: MNTrack) {
+        _track = track
         self.resetPlayer()
     }
 
@@ -37,8 +74,9 @@ final class MNPlayer: NSObject {
         _audioPlayer?.pause()
     }
 
+    // MARK: private methods
     private func resetPlayer() {
-        guard _audioUrl != nil else {
+        guard _track != nil else {
             return
         }
 
@@ -59,15 +97,27 @@ final class MNPlayer: NSObject {
 
     @objc
     private func fadeInPlayer() {
-        guard let url = _audioUrl else {
+        guard let track = _track else {
             return
         }
 
         do {
-            _audioPlayer = try AVAudioPlayer(contentsOf: url)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            _audioPlayer = try AVAudioPlayer(contentsOf: track.audioUrl)
             _audioPlayer?.volume = 0.0
             _audioPlayer?.play()
             _audioPlayer?.numberOfLoops = -1
+
+            var info: [String: Any] = [
+                MPMediaItemPropertyTitle : track.name,
+                MPMediaItemPropertyArtist : "RelaxBreath",
+            ]
+            
+            if let image = UIImage.init(named: track.fullScreen) {
+                info[MPMediaItemPropertyArtwork] = MPMediaItemArtwork.init(image: image)
+            }
+            
+            MPNowPlayingInfoCenter.default().nowPlayingInfo = info
             self.fade(audioPlayer: _audioPlayer!, toVolume: 1.0, duration: 0.75, withCompletion: {
                 self._audioPlayer?.numberOfLoops = -1
             })

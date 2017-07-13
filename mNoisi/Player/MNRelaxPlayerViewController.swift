@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import MBProgressHUD
 
 class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MNTableViewDelegate {
 
@@ -22,6 +23,9 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     @IBOutlet
     weak var maskView: UIView!
 
+    @IBOutlet
+    private weak var playButton: MNShadowButton!
+    
     @IBOutlet
     private weak var likeButton: UIButton!
 
@@ -58,7 +62,9 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
 
         // Do any additional setup after loading the view.
         self.collectionView.register(UINib(nibName: "MNTrackCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "trackCell")
-        self.calculateIndex(self.collectionView)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.calculateIndex(self.collectionView)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -156,13 +162,12 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
 
     @IBAction
     func playButtonPressed(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected {
+        if !sender.isSelected {
             // paused, wanna play
-            MNPlayer.shared.play()
+            self.play()
         } else {
             // is playing, wanna pause
-            MNPlayer.shared.pause()
+            self.pause()
         }
     }
 
@@ -237,9 +242,28 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         }
 
         _currentIndex = index
+        self.play()
+    }
+
+    // MARK: play control
+    private func play() {
+        guard _currentIndex >= 0 else { return }
         let track = MNTrackManager.shared.tracks[_currentIndex]
-        titleLabel.text = track.name
+        self.titleLabel.text = track.name
+        self.playButton.isSelected = true
         MNPlayer.shared.reset(withAudioUrl: track.audioUrl)
+
+        let hudView = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hudView.animationType = MBProgressHUDAnimation.zoom
+        hudView.mode = MBProgressHUDMode.text
+        hudView.label.text = "Play: \(track.name)"
+        hudView.removeFromSuperViewOnHide = true
+        hudView.hide(animated: true, afterDelay: 2.0)
+    }
+
+    private func pause() {
+        self.playButton.isSelected = false
+        MNPlayer.shared.pause()
     }
 
     // MARK: page jump

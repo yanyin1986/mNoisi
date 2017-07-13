@@ -9,12 +9,20 @@
 import Foundation
 import SQLite
 
-public struct MNTrack /*: Codable*/ {
+public struct MNTrack: Equatable /*: Codable*/ {
     var id: Int64
     var name: String
     var thumbnail: String
     var fullScreen: String
     var audioUrl: URL
+
+    public static func ==(lhs: MNTrack, rhs: MNTrack) -> Bool {
+        return lhs.id == rhs.id
+            && lhs.name == rhs.name
+            && lhs.thumbnail == rhs.thumbnail
+            && lhs.fullScreen == rhs.fullScreen
+            && lhs.audioUrl == rhs.audioUrl
+    }
 }
 
 public class MNTrackManager {
@@ -54,7 +62,6 @@ public class MNTrackManager {
                 trackList.append(track)
             }
         }
-
         return trackList
     }
 

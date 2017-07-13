@@ -167,6 +167,9 @@
                             <real key="value" value="0.5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="previous:" destination="-1" eventType="touchUpInside" id="PXB-Cb-qqQ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzn-tv-UFx" customClass="MNShadowButton" customModule="mNoisi" customModuleProvider="target">
                     <rect key="frame" x="329" y="315" width="36" height="36"/>
@@ -180,6 +183,9 @@
                             <real key="value" value="0.5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="next:" destination="-1" eventType="touchUpInside" id="x8O-S3-QOF"/>
+                    </connections>
                 </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFj-58-UoU">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>

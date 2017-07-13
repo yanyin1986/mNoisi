@@ -8,9 +8,10 @@
 
 import UIKit
 import AVFoundation
-import MBProgressHUD
 
 class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MNTableViewDelegate, MNPlayerDelegate {
+
+    var tracks = [MNTrack]()
 
     var showList: Bool = false
     //
@@ -59,6 +60,16 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     var collapse: Bool = false
     var toggleFullScreenAnimating = false
 
+    lazy var hudView: MBProgressHUD = {
+        let hudView = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hudView.animationType = MBProgressHUDAnimation.zoom
+        hudView.mode = MBProgressHUDMode.text
+        hudView.removeFromSuperViewOnHide = true
+
+        hudView.isUserInteractionEnabled = false
+        return hudView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
@@ -70,6 +81,10 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.calculateIndex(self.collectionView)
         }
+
+        tracks.append(contentsOf: MNTrackManager.shared.tracks)
+        tracks.insert(MNTrackManager.shared.tracks.last!, at: 0)
+        tracks.append(MNTrackManager.shared.tracks.first!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -121,6 +136,15 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         }, completion: nil)
     }
 
+    func playerListDidSelectTrack(_ track: MNTrack) {
+        guard let index = self.tracks.index(where: { $0 == track }) else { return }
+        _currentIndex = index
+        self.collectionView.scrollToItem(at: IndexPath.init(row: index, section: 0), at: .centeredHorizontally, animated: false)
+        self.play()
+    }
+
+    
+    // MARK: Actions
     @IBAction
     func showPlayerList(_ sender: UIButton) {
         self.addChildViewController(self.playerListViewController)
@@ -134,6 +158,24 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         }, completion: { (finish) in
 
         })
+    }
+
+    @IBAction func previous(_ sender: Any) {
+        /*
+        let index = _currentIndex == 0 ? MNTrackManager.shared.tracks.count - 1 : _currentIndex - 1
+        self.collectionView.scrollToItem(at: IndexPath.init(row: index, section: 0), at: .centeredHorizontally, animated: true)
+        _currentIndex = index
+        self.play()
+ */
+    }
+
+    @IBAction func next(_ sender: Any) {
+        /*
+        let index = _currentIndex + 1 >= MNTrackManager.shared.tracks.count ? 0 : _currentIndex + 1
+        self.collectionView.scrollToItem(at: IndexPath.init(row: index, section: 0), at: .centeredHorizontally, animated: true)
+        _currentIndex = index
+        self.play()
+ */
     }
 
     @IBAction
@@ -191,7 +233,7 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         guard _currentIndex >= 0 else {
             return
         }
-        let track = MNTrackManager.shared.tracks[_currentIndex]
+        let track = self.tracks[_currentIndex]// MNTrackManager.shared.tracks[_currentIndex]
 
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
@@ -226,12 +268,13 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
 
     // MARK: collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MNTrackManager.shared.tracks.count
+        return self.tracks.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "trackCell", for: indexPath) as! MNTrackCollectionViewCell
-        let track = MNTrackManager.shared.tracks[indexPath.row]
+        let track = self.tracks[indexPath.row]
+        //MNTrackManager.shared.tracks[indexPath.row]
         cell.imageView.image = UIImage(named: track.fullScreen)
         return cell
     }
@@ -239,6 +282,29 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         print(self.view.frame.size)
         return self.view.frame.size
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.jump(withContentOffset: scrollView.contentOffset)
+    }
+
+    func jump(withContentOffset offset: CGPoint) {
+        if offset.x <= 0 {
+            self.jumpToLast()
+        }
+        if offset.x >= CGFloat(self.tracks.count - 1) * collectionView.frame.width {
+            self.jumpToFirst()
+        }
+    }
+
+    func jumpToLast() {
+        let indexPath = IndexPath.init(row: self.tracks.count - 2, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+    }
+
+    func jumpToFirst() {
+        let indexPath = IndexPath.init(row: 1, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -267,17 +333,18 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     // MARK: play control
     private func play() {
         guard _currentIndex >= 0 else { return }
-        let track = MNTrackManager.shared.tracks[_currentIndex]
+        let track = self.tracks[_currentIndex]
+        //MNTrackManager.shared.tracks[_currentIndex]
         self.titleLabel.text = track.name
         self.playButton.isSelected = true
         MNPlayer.shared.reset(withTrack: track)
 
-        let hudView = MBProgressHUD.showAdded(to: self.view, animated: true)
-        hudView.animationType = MBProgressHUDAnimation.zoom
-        hudView.mode = MBProgressHUDMode.text
-        hudView.label.text = "Play: \(track.name)"
-        hudView.removeFromSuperViewOnHide = true
-        hudView.hide(animated: true, afterDelay: 2.0)
+        self.hudView.label.text = "Playing: \(track.name)"
+        if self.hudView.superview == nil {
+            self.view.addSubview(self.hudView)
+        }
+        self.hudView.show(animated: true)
+        self.hudView.hide(animated: true, afterDelay: 2.0)
     }
 
     private func pause() {

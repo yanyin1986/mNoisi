@@ -45,6 +45,7 @@
 		F709DC9F1EF54B8E0016C409 /* MNDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709DC9E1EF54B8E0016C409 /* MNDB.swift */; };
 		F709DCA11EF54CB10016C409 /* MNDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709DCA01EF54CB10016C409 /* MNDefaults.swift */; };
 		F70FB8981ECD94CF00E125F5 /* MNTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */; };
+		F71D75341F17BD04004161D9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F71D75331F17BD04004161D9 /* MBProgressHUD.m */; };
 		F7442F451ED7130A008FFF3D /* MNAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442F441ED7130A008FFF3D /* MNAnimationViewController.swift */; };
 		F7442F471ED718A4008FFF3D /* MNFadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */; };
 		F7442F491EDB82E9008FFF3D /* MNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442F481EDB82E9008FFF3D /* MNButton.swift */; };
@@ -142,6 +143,8 @@
 		F709DC9E1EF54B8E0016C409 /* MNDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNDB.swift; sourceTree = "<group>"; };
 		F709DCA01EF54CB10016C409 /* MNDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNDefaults.swift; sourceTree = "<group>"; };
 		F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTableViewController.swift; sourceTree = "<group>"; };
+		F71D75321F17BD04004161D9 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		F71D75331F17BD04004161D9 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		F7442F441ED7130A008FFF3D /* MNAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNAnimationViewController.swift; sourceTree = "<group>"; };
 		F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNFadeSegue.swift; sourceTree = "<group>"; };
 		F7442F481EDB82E9008FFF3D /* MNButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNButton.swift; sourceTree = "<group>"; };
@@ -322,9 +325,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F71D75311F17BCE2004161D9 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				F71D75321F17BD04004161D9 /* MBProgressHUD.h */,
+				F71D75331F17BD04004161D9 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		F7BD9DC91F10793300DD6932 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				F71D75311F17BCE2004161D9 /* MBProgressHUD */,
 				F7BD9DCA1F10794400DD6932 /* FSCalendar */,
 			);
 			path = Vendor;
@@ -609,6 +622,7 @@
 				F7BD9DEE1F10796200DD6932 /* FSCalendarAppearance.m in Sources */,
 				F7C991BB1EE8E9F300A60BC4 /* MNPlayer.swift in Sources */,
 				F7BD9DF31F10796200DD6932 /* FSCalendarConstants.m in Sources */,
+				F71D75341F17BD04004161D9 /* MBProgressHUD.m in Sources */,
 				F7BD9DED1F10796200DD6932 /* FSCalendar+Deprecated.m in Sources */,
 				F7BD9DF91F10796200DD6932 /* FSCalendarStickyHeader.m in Sources */,
 				F7BD9DFA1F10796200DD6932 /* FSCalendarTransitionCoordinator.m in Sources */,

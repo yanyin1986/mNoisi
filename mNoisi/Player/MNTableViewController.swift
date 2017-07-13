@@ -10,6 +10,8 @@ import UIKit
 
 protocol MNTableViewDelegate: NSObjectProtocol {
 
+    func playerListDidSelectTrack(_ track: MNTrack)
+
     func playerListViewWillHide()
 
     func playerListWannaHideBottomView()
@@ -111,6 +113,7 @@ class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let track = MNTrackManager.shared.tracks[indexPath.row]
         print(track)
+        delegate?.playerListDidSelectTrack(track)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

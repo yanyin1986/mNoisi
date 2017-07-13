@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Fabric.with([Crashlytics.self])
 
+        application.beginReceivingRemoteControlEvents()
+
         let navigationBarAppear: UINavigationBar = UINavigationBar.appearance()
         navigationBarAppear.setBackgroundImage(UIImage(), for: .default)
         navigationBarAppear.shadowImage = UIImage()
@@ -69,6 +71,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    override func remoteControlReceived(with event: UIEvent?) {
+        guard let event = event else { return }
+        if event.type == UIEventType.remoteControl {
+            switch event.subtype {
+            case .remoteControlStop:
+                //stop
+                MNPlayer.shared.pause()
+            case .remoteControlPlay:
+                MNPlayer.shared.play()
+            case .remoteControlPause:
+                MNPlayer.shared.pause()
+            case .remoteControlNextTrack:
+                break
+            case .remoteControlPreviousTrack:
+                break
+            default:
+                break
+                
+            }
+        }
+    }
 
 }
 

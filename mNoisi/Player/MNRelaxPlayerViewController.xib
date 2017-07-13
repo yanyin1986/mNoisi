@@ -22,6 +22,7 @@
                 <outlet property="titleLabel" destination="JQn-vj-SyN" id="HHC-eR-5uQ"/>
                 <outlet property="topView" destination="qm8-jO-Qwf" id="VB7-B0-3Mh"/>
                 <outlet property="view" destination="HkL-9M-Itc" id="JPu-dU-hts"/>
+                <outlet property="volumeSlider" destination="wLB-8g-1t5" id="an8-IS-RVL"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -98,6 +99,9 @@
                             <rect key="frame" x="28" y="70" width="319" height="31"/>
                             <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="maximumTrackTintColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="volumeChanged:" destination="-1" eventType="valueChanged" id="B41-Fo-onz"/>
+                            </connections>
                         </slider>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kF-Vg-DWl" customClass="MNShadowButton" customModule="mNoisi" customModuleProvider="target">
                             <rect key="frame" x="162.5" y="8" width="50" height="50"/>
@@ -150,6 +154,32 @@
                     <connections>
                         <action selector="toggleFullScreen:" destination="-1" eventType="touchUpInside" id="MgN-sb-tS9"/>
                     </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJm-f6-UMx" customClass="MNShadowButton" customModule="mNoisi" customModuleProvider="target">
+                    <rect key="frame" x="10" y="315" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="36" id="7MQ-i4-xRE"/>
+                        <constraint firstAttribute="height" constant="36" id="EA1-Py-Zvi"/>
+                    </constraints>
+                    <state key="normal" image="ic_chevron_left_white"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzn-tv-UFx" customClass="MNShadowButton" customModule="mNoisi" customModuleProvider="target">
+                    <rect key="frame" x="329" y="315" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="6yc-bL-NC9"/>
+                        <constraint firstAttribute="width" constant="36" id="yS0-Rv-i4S"/>
+                    </constraints>
+                    <state key="normal" image="ic_chevron_right_white"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFj-58-UoU">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -257,9 +287,13 @@
                 <constraint firstAttribute="trailing" secondItem="usS-UI-kVl" secondAttribute="trailing" id="HI5-0b-FUb"/>
                 <constraint firstAttribute="bottom" secondItem="rFj-58-UoU" secondAttribute="bottom" id="LA3-Xx-UDu"/>
                 <constraint firstItem="usS-UI-kVl" firstAttribute="leading" secondItem="HkL-9M-Itc" secondAttribute="leading" id="Mkv-yZ-wuv"/>
+                <constraint firstItem="Vzn-tv-UFx" firstAttribute="centerY" secondItem="HkL-9M-Itc" secondAttribute="centerY" id="Rmx-By-v3e"/>
                 <constraint firstAttribute="bottom" secondItem="tv4-ux-aUZ" secondAttribute="bottom" id="U1H-ql-cfd"/>
                 <constraint firstItem="qm8-jO-Qwf" firstAttribute="leading" secondItem="HkL-9M-Itc" secondAttribute="leading" id="Vaa-cv-or0"/>
                 <constraint firstAttribute="trailing" secondItem="qm8-jO-Qwf" secondAttribute="trailing" id="W5M-wd-cPe"/>
+                <constraint firstItem="xJm-f6-UMx" firstAttribute="leading" secondItem="HkL-9M-Itc" secondAttribute="leading" constant="10" id="aiq-rH-d3y"/>
+                <constraint firstAttribute="trailing" secondItem="Vzn-tv-UFx" secondAttribute="trailing" constant="10" id="c7V-I1-2Pv"/>
+                <constraint firstItem="xJm-f6-UMx" firstAttribute="centerY" secondItem="HkL-9M-Itc" secondAttribute="centerY" id="ctI-Z1-xBk"/>
                 <constraint firstItem="ugo-Zs-xfw" firstAttribute="leading" secondItem="HkL-9M-Itc" secondAttribute="leading" id="dKv-Me-9T5"/>
                 <constraint firstAttribute="trailing" secondItem="ugo-Zs-xfw" secondAttribute="trailing" id="eR3-a9-V3u"/>
                 <constraint firstAttribute="trailing" secondItem="49o-Yc-2o5" secondAttribute="trailing" id="f5z-J7-CrO"/>
@@ -278,6 +312,8 @@
         <image name="expand" width="23" height="22"/>
         <image name="favor" width="23" height="22"/>
         <image name="favor-on" width="22" height="22"/>
+        <image name="ic_chevron_left_white" width="36" height="36"/>
+        <image name="ic_chevron_right_white" width="36" height="36"/>
         <image name="meditation" width="27" height="27"/>
         <image name="mine" width="28" height="28"/>
         <image name="natrual sound" width="27" height="27"/>

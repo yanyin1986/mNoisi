@@ -19,6 +19,27 @@ protocol MNTableViewDelegate: NSObjectProtocol {
     func playerListWannaShowBottomView()
 }
 
+extension UIImage {
+    func blur() -> UIImage? {
+        guard let ciimage = CIImage.init(image: self) else {
+            return nil
+        }
+        let filter = CIFilter.init(name: "CIGaussianBlur")
+        filter?.setValue(ciimage, forKey: "inputImage")
+        filter?.setValue(40.0, forKey: "inputRadius")
+
+        let ctx = CIContext(eaglContext: EAGLContext.init(api: .openGLES2))
+
+        guard let output = filter?.outputImage else {
+            return nil
+        }
+        guard let cgImage = ctx.createCGImage(output, from: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)) else {
+            return nil
+        }
+        return UIImage(cgImage: cgImage)
+    }
+}
+
 class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     weak var delegate: MNTableViewDelegate?
@@ -37,13 +58,6 @@ class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, U
     var tracks: [MNTrack] = []
     private var _lastContentOffsetY: CGFloat?
 
-    var soundTrackNames = [
-        SoundTrackName(soundTitleName: "Ocean Wave", soundImageName: "Ocean Wave.jpeg"),
-        SoundTrackName(soundTitleName: "Spring Walk", soundImageName: "Spring Walk.jpeg"),
-        SoundTrackName(soundTitleName: "3", soundImageName: "3.jpg"),
-        SoundTrackName(soundTitleName: "4", soundImageName: "4.jpg"),
-    ]
-
     @IBAction func close(_ sender: Any) {
         self.delegate?.playerListWannaShowBottomView()
         self.delegate?.playerListViewWillHide()
@@ -51,15 +65,38 @@ class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, U
 
     @IBAction func selectedTagChanged(_ sender: MNSegmentControl) {
         if sender.selectedItem == 0 {
+            let newTracks = MNTrackManager.shared.liked
+            var diffIndexPaths = [IndexPath]()
+            for i in 1 ... MNTrackManager.shared.tracks.count {
+                if newTracks.first(where: { $0.id == Int64(i) }) == nil {
+                    diffIndexPaths.append(IndexPath.init(row: i - 1, section: 0))
+                }
+            }
             tracks = MNTrackManager.shared.tracks
+            collectionView.performBatchUpdates({
+                self.collectionView.insertItems(at: diffIndexPaths)
+            }, completion: { (finish) in
+
+            })
         } else {
             // selectedItem = 1
-            tracks = MNTrackManager.shared.liked
+            let newTracks = MNTrackManager.shared.liked
+
+            var diffIndexPaths = [IndexPath]()
+            for i in 1 ... MNTrackManager.shared.tracks.count {
+                if newTracks.first(where: { $0.id == Int64(i) }) == nil {
+                    diffIndexPaths.append(IndexPath.init(row: i - 1, section: 0))
+                }
+            }
+            tracks = newTracks
+            collectionView.performBatchUpdates({
+                self.collectionView.deleteItems(at: diffIndexPaths)
+            }, completion: { (finish) in
+
+            })
         }
-        collectionView.reloadData()
     }
     
-//    var soundNames = ["Ocean Wave.jpeg", "Spring Walk.jpeg", "3.jpg", "4.jpg"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,12 +126,18 @@ class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MNSoundTrackCollectionViewCell.reuseIdentifier, for: indexPath) as! MNSoundTrackCollectionViewCell
 
-        let track = MNTrackManager.shared.tracks[indexPath.row]
-        cell.soundImageView.image = UIImage(named: track.fullScreen)
 
-        let isTrackLiked = MNTrackManager.shared.isTrackLiked(track)
-        cell.isFavorite.isHidden = !isTrackLiked
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if let cell = cell as? MNSoundTrackCollectionViewCell {
+            let track = tracks[indexPath.row]
+            cell.soundImageView.image = UIImage(named: track.fullScreen)
+
+            let isTrackLiked = MNTrackManager.shared.isTrackLiked(track)
+            cell.isFavorite.isHidden = !isTrackLiked
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -111,9 +154,22 @@ class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, U
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let track = MNTrackManager.shared.tracks[indexPath.row]
+        let track = tracks[indexPath.row]
         print(track)
         delegate?.playerListDidSelectTrack(track)
+
+        /*
+        if let fullScreen = UIImage(named: track.fullScreen) {
+            DispatchQueue.global(qos: .background).async {
+                if let image = fullScreen.blur() {
+                    DispatchQueue.main.async {
+                        self.topView.backgroundColor = UIColor.clear
+                        self.view.layer.contents = image.cgImage
+                    }
+                }
+            }
+        }
+ */
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -150,5 +206,4 @@ class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, U
             self._lastContentOffsetY = nil
         }
     }
-
 }

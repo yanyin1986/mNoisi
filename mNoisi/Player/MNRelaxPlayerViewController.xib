@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G24b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -95,14 +95,30 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ugo-Zs-xfw">
                     <rect key="frame" x="0.0" y="477" width="375" height="130"/>
                     <subviews>
-                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="volume-min" maximumValueImage="volume-max" translatesAutoresizingMaskIntoConstraints="NO" id="wLB-8g-1t5">
-                            <rect key="frame" x="28" y="70" width="319" height="31"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3l-mE-Dwk">
+                            <rect key="frame" x="16" y="71" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="fId-x5-X1b"/>
+                                <constraint firstAttribute="height" constant="30" id="vTZ-pQ-SbE"/>
+                            </constraints>
+                            <state key="normal" image="volume-min"/>
+                        </button>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLB-8g-1t5">
+                            <rect key="frame" x="48" y="70" width="279" height="31"/>
                             <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="maximumTrackTintColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="volumeChanged:" destination="-1" eventType="valueChanged" id="B41-Fo-onz"/>
                             </connections>
                         </slider>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gB-9t-fJX">
+                            <rect key="frame" x="329" y="71" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="LRw-mW-HBD"/>
+                                <constraint firstAttribute="height" constant="30" id="YwX-Te-wIM"/>
+                            </constraints>
+                            <state key="normal" image="volume-max"/>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kF-Vg-DWl" customClass="MNShadowButton" customModule="mNoisi" customModuleProvider="target">
                             <rect key="frame" x="162.5" y="8" width="50" height="50"/>
                             <constraints>
@@ -130,11 +146,15 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="6kF-Vg-DWl" firstAttribute="top" secondItem="ugo-Zs-xfw" secondAttribute="top" constant="8" id="0uT-UM-Ot5"/>
-                        <constraint firstAttribute="trailing" secondItem="wLB-8g-1t5" secondAttribute="trailing" constant="30" id="88Z-MA-S84"/>
-                        <constraint firstItem="wLB-8g-1t5" firstAttribute="leading" secondItem="ugo-Zs-xfw" secondAttribute="leading" constant="30" id="AY7-wP-JKH"/>
+                        <constraint firstAttribute="trailing" secondItem="wLB-8g-1t5" secondAttribute="trailing" constant="50" id="88Z-MA-S84"/>
+                        <constraint firstItem="wLB-8g-1t5" firstAttribute="leading" secondItem="ugo-Zs-xfw" secondAttribute="leading" constant="50" id="AY7-wP-JKH"/>
                         <constraint firstAttribute="trailing" secondItem="Fb0-BJ-9ex" secondAttribute="trailing" constant="30" id="BPI-o1-Q9a"/>
+                        <constraint firstItem="6gB-9t-fJX" firstAttribute="leading" secondItem="wLB-8g-1t5" secondAttribute="trailing" constant="4" id="Ejh-XP-JQq"/>
+                        <constraint firstItem="J3l-mE-Dwk" firstAttribute="centerY" secondItem="wLB-8g-1t5" secondAttribute="centerY" constant="1" id="J7y-Ns-AlN"/>
                         <constraint firstAttribute="height" constant="130" id="KZL-tx-bbx"/>
                         <constraint firstItem="Fb0-BJ-9ex" firstAttribute="centerY" secondItem="6kF-Vg-DWl" secondAttribute="centerY" id="M1C-KB-QJN"/>
+                        <constraint firstItem="6gB-9t-fJX" firstAttribute="centerY" secondItem="wLB-8g-1t5" secondAttribute="centerY" constant="1" id="fQI-Of-x7w"/>
+                        <constraint firstItem="wLB-8g-1t5" firstAttribute="leading" secondItem="J3l-mE-Dwk" secondAttribute="trailing" constant="4" id="h3V-xW-H4H"/>
                         <constraint firstAttribute="bottom" secondItem="wLB-8g-1t5" secondAttribute="bottom" constant="30" id="lAV-0Z-atH"/>
                         <constraint firstItem="6kF-Vg-DWl" firstAttribute="centerX" secondItem="ugo-Zs-xfw" secondAttribute="centerX" id="wJL-Gd-s3M"/>
                     </constraints>
@@ -153,38 +173,6 @@
                     <state key="selected" image="collapse"/>
                     <connections>
                         <action selector="toggleFullScreen:" destination="-1" eventType="touchUpInside" id="MgN-sb-tS9"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJm-f6-UMx" customClass="MNShadowButton" customModule="mNoisi" customModuleProvider="target">
-                    <rect key="frame" x="10" y="315" width="36" height="36"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="36" id="7MQ-i4-xRE"/>
-                        <constraint firstAttribute="height" constant="36" id="EA1-Py-Zvi"/>
-                    </constraints>
-                    <state key="normal" image="ic_chevron_left_white"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                            <real key="value" value="0.5"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="previous:" destination="-1" eventType="touchUpInside" id="PXB-Cb-qqQ"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzn-tv-UFx" customClass="MNShadowButton" customModule="mNoisi" customModuleProvider="target">
-                    <rect key="frame" x="329" y="315" width="36" height="36"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="36" id="6yc-bL-NC9"/>
-                        <constraint firstAttribute="width" constant="36" id="yS0-Rv-i4S"/>
-                    </constraints>
-                    <state key="normal" image="ic_chevron_right_white"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                            <real key="value" value="0.5"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="next:" destination="-1" eventType="touchUpInside" id="x8O-S3-QOF"/>
                     </connections>
                 </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFj-58-UoU">
@@ -293,13 +281,9 @@
                 <constraint firstAttribute="trailing" secondItem="usS-UI-kVl" secondAttribute="trailing" id="HI5-0b-FUb"/>
                 <constraint firstAttribute="bottom" secondItem="rFj-58-UoU" secondAttribute="bottom" id="LA3-Xx-UDu"/>
                 <constraint firstItem="usS-UI-kVl" firstAttribute="leading" secondItem="HkL-9M-Itc" secondAttribute="leading" id="Mkv-yZ-wuv"/>
-                <constraint firstItem="Vzn-tv-UFx" firstAttribute="centerY" secondItem="HkL-9M-Itc" secondAttribute="centerY" id="Rmx-By-v3e"/>
                 <constraint firstAttribute="bottom" secondItem="tv4-ux-aUZ" secondAttribute="bottom" id="U1H-ql-cfd"/>
                 <constraint firstItem="qm8-jO-Qwf" firstAttribute="leading" secondItem="HkL-9M-Itc" secondAttribute="leading" id="Vaa-cv-or0"/>
                 <constraint firstAttribute="trailing" secondItem="qm8-jO-Qwf" secondAttribute="trailing" id="W5M-wd-cPe"/>
-                <constraint firstItem="xJm-f6-UMx" firstAttribute="leading" secondItem="HkL-9M-Itc" secondAttribute="leading" constant="10" id="aiq-rH-d3y"/>
-                <constraint firstAttribute="trailing" secondItem="Vzn-tv-UFx" secondAttribute="trailing" constant="10" id="c7V-I1-2Pv"/>
-                <constraint firstItem="xJm-f6-UMx" firstAttribute="centerY" secondItem="HkL-9M-Itc" secondAttribute="centerY" id="ctI-Z1-xBk"/>
                 <constraint firstItem="ugo-Zs-xfw" firstAttribute="leading" secondItem="HkL-9M-Itc" secondAttribute="leading" id="dKv-Me-9T5"/>
                 <constraint firstAttribute="trailing" secondItem="ugo-Zs-xfw" secondAttribute="trailing" id="eR3-a9-V3u"/>
                 <constraint firstAttribute="trailing" secondItem="49o-Yc-2o5" secondAttribute="trailing" id="f5z-J7-CrO"/>
@@ -318,8 +302,6 @@
         <image name="expand" width="23" height="22"/>
         <image name="favor" width="23" height="22"/>
         <image name="favor-on" width="22" height="22"/>
-        <image name="ic_chevron_left_white" width="36" height="36"/>
-        <image name="ic_chevron_right_white" width="36" height="36"/>
         <image name="meditation" width="27" height="27"/>
         <image name="mine" width="28" height="28"/>
         <image name="natrual sound" width="27" height="27"/>

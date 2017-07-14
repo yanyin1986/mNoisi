@@ -78,9 +78,6 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         volumeSlider.value = MNPlayer.shared.volume
         MNPlayer.shared.delegate = self
         self.collectionView.register(UINib(nibName: "MNTrackCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "trackCell")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.calculateIndex(self.collectionView)
-        }
 
         tracks.append(contentsOf: MNTrackManager.shared.tracks)
         tracks.insert(MNTrackManager.shared.tracks.last!, at: 0)
@@ -99,6 +96,12 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        if _currentIndex == -1 {
+            self.select(track: MNTrackManager.shared.tracks.first!)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                self.play()
+            })
+        }
     }
 
     // MARK: MNPlayerDelegate
@@ -137,10 +140,16 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     }
 
     func playerListDidSelectTrack(_ track: MNTrack) {
+        self.select(track: track)
+        self.play()
+    }
+
+    private func select(track: MNTrack, animated: Bool = false) {
         guard let index = self.tracks.index(where: { $0 == track }) else { return }
         _currentIndex = index
-        self.collectionView.scrollToItem(at: IndexPath.init(row: index, section: 0), at: .centeredHorizontally, animated: false)
-        self.play()
+        self.collectionView.scrollToItem(at: IndexPath(row: index, section: 0),
+                                         at: .centeredHorizontally,
+                                         animated: animated)
     }
 
     
@@ -161,21 +170,19 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     }
 
     @IBAction func previous(_ sender: Any) {
-        /*
-        let index = _currentIndex == 0 ? MNTrackManager.shared.tracks.count - 1 : _currentIndex - 1
-        self.collectionView.scrollToItem(at: IndexPath.init(row: index, section: 0), at: .centeredHorizontally, animated: true)
+        let index = _currentIndex == 0 ? self.tracks.count - 2 : _currentIndex - 1
+        self.collectionView.scrollToItem(at: IndexPath(row: index, section: 0),
+                                         at: .centeredHorizontally,
+                                         animated: true)
         _currentIndex = index
         self.play()
- */
     }
 
     @IBAction func next(_ sender: Any) {
-        /*
-        let index = _currentIndex + 1 >= MNTrackManager.shared.tracks.count ? 0 : _currentIndex + 1
+        let index = _currentIndex + 1 >= self.tracks.count ? 1 : _currentIndex + 1
         self.collectionView.scrollToItem(at: IndexPath.init(row: index, section: 0), at: .centeredHorizontally, animated: true)
         _currentIndex = index
         self.play()
- */
     }
 
     @IBAction
@@ -234,7 +241,6 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
             return
         }
         let track = self.tracks[_currentIndex]// MNTrackManager.shared.tracks[_currentIndex]
-
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
             MNTrackManager.shared.like(track: track)
@@ -279,6 +285,9 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         print(self.view.frame.size)
         return self.view.frame.size
@@ -298,12 +307,12 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     }
 
     func jumpToLast() {
-        let indexPath = IndexPath.init(row: self.tracks.count - 2, section: 0)
+        let indexPath = IndexPath(row: self.tracks.count - 2, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
     }
 
     func jumpToFirst() {
-        let indexPath = IndexPath.init(row: 1, section: 0)
+        let indexPath = IndexPath(row: 1, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
     }
 
@@ -336,6 +345,7 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         let track = self.tracks[_currentIndex]
         //MNTrackManager.shared.tracks[_currentIndex]
         self.titleLabel.text = track.name
+        self.likeButton.isSelected = MNTrackManager.shared.isTrackLiked(track)
         self.playButton.isSelected = true
         MNPlayer.shared.reset(withTrack: track)
 

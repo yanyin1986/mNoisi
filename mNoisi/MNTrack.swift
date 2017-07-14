@@ -57,7 +57,10 @@ public class MNTrackManager {
 
     public var liked: [MNTrack] {
         var trackList = [MNTrack]()
-        for id in likedTracks {
+        let liked = likedTracks.sorted { (id0, id1) -> Bool in
+            return id0 < id1
+        }
+        for id in liked {
             if let track = tracks.first(where: { $0.id == id }) {
                 trackList.append(track)
             }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MNBreathViewController: MNBaseViewController, MNTimerViewControllerDelegate {
+class MNBreathViewController: _BaseViewController, MNTimerViewControllerDelegate {
 
     @IBOutlet weak var tip1Label: UILabel!
     @IBOutlet weak var tip2Label: UILabel!

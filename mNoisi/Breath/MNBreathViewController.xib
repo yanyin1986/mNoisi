@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MNBreathViewController" customModule="mNoisi" customModuleProvider="target">
             <connections>
-                <outlet property="tip1Label" destination="6u1-wk-UvM" id="fVy-rB-6Td"/>
-                <outlet property="tip2Label" destination="ww4-uW-CS1" id="RUN-eI-bqO"/>
+                <outlet property="tip1Label" destination="6u1-wk-UvM" id="3j7-Rc-ydg"/>
+                <outlet property="tip2Label" destination="ww4-uW-CS1" id="Ifx-qZ-tyR"/>
                 <outlet property="view" destination="5Cg-4q-iN7" id="pcf-KV-GyO"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="5Cg-4q-iN7" customClass="MNGradientView" customModule="mNoisi" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfR-D0-3NB">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5u-gn-Cjt" customClass="MNShadowButton" customModule="mNoisi" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="20" width="50" height="50"/>
@@ -35,18 +34,18 @@
                                 <color key="titleShadowColor" white="0.0" alpha="0.75569432219999999" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="dismiss:" destination="-1" eventType="touchUpInside" id="MlQ-o0-lxf"/>
+                                <action selector="dismiss:" destination="-1" eventType="touchUpInside" id="n5Y-7d-ibG"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breathe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuJ-sI-GWW" customClass="MNShadowLabel" customModule="mNoisi" customModuleProvider="target">
-                            <rect key="frame" x="159" y="35" width="57" height="19.5"/>
+                            <rect key="frame" x="131.5" y="35" width="57" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                             <size key="shadowOffset" width="1" height="1"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4up-mS-lmT">
-                            <rect key="frame" x="325" y="20" width="50" height="50"/>
+                            <rect key="frame" x="270" y="20" width="50" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="awe-bD-DgO"/>
                                 <constraint firstAttribute="height" constant="50" id="igg-Az-Qoc"/>
@@ -56,7 +55,7 @@
                                 <color key="titleShadowColor" white="0.0" alpha="0.75569432219999999" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="timerButtonPressed:" destination="-1" eventType="touchUpInside" id="Z51-gf-q7B"/>
+                                <action selector="timerButtonPressed:" destination="-1" eventType="touchUpInside" id="PZV-ke-CAh"/>
                             </connections>
                         </button>
                     </subviews>
@@ -71,26 +70,26 @@
                     </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_breath" translatesAutoresizingMaskIntoConstraints="NO" id="4Ni-UW-Us6">
-                    <rect key="frame" x="137.5" y="178" width="100" height="100"/>
+                    <rect key="frame" x="110" y="178" width="100" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="M9r-pj-Zi7"/>
                         <constraint firstAttribute="width" constant="100" id="hQD-h7-yyh"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Deep Breath" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6u1-wk-UvM">
-                    <rect key="frame" x="108.5" y="348" width="158" height="24"/>
+                    <rect key="frame" x="81" y="348" width="158" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ww4-uW-CS1">
-                    <rect key="frame" x="164" y="384" width="47.5" height="24"/>
+                    <rect key="frame" x="136.5" y="384" width="47.5" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4p5-tD-l2m" customClass="MNGradientView" customModule="mNoisi" customModuleProvider="target">
-                    <rect key="frame" x="112" y="458" width="152" height="45"/>
+                    <rect key="frame" x="84" y="458" width="152" height="45"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="71r-4r-iib"/>
@@ -112,11 +111,11 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPF-ST-Vrk">
-                    <rect key="frame" x="112" y="458" width="152" height="45"/>
+                    <rect key="frame" x="84" y="458" width="152" height="45"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="Start"/>
                     <connections>
-                        <action selector="startBreath:" destination="-1" eventType="touchUpInside" id="CS6-YD-tR7"/>
+                        <action selector="startBreath:" destination="-1" eventType="touchUpInside" id="Zlj-kR-jmq"/>
                     </connections>
                 </button>
             </subviews>

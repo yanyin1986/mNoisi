@@ -258,7 +258,9 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
 
     @IBAction
     func meditationButtonPressed(_ sender: Any) {
-
+        let vc = MNNavigationController(rootViewController: MNMeditationViewController())
+        vc.isNavigationBarHidden = true
+        self.navigationController?.present(vc, animated: true, completion: nil)
     }
 
     @IBAction

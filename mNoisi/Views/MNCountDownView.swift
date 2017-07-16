@@ -8,10 +8,19 @@
 
 import UIKit
 
+extension UIBezierPath {
+    
+    convenience init(arcCenter: CGPoint, radius: CGFloat) {
+        self.init(arcCenter: arcCenter, radius: radius, startAngle: CGFloat(-Double.pi / 2.0), endAngle: CGFloat(Double.pi / 2.0 * 3.0), clockwise: true)
+    }
+}
+
 class MNCountDownView: UIView {
 
-    var _unspentTimeLayer: CAShapeLayer = CAShapeLayer()
-    var _spentTimeLayer: CAShapeLayer = CAShapeLayer()
+    private var _timeLabel: UILabel = UILabel()
+    private var _unspentTimeLayer: CAShapeLayer = CAShapeLayer()
+    private var _spentTimeLayer: CAShapeLayer = CAShapeLayer()
+    private var _bgTimeLayer: CAShapeLayer = CAShapeLayer()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,24 +40,46 @@ class MNCountDownView: UIView {
         let radius = (side - borderWidth) / 2.0
         print(radius)
 
-        let path: UIBezierPath = UIBezierPath.init(arcCenter: center, radius: radius, startAngle: CGFloat(-Double.pi / 2.0), endAngle: CGFloat(Double.pi / 2.0 * 3.0), clockwise: true)
+        let path: UIBezierPath = UIBezierPath(arcCenter: center, radius: radius)
+        _bgTimeLayer.path = path.cgPath
+        _bgTimeLayer.fillRule = kCAFillRuleNonZero
+        _bgTimeLayer.fillColor = UIColor.clear.cgColor
+        _bgTimeLayer.frame = self.bounds
+        _bgTimeLayer.lineWidth = 1
+        _bgTimeLayer.strokeColor = UIColor(white: 0.77, alpha: 1.0).cgColor
+        
+        let innerPath: UIBezierPath = UIBezierPath(arcCenter: center, radius: radius - 18)
         print(path)
-        _unspentTimeLayer.path = path.cgPath
+        _unspentTimeLayer.path = innerPath.cgPath
         _unspentTimeLayer.fillRule = kCAFillRuleNonZero
         _unspentTimeLayer.fillColor = UIColor.clear.cgColor
         _unspentTimeLayer.frame = self.bounds
         _unspentTimeLayer.lineWidth = borderWidth
         _unspentTimeLayer.strokeColor = UIColor(white: 0.77, alpha: 1.0).cgColor
 
-        _spentTimeLayer.path = path.cgPath
+        _spentTimeLayer.path = innerPath.cgPath
         _spentTimeLayer.fillRule = kCAFillRuleNonZero
         _spentTimeLayer.fillColor = UIColor.clear.cgColor
         _spentTimeLayer.frame = self.bounds
         _spentTimeLayer.lineWidth = borderWidth
         _spentTimeLayer.strokeColor = UIColor(white: 0.9, alpha: 1.0).cgColor
 
+        self.layer.addSublayer(_bgTimeLayer)
         self.layer.addSublayer(_unspentTimeLayer)
         self.layer.addSublayer(_spentTimeLayer)
+        
+        _timeLabel.font = UIFont.boldSystemFont(ofSize: 40)
+        _timeLabel.text = ""
+        _timeLabel.textAlignment = .center
+        _timeLabel.textColor = UIColor(white: 0.9, alpha: 1.0)
+        _timeLabel.frame = self.bounds
+        self.addSubview(_timeLabel)
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        _timeLabel.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
     }
 
     var progress: CGFloat = 0.0 {
@@ -60,6 +91,13 @@ class MNCountDownView: UIView {
             _spentTimeLayer.strokeEnd = progress - 0.01
             _spentTimeLayer.strokeStart = 0.00
             CATransaction.commit()
+        }
+    }
+    
+    var title: String = "" {
+        didSet {
+            _timeLabel.text = title
+            _timeLabel.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
         }
     }
 

@@ -1,20 +1,100 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MNMeditationStartViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MNMeditationStartViewController" customModule="mNoisi" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="countDownLabel" destination="OYA-ca-vhe" id="OJ2-SP-XnX"/>
+                <outlet property="countDownView" destination="HmM-ds-Dl0" id="WTQ-XB-CEk"/>
+                <outlet property="tipLabel" destination="fdq-LA-hEW" id="fl2-6Z-oXq"/>
+                <outlet property="view" destination="7ab-nq-kGd" id="1Qt-l5-4Xg"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view contentMode="scaleToFill" id="7ab-nq-kGd" customClass="MNGradientView" customModule="mNoisi" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XuC-UI-NIS">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChG-vX-0pE" customClass="MNShadowButton" customModule="mNoisi" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="20" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="5dQ-Hp-szW"/>
+                                <constraint firstAttribute="width" constant="50" id="N4s-fP-B6W"/>
+                            </constraints>
+                            <size key="titleShadowOffset" width="1" height="1"/>
+                            <state key="normal" image="exit-white">
+                                <color key="titleShadowColor" white="0.0" alpha="0.75569432219999999" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="dismiss:" destination="-1" eventType="touchUpInside" id="FsL-N6-BBW"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="2rC-be-SdQ"/>
+                        <constraint firstItem="ChG-vX-0pE" firstAttribute="leading" secondItem="XuC-UI-NIS" secondAttribute="leading" id="i9T-1G-SxJ"/>
+                        <constraint firstAttribute="bottom" secondItem="ChG-vX-0pE" secondAttribute="bottom" id="piQ-rW-rtP"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmM-ds-Dl0" customClass="MNCountDownView" customModule="mNoisi" customModuleProvider="target">
+                    <rect key="frame" x="67" y="130" width="240" height="240"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="apx-Fg-OY2"/>
+                        <constraint firstAttribute="height" constant="240" id="tHZ-Ch-iwU"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYA-ca-vhe">
+                    <rect key="frame" x="178" y="410" width="18.5" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdq-LA-hEW">
+                    <rect key="frame" x="187" y="465" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OYA-ca-vhe" firstAttribute="centerX" secondItem="7ab-nq-kGd" secondAttribute="centerX" id="4DC-St-kUI"/>
+                <constraint firstItem="HmM-ds-Dl0" firstAttribute="centerX" secondItem="7ab-nq-kGd" secondAttribute="centerX" id="JCy-6X-gch"/>
+                <constraint firstItem="fdq-LA-hEW" firstAttribute="top" secondItem="HmM-ds-Dl0" secondAttribute="bottom" constant="95" id="NFX-ID-xgA"/>
+                <constraint firstItem="XuC-UI-NIS" firstAttribute="top" secondItem="7ab-nq-kGd" secondAttribute="top" id="RRz-Ea-Vpn"/>
+                <constraint firstItem="fdq-LA-hEW" firstAttribute="centerX" secondItem="7ab-nq-kGd" secondAttribute="centerX" id="eUJ-hL-6p2"/>
+                <constraint firstItem="HmM-ds-Dl0" firstAttribute="top" secondItem="XuC-UI-NIS" secondAttribute="bottom" constant="60" id="hWf-ds-31m"/>
+                <constraint firstItem="OYA-ca-vhe" firstAttribute="top" secondItem="HmM-ds-Dl0" secondAttribute="bottom" constant="40" id="msI-fc-em7"/>
+                <constraint firstItem="XuC-UI-NIS" firstAttribute="leading" secondItem="7ab-nq-kGd" secondAttribute="leading" id="oYB-Vw-FcQ"/>
+                <constraint firstAttribute="trailing" secondItem="XuC-UI-NIS" secondAttribute="trailing" id="of3-Za-7yk"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                    <color key="value" red="0.3803921569" green="0.26274509800000001" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                    <color key="value" red="0.31764705879999999" green="0.38823529410000002" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                    <point key="value" x="0.0" y="0.5"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
+                    <point key="value" x="1" y="0.5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
         </view>
     </objects>
+    <resources>
+        <image name="exit-white" width="24" height="24"/>
+    </resources>
 </document>

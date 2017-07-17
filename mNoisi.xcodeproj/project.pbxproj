@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1AD0F21F1C9FA000C7C994 /* TTRateKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1AD0F11F1C9FA000C7C994 /* TTRateKit.swift */; };
+		2C1AD0F41F1CA6AA00C7C994 /* Rate.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C1AD0F31F1CA6AA00C7C994 /* Rate.strings */; };
+		2C1AD0F71F1CC0E700C7C994 /* MNLocalWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1AD0F51F1CC0E700C7C994 /* MNLocalWebViewController.swift */; };
+		2C1AD0F81F1CC0E700C7C994 /* MNLocalWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1AD0F61F1CC0E700C7C994 /* MNLocalWebViewController.xib */; };
+		2C1AD0FB1F1CC95700C7C994 /* eula.html in Resources */ = {isa = PBXBuildFile; fileRef = 2C1AD0F91F1CC95700C7C994 /* eula.html */; };
+		2C1AD0FC1F1CC95700C7C994 /* privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = 2C1AD0FA1F1CC95700C7C994 /* privacy.html */; };
 		2C3F0A011F132B1200CCB177 /* crackling_fire_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F09FB1F132B1200CCB177 /* crackling_fire_sound.mp3 */; };
 		2C3F0A021F132B1200CCB177 /* distantthunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F09FC1F132B1200CCB177 /* distantthunder.mp3 */; };
 		2C3F0A031F132B1200CCB177 /* fairypond.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F09FD1F132B1200CCB177 /* fairypond.mp3 */; };
@@ -104,6 +110,12 @@
 
 /* Begin PBXFileReference section */
 		061546CF2EB2617C79F9CBD2 /* Pods_mNoisi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mNoisi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C1AD0F11F1C9FA000C7C994 /* TTRateKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTRateKit.swift; sourceTree = "<group>"; };
+		2C1AD0F31F1CA6AA00C7C994 /* Rate.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Rate.strings; sourceTree = "<group>"; };
+		2C1AD0F51F1CC0E700C7C994 /* MNLocalWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNLocalWebViewController.swift; sourceTree = "<group>"; };
+		2C1AD0F61F1CC0E700C7C994 /* MNLocalWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNLocalWebViewController.xib; sourceTree = "<group>"; };
+		2C1AD0F91F1CC95700C7C994 /* eula.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = eula.html; sourceTree = "<group>"; };
+		2C1AD0FA1F1CC95700C7C994 /* privacy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
 		2C3F09FB1F132B1200CCB177 /* crackling_fire_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crackling_fire_sound.mp3; sourceTree = "<group>"; };
 		2C3F09FC1F132B1200CCB177 /* distantthunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = distantthunder.mp3; sourceTree = "<group>"; };
 		2C3F09FD1F132B1200CCB177 /* fairypond.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fairypond.mp3; sourceTree = "<group>"; };
@@ -281,6 +293,7 @@
 				F709DCA01EF54CB10016C409 /* MNDefaults.swift */,
 				2C4CC2B01F15E70A00FED7A7 /* MNTimer.h */,
 				2C4CC2B11F15E70A00FED7A7 /* MNTimer.m */,
+				2C1AD0F11F1C9FA000C7C994 /* TTRateKit.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -299,6 +312,8 @@
 				2C3F0A191F13573600CCB177 /* MNSwitchTableViewCell.xib */,
 				F78B60D61ED4FB9000D5468F /* MNTextTableViewCell.swift */,
 				2C3F0A1B1F13576700CCB177 /* MNTextTableViewCell.xib */,
+				2C1AD0F51F1CC0E700C7C994 /* MNLocalWebViewController.swift */,
+				2C1AD0F61F1CC0E700C7C994 /* MNLocalWebViewController.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -443,6 +458,8 @@
 				F7FB6EDB1EC8F8DA0086E576 /* LaunchScreen.storyboard */,
 				F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */,
 				F7FB6EDE1EC8F8DA0086E576 /* Info.plist */,
+				2C1AD0F91F1CC95700C7C994 /* eula.html */,
+				2C1AD0FA1F1CC95700C7C994 /* privacy.html */,
 				F70910641EE82E7B00B7A699 /* mNoisi.entitlements */,
 				F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */,
 				F709DC9E1EF54B8E0016C409 /* MNDB.swift */,
@@ -451,6 +468,7 @@
 				BAEEF2DC1F1A47BD00EADAF6 /* _BaseViewController.h */,
 				BAEEF2DD1F1A47BD00EADAF6 /* _BaseViewController.m */,
 				BAEEF2E41F1A57F000EADAF6 /* Localizable.strings */,
+				2C1AD0F31F1CA6AA00C7C994 /* Rate.strings */,
 			);
 			path = mNoisi;
 			sourceTree = "<group>";
@@ -492,7 +510,7 @@
 				TargetAttributes = {
 					F7FB6ECE1EC8F8DA0086E576 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = BA96H9FD2B;
+						DevelopmentTeam = 9HK6LYYN6L;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -533,9 +551,11 @@
 				2C9D41EB1F161A83005901CD /* MNBreathResultViewController.xib in Resources */,
 				2C3F0A011F132B1200CCB177 /* crackling_fire_sound.mp3 in Resources */,
 				2CE447F71F14BE72007AD3CD /* MNBreathViewController.xib in Resources */,
+				2C1AD0F41F1CA6AA00C7C994 /* Rate.strings in Resources */,
 				2C3F0A021F132B1200CCB177 /* distantthunder.mp3 in Resources */,
 				2C6F52011F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib in Resources */,
 				2C6A72F91F14C601006B9D6F /* MNTimerViewController.xib in Resources */,
+				2C1AD0FB1F1CC95700C7C994 /* eula.html in Resources */,
 				BAEEF2E31F1A55DC00EADAF6 /* MNMeditationViewController.xib in Resources */,
 				2C3F0A181F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib in Resources */,
 				2C3F0A141F134F4C00CCB177 /* MNMineViewController.xib in Resources */,
@@ -544,6 +564,7 @@
 				2C3F0A111F132B2800CCB177 /* tropicalrain.jpg in Resources */,
 				2CB616481F0F88F700575747 /* MNTrackCollectionViewCell.xib in Resources */,
 				2C3F0A061F132B1200CCB177 /* whiterain.mp3 in Resources */,
+				2C1AD0F81F1CC0E700C7C994 /* MNLocalWebViewController.xib in Resources */,
 				2C3F0A051F132B1200CCB177 /* tropicalrain.mp3 in Resources */,
 				2C3F0A0F1F132B2800CCB177 /* fairypond.jpg in Resources */,
 				2C3F0A101F132B2800CCB177 /* skywalker.jpg in Resources */,
@@ -555,6 +576,7 @@
 				BAEEF2E51F1A57F000EADAF6 /* Localizable.strings in Resources */,
 				2C6F51FF1F0F8BAA006D2387 /* MNTableViewController.xib in Resources */,
 				2C3F0A1C1F13576700CCB177 /* MNTextTableViewCell.xib in Resources */,
+				2C1AD0FC1F1CC95700C7C994 /* privacy.html in Resources */,
 				2C3F0A031F132B1200CCB177 /* fairypond.mp3 in Resources */,
 				2C3F0A0E1F132B2800CCB177 /* distantthunder.jpg in Resources */,
 				2C3F0A041F132B1200CCB177 /* skywalker.mp3 in Resources */,
@@ -590,7 +612,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D77DA1E10DCF771EB8B2CC93 /* [CP] Copy Pods Resources */ = {
@@ -647,6 +669,7 @@
 				F709DCA11EF54CB10016C409 /* MNDefaults.swift in Sources */,
 				2C9D41ED1F1623E1005901CD /* MNBaseViewController.swift in Sources */,
 				F7A133EE1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift in Sources */,
+				2C1AD0F71F1CC0E700C7C994 /* MNLocalWebViewController.swift in Sources */,
 				BAEEF2E11F1A482A00EADAF6 /* MNMeditationViewController.m in Sources */,
 				F7BD9DF81F10796200DD6932 /* FSCalendarScopeHandle.m in Sources */,
 				F70FB8981ECD94CF00E125F5 /* MNTableViewController.swift in Sources */,
@@ -656,6 +679,7 @@
 				F7BD9DEE1F10796200DD6932 /* FSCalendarAppearance.m in Sources */,
 				F7C991BB1EE8E9F300A60BC4 /* MNPlayer.swift in Sources */,
 				F7BD9DF31F10796200DD6932 /* FSCalendarConstants.m in Sources */,
+				2C1AD0F21F1C9FA000C7C994 /* TTRateKit.swift in Sources */,
 				F71D75341F17BD04004161D9 /* MBProgressHUD.m in Sources */,
 				F7BD9DED1F10796200DD6932 /* FSCalendar+Deprecated.m in Sources */,
 				F7BD9DF91F10796200DD6932 /* FSCalendarStickyHeader.m in Sources */,
@@ -813,11 +837,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = mNoisi/mNoisi.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = BA96H9FD2B;
+				DEVELOPMENT_TEAM = 9HK6LYYN6L;
 				INFOPLIST_FILE = mNoisi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.relaxbreath;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.relaxbreathapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mNoisi/mNoisi-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -834,11 +858,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = mNoisi/mNoisi.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = BA96H9FD2B;
+				DEVELOPMENT_TEAM = 9HK6LYYN6L;
 				INFOPLIST_FILE = mNoisi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.relaxbreath;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.relaxbreathapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mNoisi/mNoisi-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;

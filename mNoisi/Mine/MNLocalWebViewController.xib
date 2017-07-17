@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MNLocalWebViewController" customModule="mNoisi" customModuleProvider="target">
+            <connections>
+                <outlet property="titleLabel" destination="uEL-LH-uQI" id="QKg-mc-FOv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="pGq-8g-qVO" id="5qh-yE-YLW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGq-8g-qVO">
+                    <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </webView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n90-Uz-TUQ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USL-qV-Czd">
+                            <rect key="frame" x="0.0" y="20" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="X7a-pT-zYQ"/>
+                                <constraint firstAttribute="height" constant="40" id="xGW-kt-IcD"/>
+                            </constraints>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="exit-white"/>
+                            <connections>
+                                <action selector="back:" destination="-1" eventType="touchUpInside" id="K0E-hf-ifL"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEL-LH-uQI">
+                            <rect key="frame" x="187" y="40.5" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="USL-qV-Czd" firstAttribute="leading" secondItem="n90-Uz-TUQ" secondAttribute="leading" id="AyI-Al-M8a"/>
+                        <constraint firstItem="uEL-LH-uQI" firstAttribute="centerX" secondItem="n90-Uz-TUQ" secondAttribute="centerX" id="QxV-G7-5al"/>
+                        <constraint firstAttribute="height" constant="60" id="gJr-QD-T8v"/>
+                        <constraint firstAttribute="bottom" secondItem="USL-qV-Czd" secondAttribute="bottom" id="gzV-XN-1q4"/>
+                        <constraint firstItem="uEL-LH-uQI" firstAttribute="centerY" secondItem="USL-qV-Czd" secondAttribute="centerY" id="z4f-Jp-X34"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="n90-Uz-TUQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AVb-Sj-cuK"/>
+                <constraint firstItem="pGq-8g-qVO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="FXG-K1-LA9"/>
+                <constraint firstAttribute="trailing" secondItem="pGq-8g-qVO" secondAttribute="trailing" id="H0B-zN-deu"/>
+                <constraint firstAttribute="trailing" secondItem="n90-Uz-TUQ" secondAttribute="trailing" id="IT5-6G-xK5"/>
+                <constraint firstAttribute="bottom" secondItem="pGq-8g-qVO" secondAttribute="bottom" id="Tdm-uo-vEt"/>
+                <constraint firstItem="n90-Uz-TUQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eQM-zG-5Vl"/>
+                <constraint firstItem="pGq-8g-qVO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="obL-rZ-eHM"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="exit-white" width="24" height="24"/>
+    </resources>
+</document>

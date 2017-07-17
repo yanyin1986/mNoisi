@@ -9,6 +9,11 @@
 import UIKit
 import Fabric
 import Crashlytics
+import UserNotifications
+
+struct NotificationSetting {
+    var authStatus: UNAuthorizationStatus
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Fabric.with([Crashlytics.self])
 
+        self.enableLocalNotification()
         application.beginReceivingRemoteControlEvents()
 
         let navigationBarAppear: UINavigationBar = UINavigationBar.appearance()
@@ -48,6 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
+
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -93,5 +101,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+
+    func enableLocalNotification() {
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        center.getNotificationSettings(completionHandler: { (settings) in
+            debugPrint(settings)
+
+            if settings.authorizationStatus == .notDetermined {
+                center.requestAuthorization(options: [.alert, .sound, .badge],
+                                            completionHandler: { (granted, error) in
+                                                //
+                                                debugPrint(granted)
+                                                debugPrint(error)
+                })
+            }
+        })
+        /*
+        center.requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { (granted, error) in
+
+        })
+        */
+    }
 }
 

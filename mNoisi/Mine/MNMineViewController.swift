@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -29,7 +30,11 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 8
+    }
+
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.row >= 3
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,6 +49,17 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
             return cell
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: MNSwitchTableViewCell.reuseIdentifier, for: indexPath) as! MNSwitchTableViewCell
+            cell.switch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
+
+            UNUserNotificationCenter.current().getNotificationSettings(completionHandler: { (setting) in
+                if (setting.authorizationStatus == .denied) {
+                    cell.switch.isEnabled = false
+                } else {
+                    cell.switch.isEnabled = true
+                    cell.switch.isOn = (setting.authorizationStatus == .authorized)
+                }
+            })
+
             cell.backgroundColor = UIColor.clear
             return cell
         } else {
@@ -62,9 +78,36 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
             case 6:
                 // privacy policy
                 cell.titleLabel.text = "Privacy Policy"
+            case 7:
+                // EULA
+                cell.titleLabel.text = "EULA"
             default: break
             }
             return cell
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+        case 3:
+            TTRateKit.shared.shareWithFriends(self.navigationController)
+        case 4:
+            TTRateKit.shared.showRate(self.navigationController)
+        case 5:
+            TTRateKit.shared.showFeedbackEmail(self.navigationController)
+        case 6:
+            let webVC = MNLocalWebViewController()
+            webVC.title = "Privacy Policy"
+            webVC.webURL = Bundle.main.url(forResource: "privacy", withExtension: "html")
+            self.navigationController?.pushViewController(webVC, animated: true)
+        case 7:
+            let webVC = MNLocalWebViewController()
+            webVC.title = "EULA"
+            webVC.webURL = Bundle.main.url(forResource: "eula", withExtension: "html")
+            self.navigationController?.pushViewController(webVC, animated: true)
+        default:
+            debugPrint("")
         }
     }
 
@@ -82,6 +125,38 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
     @IBAction
     func dismiss(_ sender: Any) {
         self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+
+    @objc
+    func switchValueChanged(_ switch: UISwitch) {
+        if `switch`.isOn {
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: [.alert, .badge, .sound],
+                completionHandler: self.requestNotificationComplete(granted:error:))
+        } else {
+            self.requestNotificationComplete(granted: false, error: nil)
+        }
+    }
+
+    func requestNotificationComplete(granted: Bool, error: Error?) {
+        let center = UNUserNotificationCenter.current()
+        if granted {
+            let content = UNMutableNotificationContent()
+            content.title = "Start to Relax"
+            content.body = "relax now!"
+
+            var date = DateComponents()
+            date.hour = 19
+            date.minute = 58
+            let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+            
+            let notificationRequest = UNNotificationRequest(identifier: "com.relax.notification_1", content: content, trigger: trigger)//, trigger: trigger)
+            center.add(notificationRequest, withCompletionHandler: { (error) in
+
+            })
+        } else {
+
+        }
     }
 
     /*

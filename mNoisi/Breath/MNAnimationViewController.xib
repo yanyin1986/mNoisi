@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,8 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MNAnimationViewController" customModule="mNoisi" customModuleProvider="target">
             <connections>
                 <outlet property="breathTipLabel" destination="28Z-2k-nME" id="yFy-fF-Clc"/>
+                <outlet property="breathView" destination="D2k-7z-bTq" id="pA6-GG-hd7"/>
                 <outlet property="countDownLabel" destination="lnR-GK-U1e" id="DJF-iP-MOa"/>
-                <outlet property="countDownView" destination="f0f-i4-5ou" id="kGE-qd-Hhb"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7aV-fD-1sa"/>
             </connections>
         </placeholder>
@@ -45,11 +46,11 @@
                         <constraint firstItem="W2Y-HL-6Z4" firstAttribute="leading" secondItem="eEG-tB-duN" secondAttribute="leading" id="znZ-pg-EGQ"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0f-i4-5ou" customClass="MNCountDownView" customModule="mNoisi" customModuleProvider="target">
-                    <rect key="frame" x="67" y="130" width="240" height="240"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2k-7z-bTq" customClass="MNBreathView" customModule="mNoisi" customModuleProvider="target">
+                    <rect key="frame" x="97" y="150" width="180" height="180"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="240" id="5si-6p-ycN"/>
-                        <constraint firstAttribute="height" constant="240" id="BZT-kl-oxd"/>
+                        <constraint firstAttribute="width" constant="180" id="RMQ-BT-tgZ"/>
+                        <constraint firstAttribute="height" constant="180" id="mmf-gp-NLZ"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnR-GK-U1e">
@@ -67,15 +68,15 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="D2k-7z-bTq" firstAttribute="top" secondItem="eEG-tB-duN" secondAttribute="bottom" constant="80" id="47L-22-NEt"/>
                 <constraint firstItem="eEG-tB-duN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BJL-pi-1wr"/>
                 <constraint firstItem="eEG-tB-duN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PgO-ib-4Nj"/>
-                <constraint firstItem="f0f-i4-5ou" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WSJ-Cq-0bs"/>
+                <constraint firstItem="lnR-GK-U1e" firstAttribute="top" secondItem="D2k-7z-bTq" secondAttribute="bottom" constant="80" id="X9L-JL-Xcx"/>
                 <constraint firstItem="lnR-GK-U1e" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YTb-2W-jG3"/>
                 <constraint firstItem="28Z-2k-nME" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bXZ-IJ-JS5"/>
+                <constraint firstItem="D2k-7z-bTq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lmC-0k-vFJ"/>
                 <constraint firstAttribute="trailing" secondItem="eEG-tB-duN" secondAttribute="trailing" id="lp9-86-9hO"/>
-                <constraint firstItem="28Z-2k-nME" firstAttribute="top" secondItem="f0f-i4-5ou" secondAttribute="bottom" constant="95" id="p89-sM-vOD"/>
-                <constraint firstItem="lnR-GK-U1e" firstAttribute="top" secondItem="f0f-i4-5ou" secondAttribute="bottom" constant="40" id="sSo-er-H8U"/>
-                <constraint firstItem="f0f-i4-5ou" firstAttribute="top" secondItem="eEG-tB-duN" secondAttribute="bottom" constant="60" id="vI4-xT-C23"/>
+                <constraint firstItem="28Z-2k-nME" firstAttribute="top" secondItem="lnR-GK-U1e" secondAttribute="bottom" constant="19" id="t31-Pf-DSd"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <userDefinedRuntimeAttributes>

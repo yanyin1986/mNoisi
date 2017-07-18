@@ -10,11 +10,23 @@ import UIKit
 
 class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
 
-    @IBOutlet weak var countDownView: MNCountDownView!
+
+    enum BreathStatus: Int {
+        case idle      = 0
+        case breathIn  = 1
+        case hold      = 2
+        case breathOut = 3
+    }
+    
+    @IBOutlet weak var breathView: MNBreathView!
     var timer: MNTimer = MNTimer()
     var countDown: Int = 3
     @IBOutlet weak var countDownLabel: UILabel!
     @IBOutlet weak var breathTipLabel: UILabel!
+
+
+    var minute: Int = 5
+    private var status: BreathStatus = .idle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +46,7 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
             timer.duration = 60.0
             timer.delegate = self
             timer.start()
+            self.breathView.startAnimation()
         } else {
             countDownLabel.text = String(self.countDown)
             self.countDownAnimation()
@@ -66,7 +79,21 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
     // MARK: MNTimerDelegate
     func timerDidTip(_ timer: MNTimer!) {
         let time = timer.spentTime
-        countDownView.progress = CGFloat(time / 60.0)
+        let remainTime = time.truncatingRemainder(dividingBy: 12.0)
+
+        if remainTime >= 0.0 && remainTime < 3.5 && status != .breathIn {
+            status = .breathIn
+            breathTipLabel.text = "Breath in ..."
+        } else if remainTime >= 3.5 && remainTime < 6.0 && status != .hold {
+            status = .hold
+            breathTipLabel.text = "Hold..."
+        } else if remainTime >= 6.0 && remainTime < 9.5 && status != .breathOut {
+            status = .breathOut
+            breathTipLabel.text = "Breath out..."
+        } else if remainTime >= 9.5 && status != .idle {
+            status = .idle
+            breathTipLabel.text = "Relax"
+        }
     }
 
     func timerDidFinish(_ timer: MNTimer!) {

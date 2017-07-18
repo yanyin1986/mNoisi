@@ -10,8 +10,8 @@ import UIKit
 
 extension UIBezierPath {
     
-    convenience init(arcCenter: CGPoint, radius: CGFloat) {
-        self.init(arcCenter: arcCenter, radius: radius, startAngle: CGFloat(-Double.pi / 2.0), endAngle: CGFloat(Double.pi / 2.0 * 3.0), clockwise: true)
+    convenience init(arcCenter: CGPoint, radius: CGFloat, clockwise: Bool = true) {
+        self.init(arcCenter: arcCenter, radius: radius, startAngle: CGFloat(-Double.pi / 2.0), endAngle: CGFloat(Double.pi / 2.0 * 3.0), clockwise: clockwise)
     }
 }
 

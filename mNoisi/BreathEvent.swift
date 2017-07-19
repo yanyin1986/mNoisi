@@ -41,7 +41,7 @@ struct BreathEvent {
     }
 }
 
-struct BreathTable {
+struct BreathTable: EventTable {
     let colId = Expression<Int64>("id")
     let colYear = Expression<Int>("year")
     let colMonth = Expression<Int>("month")
@@ -50,6 +50,29 @@ struct BreathTable {
     let colEndTime = Expression<TimeInterval>("endTime")
     let colDuration = Expression<TimeInterval>("duration")
     let colCount = Expression<Int>("count")
+
+    private static let _tableName = "health"
+    var tableName: String {
+        return BreathTable._tableName
+    }
+
+    private var _table: Table = Table(_tableName)
+    var table: Table {
+        return _table
+    }
+
+    var createTableSQL: String {
+        return _table.create(ifNotExists: true, block: { (t) in
+            t.column(colId, primaryKey: PrimaryKey.autoincrement)
+            t.column(colYear)
+            t.column(colMonth)
+            t.column(colDay)
+            t.column(colStartTime)
+            t.column(colEndTime)
+            t.column(colDuration)
+            t.column(colCount)
+        })
+    }
 }
 
 

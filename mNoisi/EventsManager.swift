@@ -10,13 +10,18 @@ import Foundation
 import SQLite
 
 protocol EventTable {
-    
+    var tableName: String { get }
+    var table: Table { get }
+    var createTableSQL: String { get }
 }
 
 struct EventsManager {
     static public let shared: EventsManager = EventsManager()
+
+    static private let breathEventTable: BreathTable = BreathTable()
+    
     static public let tables: [EventTable] = [
-        
+        breathEventTable
     ]
 
     private var db: Connection
@@ -35,18 +40,15 @@ struct EventsManager {
     }
 
     public func setup() {
-        guard let connection = try? Connection(self.dbFileURL.path) else {
-            return
-        }
-
         do {
-            for table in FNDataBase.tables {
-                try connection.run(table.createTableSQL)
+            for table in EventsManager.tables {
+                try db.run(table.createTableSQL)
             }
         } catch {
             print(error)
         }
 
+        /*
         for table in FNDataBase.tables {
             if let modify = table.modifySQL {
                 do {
@@ -56,5 +58,6 @@ struct EventsManager {
                 }
             }
         }
+         */
     }
 }

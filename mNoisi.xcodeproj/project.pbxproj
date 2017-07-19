@@ -60,7 +60,6 @@
 		BAEEF2E51F1A57F000EADAF6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAEEF2E41F1A57F000EADAF6 /* Localizable.strings */; };
 		BAEEF2F61F1A64CB00EADAF6 /* MNMeditationStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEEF2F41F1A64CB00EADAF6 /* MNMeditationStartViewController.swift */; };
 		BAEEF2F71F1A64CB00EADAF6 /* MNMeditationStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAEEF2F51F1A64CB00EADAF6 /* MNMeditationStartViewController.xib */; };
-		F709DC9F1EF54B8E0016C409 /* MNDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709DC9E1EF54B8E0016C409 /* MNDB.swift */; };
 		F709DCA11EF54CB10016C409 /* MNDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709DCA01EF54CB10016C409 /* MNDefaults.swift */; };
 		F70FB8981ECD94CF00E125F5 /* MNTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */; };
 		F71D75341F17BD04004161D9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F71D75331F17BD04004161D9 /* MBProgressHUD.m */; };
@@ -178,7 +177,6 @@
 		F709101B1EE696B600B7A699 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
 		F70910301EE696B600B7A699 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F70910641EE82E7B00B7A699 /* mNoisi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mNoisi.entitlements; sourceTree = "<group>"; };
-		F709DC9E1EF54B8E0016C409 /* MNDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNDB.swift; sourceTree = "<group>"; };
 		F709DCA01EF54CB10016C409 /* MNDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNDefaults.swift; sourceTree = "<group>"; };
 		F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTableViewController.swift; sourceTree = "<group>"; };
 		F71D75321F17BD04004161D9 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -488,7 +486,6 @@
 				2C1AD0FA1F1CC95700C7C994 /* privacy.html */,
 				F70910641EE82E7B00B7A699 /* mNoisi.entitlements */,
 				F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */,
-				F709DC9E1EF54B8E0016C409 /* MNDB.swift */,
 				2CB616491F0F8A0F00575747 /* MNNavigationController.swift */,
 				2C9D41EC1F1623E1005901CD /* MNBaseViewController.swift */,
 				BAEEF2DC1F1A47BD00EADAF6 /* _BaseViewController.h */,
@@ -723,7 +720,6 @@
 				F7BD9DEF1F10796200DD6932 /* FSCalendarCalculator.m in Sources */,
 				F75DC30C1EDE21AB001E5547 /* MNActivityRecords.swift in Sources */,
 				F762B9CB1ED63E7B002C2FB0 /* MNBreathViewController.swift in Sources */,
-				F709DC9F1EF54B8E0016C409 /* MNDB.swift in Sources */,
 				2C57AC741F14727B00C080A1 /* MNShadowLabel.swift in Sources */,
 				2C57AC721F146DA000C080A1 /* MNShadowButton.swift in Sources */,
 				BAEEF2F61F1A64CB00EADAF6 /* MNMeditationStartViewController.swift in Sources */,

@@ -18,13 +18,15 @@ protocol EventTable {
 struct EventsManager {
     static public let shared: EventsManager = EventsManager()
 
-    static private let breathEventTable: BreathTable = BreathTable()
+    static public let breathEventTable: BreathEventTable = BreathEventTable()
+    static public let meditationEventTable: MeditationEventTable = MeditationEventTable()
     
     static public let tables: [EventTable] = [
-        breathEventTable
+        breathEventTable,
+        meditationEventTable,
     ]
 
-    private var db: Connection
+    fileprivate var db: Connection
 
     init() {
         do {
@@ -59,5 +61,145 @@ struct EventsManager {
             }
         }
          */
+    }
+
+}
+
+// MARK: breath event
+extension EventsManager {
+    
+    func insert(_ breathEvent: BreathEvent) {
+        let table = EventsManager.breathEventTable
+
+        let insert = table.table.insert(
+            table.colYear      <- breathEvent.year,
+            table.colMonth     <- breathEvent.month,
+            table.colDay       <- breathEvent.day,
+            table.colStartTime <- breathEvent.startTime,
+            table.colEndTime   <- breathEvent.endTime,
+            table.colDuration  <- breathEvent.duration,
+            table.colType      <- breathEvent.type,
+            table.colRemark    <- breathEvent.remark,
+            table.colUser      <- breathEvent.user)
+        do {
+            try self.db.run(insert)
+        } catch {
+            debugPrint(error.localizedDescription)
+        }
+    }
+
+    func lastBreathEvent() -> BreathEvent? {
+        let table = EventsManager.breathEventTable
+        let query = table.table.order(table.colDay.desc).limit(1)
+
+        do {
+            let results = try self.db.prepare(query)
+            guard let record = results.makeIterator().next() else {
+                return nil
+            }
+            let event = BreathEvent(record)
+            return event
+        } catch {
+            return nil
+        }
+    }
+
+    func breathEvnets(forDay: Int) -> [BreathEvent] {
+        let table = EventsManager.breathEventTable
+        let query = table.table.filter(table.colDay == forDay)
+
+        var events = [BreathEvent]()
+        do {
+            
+            let results = try db.prepare(query)
+            for row in results {
+                events.append(BreathEvent(row))
+            }
+        } catch {
+
+        }
+
+        return events
+        
+    }
+
+    func countBreathEvents(forDay: Int) -> Int {
+        let table = EventsManager.breathEventTable
+        let query = table.table.filter(table.colDay == forDay).count
+
+        do {
+            return try db.scalar(query)
+        } catch {
+            return 0
+        }
+    }
+}
+
+// MARK: meditation event
+extension EventsManager {
+
+    func insert(_ meditationEvent: MeditationEvent) {
+        let table = EventsManager.meditationEventTable
+
+        let insert = table.table.insert(
+            table.colYear      <- meditationEvent.year,
+            table.colMonth     <- meditationEvent.month,
+            table.colDay       <- meditationEvent.day,
+            table.colStartTime <- meditationEvent.startTime,
+            table.colEndTime   <- meditationEvent.endTime,
+            table.colDuration  <- meditationEvent.duration,
+            table.colType      <- meditationEvent.type,
+            table.colRemark    <- meditationEvent.remark,
+            table.colUser      <- meditationEvent.user)
+        do {
+            try self.db.run(insert)
+        } catch {
+            debugPrint(error.localizedDescription)
+        }
+    }
+
+    func lastMeditationEvent() -> MeditationEvent? {
+        let table = EventsManager.meditationEventTable
+        let query = table.table.order(table.colDay.desc).limit(1)
+
+        do {
+            let results = try self.db.prepare(query)
+            guard let record = results.makeIterator().next() else {
+                return nil
+            }
+            let event = MeditationEvent(record)
+            return event
+        } catch {
+            return nil
+        }
+    }
+
+    func breathEvnets(forDay: Int) -> [MeditationEvent] {
+        let table = EventsManager.meditationEventTable
+        let query = table.table.filter(table.colDay == forDay)
+
+        var events = [MeditationEvent]()
+        do {
+
+            let results = try db.prepare(query)
+            for row in results {
+                events.append(MeditationEvent(row))
+            }
+        } catch {
+
+        }
+
+        return events
+    }
+
+    func countMeditationEvents(forDay: Int) -> Int {
+        let table = EventsManager.breathEventTable
+        let query = EventsManager.breathEventTable.table.filter(table.colDay == forDay).count
+
+        do {
+            return try db.scalar(query)
+        } catch {
+            return 0
+        }
     }
 }

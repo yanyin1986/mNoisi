@@ -1,15 +1,15 @@
 //
-//  BreathEvent.swift
+//  MeditationEvent.swift
 //  mNoisi
 //
-//  Created by yan on 2017/07/18.
+//  Created by yan on 2017/07/19.
 //  Copyright © 2017 Leon.yan. All rights reserved.
 //
 
 import Foundation
 import SQLite
 
-struct BreathEvent {
+struct MeditationEvent {
     // 2017
     var year: Int
     // 201704
@@ -27,10 +27,6 @@ struct BreathEvent {
     // user uuid
     var user: String = ""
 
-    mutating func addCount() {
-        self.count += 1
-    }
-
     init(year: Int, month: Int, day: Int, startTime: TimeInterval, endTime: TimeInterval, duration: TimeInterval, count: Int, type: Int, remark: String, user: String) {
         self.year = year
         self.month = month
@@ -45,7 +41,7 @@ struct BreathEvent {
     }
 
     init(_ row: Row) {
-        let table = EventsManager.breathEventTable
+        let table = EventsManager.meditationEventTable
 
         year = row[table.colYear]
         month = row[table.colMonth]
@@ -57,6 +53,10 @@ struct BreathEvent {
         type = row[table.colType]
         remark = row[table.colRemark]
         user = row[table.colUser]
+    }
+
+    mutating func addCount() {
+        self.count += 1
     }
 
     mutating func start() {
@@ -73,7 +73,5 @@ struct BreathEvent {
         self.endTime = endDate.timeIntervalSince1970
         self.duration = endTime - startTime
     }
+    
 }
-
-
-

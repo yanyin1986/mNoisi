@@ -10,6 +10,15 @@ import UIKit
 
 class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
 
+    enum ProgressStatus {
+        case notStart
+        case prepare
+        case hiding
+        case hide
+        case showing
+        case show
+        case finish
+    }
 
     enum BreathStatus: Int {
         case idle      = 0
@@ -23,17 +32,29 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
     var countDown: Int = 3
     @IBOutlet weak var countDownLabel: UILabel!
     @IBOutlet weak var breathTipLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
 
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
+
+    private var _progress: ProgressStatus = .notStart
 
     var minute: Int = 5
     private var status: BreathStatus = .idle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        self.perform(#selector(countDown(_:)), with: nil, afterDelay: 1.0)
-        self.countDownAnimation()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if _progress == .notStart {
+            _progress = .prepare
+            self.perform(#selector(countDown(_:)), with: nil, afterDelay: 1.0)
+            self.countDownAnimation()
+        }
     }
 
     dynamic func countDown(_ sender: Any) {
@@ -47,6 +68,12 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
             timer.delegate = self
             timer.start()
             self.breathView.startAnimation()
+
+            // hide backbutton,
+            //
+            UIView.animate(withDuration: 0.3, animations: { 
+                self.backButton.alpha = 0.0
+            })
         } else {
             countDownLabel.text = String(self.countDown)
             self.countDownAnimation()
@@ -64,6 +91,10 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func showButtons(_ sender: Any) {
+        
     }
 
     @IBAction func dismiss(_ sender: Any) {

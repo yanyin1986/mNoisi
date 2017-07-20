@@ -56,6 +56,7 @@ class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, U
     }
 
     var tracks: [MNTrack] = []
+    var playingTrack: MNTrack!
     private var _lastContentOffsetY: CGFloat?
 
     @IBAction func close(_ sender: Any) {
@@ -133,10 +134,23 @@ class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if let cell = cell as? MNSoundTrackCollectionViewCell {
             let track = tracks[indexPath.row]
+            cell.titleLabel.text = track.name
             cell.soundImageView.image = UIImage(named: track.fullScreen)
 
             let isTrackLiked = MNTrackManager.shared.isTrackLiked(track)
             cell.isFavorite.isHidden = !isTrackLiked
+
+            if track != playingTrack {
+                cell.soundImageView.alpha = 0.5
+                cell.titleLabel.alpha = 0.5
+                cell.isFavorite.alpha = 0.5
+                cell.isPlay.isHidden = true
+            } else {
+                cell.soundImageView.alpha = 1.0
+                cell.titleLabel.alpha = 1.0
+                cell.isFavorite.alpha = 1.0
+                cell.isPlay.isHidden = false
+            }
         }
     }
 
@@ -154,8 +168,16 @@ class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, U
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var reloadIndexPaths = [IndexPath]()
+        reloadIndexPaths.append(indexPath)
+        if let currentPlayingIndex = tracks.index(of: playingTrack) {
+            reloadIndexPaths.append(IndexPath(row: currentPlayingIndex, section: 0))
+        }
+
         let track = tracks[indexPath.row]
         print(track)
+        playingTrack = track
+        collectionView.reloadItems(at: reloadIndexPaths)
         delegate?.playerListDidSelectTrack(track)
 
         /*

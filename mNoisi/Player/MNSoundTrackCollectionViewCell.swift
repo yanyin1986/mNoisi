@@ -13,8 +13,9 @@ class MNSoundTrackCollectionViewCell: UICollectionViewCell {
     static public let reuseIdentifier: String = "soundTrackCell"
 
     @IBOutlet weak var soundImageView: UIImageView!
-
+    @IBOutlet weak var titleLabel: MNShadowLabel!
     @IBOutlet weak var isFavorite: UIImageView!
+    @IBOutlet weak var isPlay: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

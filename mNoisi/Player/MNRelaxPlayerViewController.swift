@@ -158,10 +158,12 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     func showPlayerList(_ sender: UIButton) {
         self.addChildViewController(self.playerListViewController)
         self.playerListViewController.willMove(toParentViewController: self)
+        self.playerListViewController.playingTrack = self.tracks[_currentIndex]
         self.containerView.isHidden = false
         self.containerView.addSubview(self.playerListViewController.view)
         self.playerListViewController.view.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.view.frame.height)
         self.playerListViewController.didMove(toParentViewController: self)
+        self.playerListViewController.collectionView.reloadData()
         UIView.animate(withDuration: 0.35, animations: {
             self.playerListViewController.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         }, completion: { (finish) in

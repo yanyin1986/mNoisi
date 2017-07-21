@@ -13,9 +13,7 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
     enum ProgressStatus {
         case notStart
         case prepare
-        case hiding
         case hide
-        case showing
         case show
         case finish
     }
@@ -30,21 +28,70 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
     @IBOutlet weak var breathView: MNBreathView!
     var timer: MNTimer = MNTimer()
     var countDown: Int = 3
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var countDownLabel: UILabel!
     @IBOutlet weak var breathTipLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
-
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
 
-    private var _progress: ProgressStatus = .notStart
+    private var _progress: ProgressStatus = .notStart {
+        didSet {
+            switch _progress {
+            case .notStart:
+                /* do nothing */
+                break
+            case .prepare:
+                self.playButton.alpha = 0.0
+                self.doneButton.alpha = 0.0
+                self.playButton.isHidden = true
+                self.doneButton.isHidden = true
+                UIView.animate(withDuration: 0.75, animations: {
+                    self.backButton.alpha = 0.0
+                }, completion: { (finished) in
+                    self.backButton.isHidden = true
+                })
+            case .hide:
+                let buttons = [self.playButton, self.doneButton, self.backButton]
+                buttons.forEach { $0?.isHidden = false }
+                UIView.animate(withDuration: 0.75, animations: {
+                    buttons.forEach { $0?.alpha = 0.0 }
+                })
+            case .show:
+                let buttons = [self.playButton, self.doneButton, self.backButton]
+                buttons.forEach {
+                    $0?.alpha = 0.0
+                    $0?.isHidden = false
+                }
+                UIView.animate(withDuration: 0.75, animations: {
+                    buttons.forEach {
+                        $0?.alpha = 1.0
+                    }
+                }, completion: { (finished) in
+
+                })
+            default:
+                /* do nothing */
+                break
+            }
+        }
+    }
 
     var minute: Int = 5
     private var status: BreathStatus = .idle
+    private var duration: TimeInterval = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        duration = TimeInterval(minute) * 60.0
+        self.timeLabel.text = self.timeText(duration)
+    }
+
+    func timeText(_ time: TimeInterval) -> String {
+        let min = Int(time / 60.0)
+        let seconds = Int(time - 60.0 * TimeInterval(min))
+        return String(format: "%d : %02d", min, seconds)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -52,6 +99,13 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
 
         if _progress == .notStart {
             _progress = .prepare
+
+            self.timeLabel.isHidden = false
+            self.timeLabel.alpha = 0.0
+            UIView.animate(withDuration: 0.75, animations: {
+                self.timeLabel.alpha = 1.0
+            })
+
             self.perform(#selector(countDown(_:)), with: nil, afterDelay: 1.0)
             self.countDownAnimation()
         }
@@ -64,16 +118,11 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
             self.countDownLabel.isHidden = true
             // start animation
             timer.interval = 1.0 / 30.0
-            timer.duration = 60.0
+            timer.duration = duration
             timer.delegate = self
             timer.start()
             self.breathView.startAnimation()
 
-            // hide backbutton,
-            //
-            UIView.animate(withDuration: 0.3, animations: { 
-                self.backButton.alpha = 0.0
-            })
         } else {
             countDownLabel.text = String(self.countDown)
             self.countDownAnimation()
@@ -94,7 +143,11 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
     }
     
     @IBAction func showButtons(_ sender: Any) {
-        
+        if _progress == .prepare || _progress == .hide {
+            _progress = .show
+        } else if _progress == .show {
+            _progress = .hide
+        }
     }
 
     @IBAction func dismiss(_ sender: Any) {
@@ -125,6 +178,8 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
             status = .idle
             breathTipLabel.text = "Relax"
         }
+
+        self.timeLabel.text = timeText(duration - time)
     }
 
     func timerDidFinish(_ timer: MNTimer!) {

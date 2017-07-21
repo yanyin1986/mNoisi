@@ -42,6 +42,7 @@ class MNBreathViewController: _BaseViewController, MNTimerViewControllerDelegate
     @IBAction
     func startBreath(_ sender: Any) {
         let animationViewController = MNAnimationViewController()
+        animationViewController.minute = time
         self.navigationController?.pushViewController(animationViewController, animated: true)
     }
 

@@ -64,7 +64,6 @@
 		F70FB8981ECD94CF00E125F5 /* MNTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */; };
 		F71D75341F17BD04004161D9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F71D75331F17BD04004161D9 /* MBProgressHUD.m */; };
 		F7442F451ED7130A008FFF3D /* MNAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442F441ED7130A008FFF3D /* MNAnimationViewController.swift */; };
-		F7442F471ED718A4008FFF3D /* MNFadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */; };
 		F7442F491EDB82E9008FFF3D /* MNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442F481EDB82E9008FFF3D /* MNButton.swift */; };
 		F74E4F391ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74E4F381ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift */; };
 		F75DC30C1EDE21AB001E5547 /* MNActivityRecords.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75DC30B1EDE21AB001E5547 /* MNActivityRecords.swift */; };
@@ -182,7 +181,6 @@
 		F71D75321F17BD04004161D9 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		F71D75331F17BD04004161D9 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		F7442F441ED7130A008FFF3D /* MNAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNAnimationViewController.swift; sourceTree = "<group>"; };
-		F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNFadeSegue.swift; sourceTree = "<group>"; };
 		F7442F481EDB82E9008FFF3D /* MNButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNButton.swift; sourceTree = "<group>"; };
 		F74E4F381ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNTrackCollectionViewCell.swift; sourceTree = "<group>"; };
 		F75DC30B1EDE21AB001E5547 /* MNActivityRecords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNActivityRecords.swift; sourceTree = "<group>"; };
@@ -480,7 +478,6 @@
 				F7BD9DCB1F10796100DD6932 /* mNoisi-Bridging-Header.h */,
 				F78B60D81ED5BC3500D5468F /* MNTrack.swift */,
 				F7FB6EDB1EC8F8DA0086E576 /* LaunchScreen.storyboard */,
-				F7442F461ED718A4008FFF3D /* MNFadeSegue.swift */,
 				F7FB6EDE1EC8F8DA0086E576 /* Info.plist */,
 				2C1AD0F91F1CC95700C7C994 /* eula.html */,
 				2C1AD0FA1F1CC95700C7C994 /* privacy.html */,
@@ -533,7 +530,7 @@
 				TargetAttributes = {
 					F7FB6ECE1EC8F8DA0086E576 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 9HK6LYYN6L;
+						DevelopmentTeam = BA96H9FD2B;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -675,7 +672,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7442F471ED718A4008FFF3D /* MNFadeSegue.swift in Sources */,
 				F7442F451ED7130A008FFF3D /* MNAnimationViewController.swift in Sources */,
 				F7BD9DF21F10796200DD6932 /* FSCalendarCollectionViewLayout.m in Sources */,
 				F7BD9DEC1F10796100DD6932 /* FSCalendar.m in Sources */,
@@ -865,11 +861,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = mNoisi/mNoisi.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9HK6LYYN6L;
+				DEVELOPMENT_TEAM = BA96H9FD2B;
 				INFOPLIST_FILE = mNoisi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.relaxbreathapp;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.relaxbreath;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mNoisi/mNoisi-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -886,11 +882,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = mNoisi/mNoisi.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9HK6LYYN6L;
+				DEVELOPMENT_TEAM = BA96H9FD2B;
 				INFOPLIST_FILE = mNoisi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.relaxbreathapp;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.mmd.relaxbreath;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mNoisi/mNoisi-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;

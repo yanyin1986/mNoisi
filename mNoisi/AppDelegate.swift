@@ -48,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             relaxVC.showList = false
         }
-
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
 

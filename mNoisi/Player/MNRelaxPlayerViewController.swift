@@ -82,6 +82,11 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         tracks.append(contentsOf: MNTrackManager.shared.tracks)
         tracks.insert(MNTrackManager.shared.tracks.last!, at: 0)
         tracks.append(MNTrackManager.shared.tracks.first!)
+        collectionView.alpha = 0.0
+        self.hideStatusBar = true
+        self.bottomViewBottomConst.constant = -70
+        self.view.layoutIfNeeded()
+        self.setNeedsStatusBarAppearanceUpdate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,17 +96,41 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        debugPrint("--- \(self.view.frame)")
         volumeSlider.value = MNPlayer.shared.volume
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if _currentIndex == -1 {
+
+        guard _currentIndex < 0 else { return }
+        if let musicId = Defaults[.lastPlayedMusicId],
+            let index = MNTrackManager.shared.tracks.index(where: { $0.id == musicId }) {
+            /// do have
+            let track = MNTrackManager.shared.tracks[index]
+            self.select(track: track)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                self.play()
+            })
+        } else {
+            /// play first track
             self.select(track: MNTrackManager.shared.tracks.first!)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
                 self.play()
             })
         }
+        self.hideStatusBar = false
+        self.bottomViewBottomConst.constant = 0
+        UIView.animate(withDuration: 0.75, delay: 0.1, options: .curveEaseOut, animations: {
+            self.collectionView.alpha = 1.0
+            self.topView.alpha = 1.0
+            self.bottomView.alpha = 1.0
+            self.playerView.alpha = 1.0
+            self.maskView.alpha = 1.0
+            self.view.layoutIfNeeded()
+            self.setNeedsStatusBarAppearanceUpdate()
+        }, completion: nil)
     }
 
     // MARK: MNPlayerDelegate
@@ -147,9 +176,9 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     private func select(track: MNTrack, animated: Bool = false) {
         guard let index = self.tracks.index(where: { $0 == track }) else { return }
         _currentIndex = index
-        self.collectionView.scrollToItem(at: IndexPath(row: index, section: 0),
-                                         at: .centeredHorizontally,
-                                         animated: animated)
+        let size = self.view.frame.size
+        let offset = CGPoint(x: size.width * CGFloat(index), y: 0)
+        self.collectionView.setContentOffset(offset, animated: animated)
     }
 
     
@@ -293,8 +322,7 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        print(self.view.frame.size)
-        return self.view.frame.size
+        return UIScreen.main.bounds.size
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -347,7 +375,6 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     private func play() {
         guard _currentIndex >= 0 else { return }
         let track = self.tracks[_currentIndex]
-        //MNTrackManager.shared.tracks[_currentIndex]
         self.titleLabel.text = track.name
         self.likeButton.isSelected = MNTrackManager.shared.isTrackLiked(track)
         self.playButton.isSelected = true
@@ -359,6 +386,10 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         }
         self.hudView.show(animated: true)
         self.hudView.hide(animated: true, afterDelay: 2.0)
+
+        ///
+        Defaults[.lastPlayedMusicId] = track.id
+        Defaults.sync()
     }
 
     private func pause() {

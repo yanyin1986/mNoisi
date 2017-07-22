@@ -20,8 +20,8 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0)
         tableView.register(UINib(nibName: "MNCalendarTableViewCell", bundle: nil), forCellReuseIdentifier: "calendarCell")
         tableView.register(UINib(nibName: "MNStaticsInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "staticsInfoCell")
-        tableView.register(UINib(nibName: "MNSwitchTableViewCell", bundle: nil), forCellReuseIdentifier: "switchCell")
-        tableView.register(UINib(nibName: "MNTextTableViewCell", bundle: nil), forCellReuseIdentifier: "textCell")
+        tableView.register(MNSwitchTableViewCell.self, forCellReuseIdentifier: "switchCell")
+        tableView.register(MNTextTableViewCell.self, forCellReuseIdentifier: "textCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,7 +59,7 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
                     cell.switch.isOn = (setting.authorizationStatus == .authorized)
                 }
             })
-
+            cell.titleLabel.text = "Daily Notification"
             cell.backgroundColor = UIColor.clear
             return cell
         } else {

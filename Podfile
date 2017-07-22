@@ -10,4 +10,5 @@ target 'mNoisi' do
     pod 'SQLite.swift'# :git => 'https://github.com/stephencelis/SQLite.swift.git', :branch => 'swift-4'
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'SnapKit', '~> 3.2.0'
 end

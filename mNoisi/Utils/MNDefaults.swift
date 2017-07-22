@@ -22,6 +22,7 @@ open class MNDKey<ValueType>: MNDefaultsKeys {
 extension MNDefaultsKeys {
     static let firstLaunch = MNDKey<Bool>("mmd.noisi.firstLaunch")
     static let databaseInitialized = MNDKey<Bool>("mmd.noisi.database_initialized")
+    static let lastPlayedMusicId = MNDKey<Int64>("mmd.noisi.last_played_music_id")
 }
 
 
@@ -41,9 +42,30 @@ public struct MNDefaults {
         set { _ud.set(newValue, forKey: index._key) }
     }
 
-    subscript(index: MNDKey<Int>) -> Int {
-        get { return _ud.integer(forKey: index._key) }
+    subscript(index: MNDKey<Int>) -> Int? {
+        get {
+            if _ud.object(forKey: index._key) == nil {
+                return nil
+            } else {
+                return _ud.integer(forKey: index._key)
+            }
+        }
         set { _ud.set(newValue, forKey: index._key) }
+    }
+
+    subscript(index: MNDKey<Int64>) -> Int64? {
+        get {
+            if _ud.object(forKey: index._key) == nil {
+                return nil
+            } else {
+                return Int64(_ud.integer(forKey: index._key))
+            }
+        }
+        set { _ud.set(newValue, forKey: index._key) }
+    }
+
+    public func sync() {
+        _ud.synchronize()
     }
 
 }

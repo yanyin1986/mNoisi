@@ -64,6 +64,7 @@ class MNBreathView: UIView {
     }
 
     func startAnimation() {
+        
         let anim1 = CAKeyframeAnimation(keyPath: "lineWidth")
         anim1.keyTimes = [0, 0.29167, 0.5, 0.79167, 1.0]
         anim1.values = [1.0, 50, 50, 1.0, 1.0]

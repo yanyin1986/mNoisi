@@ -28,8 +28,6 @@
 		2C3F0A141F134F4C00CCB177 /* MNMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A131F134F4C00CCB177 /* MNMineViewController.xib */; };
 		2C3F0A161F1356AD00CCB177 /* MNCalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A151F1356AD00CCB177 /* MNCalendarTableViewCell.xib */; };
 		2C3F0A181F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A171F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib */; };
-		2C3F0A1A1F13573600CCB177 /* MNSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A191F13573600CCB177 /* MNSwitchTableViewCell.xib */; };
-		2C3F0A1C1F13576700CCB177 /* MNTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F0A1B1F13576700CCB177 /* MNTextTableViewCell.xib */; };
 		2C4CC2B21F15E70A00FED7A7 /* MNTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4CC2B11F15E70A00FED7A7 /* MNTimer.m */; };
 		2C4CC2B51F15F14A00FED7A7 /* MNTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4CC2B41F15F14A00FED7A7 /* MNTimerViewController.m */; };
 		2C4CC2B71F16059300FED7A7 /* MNAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4CC2B61F16059300FED7A7 /* MNAnimationViewController.xib */; };
@@ -49,7 +47,6 @@
 		2C9D41EB1F161A83005901CD /* MNBreathResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9D41E91F161A83005901CD /* MNBreathResultViewController.xib */; };
 		2C9D41ED1F1623E1005901CD /* MNBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D41EC1F1623E1005901CD /* MNBaseViewController.swift */; };
 		2CB0215D1F0F700800470AD3 /* MNRelaxPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0215C1F0F700800470AD3 /* MNRelaxPlayerViewController.xib */; };
-		2CB616481F0F88F700575747 /* MNTrackCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB616471F0F88F700575747 /* MNTrackCollectionViewCell.xib */; };
 		2CB6164A1F0F8A0F00575747 /* MNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB616491F0F8A0F00575747 /* MNNavigationController.swift */; };
 		2CE447F51F14BBDE007AD3CD /* MNCountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE447F41F14BBDE007AD3CD /* MNCountDownView.swift */; };
 		2CE447F71F14BE72007AD3CD /* MNBreathViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CE447F61F14BE72007AD3CD /* MNBreathViewController.xib */; };
@@ -135,8 +132,6 @@
 		2C3F0A131F134F4C00CCB177 /* MNMineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNMineViewController.xib; sourceTree = "<group>"; };
 		2C3F0A151F1356AD00CCB177 /* MNCalendarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNCalendarTableViewCell.xib; sourceTree = "<group>"; };
 		2C3F0A171F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNStaticsInfoTableViewCell.xib; sourceTree = "<group>"; };
-		2C3F0A191F13573600CCB177 /* MNSwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNSwitchTableViewCell.xib; sourceTree = "<group>"; };
-		2C3F0A1B1F13576700CCB177 /* MNTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNTextTableViewCell.xib; sourceTree = "<group>"; };
 		2C4CC2B01F15E70A00FED7A7 /* MNTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTimer.h; sourceTree = "<group>"; };
 		2C4CC2B11F15E70A00FED7A7 /* MNTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNTimer.m; sourceTree = "<group>"; };
 		2C4CC2B31F15F14A00FED7A7 /* MNTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTimerViewController.h; sourceTree = "<group>"; };
@@ -158,7 +153,6 @@
 		2C9D41E91F161A83005901CD /* MNBreathResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNBreathResultViewController.xib; sourceTree = "<group>"; };
 		2C9D41EC1F1623E1005901CD /* MNBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNBaseViewController.swift; sourceTree = "<group>"; };
 		2CB0215C1F0F700800470AD3 /* MNRelaxPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNRelaxPlayerViewController.xib; sourceTree = "<group>"; };
-		2CB616471F0F88F700575747 /* MNTrackCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNTrackCollectionViewCell.xib; sourceTree = "<group>"; };
 		2CB616491F0F8A0F00575747 /* MNNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNNavigationController.swift; sourceTree = "<group>"; };
 		2CE447F41F14BBDE007AD3CD /* MNCountDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNCountDownView.swift; sourceTree = "<group>"; };
 		2CE447F61F14BE72007AD3CD /* MNBreathViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNBreathViewController.xib; sourceTree = "<group>"; };
@@ -258,7 +252,6 @@
 				F70FB8971ECD94CF00E125F5 /* MNTableViewController.swift */,
 				2C6F51FE1F0F8BAA006D2387 /* MNTableViewController.xib */,
 				F74E4F381ED15C3300CFCDD5 /* MNTrackCollectionViewCell.swift */,
-				2CB616471F0F88F700575747 /* MNTrackCollectionViewCell.xib */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -330,9 +323,7 @@
 				F7A133ED1ECFDFBC001F9124 /* MNStaticsInfoTableViewCell.swift */,
 				2C3F0A171F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib */,
 				F78B60D41ED4FB2800D5468F /* MNSwitchTableViewCell.swift */,
-				2C3F0A191F13573600CCB177 /* MNSwitchTableViewCell.xib */,
 				F78B60D61ED4FB9000D5468F /* MNTextTableViewCell.swift */,
-				2C3F0A1B1F13576700CCB177 /* MNTextTableViewCell.xib */,
 				2C1AD0F51F1CC0E700C7C994 /* MNLocalWebViewController.swift */,
 				2C1AD0F61F1CC0E700C7C994 /* MNLocalWebViewController.xib */,
 			);
@@ -582,20 +573,17 @@
 				BAEEF2F71F1A64CB00EADAF6 /* MNMeditationStartViewController.xib in Resources */,
 				F7FB6EDA1EC8F8DA0086E576 /* Assets.xcassets in Resources */,
 				2C3F0A111F132B2800CCB177 /* tropicalrain.jpg in Resources */,
-				2CB616481F0F88F700575747 /* MNTrackCollectionViewCell.xib in Resources */,
 				2C3F0A061F132B1200CCB177 /* whiterain.mp3 in Resources */,
 				2C1AD0F81F1CC0E700C7C994 /* MNLocalWebViewController.xib in Resources */,
 				2C3F0A051F132B1200CCB177 /* tropicalrain.mp3 in Resources */,
 				2C3F0A0F1F132B2800CCB177 /* fairypond.jpg in Resources */,
 				2C3F0A101F132B2800CCB177 /* skywalker.jpg in Resources */,
-				2C3F0A1A1F13573600CCB177 /* MNSwitchTableViewCell.xib in Resources */,
 				2C4CC2B71F16059300FED7A7 /* MNAnimationViewController.xib in Resources */,
 				2C3F0A161F1356AD00CCB177 /* MNCalendarTableViewCell.xib in Resources */,
 				2C3F0A0D1F132B2800CCB177 /* crackling_fire_sound.jpg in Resources */,
 				2CB0215D1F0F700800470AD3 /* MNRelaxPlayerViewController.xib in Resources */,
 				BAEEF2E51F1A57F000EADAF6 /* Localizable.strings in Resources */,
 				2C6F51FF1F0F8BAA006D2387 /* MNTableViewController.xib in Resources */,
-				2C3F0A1C1F13576700CCB177 /* MNTextTableViewCell.xib in Resources */,
 				2C1AD0FC1F1CC95700C7C994 /* privacy.html in Resources */,
 				2C3F0A031F132B1200CCB177 /* fairypond.mp3 in Resources */,
 				2C3F0A0E1F132B2800CCB177 /* distantthunder.jpg in Resources */,

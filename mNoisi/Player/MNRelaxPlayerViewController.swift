@@ -77,8 +77,8 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         // Do any additional setup after loading the view.
         volumeSlider.value = MNPlayer.shared.volume
         MNPlayer.shared.delegate = self
-        self.collectionView.register(UINib(nibName: "MNTrackCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "trackCell")
-
+        self.collectionView.register(MNTrackCollectionViewCell.self,
+                                     forCellWithReuseIdentifier: "trackCell")
         tracks.append(contentsOf: MNTrackManager.shared.tracks)
         tracks.insert(MNTrackManager.shared.tracks.last!, at: 0)
         tracks.append(MNTrackManager.shared.tracks.first!)

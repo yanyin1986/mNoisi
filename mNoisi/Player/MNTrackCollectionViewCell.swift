@@ -7,8 +7,23 @@
 //
 
 import UIKit
+import SnapKit
 
 class MNTrackCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageView: UIImageView!
-    
+    var imageView: UIImageView!
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        imageView = UIImageView(frame: self.bounds)
+        imageView.contentMode = .scaleAspectFill
+        self.contentView.addSubview(imageView)
+        imageView.snp.makeConstraints { (m) in
+            m.edges.equalTo(self.contentView.snp.edges)
+        }
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("not implement")
+    }
 }

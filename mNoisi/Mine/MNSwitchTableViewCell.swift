@@ -7,17 +7,39 @@
 //
 
 import UIKit
+import SnapKit
 
 class MNSwitchTableViewCell: UITableViewCell {
 
     public static let reuseIdentifier: String = "switchCell"
 
-    @IBOutlet
-    weak var `switch`: UISwitch!
+    var `switch`: UISwitch!
 
-    @IBOutlet
-    weak var titleLabel: UILabel!
+    var titleLabel: UILabel!
 
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        titleLabel = UILabel(frame: CGRect.zero)
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.textColor = UIColor.white
+        self.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { (m) in
+            m.leading.equalTo(self.snp.leading).offset(30)
+            m.centerY.equalTo(self.snp.centerY)
+        }
+
+        `switch` = UISwitch()
+        self.addSubview(`switch`)
+        `switch`.snp.makeConstraints { (m) in
+            m.trailing.equalTo(self.snp.trailing).offset(-8)
+            m.centerY.equalTo(self.snp.centerY)
+        }
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("not implement")
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

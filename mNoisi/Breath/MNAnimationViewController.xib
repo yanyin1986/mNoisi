@@ -70,12 +70,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoF-Bw-whm" customClass="MNRadiusButton" customModule="mNoisi" customModuleProvider="target">
-                    <rect key="frame" x="110" y="456" width="100" height="34"/>
+                    <rect key="frame" x="84" y="456" width="152" height="42"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="100" id="6Uu-pc-qZ5"/>
-                        <constraint firstAttribute="height" constant="34" id="YGR-iV-Jt8"/>
+                        <constraint firstAttribute="width" constant="152" id="6Uu-pc-qZ5"/>
+                        <constraint firstAttribute="height" constant="42" id="YGR-iV-Jt8"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <inset key="contentEdgeInsets" minX="30" minY="8" maxX="30" maxY="8"/>
                     <state key="normal" title="Play"/>
                     <state key="selected" title="Pause"/>
@@ -84,7 +84,7 @@
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                            <real key="value" value="17"/>
+                            <real key="value" value="21"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                             <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,8 +95,8 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lR9-la-Vcm">
-                    <rect key="frame" x="127.5" y="500" width="65" height="33"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <rect key="frame" x="123.5" y="508" width="73" height="38"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <inset key="contentEdgeInsets" minX="15" minY="8" maxX="15" maxY="8"/>
                     <state key="normal" title="Done"/>
                     <connections>

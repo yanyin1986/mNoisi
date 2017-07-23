@@ -72,14 +72,12 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
         }
     }
 
-    var minute: Int = 5
     private var status: BreathStatus = .idle
-    private var duration: TimeInterval = -1
+    var duration: TimeInterval = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        duration = TimeInterval(minute) * 60.0
         self.timeLabel.text = self.timeText(duration)
     }
 
@@ -167,12 +165,9 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
     @IBAction func doneButtonPressed(_ sender: Any) {
         let time = timer.spentTime
         timer.stop()
-        let resultViewController = MNBreathResultViewController()
-        resultViewController.time = Int(time)
-        self.navigationController?.setViewControllers([resultViewController], animated: true)
+        self.showResult(withTime: Int(time), duration: duration)
     }
-    
-    
+
     @IBAction func showButtons(_ sender: Any) {
         guard _progress == .hide || _progress == .show else { return }
         
@@ -188,10 +183,15 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
         self.navigationController?.popViewController(animated: true)
     }
 
-    func finish(_ sender: Any?) {
+    private func showResult(withTime time: Int, duration: TimeInterval) {
         let resultViewController = MNBreathResultViewController()
-        resultViewController.time = Int(duration)
+        resultViewController.time = time
+        resultViewController.duration = duration
         self.navigationController?.setViewControllers([resultViewController], animated: true)
+    }
+
+    func finish(_ sender: Any?) {
+        self.showResult(withTime: Int(duration), duration: duration)
     }
 
     // MARK: MNTimerDelegate

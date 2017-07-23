@@ -12,6 +12,7 @@ class MNBreathResultViewController: MNBaseViewController {
 
     /// seconds
     var time: Int = 0
+    var duration: TimeInterval = -1
     
     @IBOutlet weak var againButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
@@ -75,11 +76,13 @@ class MNBreathResultViewController: MNBaseViewController {
     }
     
     @IBAction func done(_ sender: Any) {
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        let vc = MNMineViewController()
+        self.navigationController?.setViewControllers([vc], animated: true)
     }
 
     @IBAction func redo(_ sender: Any) {
-        let breathViewController = MNBreathViewController()
+        let breathViewController = MNAnimationViewController()
+        breathViewController.duration = duration
         self.navigationController?.setViewControllers([breathViewController], animated: true)
     }
     /*

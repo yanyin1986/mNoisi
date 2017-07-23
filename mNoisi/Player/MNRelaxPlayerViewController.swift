@@ -96,6 +96,25 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         } else {
             volumeSlider.value = MNPlayer.shared.volume
         }
+
+        if showList {
+            self.hideStatusBar = false
+            self.bottomViewBottomConst.constant = 0
+            self.collectionView.alpha = 1.0
+            self.topView.alpha = 1.0
+            self.bottomView.alpha = 1.0
+            self.playerView.alpha = 1.0
+            self.maskView.alpha = 1.0
+
+            self.addChildViewController(self.playerListViewController)
+            self.playerListViewController.willMove(toParentViewController: self)
+            self.playerListViewController.playingTrack = MNTrackManager.shared.tracks.first!
+            self.containerView.isHidden = false
+            self.containerView.addSubview(self.playerListViewController.view)
+            self.playerListViewController.didMove(toParentViewController: self)
+            self.playerListViewController.view.frame = UIScreen.main.bounds
+            self.playerListViewController.collectionView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -193,11 +212,11 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     private func select(track: MNTrack, animated: Bool = false) {
         guard let index = self.tracks.index(where: { $0 == track }) else { return }
         _currentIndex = index
+        self.titleLabel.text = track.name
         let size = self.view.frame.size
         let offset = CGPoint(x: size.width * CGFloat(index), y: 0)
         self.collectionView.setContentOffset(offset, animated: animated)
     }
-
     
     // MARK: Actions
     @IBAction

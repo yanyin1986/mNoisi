@@ -116,7 +116,7 @@ final class MNPlayer: NSObject {
             ]
             
             if let image = UIImage.init(named: track.fullScreen) {
-                info[MPMediaItemPropertyArtwork] = MPMediaItemArtwork.init(image: image)
+                info[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: image)
             }
             
             MPNowPlayingInfoCenter.default().nowPlayingInfo = info

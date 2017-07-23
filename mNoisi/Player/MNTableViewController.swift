@@ -126,8 +126,6 @@ class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, U
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MNSoundTrackCollectionViewCell.reuseIdentifier, for: indexPath) as! MNSoundTrackCollectionViewCell
-
-
         return cell
     }
 

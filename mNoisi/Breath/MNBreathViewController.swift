@@ -17,6 +17,8 @@ class MNBreathViewController: _BaseViewController, MNTimerViewControllerDelegate
         var imageName: String
         var title: String
         var colors: [UIColor]
+        var defaultTime: Int
+        var lastTime: Int?
     }
     
     @IBOutlet
@@ -35,11 +37,15 @@ class MNBreathViewController: _BaseViewController, MNTimerViewControllerDelegate
         BMType.breath     : Meta(imageName: "bg_breath",
                                  title: "Breath",
                                  colors: [ UIColor(red: 36.0/255.0, green: 34.0/255.0, blue: 127.0/255.0, alpha: 1.0),
-                                           UIColor(red: 38.0/255.0, green: 60.0/255.0, blue: 92.0/255.0, alpha: 1.0) ]),
+                                           UIColor(red: 38.0/255.0, green: 60.0/255.0, blue: 92.0/255.0, alpha: 1.0) ],
+                                 defaultTime: 1,
+                                 lastTime: Defaults[.lastBreathTime]),
         BMType.meditation : Meta(imageName: "bg_meditation",
                                  title: "Meditation",
                                  colors: [ UIColor(red: 36.0/255.0, green: 34.0/255.0, blue: 127.0/255.0, alpha: 1.0),
-                                           UIColor(red: 38.0/255.0, green: 60.0/255.0, blue: 92.0/255.0, alpha: 1.0) ]),
+                                           UIColor(red: 38.0/255.0, green: 60.0/255.0, blue: 92.0/255.0, alpha: 1.0) ],
+                                 defaultTime: 5,
+                                 lastTime: Defaults[.lastMeditationTime]),
     ]
 
     override func viewDidLoad() {
@@ -50,6 +56,12 @@ class MNBreathViewController: _BaseViewController, MNTimerViewControllerDelegate
         }
         imageView.image = UIImage(named: meta.imageName)
         titleLabel.text = meta.title
+        
+        if let lastTime = meta.lastTime {
+            time = lastTime
+        } else {
+            time = meta.defaultTime
+        }
         tip2Label.text = String(format: "%d M", time)
     }
 
@@ -93,5 +105,12 @@ class MNBreathViewController: _BaseViewController, MNTimerViewControllerDelegate
     func timerViewController(_ viewController: MNTimerViewController!, didChooseTime time: Int) {
         self.time = time
         self.tip2Label.text = "\(time) M"
+        
+        if type == .breath {
+            Defaults[.lastBreathTime] = time
+        } else {
+            Defaults[.lastMeditationTime] = time
+        }
+        Defaults.sync()
     }
 }

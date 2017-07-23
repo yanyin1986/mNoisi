@@ -20,10 +20,12 @@ open class MNDKey<ValueType>: MNDefaultsKeys {
 }
 
 extension MNDefaultsKeys {
-    static let firstLaunch = MNDKey<Bool>("mmd.noisi.firstLaunch")
+    static let firstLaunch         = MNDKey<Bool>("mmd.noisi.firstLaunch")
     static let databaseInitialized = MNDKey<Bool>("mmd.noisi.database_initialized")
-    static let lastPlayedMusicId = MNDKey<Int64>("mmd.noisi.last_played_music_id")
-    static let playerVolume = MNDKey<Float>("mmd.noisi.player_volume")
+    static let lastPlayedMusicId   = MNDKey<Int64>("mmd.noisi.last_played_music_id")
+    static let playerVolume        = MNDKey<Float>("mmd.noisi.player_volume")
+    static let lastBreathTime      = MNDKey<Int>("mmd.noisi.last_breath_time")
+    static let lastMeditationTime  = MNDKey<Int>("mmd.noisi.last_meditation_time")
 }
 
 

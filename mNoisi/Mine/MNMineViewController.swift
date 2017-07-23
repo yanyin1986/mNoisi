@@ -9,10 +9,14 @@
 import UIKit
 import UserNotifications
 
+let relaxNotificationId = "com.relax.notification_1"
+
 class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet
     private weak var tableView: UITableView!
+
+    private var notificationAuth: UNAuthorizationStatus?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +54,28 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: MNSwitchTableViewCell.reuseIdentifier, for: indexPath) as! MNSwitchTableViewCell
             cell.switch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
+            if let notificationAuth = self.notificationAuth {
+                if notificationAuth == .authorized {
+                    UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (requests) in
+                        if requests.first(where: { $0.identifier == relaxNotificationId }) != nil {
+                            cell.switch.isOn = true
+                        } else {
+                            cell.switch.isOn = false
+                        }
+                    })
+                } else {
+                    ///
+                    cell.switch.isOn = false
+                }
+            } else {
+                UNUserNotificationCenter.current().getNotificationSettings(completionHandler: { (setting) in
+                    self.notificationAuth = setting.authorizationStatus
+                    cell.switch.isOn = (setting.authorizationStatus == .authorized)
+                })
+            }
 
             UNUserNotificationCenter.current().getNotificationSettings(completionHandler: { (setting) in
-                if (setting.authorizationStatus == .denied) {
-                    cell.switch.isEnabled = false
-                } else {
-                    cell.switch.isEnabled = true
-                    cell.switch.isOn = (setting.authorizationStatus == .authorized)
-                }
+                cell.switch.isOn = (setting.authorizationStatus == .authorized)
             })
             cell.titleLabel.text = "Daily Notification"
             cell.backgroundColor = UIColor.clear
@@ -139,6 +157,29 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
     }
 
     func requestNotificationComplete(granted: Bool, error: Error?) {
+        let task: () -> Void = {
+            let indexPath = IndexPath(row: 2, section: 0)
+            guard let switchCell = self.tableView.cellForRow(at: indexPath) as? MNSwitchTableViewCell else { return }
+            switchCell.switch.isOn = false
+
+            if let auth = self.notificationAuth, auth == UNAuthorizationStatus.denied {
+                ///
+                let alert = UIAlertController(title: "Notification permission is denied",
+                                              message: "Please goto Setting->Privacy, turn on notification",
+                                              preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
+                    // do nothing
+                }))
+                alert.addAction(UIAlertAction(title: "Setting", style: .default, handler: { (_) in
+                    // setting
+                    if let url = URL(string: UIApplicationOpenSettingsURLString) {
+                        UIApplication.shared.open(url)
+                    }
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+
         let center = UNUserNotificationCenter.current()
         if granted {
             let content = UNMutableNotificationContent()
@@ -152,10 +193,14 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
             
             let notificationRequest = UNNotificationRequest(identifier: "com.relax.notification_1", content: content, trigger: trigger)//, trigger: trigger)
             center.add(notificationRequest, withCompletionHandler: { (error) in
+                if error == nil {
 
+                } else {
+                    DispatchQueue.main.async(execute: task)
+                }
             })
         } else {
-
+            DispatchQueue.main.async(execute: task)
         }
     }
 

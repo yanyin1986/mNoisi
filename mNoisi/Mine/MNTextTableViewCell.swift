@@ -19,6 +19,7 @@ class MNTextTableViewCell: UITableViewCell {
 
         titleLabel = UILabel()
         titleLabel.textColor = UIColor.white
+        titleLabel.font = UIFont.systemFont(ofSize: 18.0)
         self.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (m) in
             m.leading.equalTo(self.snp.leading).offset(30)

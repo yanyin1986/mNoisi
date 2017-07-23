@@ -38,8 +38,8 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fQ-fn-spR">
-                            <rect key="frame" x="155.5" y="35" width="64.5" height="19.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <rect key="frame" x="148.5" y="33" width="79.5" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                             <size key="shadowOffset" width="1" height="1"/>
@@ -64,13 +64,12 @@
                         <outlet property="delegate" destination="-1" id="pSa-Ae-9uO"/>
                     </connections>
                 </pickerView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceq-h9-6Qq">
-                    <rect key="frame" x="112" y="529" width="150" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="Vcu-lK-f8I"/>
-                        <constraint firstAttribute="width" constant="150" id="Zcy-Hy-igE"/>
-                    </constraints>
-                    <state key="normal" title="Done"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceq-h9-6Qq">
+                    <rect key="frame" x="111" y="529" width="152" height="45"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Done" backgroundImage="gradient_button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                     <connections>
                         <action selector="comfirm:" destination="-1" eventType="touchUpInside" id="87t-UO-QPc"/>
                     </connections>
@@ -98,5 +97,6 @@
     </objects>
     <resources>
         <image name="exit-white" width="24" height="24"/>
+        <image name="gradient_button" width="152" height="45"/>
     </resources>
 </document>

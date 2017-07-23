@@ -19,10 +19,13 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     private weak var topView: UIView!
 
     @IBOutlet
-    weak var titleLabel: MNShadowLabel!
+    private weak var titleLabel: MNShadowLabel!
 
     @IBOutlet
-    weak var maskView: UIView!
+    private weak var maskView: UIView!
+
+    @IBOutlet
+    private weak var fullScreenButton: MNShadowButton!
 
     @IBOutlet
     private weak var playButton: MNShadowButton!
@@ -31,7 +34,7 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     private weak var likeButton: UIButton!
 
     @IBOutlet
-    weak var containerView: UIView!
+    private weak var containerView: UIView!
 
     @IBOutlet
     private weak var bottomView: UIView!
@@ -40,7 +43,7 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     private weak var bottomViewBottomConst: NSLayoutConstraint!
 
     @IBOutlet
-    weak var volumeSlider: UISlider!
+    private weak var volumeSlider: UISlider!
 
     @IBOutlet
     private weak var playerView: UIView!
@@ -48,7 +51,7 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     @IBOutlet
     private weak var collectionView: UICollectionView!
 
-    lazy var playerListViewController: MNTableViewController = {
+    private lazy var playerListViewController: MNTableViewController = {
         let vc = MNTableViewController()
         vc.delegate = self
         return vc
@@ -232,6 +235,7 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
                 self.bottomView.alpha = 0.0
                 self.playerView.alpha = 0.0
                 self.maskView.alpha = 0.0
+                self.fullScreenButton.alpha = 0.65
                 self.view.layoutIfNeeded()
                 self.setNeedsStatusBarAppearanceUpdate()
             }, completion: { (finish) in
@@ -247,6 +251,7 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
                 self.bottomView.alpha = 1.0
                 self.playerView.alpha = 1.0
                 self.maskView.alpha = 1.0
+                self.fullScreenButton.alpha = 1.0
                 self.view.layoutIfNeeded()
                 self.setNeedsStatusBarAppearanceUpdate()
             }, completion: { (finish) in

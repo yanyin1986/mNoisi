@@ -16,6 +16,7 @@
                 <outlet property="bottomViewBottomConst" destination="U1H-ql-cfd" id="qDg-9O-dMP"/>
                 <outlet property="collectionView" destination="tav-Km-tZO" id="SPB-Va-Ekp"/>
                 <outlet property="containerView" destination="rFj-58-UoU" id="aNr-gG-Z0h"/>
+                <outlet property="fullScreenButton" destination="49o-Yc-2o5" id="i4K-Vg-SRc"/>
                 <outlet property="likeButton" destination="Fb0-BJ-9ex" id="qA8-9w-aUx"/>
                 <outlet property="maskView" destination="usS-UI-kVl" id="Jhe-FX-O9r"/>
                 <outlet property="playButton" destination="6kF-Vg-DWl" id="vPE-mR-EQs"/>
@@ -107,7 +108,7 @@
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLB-8g-1t5">
                             <rect key="frame" x="48" y="70" width="279" height="31"/>
                             <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="maximumTrackTintColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="maximumTrackTintColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="volumeChanged:" destination="-1" eventType="valueChanged" id="B41-Fo-onz"/>
                             </connections>

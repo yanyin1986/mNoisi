@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiI-cb-BlL" customClass="FSCalendar">
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiI-cb-BlL" customClass="FSCalendar">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="placeholderType">
@@ -28,9 +28,9 @@
                                 <integer key="value" value="0"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="NO"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="titleTextSize">
-                                <real key="value" value="13"/>
+                                <real key="value" value="12"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
                                 <color key="value" red="0.76078431369999999" green="0.7843137255" blue="0.90588235289999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,7 +41,7 @@
                             <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
                                 <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="useVeryShortWeekdaySymbols" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="useVeryShortWeekdaySymbols" value="NO"/>
                             <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
                                 <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </userDefinedRuntimeAttribute>
@@ -52,7 +52,7 @@
                                 <real key="value" value="12"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="headerTitleTextSize">
-                                <real key="value" value="16"/>
+                                <real key="value" value="15"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="fakeEventDots" value="NO"/>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="fakeSubtitles" value="NO"/>

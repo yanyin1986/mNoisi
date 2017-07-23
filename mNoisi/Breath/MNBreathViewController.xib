@@ -89,32 +89,10 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4p5-tD-l2m" customClass="MNGradientView" customModule="mNoisi" customModuleProvider="target">
-                    <rect key="frame" x="111.5" y="458" width="152" height="45"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="45" id="71r-4r-iib"/>
-                        <constraint firstAttribute="width" constant="152" id="U0g-QT-DGH"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                            <color key="value" red="0.43137254901960786" green="0.49803921568627452" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="centerColor">
-                            <color key="value" red="0.3411764705882353" green="0.32549019607843138" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                            <color key="value" red="0.23921568627450979" green="0.30588235294117649" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="22.5"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPF-ST-Vrk">
-                    <rect key="frame" x="111.5" y="458" width="152" height="45"/>
+                    <rect key="frame" x="112" y="458" width="152" height="45"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <state key="normal" title="Start"/>
+                    <state key="normal" title="Start" backgroundImage="gradient_button"/>
                     <connections>
                         <action selector="startBreath:" destination="-1" eventType="touchUpInside" id="Zlj-kR-jmq"/>
                     </connections>
@@ -122,20 +100,16 @@
             </subviews>
             <constraints>
                 <constraint firstItem="sfR-D0-3NB" firstAttribute="leading" secondItem="5Cg-4q-iN7" secondAttribute="leading" id="687-LN-dep"/>
-                <constraint firstItem="4p5-tD-l2m" firstAttribute="centerX" secondItem="5Cg-4q-iN7" secondAttribute="centerX" id="8y1-Ia-0cY"/>
-                <constraint firstItem="4p5-tD-l2m" firstAttribute="top" secondItem="ww4-uW-CS1" secondAttribute="bottom" constant="50" id="A8u-eO-2dZ"/>
                 <constraint firstItem="4Ni-UW-Us6" firstAttribute="centerX" secondItem="5Cg-4q-iN7" secondAttribute="centerX" id="SHW-CK-dNU"/>
                 <constraint firstItem="ww4-uW-CS1" firstAttribute="top" secondItem="6u1-wk-UvM" secondAttribute="bottom" constant="12" id="Smn-Ny-koG"/>
                 <constraint firstItem="6u1-wk-UvM" firstAttribute="centerX" secondItem="5Cg-4q-iN7" secondAttribute="centerX" id="UJR-xk-9dz"/>
-                <constraint firstItem="GPF-ST-Vrk" firstAttribute="width" secondItem="4p5-tD-l2m" secondAttribute="width" id="V1o-Xw-xse"/>
+                <constraint firstItem="GPF-ST-Vrk" firstAttribute="top" secondItem="ww4-uW-CS1" secondAttribute="bottom" constant="50" id="a26-FO-M5L"/>
                 <constraint firstItem="6u1-wk-UvM" firstAttribute="top" secondItem="4Ni-UW-Us6" secondAttribute="bottom" constant="70" id="jnO-B1-A7X"/>
                 <constraint firstItem="4Ni-UW-Us6" firstAttribute="top" secondItem="sfR-D0-3NB" secondAttribute="bottom" constant="108" id="jzh-Vm-zTt"/>
                 <constraint firstItem="sfR-D0-3NB" firstAttribute="top" secondItem="5Cg-4q-iN7" secondAttribute="top" id="oHS-Bs-7U6"/>
+                <constraint firstItem="GPF-ST-Vrk" firstAttribute="centerX" secondItem="5Cg-4q-iN7" secondAttribute="centerX" id="qlZ-5g-qaE"/>
                 <constraint firstItem="ww4-uW-CS1" firstAttribute="centerX" secondItem="5Cg-4q-iN7" secondAttribute="centerX" id="tHQ-5A-6XR"/>
                 <constraint firstAttribute="trailing" secondItem="sfR-D0-3NB" secondAttribute="trailing" id="tMg-qT-Trb"/>
-                <constraint firstItem="GPF-ST-Vrk" firstAttribute="centerY" secondItem="4p5-tD-l2m" secondAttribute="centerY" id="xYm-xl-V8W"/>
-                <constraint firstItem="GPF-ST-Vrk" firstAttribute="height" secondItem="4p5-tD-l2m" secondAttribute="height" id="xpt-fS-9Th"/>
-                <constraint firstItem="GPF-ST-Vrk" firstAttribute="centerX" secondItem="4p5-tD-l2m" secondAttribute="centerX" id="xuI-8Y-ufd"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <userDefinedRuntimeAttributes>
@@ -152,6 +126,7 @@
     <resources>
         <image name="bg_breath" width="150" height="150"/>
         <image name="exit-white" width="24" height="24"/>
+        <image name="gradient_button" width="152" height="45"/>
         <image name="timer" width="30" height="30"/>
     </resources>
 </document>

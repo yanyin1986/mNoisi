@@ -72,32 +72,10 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNT-K5-fdO" customClass="MNGradientView" customModule="mNoisi" customModuleProvider="target">
-                    <rect key="frame" x="84" y="452" width="152" height="45"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="45" id="H7f-rj-7Oa"/>
-                        <constraint firstAttribute="width" constant="152" id="qpI-mb-2hc"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                            <color key="value" red="0.43137254899999999" green="0.49803921569999998" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="centerColor">
-                            <color key="value" red="0.3411764706" green="0.32549019610000002" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                            <color key="value" red="0.23921568630000001" green="0.30588235289999999" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="22.5"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKJ-Ht-qTy">
                     <rect key="frame" x="84" y="452" width="152" height="45"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <state key="normal" title="Done"/>
+                    <state key="normal" title="Done" backgroundImage="gradient_button"/>
                     <connections>
                         <action selector="done:" destination="-1" eventType="touchUpInside" id="MFd-iw-8bb"/>
                     </connections>
@@ -114,22 +92,18 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="J9x-qA-oA8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4OK-pg-AtG"/>
-                <constraint firstItem="gNT-K5-fdO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="52k-bQ-glB"/>
                 <constraint firstItem="dp2-Fa-wkh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="77u-AS-3h1"/>
-                <constraint firstItem="NKJ-Ht-qTy" firstAttribute="height" secondItem="gNT-K5-fdO" secondAttribute="height" id="85E-GP-nUS"/>
                 <constraint firstItem="8Sa-1b-1Rz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9jd-3P-DqY"/>
                 <constraint firstItem="EcQ-CP-JqE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Agl-dS-Hfh"/>
+                <constraint firstItem="NKJ-Ht-qTy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BmR-6F-3fK"/>
                 <constraint firstItem="8Sa-1b-1Rz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EgI-I0-1ZZ"/>
                 <constraint firstItem="dp2-Fa-wkh" firstAttribute="top" secondItem="EcQ-CP-JqE" secondAttribute="bottom" constant="70" id="NDu-6o-1wH"/>
                 <constraint firstItem="J9x-qA-oA8" firstAttribute="top" secondItem="dp2-Fa-wkh" secondAttribute="bottom" constant="12" id="NlJ-eM-E8i"/>
-                <constraint firstItem="NKJ-Ht-qTy" firstAttribute="centerX" secondItem="gNT-K5-fdO" secondAttribute="centerX" id="T7a-4x-a3N"/>
                 <constraint firstItem="a4q-7G-OWy" firstAttribute="top" secondItem="NKJ-Ht-qTy" secondAttribute="bottom" constant="10" id="TZ5-u6-Gjk"/>
-                <constraint firstItem="gNT-K5-fdO" firstAttribute="top" secondItem="J9x-qA-oA8" secondAttribute="bottom" constant="50" id="Xkp-iT-HE7"/>
-                <constraint firstItem="NKJ-Ht-qTy" firstAttribute="centerY" secondItem="gNT-K5-fdO" secondAttribute="centerY" id="bCM-kx-ZST"/>
                 <constraint firstItem="a4q-7G-OWy" firstAttribute="height" secondItem="NKJ-Ht-qTy" secondAttribute="height" id="dag-fJ-ufP"/>
                 <constraint firstItem="a4q-7G-OWy" firstAttribute="width" secondItem="NKJ-Ht-qTy" secondAttribute="width" id="did-zE-npK"/>
                 <constraint firstItem="EcQ-CP-JqE" firstAttribute="top" secondItem="8Sa-1b-1Rz" secondAttribute="bottom" constant="90" id="ed9-Gc-3kI"/>
-                <constraint firstItem="NKJ-Ht-qTy" firstAttribute="width" secondItem="gNT-K5-fdO" secondAttribute="width" id="pVR-ag-gFw"/>
+                <constraint firstItem="NKJ-Ht-qTy" firstAttribute="top" secondItem="J9x-qA-oA8" secondAttribute="bottom" constant="50" id="jdk-0h-Mhj"/>
                 <constraint firstAttribute="trailing" secondItem="8Sa-1b-1Rz" secondAttribute="trailing" id="qap-it-ag4"/>
                 <constraint firstItem="a4q-7G-OWy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tG3-fG-uev"/>
             </constraints>
@@ -146,6 +120,7 @@
     <resources>
         <image name="bg_completed" width="112" height="112"/>
         <image name="exit-white" width="24" height="24"/>
+        <image name="gradient_button" width="152" height="45"/>
         <image name="icon_share" width="24" height="24"/>
     </resources>
 </document>

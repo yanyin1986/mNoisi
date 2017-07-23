@@ -11,8 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MNBreathViewController" customModule="mNoisi" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="4Ni-UW-Us6" id="1Ot-Kx-cTf"/>
                 <outlet property="tip1Label" destination="6u1-wk-UvM" id="3j7-Rc-ydg"/>
                 <outlet property="tip2Label" destination="ww4-uW-CS1" id="Ifx-qZ-tyR"/>
+                <outlet property="titleLabel" destination="iuJ-sI-GWW" id="fta-eX-gYO"/>
                 <outlet property="view" destination="5Cg-4q-iN7" id="pcf-KV-GyO"/>
             </connections>
         </placeholder>
@@ -70,27 +72,27 @@
                         <constraint firstAttribute="bottom" secondItem="W5u-gn-Cjt" secondAttribute="bottom" id="rtZ-o8-m6N"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_breath" translatesAutoresizingMaskIntoConstraints="NO" id="4Ni-UW-Us6">
-                    <rect key="frame" x="137.5" y="178" width="100" height="100"/>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_breath" translatesAutoresizingMaskIntoConstraints="NO" id="4Ni-UW-Us6">
+                    <rect key="frame" x="87.5" y="150" width="200" height="200"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="M9r-pj-Zi7"/>
-                        <constraint firstAttribute="width" constant="100" id="hQD-h7-yyh"/>
+                        <constraint firstAttribute="height" constant="200" id="M9r-pj-Zi7"/>
+                        <constraint firstAttribute="width" constant="200" id="hQD-h7-yyh"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Deep Breath" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6u1-wk-UvM">
-                    <rect key="frame" x="108.5" y="348" width="158" height="24"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <rect key="frame" x="93" y="370" width="189" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ww4-uW-CS1">
-                    <rect key="frame" x="164" y="384" width="47.5" height="24"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <rect key="frame" x="164.5" y="419" width="46" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPF-ST-Vrk">
-                    <rect key="frame" x="112" y="458" width="152" height="45"/>
+                    <rect key="frame" x="111.5" y="493" width="152" height="45"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="Start" backgroundImage="gradient_button"/>
                     <connections>
@@ -101,11 +103,11 @@
             <constraints>
                 <constraint firstItem="sfR-D0-3NB" firstAttribute="leading" secondItem="5Cg-4q-iN7" secondAttribute="leading" id="687-LN-dep"/>
                 <constraint firstItem="4Ni-UW-Us6" firstAttribute="centerX" secondItem="5Cg-4q-iN7" secondAttribute="centerX" id="SHW-CK-dNU"/>
-                <constraint firstItem="ww4-uW-CS1" firstAttribute="top" secondItem="6u1-wk-UvM" secondAttribute="bottom" constant="12" id="Smn-Ny-koG"/>
+                <constraint firstItem="ww4-uW-CS1" firstAttribute="top" secondItem="6u1-wk-UvM" secondAttribute="bottom" constant="20" id="Smn-Ny-koG"/>
                 <constraint firstItem="6u1-wk-UvM" firstAttribute="centerX" secondItem="5Cg-4q-iN7" secondAttribute="centerX" id="UJR-xk-9dz"/>
                 <constraint firstItem="GPF-ST-Vrk" firstAttribute="top" secondItem="ww4-uW-CS1" secondAttribute="bottom" constant="50" id="a26-FO-M5L"/>
-                <constraint firstItem="6u1-wk-UvM" firstAttribute="top" secondItem="4Ni-UW-Us6" secondAttribute="bottom" constant="70" id="jnO-B1-A7X"/>
-                <constraint firstItem="4Ni-UW-Us6" firstAttribute="top" secondItem="sfR-D0-3NB" secondAttribute="bottom" constant="108" id="jzh-Vm-zTt"/>
+                <constraint firstItem="6u1-wk-UvM" firstAttribute="top" secondItem="4Ni-UW-Us6" secondAttribute="bottom" constant="20" id="jnO-B1-A7X"/>
+                <constraint firstItem="4Ni-UW-Us6" firstAttribute="top" secondItem="sfR-D0-3NB" secondAttribute="bottom" constant="80" id="jzh-Vm-zTt"/>
                 <constraint firstItem="sfR-D0-3NB" firstAttribute="top" secondItem="5Cg-4q-iN7" secondAttribute="top" id="oHS-Bs-7U6"/>
                 <constraint firstItem="GPF-ST-Vrk" firstAttribute="centerX" secondItem="5Cg-4q-iN7" secondAttribute="centerX" id="qlZ-5g-qaE"/>
                 <constraint firstItem="ww4-uW-CS1" firstAttribute="centerX" secondItem="5Cg-4q-iN7" secondAttribute="centerX" id="tHQ-5A-6XR"/>

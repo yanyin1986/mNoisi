@@ -53,9 +53,8 @@
 		2CE447F71F14BE72007AD3CD /* MNBreathViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CE447F61F14BE72007AD3CD /* MNBreathViewController.xib */; };
 		659D868629E656A5440F44EB /* Pods_mNoisi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061546CF2EB2617C79F9CBD2 /* Pods_mNoisi.framework */; };
 		BA98F9671F222BBE001288D3 /* MNRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA98F9661F222BBE001288D3 /* MNRadiusButton.swift */; };
+		BAAEBC801F24E2C1005E30BF /* BMCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAEBC7F1F24E2C1005E30BF /* BMCommon.swift */; };
 		BAEEF2DE1F1A47BD00EADAF6 /* _BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEEF2DD1F1A47BD00EADAF6 /* _BaseViewController.m */; };
-		BAEEF2E11F1A482A00EADAF6 /* MNMeditationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEEF2E01F1A482A00EADAF6 /* MNMeditationViewController.m */; };
-		BAEEF2E31F1A55DC00EADAF6 /* MNMeditationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAEEF2E21F1A55DC00EADAF6 /* MNMeditationViewController.xib */; };
 		BAEEF2E51F1A57F000EADAF6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAEEF2E41F1A57F000EADAF6 /* Localizable.strings */; };
 		BAEEF2F61F1A64CB00EADAF6 /* MNMeditationStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEEF2F41F1A64CB00EADAF6 /* MNMeditationStartViewController.swift */; };
 		BAEEF2F71F1A64CB00EADAF6 /* MNMeditationStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAEEF2F51F1A64CB00EADAF6 /* MNMeditationStartViewController.xib */; };
@@ -160,11 +159,9 @@
 		2CE447F41F14BBDE007AD3CD /* MNCountDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNCountDownView.swift; sourceTree = "<group>"; };
 		2CE447F61F14BE72007AD3CD /* MNBreathViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNBreathViewController.xib; sourceTree = "<group>"; };
 		BA98F9661F222BBE001288D3 /* MNRadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNRadiusButton.swift; sourceTree = "<group>"; };
+		BAAEBC7F1F24E2C1005E30BF /* BMCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCommon.swift; sourceTree = "<group>"; };
 		BAEEF2DC1F1A47BD00EADAF6 /* _BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BaseViewController.h; sourceTree = "<group>"; };
 		BAEEF2DD1F1A47BD00EADAF6 /* _BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BaseViewController.m; sourceTree = "<group>"; };
-		BAEEF2DF1F1A482A00EADAF6 /* MNMeditationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMeditationViewController.h; sourceTree = "<group>"; };
-		BAEEF2E01F1A482A00EADAF6 /* MNMeditationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMeditationViewController.m; sourceTree = "<group>"; };
-		BAEEF2E21F1A55DC00EADAF6 /* MNMeditationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNMeditationViewController.xib; sourceTree = "<group>"; };
 		BAEEF2E41F1A57F000EADAF6 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BAEEF2F41F1A64CB00EADAF6 /* MNMeditationStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNMeditationStartViewController.swift; sourceTree = "<group>"; };
 		BAEEF2F51F1A64CB00EADAF6 /* MNMeditationStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNMeditationStartViewController.xib; sourceTree = "<group>"; };
@@ -339,15 +336,18 @@
 		2CE447F31F14AB4E007AD3CD /* Breath */ = {
 			isa = PBXGroup;
 			children = (
+				BAEEF2F41F1A64CB00EADAF6 /* MNMeditationStartViewController.swift */,
+				BAEEF2F51F1A64CB00EADAF6 /* MNMeditationStartViewController.xib */,
+				BAAEBC7F1F24E2C1005E30BF /* BMCommon.swift */,
 				F7442F441ED7130A008FFF3D /* MNAnimationViewController.swift */,
 				2C4CC2B61F16059300FED7A7 /* MNAnimationViewController.xib */,
+				2C9D41E81F161A83005901CD /* MNBreathResultViewController.swift */,
+				2C9D41E91F161A83005901CD /* MNBreathResultViewController.xib */,
 				F762B9CA1ED63E7B002C2FB0 /* MNBreathViewController.swift */,
 				2CE447F61F14BE72007AD3CD /* MNBreathViewController.xib */,
 				2C4CC2B31F15F14A00FED7A7 /* MNTimerViewController.h */,
 				2C4CC2B41F15F14A00FED7A7 /* MNTimerViewController.m */,
 				2C6A72F81F14C601006B9D6F /* MNTimerViewController.xib */,
-				2C9D41E81F161A83005901CD /* MNBreathResultViewController.swift */,
-				2C9D41E91F161A83005901CD /* MNBreathResultViewController.xib */,
 			);
 			path = Breath;
 			sourceTree = "<group>";
@@ -370,18 +370,6 @@
 				C90F86AF6D27D3C5C7A4BAC5 /* Pods-mNoisi.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		BAEEF2D71F1A41FB00EADAF6 /* Meditation */ = {
-			isa = PBXGroup;
-			children = (
-				BAEEF2DF1F1A482A00EADAF6 /* MNMeditationViewController.h */,
-				BAEEF2E01F1A482A00EADAF6 /* MNMeditationViewController.m */,
-				BAEEF2E21F1A55DC00EADAF6 /* MNMeditationViewController.xib */,
-				BAEEF2F41F1A64CB00EADAF6 /* MNMeditationStartViewController.swift */,
-				BAEEF2F51F1A64CB00EADAF6 /* MNMeditationStartViewController.xib */,
-			);
-			path = Meditation;
 			sourceTree = "<group>";
 		};
 		F71D75311F17BCE2004161D9 /* MBProgressHUD */ = {
@@ -463,7 +451,6 @@
 			isa = PBXGroup;
 			children = (
 				2C6280B01F1E02EF00EABBA3 /* Model */,
-				BAEEF2D71F1A41FB00EADAF6 /* Meditation */,
 				2CE447F31F14AB4E007AD3CD /* Breath */,
 				F7BD9DC91F10793300DD6932 /* Vendor */,
 				2CB0215E1F0F706500470AD3 /* Utils */,
@@ -576,7 +563,6 @@
 				2C6A72F91F14C601006B9D6F /* MNTimerViewController.xib in Resources */,
 				2C11D23C1F248C6200EE03B6 /* a13.mp3 in Resources */,
 				2C1AD0FB1F1CC95700C7C994 /* eula.html in Resources */,
-				BAEEF2E31F1A55DC00EADAF6 /* MNMeditationViewController.xib in Resources */,
 				2C3F0A181F1356E500CCB177 /* MNStaticsInfoTableViewCell.xib in Resources */,
 				2C3F0A141F134F4C00CCB177 /* MNMineViewController.xib in Resources */,
 				2C11D2301F248C6200EE03B6 /* a1.mp3 in Resources */,
@@ -687,7 +673,6 @@
 				2C663C531F1F4B1500F0E547 /* BreathEventTable.swift in Sources */,
 				2C6280AD1F1D9BCE00EABBA3 /* MNBreathView.swift in Sources */,
 				2C1AD0F71F1CC0E700C7C994 /* MNLocalWebViewController.swift in Sources */,
-				BAEEF2E11F1A482A00EADAF6 /* MNMeditationViewController.m in Sources */,
 				F7BD9DF81F10796200DD6932 /* FSCalendarScopeHandle.m in Sources */,
 				F70FB8981ECD94CF00E125F5 /* MNTableViewController.swift in Sources */,
 				F7BD9DFB1F10796200DD6932 /* FSCalendarWeekdayView.m in Sources */,
@@ -703,6 +688,7 @@
 				F71D75341F17BD04004161D9 /* MBProgressHUD.m in Sources */,
 				2C663C551F1F741C00F0E547 /* MeditationEventTable.swift in Sources */,
 				F7BD9DED1F10796200DD6932 /* FSCalendar+Deprecated.m in Sources */,
+				BAAEBC801F24E2C1005E30BF /* BMCommon.swift in Sources */,
 				F7BD9DF91F10796200DD6932 /* FSCalendarStickyHeader.m in Sources */,
 				F7BD9DFA1F10796200DD6932 /* FSCalendarTransitionCoordinator.m in Sources */,
 				F7DE642B1F12724900079BA6 /* MNSegmentControl.swift in Sources */,

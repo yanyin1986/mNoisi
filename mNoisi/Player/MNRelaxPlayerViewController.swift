@@ -226,11 +226,17 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         self.playerListViewController.playingTrack = self.tracks[_currentIndex]
         self.containerView.isHidden = false
         self.containerView.addSubview(self.playerListViewController.view)
-        self.playerListViewController.view.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.view.frame.height)
+        
+        let size = UIScreen.main.bounds.size
+        
+        self.playerListViewController.view.frame = CGRect(x: 0, y: size.height, width: size.width, height: size.height)
+        self.playerListViewController.view.layoutSubviews()
         self.playerListViewController.didMove(toParentViewController: self)
         self.playerListViewController.collectionView.reloadData()
+        self.playerListViewController.scrollToPlayingTrack()
+        
         UIView.animate(withDuration: 0.35, animations: {
-            self.playerListViewController.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+            self.playerListViewController.view.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         }, completion: { (finish) in
 
         })
@@ -320,14 +326,18 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
 
     @IBAction
     func breathButtonPressed(_ sender: Any) {
-        let vc = MNNavigationController(rootViewController: MNBreathViewController())
+        let breathVC = MNBreathViewController()
+        breathVC.type = BMType.breath
+        let vc = MNNavigationController(rootViewController: breathVC)
         vc.isNavigationBarHidden = true
         self.navigationController?.present(vc, animated: true, completion: nil)
     }
 
     @IBAction
     func meditationButtonPressed(_ sender: Any) {
-        let vc = MNNavigationController(rootViewController: MNMeditationViewController())
+        let meditationVC = MNBreathViewController()
+        meditationVC.type = BMType.meditation
+        let vc = MNNavigationController(rootViewController: meditationVC)
         vc.isNavigationBarHidden = true
         self.navigationController?.present(vc, animated: true, completion: nil)
     }

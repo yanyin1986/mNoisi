@@ -63,6 +63,14 @@ class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, U
         self.delegate?.playerListWannaShowBottomView()
         self.delegate?.playerListViewWillHide()
     }
+    
+    //
+    func scrollToPlayingTrack() {
+        if let index = self.tracks.index(of: playingTrack) {
+            let indexPath = IndexPath(row: index, section: 0)
+            self.collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: false)
+        }
+    }
 
     @IBAction func selectedTagChanged(_ sender: MNSegmentControl) {
         if sender.selectedItem == 0 {

@@ -64,9 +64,11 @@ class MNBreathView: UIView {
     }
 
     func startAnimation() {
+        
         let anim1 = CAKeyframeAnimation(keyPath: "lineWidth")
         anim1.keyTimes = [0, 0.29167, 0.5, 0.79167, 1.0]
         anim1.values = [1.0, 50, 50, 1.0, 1.0]
+        anim1.fillMode = kCAFillModeBoth
         anim1.timingFunctions = [ CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn),
                                   CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear),
                                   CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
@@ -78,6 +80,7 @@ class MNBreathView: UIView {
         let anim2 = CAKeyframeAnimation(keyPath: "transform.scale")
         anim2.keyTimes = [0, 0.29167, 0.5, 0.79167, 1.0]
         anim2.values = [1.0, 1.1, 1.1, 1.0, 1.0]
+        anim2.fillMode = kCAFillModeBoth
         anim2.timingFunctions = [ CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn),
                                   CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear),
                                   CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
@@ -87,7 +90,8 @@ class MNBreathView: UIView {
         let anim3 = CAKeyframeAnimation(keyPath: "shadowOpacity")
         anim3.keyTimes = [0, 0.4, 0.5, 0.612, 1.0]
         anim3.values = [0.0, 0.65, 0.75, 0.0, 0.0]
-        anim2.timingFunctions = [ CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear),
+        anim3.fillMode = kCAFillModeBoth
+        anim3.timingFunctions = [ CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear),
                                   CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn),
                                   CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
                                   CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear),]
@@ -112,9 +116,25 @@ class MNBreathView: UIView {
         //, anim4, anim5]
         anim.duration = 12.0
         // TODO: fix repeat count
-        anim.repeatCount = 100
+        anim.repeatCount = 1000
+        anim.fillMode = kCAFillModeBoth
 
         _borderLayer.add(anim, forKey: "anim")
+    }
+    
+    func pause() {
+        let pausedTime = self.layer.convertTime(CACurrentMediaTime(), to: nil)
+        self.layer.speed = 0.0
+        self.layer.timeOffset = pausedTime
+    }
+    
+    func resume() {
+        let pausedTime = self.layer.timeOffset
+        self.layer.speed = 1.0
+        self.layer.timeOffset = 0.0
+        self.layer.beginTime = 0.0
+        let timeSincePause = self.layer.convertTime(CACurrentMediaTime(), to: nil) - pausedTime
+        self.layer.beginTime = timeSincePause
     }
 
 }

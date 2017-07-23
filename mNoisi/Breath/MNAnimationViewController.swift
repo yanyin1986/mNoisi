@@ -122,7 +122,7 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
             timer.delegate = self
             timer.start()
             self.breathView.startAnimation()
-
+            self.playButton.isSelected = true
         } else {
             countDownLabel.text = String(self.countDown)
             self.countDownAnimation()
@@ -141,6 +141,40 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func playButtonPressed(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        
+        if sender.isSelected {
+            if _progress != .hide {
+                _progress = .hide
+            }
+            
+            if timer.isPaused {
+                timer.resume()
+            }
+            
+            breathView.resume()
+        } else {
+            if _progress != .show {
+                _progress = .show
+            }
+            
+            if !timer.isPaused {
+                timer.pause()
+            }
+            breathView.pause()
+        }
+    }
+    
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        let time = timer.spentTime
+        
+        timer.stop()
+        let resultViewController = MNBreathResultViewController()
+        self.navigationController?.setViewControllers([resultViewController], animated: true)
+    }
+    
     
     @IBAction func showButtons(_ sender: Any) {
         if _progress == .prepare || _progress == .hide {

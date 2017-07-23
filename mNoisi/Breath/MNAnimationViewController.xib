@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -69,15 +69,39 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoF-Bw-whm">
-                    <rect key="frame" x="122" y="444" width="76" height="34"/>
-                    <inset key="contentEdgeInsets" minX="15" minY="8" maxX="15" maxY="8"/>
-                    <state key="normal" title="Button"/>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoF-Bw-whm" customClass="MNRadiusButton" customModule="mNoisi" customModuleProvider="target">
+                    <rect key="frame" x="110" y="456" width="100" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="6Uu-pc-qZ5"/>
+                        <constraint firstAttribute="height" constant="34" id="YGR-iV-Jt8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <inset key="contentEdgeInsets" minX="30" minY="8" maxX="30" maxY="8"/>
+                    <state key="normal" title="Play"/>
+                    <state key="selected" title="Pause"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="border">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                            <real key="value" value="17"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="playButtonPressed:" destination="-1" eventType="touchUpInside" id="C3u-cE-DkE"/>
+                    </connections>
                 </button>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lR9-la-Vcm">
-                    <rect key="frame" x="122" y="508" width="76" height="34"/>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lR9-la-Vcm">
+                    <rect key="frame" x="127.5" y="500" width="65" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <inset key="contentEdgeInsets" minX="15" minY="8" maxX="15" maxY="8"/>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="Done"/>
+                    <connections>
+                        <action selector="doneButtonPressed:" destination="-1" eventType="touchUpInside" id="Vo8-dd-Zzs"/>
+                    </connections>
                 </button>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muA-x6-5Yf">
                     <rect key="frame" x="160.5" y="70" width="0.0" height="0.0"/>
@@ -89,13 +113,13 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="D2k-7z-bTq" firstAttribute="top" secondItem="eEG-tB-duN" secondAttribute="bottom" constant="80" id="47L-22-NEt"/>
-                <constraint firstItem="yoF-Bw-whm" firstAttribute="top" secondItem="lnR-GK-U1e" secondAttribute="bottom" constant="8" id="7ca-ek-mlF"/>
+                <constraint firstItem="yoF-Bw-whm" firstAttribute="top" secondItem="lnR-GK-U1e" secondAttribute="bottom" constant="20" id="7ca-ek-mlF"/>
                 <constraint firstItem="eEG-tB-duN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BJL-pi-1wr"/>
                 <constraint firstItem="muA-x6-5Yf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Dsa-y2-3w7"/>
                 <constraint firstItem="muA-x6-5Yf" firstAttribute="top" secondItem="eEG-tB-duN" secondAttribute="bottom" id="JiP-YP-NTJ"/>
                 <constraint firstItem="eEG-tB-duN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PgO-ib-4Nj"/>
                 <constraint firstItem="28Z-2k-nME" firstAttribute="centerY" secondItem="lnR-GK-U1e" secondAttribute="centerY" id="TTI-jE-YrD"/>
-                <constraint firstItem="lR9-la-Vcm" firstAttribute="top" secondItem="yoF-Bw-whm" secondAttribute="bottom" constant="30" id="Ttz-Xo-36h"/>
+                <constraint firstItem="lR9-la-Vcm" firstAttribute="top" secondItem="yoF-Bw-whm" secondAttribute="bottom" constant="10" id="Ttz-Xo-36h"/>
                 <constraint firstItem="lnR-GK-U1e" firstAttribute="top" secondItem="D2k-7z-bTq" secondAttribute="bottom" constant="70" id="X9L-JL-Xcx"/>
                 <constraint firstItem="lnR-GK-U1e" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YTb-2W-jG3"/>
                 <constraint firstItem="28Z-2k-nME" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bXZ-IJ-JS5"/>

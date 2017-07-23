@@ -10,12 +10,20 @@ import UIKit
 
 class MNBreathResultViewController: MNBaseViewController {
 
+    /// seconds
     var time: Int = 0
+    
+    @IBOutlet weak var timeLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        timeLabel.text =
+    }
+    
+    func timeText(_ time: Int) -> String {
+        
     }
 
     override func didReceiveMemoryWarning() {

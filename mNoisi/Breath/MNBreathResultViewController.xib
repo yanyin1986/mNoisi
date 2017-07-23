@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MNBreathResultViewController" customModule="mNoisi" customModuleProvider="target">
             <connections>
+                <outlet property="timeLabel" destination="J9x-qA-oA8" id="Rpw-vA-wm9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -141,6 +142,7 @@
                     <color key="value" red="0.14901960784313725" green="0.23529411764705882" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="13" y="47"/>
         </view>
     </objects>
     <resources>

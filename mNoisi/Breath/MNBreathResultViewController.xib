@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MNBreathResultViewController" customModule="mNoisi" customModuleProvider="target">
             <connections>
+                <outlet property="againButton" destination="a4q-7G-OWy" id="nWp-rp-vxY"/>
+                <outlet property="completeLabel" destination="dp2-Fa-wkh" id="Uk5-9g-R7c"/>
+                <outlet property="doneButton" destination="NKJ-Ht-qTy" id="2PP-ht-Oxc"/>
+                <outlet property="doneImageView" destination="EcQ-CP-JqE" id="qCl-ug-0Yc"/>
                 <outlet property="timeLabel" destination="J9x-qA-oA8" id="Rpw-vA-wm9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -54,26 +58,26 @@
                         <constraint firstAttribute="bottom" secondItem="oVW-3F-JcQ" secondAttribute="bottom" id="nbI-6r-dhd"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_completed" translatesAutoresizingMaskIntoConstraints="NO" id="EcQ-CP-JqE">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_completed" translatesAutoresizingMaskIntoConstraints="NO" id="EcQ-CP-JqE">
                     <rect key="frame" x="104" y="160" width="112" height="112"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="112" id="SCd-O1-zAT"/>
                         <constraint firstAttribute="height" constant="112" id="Z7s-TJ-jSs"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breath Completed!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dp2-Fa-wkh">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breath Completed!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dp2-Fa-wkh">
                     <rect key="frame" x="76" y="342" width="168.5" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9x-qA-oA8">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9x-qA-oA8">
                     <rect key="frame" x="136.5" y="378" width="47.5" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKJ-Ht-qTy">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKJ-Ht-qTy">
                     <rect key="frame" x="84" y="452" width="152" height="45"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="Done" backgroundImage="gradient_button"/>
@@ -81,7 +85,7 @@
                         <action selector="done:" destination="-1" eventType="touchUpInside" id="MFd-iw-8bb"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4q-7G-OWy">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4q-7G-OWy">
                     <rect key="frame" x="84" y="507" width="152" height="45"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Do it again"/>

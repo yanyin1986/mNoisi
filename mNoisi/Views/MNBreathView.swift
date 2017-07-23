@@ -11,9 +11,11 @@ import UIKit
 class MNBreathView: UIView {
     private var _borderLayer: CAShapeLayer = CAShapeLayer()
     private var _maskLayer: CAShapeLayer = CAShapeLayer()
+    private var _bounds: CGRect = CGRect.zero
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self._bounds = self.bounds
         self._commonInit()
     }
 
@@ -27,6 +29,10 @@ class MNBreathView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        if _bounds != self.bounds {
+            _bounds = self.bounds
+            _layout()
+        }
     }
 
     private func _commonInit() {
@@ -61,6 +67,23 @@ class MNBreathView: UIView {
         _borderLayer.shadowRadius = 7.0
         
         self.layer.addSublayer(_borderLayer)
+    }
+
+    private func _layout() {
+        let radius = min(self.bounds.width, self.bounds.height) / 2.0
+        let center = CGPoint(x: self.bounds.width / 2.0, y: self.bounds.height / 2.0)
+        let path = UIBezierPath(arcCenter: center, radius: radius)
+        path.append(UIBezierPath(arcCenter: center, radius: radius - 10.0).reversing())
+
+        _borderLayer.frame = self.bounds
+        _borderLayer.path = path.cgPath
+
+        let maskPath = UIBezierPath(arcCenter: center, radius: radius - 8.0)
+        _maskLayer.path = maskPath.cgPath
+
+        let shadow = UIBezierPath(arcCenter: center, radius: radius)
+        shadow.append(UIBezierPath.init(arcCenter: center, radius: radius - 10.0).reversing())
+        _borderLayer.shadowPath = shadow.cgPath
     }
 
     func startAnimation() {

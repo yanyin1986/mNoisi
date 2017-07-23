@@ -46,11 +46,6 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
                 self.doneButton.alpha = 0.0
                 self.playButton.isHidden = true
                 self.doneButton.isHidden = true
-                UIView.animate(withDuration: 0.75, animations: {
-                    self.backButton.alpha = 0.0
-                }, completion: { (finished) in
-                    self.backButton.isHidden = true
-                })
             case .hide:
                 let buttons = [self.playButton, self.doneButton, self.backButton]
                 buttons.forEach { $0?.isHidden = false }
@@ -99,13 +94,6 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
 
         if _progress == .notStart {
             _progress = .prepare
-
-            self.timeLabel.isHidden = false
-            self.timeLabel.alpha = 0.0
-            UIView.animate(withDuration: 0.75, animations: {
-                self.timeLabel.alpha = 1.0
-            })
-
             self.perform(#selector(countDown(_:)), with: nil, afterDelay: 1.0)
             self.countDownAnimation()
         }
@@ -116,13 +104,22 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
 
         if self.countDown <= 0 {
             self.countDownLabel.isHidden = true
+            self.timeLabel.isHidden = false
             // start animation
-            timer.interval = 1.0 / 30.0
-            timer.duration = duration
-            timer.delegate = self
-            timer.start()
-            self.breathView.startAnimation()
-            self.playButton.isSelected = true
+            UIView.animate(withDuration: 0.75, animations: {
+                self.timeLabel.alpha = 1.0
+                self.backButton.alpha = 0.0
+            }, completion: { (finished) in
+                if finished {
+                    self._progress = .hide
+                    self.timer.interval = 1.0 / 30.0
+                    self.timer.duration = self.duration
+                    self.timer.delegate = self
+                    self.timer.start()
+                    self.breathView.startAnimation()
+                    self.playButton.isSelected = true
+                }
+            })
         } else {
             countDownLabel.text = String(self.countDown)
             self.countDownAnimation()
@@ -169,15 +166,17 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
     
     @IBAction func doneButtonPressed(_ sender: Any) {
         let time = timer.spentTime
-        
         timer.stop()
         let resultViewController = MNBreathResultViewController()
+        resultViewController.time = Int(time)
         self.navigationController?.setViewControllers([resultViewController], animated: true)
     }
     
     
     @IBAction func showButtons(_ sender: Any) {
-        if _progress == .prepare || _progress == .hide {
+        guard _progress == .hide || _progress == .show else { return }
+        
+        if _progress == .hide {
             _progress = .show
         } else if _progress == .show {
             _progress = .hide
@@ -191,6 +190,7 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
 
     func finish(_ sender: Any?) {
         let resultViewController = MNBreathResultViewController()
+        resultViewController.time = Int(duration)
         self.navigationController?.setViewControllers([resultViewController], animated: true)
     }
 
@@ -202,15 +202,37 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
         if remainTime >= 0.0 && remainTime < 3.5 && status != .breathIn {
             status = .breathIn
             breathTipLabel.text = "Breath in ..."
+            breathTipLabel.alpha = 0.0
+            UIView.animate(withDuration: 0.3, animations: {
+                self.breathTipLabel.alpha = 1.0
+            }, completion: nil)
         } else if remainTime >= 3.5 && remainTime < 6.0 && status != .hold {
             status = .hold
-            breathTipLabel.text = "Hold..."
+            UIView.animate(withDuration: 0.3, animations: {
+                self.breathTipLabel.alpha = 0.0
+            }, completion: { (_) in
+                self.breathTipLabel.text = "Hold..."
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.breathTipLabel.alpha = 1.0
+                }, completion: nil)
+            })
         } else if remainTime >= 6.0 && remainTime < 9.5 && status != .breathOut {
             status = .breathOut
-            breathTipLabel.text = "Breath out..."
+            UIView.animate(withDuration: 0.3, animations: {
+                self.breathTipLabel.alpha = 0.0
+            }, completion: { (_) in
+                self.breathTipLabel.text = "Breath out..."
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.breathTipLabel.alpha = 1.0
+                }, completion: nil)
+            })
         } else if remainTime >= 9.5 && status != .idle {
             status = .idle
-            breathTipLabel.text = "Relax"
+            UIView.animate(withDuration: 0.3, animations: {
+                self.breathTipLabel.alpha = 0.0
+            }, completion: { (_) in
+                self.breathTipLabel.text = ""
+            })
         }
 
         self.timeLabel.text = timeText(duration - time)

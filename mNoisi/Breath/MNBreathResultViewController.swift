@@ -13,17 +13,60 @@ class MNBreathResultViewController: MNBaseViewController {
     /// seconds
     var time: Int = 0
     
+    @IBOutlet weak var againButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var completeLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var doneImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        timeLabel.text =
+        timeLabel.text = timeText(time)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.doneImageView.alpha = 0.0
+            self.doneImageView.isHidden = false
+            UIView.animate(withDuration: 1.0, animations: {
+                self.doneImageView.alpha = 1.0
+            }, completion: { (_) in
+                self.completeLabel.alpha = 0.0
+                self.completeLabel.isHidden = false
+                self.timeLabel.alpha = 0.0
+                self.timeLabel.isHidden = false
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                    UIView.animate(withDuration: 1.0, animations: {
+                        self.completeLabel.alpha = 1.0
+                        self.timeLabel.alpha = 1.0
+                    }, completion: { (_) in
+
+                        self.doneButton.alpha = 0.0
+                        self.doneButton.isHidden = false
+                        self.againButton.alpha = 0.0
+                        self.againButton.isHidden = false
+
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                            UIView.animate(withDuration: 1.0, animations: {
+                                self.doneButton.alpha = 1.0
+                                self.againButton.alpha = 1.0
+                            }, completion: nil)
+                        })
+                    })
+                })
+            })
+        }
     }
     
     func timeText(_ time: Int) -> String {
-        
+        if time < 60 {
+            return "\(time) s"
+        } else {
+            let min = time / 60
+            let seconds = time - min * 60
+            return "\(min) m \(seconds) s"
+        }
     }
 
     override func didReceiveMemoryWarning() {

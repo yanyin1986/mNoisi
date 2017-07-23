@@ -33,7 +33,9 @@ final class MNPlayer: NSObject {
 
         set {
             _volume = newValue
-            (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(_volume, animated: false)
+            let volumeView = MPVolumeView()
+            volumeView.center = CGPoint(x: -1000, y: -1000)
+            (volumeView.subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(_volume, animated: false)
         }
     }
 

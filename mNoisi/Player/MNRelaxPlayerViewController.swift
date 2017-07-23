@@ -78,7 +78,6 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         self.automaticallyAdjustsScrollViewInsets = false
 
         // Do any additional setup after loading the view.
-        volumeSlider.value = MNPlayer.shared.volume
         MNPlayer.shared.delegate = self
         self.collectionView.register(MNTrackCollectionViewCell.self,
                                      forCellWithReuseIdentifier: "trackCell")
@@ -90,6 +89,13 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         self.bottomViewBottomConst.constant = -70
         self.view.layoutIfNeeded()
         self.setNeedsStatusBarAppearanceUpdate()
+
+        if let volume = Defaults[.playerVolume] {
+            volumeSlider.value = volume
+            MNPlayer.shared.volume = volume
+        } else {
+            volumeSlider.value = MNPlayer.shared.volume
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -139,6 +145,14 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     // MARK: MNPlayerDelegate
     func volumeDidChanged(_ volume: Float) {
         volumeSlider.value = volume
+        Defaults[.playerVolume] = volume
+        // sync value
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(sync), object: nil)
+        self.perform(#selector(sync), with: nil, afterDelay: 2.0)
+    }
+
+    @objc func sync() {
+        Defaults.sync()
     }
 
     // MARK: MNTableViewDelegate
@@ -308,6 +322,10 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
 
     @IBAction func volumeChanged(_ sender: UISlider) {
         MNPlayer.shared.volume = sender.value
+        Defaults[.playerVolume] = sender.value
+        // sync value
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(sync), object: nil)
+        self.perform(#selector(sync), with: nil, afterDelay: 2.0)
     }
 
     // MARK: collection view

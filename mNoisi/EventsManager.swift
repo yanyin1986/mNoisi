@@ -47,7 +47,7 @@ struct EventsManager {
                 try db.run(table.createTableSQL)
             }
         } catch {
-            print(error)
+            debugPrint(error.localizedDescription)
         }
 
         /*
@@ -78,9 +78,12 @@ extension EventsManager {
             table.colStartTime <- breathEvent.startTime,
             table.colEndTime   <- breathEvent.endTime,
             table.colDuration  <- breathEvent.duration,
+            table.colCount     <- breathEvent.count,
             table.colType      <- breathEvent.type,
             table.colRemark    <- breathEvent.remark,
             table.colUser      <- breathEvent.user)
+
+        
         do {
             try self.db.run(insert)
         } catch {
@@ -90,14 +93,15 @@ extension EventsManager {
 
     func lastBreathEvent() -> BreathEvent? {
         let table = EventsManager.breathEventTable
-        let query = table.table.order(table.colDay.desc).limit(1)
+        let query = table.table.order(table.colStartTime.desc).limit(1)
 
         do {
             let results = try self.db.prepare(query)
-            guard let record = results.makeIterator().next() else {
-                return nil
+            var event: BreathEvent?
+            for row in results {
+                event = BreathEvent(row)
+                break
             }
-            let event = BreathEvent(record)
             return event
         } catch {
             return nil
@@ -120,7 +124,10 @@ extension EventsManager {
         }
 
         return events
-        
+    }
+
+    func breathDuration(forDay: Int) -> TimeInterval {
+        return self.breathEvnets(forDay: forDay).reduce(TimeInterval(0), { $0.0 + $0.1.duration })
     }
 
     func countBreathEvents(forDay: Int) -> Int {
@@ -174,7 +181,7 @@ extension EventsManager {
         }
     }
 
-    func breathEvnets(forDay: Int) -> [MeditationEvent] {
+    func meditationEvnets(forDay: Int) -> [MeditationEvent] {
         let table = EventsManager.meditationEventTable
         let query = table.table.filter(table.colDay == forDay)
 
@@ -190,6 +197,10 @@ extension EventsManager {
         }
 
         return events
+    }
+
+    func meditationDuration(forDay: Int) -> TimeInterval {
+        return self.meditationEvnets(forDay: forDay).reduce(TimeInterval(0), { $0.0 + $0.1.duration })
     }
 
     func countMeditationEvents(forDay: Int) -> Int {

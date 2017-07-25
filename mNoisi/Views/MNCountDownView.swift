@@ -35,10 +35,8 @@ class MNCountDownView: UIView {
     private func _commonInit() {
         let side = min(self.bounds.size.width, self.bounds.size.height)
         let center = CGPoint(x: self.bounds.width / 2.0, y: self.bounds.height / 2.0)
-        print(center)
         let borderWidth: CGFloat = 2.0
         let radius = (side - borderWidth) / 2.0
-        print(radius)
 
         let path: UIBezierPath = UIBezierPath(arcCenter: center, radius: radius)
         _bgTimeLayer.path = path.cgPath
@@ -49,7 +47,6 @@ class MNCountDownView: UIView {
         _bgTimeLayer.strokeColor = UIColor(white: 0.77, alpha: 1.0).cgColor
         
         let innerPath: UIBezierPath = UIBezierPath(arcCenter: center, radius: radius - 18)
-        print(path)
         _unspentTimeLayer.path = innerPath.cgPath
         _unspentTimeLayer.fillRule = kCAFillRuleNonZero
         _unspentTimeLayer.fillColor = UIColor.clear.cgColor

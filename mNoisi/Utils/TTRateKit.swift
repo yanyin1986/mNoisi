@@ -203,7 +203,7 @@ class TTRateKit: NSObject, MFMailComposeViewControllerDelegate, MFMessageCompose
             mail = mail.replacingOccurrences(of: "DEV-AVAILABLE",
                                              with: formatter.string(fromByteCount: freeSize))
         } catch {
-            debugPrint(error)
+            debugPrint(error.localizedDescription)
         }
 
         let subject = String(format: NSLocalizedString("TTSC_Feedback", tableName: "Rate", comment: ""), appName) + " " + appVersion

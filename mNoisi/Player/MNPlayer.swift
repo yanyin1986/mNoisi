@@ -124,7 +124,7 @@ final class MNPlayer: NSObject {
                 self._audioPlayer?.numberOfLoops = -1
             })
         } catch {
-            debugPrint(error)
+            debugPrint(error.localizedDescription)
         }
         
     }

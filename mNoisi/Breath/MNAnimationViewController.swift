@@ -35,6 +35,8 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
 
+    var breathEvent: BreathEvent = BreathEvent()
+
     private var _progress: ProgressStatus = .notStart {
         didSet {
             switch _progress {
@@ -114,6 +116,7 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
                     self.timer.duration = self.duration
                     self.timer.delegate = self
                     self.timer.start()
+                    self.breathEvent.start()
                     self.breathView.startAnimation()
                     self.playButton.isSelected = true
                 }
@@ -165,6 +168,12 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
     @IBAction func doneButtonPressed(_ sender: Any) {
         let time = timer.spentTime
         timer.stop()
+
+        // end and insert breath events
+        breathEvent.end(withDuration: time)
+        EventsManager.shared.insert(breathEvent)
+
+        // show results
         self.showResult(withTime: Int(time), duration: duration)
     }
 
@@ -239,6 +248,11 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
     }
 
     func timerDidFinish(_ timer: MNTimer!) {
+        // end and insert breath events
+        breathEvent.end(withDuration: duration)
+        EventsManager.shared.insert(breathEvent)
+
+        // finish
         self.finish(nil)
     }
 

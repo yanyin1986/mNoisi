@@ -30,28 +30,52 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        if section == 0 {
+            return 2
+        } else {
+            return 5
+        }
+    }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        return view
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 40
+        } else {
+            return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return indexPath.row >= 3
+        return indexPath.section == 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: MNCalendarTableViewCell.reuseIdentifier, for: indexPath) as! MNCalendarTableViewCell
-            cell.backgroundColor = UIColor.clear
-            return cell
-        } else if indexPath.row == 1 {
-            // 1
-            let cell = tableView.dequeueReusableCell(withIdentifier: MNStaticsInfoTableViewCell.reuseIdentifier, for: indexPath) as! MNStaticsInfoTableViewCell
-            cell.backgroundColor = UIColor.clear
-            return cell
-        } else if indexPath.row == 2 {
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: MNCalendarTableViewCell.reuseIdentifier, for: indexPath) as! MNCalendarTableViewCell
+                cell.backgroundColor = UIColor.clear
+                return cell
+            } else {// if indexPath.row == 1 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: MNStaticsInfoTableViewCell.reuseIdentifier, for: indexPath) as! MNStaticsInfoTableViewCell
+                cell.backgroundColor = UIColor.clear
+                return cell
+            }
+        } else { // section == 1
+        /*
+        else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: MNSwitchTableViewCell.reuseIdentifier, for: indexPath) as! MNSwitchTableViewCell
             cell.switch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
             if let notificationAuth = self.notificationAuth {
@@ -80,23 +104,23 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
             cell.titleLabel.text = "Daily Notification"
             cell.backgroundColor = UIColor.clear
             return cell
-        } else {
+        } */
             let cell = tableView.dequeueReusableCell(withIdentifier: MNTextTableViewCell.reuseIdentifier, for: indexPath) as! MNTextTableViewCell
             cell.backgroundColor = UIColor.clear
             switch indexPath.row {
-            case 3:
+            case 0:
                 // share with your friends
                 cell.titleLabel.text = "Share with your friends"
-            case 4:
+            case 1:
                 // rate us with 5 stars
                 cell.titleLabel.text = "Rate us with 5 starts"
-            case 5:
+            case 2:
                 // feedback
                 cell.titleLabel.text = "Feedback"
-            case 6:
+            case 3:
                 // privacy policy
                 cell.titleLabel.text = "Privacy Policy"
-            case 7:
+            case 4:
                 // EULA
                 cell.titleLabel.text = "EULA"
             default: break
@@ -107,19 +131,21 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard indexPath.section == 1 else { return }
+
         switch indexPath.row {
-        case 3:
+        case 0:
             TTRateKit.shared.shareWithFriends(self.navigationController)
-        case 4:
+        case 1:
             TTRateKit.shared.showRate(self.navigationController)
-        case 5:
+        case 2:
             TTRateKit.shared.showFeedbackEmail(self.navigationController)
-        case 6:
+        case 3:
             let webVC = MNLocalWebViewController()
             webVC.title = "Privacy Policy"
             webVC.webURL = Bundle.main.url(forResource: "privacy", withExtension: "html")
             self.navigationController?.pushViewController(webVC, animated: true)
-        case 7:
+        case 4:
             let webVC = MNLocalWebViewController()
             webVC.title = "EULA"
             webVC.webURL = Bundle.main.url(forResource: "eula", withExtension: "html")
@@ -130,14 +156,25 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                return 300
+            } else {
+                return 85
+            }
+        } else {
+            return 50
+        }
+        /*
         if indexPath.row == 0 {
             return 300 * tableView.frame.width / 360
         } else if indexPath.row == 1 {
             // 1
-            return 120
+            return 85
         } else {
             return 50
         }
+ */
     }
 
     @IBAction
@@ -211,7 +248,6 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
     }
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(date)
     }
  */
 
@@ -221,10 +257,8 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        print(segue)
     }
 
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
-        print(unwindSegue)
     }
 }

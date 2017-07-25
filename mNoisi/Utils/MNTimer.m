@@ -80,8 +80,6 @@
     }
     [_timer invalidate];
     _timer = nil;
-
-    NSLog(@"%0.3f", _remainTime);
 }
 
 - (void)resume
@@ -92,7 +90,6 @@
     _paused = NO;
     _resumeTime = CFAbsoluteTimeGetCurrent();
     CFTimeInterval afterTime = _interval - _remainTime;
-    NSLog(@"==> %0.3f", afterTime);
 
     [self performSelector:@selector(_resume) withObject:nil afterDelay:afterTime];
 }

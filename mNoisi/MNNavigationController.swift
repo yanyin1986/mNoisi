@@ -25,7 +25,6 @@ class FadeAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             let toView = transitionContext.view(forKey: .to) else {
                 return
         }
-        debugPrint(transitionContext.containerView.frame)
         fromView.frame = transitionContext.containerView.bounds
         toView.frame = transitionContext.containerView.bounds
 

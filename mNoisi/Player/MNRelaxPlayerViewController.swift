@@ -124,8 +124,6 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        debugPrint("--- \(self.view.frame)")
         volumeSlider.value = MNPlayer.shared.volume
     }
 
@@ -413,7 +411,6 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
     private func calculateIndex(_ scrollView: UIScrollView) {
         let x = scrollView.contentOffset.x
         let index = Int(x / scrollView.frame.width)
-        print(index)
 
         guard _currentIndex != index, index >= 0 else {
             return

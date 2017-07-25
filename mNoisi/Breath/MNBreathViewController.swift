@@ -57,7 +57,61 @@ class MNBreathViewController: MNBaseViewController, MNTimerViewControllerDelegat
         } else {
             time = meta.defaultTime
         }
-        tip2Label.text = String(format: "%d M", time)
+
+        let components = Calendar(identifier: .gregorian).dateComponents(in: TimeZone.current, from: Date())
+        let today = components.year! * 10000 + components.month! * 100 + components.day!
+        if type == .breath {
+            if let lastBreathEvent = EventsManager.shared.lastBreathEvent() {
+                // breath duration
+                let breathDuration = EventsManager.shared.breathDuration(forDay: today)
+                /// today times
+                tip1Label.text = todayDescription(forDuration: breathDuration)
+                /// last time
+                tip2Label.text = description(forLastTime: lastBreathEvent.startTime)
+            } else {
+                tip1Label.text = "Take Deep Breath"
+                tip2Label.text = String(format: "%d min", time)
+            }
+        } else {
+            // .meditation
+            if let lastMeditationEvent = EventsManager.shared.lastMeditationEvent() {
+                let meditationDuration = EventsManager.shared.meditationDuration(forDay: today)
+                /// today duration
+                tip1Label.text = todayDescription(forDuration: meditationDuration)
+                /// last time
+                tip2Label.text = description(forLastTime: lastMeditationEvent.startTime)
+            } else {
+                tip1Label.text = "Meditation"
+                tip2Label.text = String(format: "%d min", time)
+            }
+        }
+    }
+
+    func todayDescription(forDuration duration: TimeInterval) -> String {
+        if duration < 60 {
+            return String(format: "Today %d seconds", Int(max(0, duration)))
+        } else if duration < 3600 {
+            return String(format: "Today %d minutes", Int(duration/60.0))
+        } else if duration < 86400 {
+            return String(format: "Today %d hours", Int(duration/3600.0))
+        } else {
+            return ""
+        }
+    }
+
+    func description(forLastTime lastTime: TimeInterval) -> String {
+        let diff = Date().timeIntervalSince1970 - lastTime
+        if diff < 60 {
+            return String(format: "Last time %d seconds ago", Int(max(0, diff)))
+        } else if diff < 3600 {
+            return String(format: "Last time %d minutes ago", Int(diff / 60))
+        } else if diff < 86400 {
+            return String(format: "Last time %d hours ago", Int(diff / 3600))
+        } else if diff < 604800 {
+            return String(format: "Last time %d days ago", Int(diff / 86400))
+        } else {
+            return String(format: "Last time %d weeks ago", Int(diff / 604800))
+        }
     }
 
     override func didReceiveMemoryWarning() {

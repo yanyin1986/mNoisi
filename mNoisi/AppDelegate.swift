@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
+        /// setup db
+        EventsManager.shared.setup()
 
         application.beginReceivingRemoteControlEvents()
 
@@ -110,14 +112,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let center = UNUserNotificationCenter.current()
         center.delegate = self
         center.getNotificationSettings(completionHandler: { (settings) in
-            debugPrint(settings)
 
             if settings.authorizationStatus == .notDetermined {
                 center.requestAuthorization(options: [.alert, .sound, .badge],
                                             completionHandler: { (granted, error) in
                                                 //
-                                                debugPrint(granted)
-                                                debugPrint(error)
                 })
             }
         })

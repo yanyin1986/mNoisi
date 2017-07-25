@@ -11,12 +11,20 @@ import UserNotifications
 
 let relaxNotificationId = "com.relax.notification_1"
 
+struct AllInfo {
+    var meditationTime: TimeInterval
+    var sessionCount: Int
+    var longestStreakCount: Int
+}
+
 class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet
     private weak var tableView: UITableView!
-
     private var notificationAuth: UNAuthorizationStatus?
+
+    private var eventDays = [Date]()
+    private var allInfo: AllInfo?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +34,57 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
         tableView.register(UINib(nibName: "MNStaticsInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "staticsInfoCell")
         tableView.register(MNSwitchTableViewCell.self, forCellReuseIdentifier: "switchCell")
         tableView.register(MNTextTableViewCell.self, forCellReuseIdentifier: "textCell")
+
+        let calendar = Calendar(identifier: .gregorian)
+        let components = calendar.dateComponents(in: TimeZone.current, from: Date())
+        let month = components.year! * 100 + components.month!
+        let breathEvents = EventsManager.shared.breathEvents(forMonth: month)
+        let meditationEvents = EventsManager.shared.meditationEvents(forMonth: month)
+
+        var days = [Int]()
+        breathEvents.keys.sorted().forEach {
+            if !days.contains($0) {
+                days.append($0)
+            }
+        }
+        meditationEvents.keys.sorted().forEach {
+            if !days.contains($0) {
+                days.append($0)
+            }
+        }
+
+        days.forEach {
+            let year = $0 / 10000
+            let month = ($0 - year * 10000) / 100
+            let day = $0 - year * 10000 - 100 * month
+
+            var dateComponents = DateComponents()
+            dateComponents.year = year
+            dateComponents.month = month
+            dateComponents.day = day
+            if let date = calendar.date(from: dateComponents) {
+                self.eventDays.append(date)
+            }
+        }
+
+        let allMeditationEvents = EventsManager.shared.allMeditationEvents()
+        let allBreathEvents = EventsManager.shared.allBreathEvents()
+
+        days.removeAll()
+        allMeditationEvents.forEach {
+            if !days.contains($0.day) {
+                days.append($0.day)
+            }
+        }
+        allBreathEvents.forEach {
+            if !days.contains($0.day) {
+                days.append($0.day)
+            }
+        }
+        
+        allInfo = AllInfo(meditationTime: allMeditationEvents.reduce(TimeInterval(0), { $0.0 + $0.1.duration }),
+                          sessionCount: allMeditationEvents.count + allBreathEvents.count,
+                          longestStreakCount: days.count)
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,10 +126,12 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: MNCalendarTableViewCell.reuseIdentifier, for: indexPath) as! MNCalendarTableViewCell
                 cell.backgroundColor = UIColor.clear
+                cell.selectedDate = self.eventDays
                 return cell
             } else {// if indexPath.row == 1 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: MNStaticsInfoTableViewCell.reuseIdentifier, for: indexPath) as! MNStaticsInfoTableViewCell
                 cell.backgroundColor = UIColor.clear
+                cell.info = self.allInfo
                 return cell
             }
         } else { // section == 1

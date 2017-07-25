@@ -15,11 +15,32 @@ class MNStaticsInfoTableViewCell: UITableViewCell {
     @IBOutlet
     weak var natrualSoundImageView: UIImageView!
 
+    @IBOutlet weak var longestStreakLabel: UILabel!
     @IBOutlet
     weak var meditationImageView: UIImageView!
+    @IBOutlet weak var meditationLabel: UILabel!
 
     @IBOutlet
     weak var breathImageView: UIImageView!
+    @IBOutlet weak var sessionLabel: UILabel!
+
+    var info: AllInfo? {
+        didSet {
+            guard let info = self.info else { return }
+
+            self.longestStreakLabel.text = String.init(format: "%d Days", info.longestStreakCount)
+            self.meditationLabel.text = self.stringFor(time: Int(info.meditationTime))
+            self.sessionLabel.text = String.init(format: "%d", info.sessionCount)
+        }
+    }
+
+    func stringFor(time: Int) -> String {
+        let hour = time / 3600
+        let min = time % 3600 / 60
+        let seconds = time % 3600 % 60
+
+        return String(format: "%02d:%02d:%02d", hour, min, seconds)
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

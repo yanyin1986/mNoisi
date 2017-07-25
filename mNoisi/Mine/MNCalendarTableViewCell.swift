@@ -10,10 +10,18 @@ import UIKit
 
 class MNCalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDelegate {
     public static let reuseIdentifier: String = "calendarCell"
+    @IBOutlet weak var calendar: FSCalendar!
+
+    var selectedDate: [Date] = [] {
+        didSet {
+            selectedDate.forEach { self.calendar.select($0, scrollToDate: false) }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

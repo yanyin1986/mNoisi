@@ -27,8 +27,8 @@
                             <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
                                 <integer key="value" value="0"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="titleTextSize">
                                 <real key="value" value="13"/>
                             </userDefinedRuntimeAttribute>
@@ -79,6 +79,9 @@
                     <constraint firstItem="LiI-cb-BlL" firstAttribute="top" secondItem="TTO-bm-eOK" secondAttribute="top" id="ivS-k1-1nK"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="calendar" destination="LiI-cb-BlL" id="iba-YM-2Xa"/>
+            </connections>
             <point key="canvasLocation" x="32.5" y="39"/>
         </tableViewCell>
     </objects>

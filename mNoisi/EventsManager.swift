@@ -108,6 +108,29 @@ extension EventsManager {
         }
     }
 
+    func breathEvents(forMonth: Int) -> [Int: [BreathEvent]] {
+        var events: [Int: [BreathEvent]] = [:]
+
+        let table = EventsManager.breathEventTable
+        let query = table.table.filter(table.colMonth == forMonth)
+        do {
+
+            let results = try db.prepare(query)
+            for row in results {
+                let event = BreathEvent(row)
+
+                if var eventsOnDay = events[event.day] {
+                    eventsOnDay.append(event)
+                } else {
+                    events[event.day] = [event]
+                }
+            }
+        } catch {
+
+        }
+        return events
+    }
+
     func breathEvnets(forDay: Int) -> [BreathEvent] {
         let table = EventsManager.breathEventTable
         let query = table.table.filter(table.colDay == forDay)
@@ -121,6 +144,21 @@ extension EventsManager {
             }
         } catch {
 
+        }
+
+        return events
+    }
+
+    func allBreathEvents() -> [BreathEvent] {
+        var events = [BreathEvent]()
+        let table = EventsManager.breathEventTable
+        do {
+            let results = try db.prepare(table.table)
+            for row in results {
+                events.append(BreathEvent(row))
+            }
+        } catch {
+            debugPrint(error.localizedDescription)
         }
 
         return events
@@ -196,6 +234,44 @@ extension EventsManager {
 
         }
 
+        return events
+    }
+
+    func allMeditationEvents() -> [MeditationEvent] {
+        var events = [MeditationEvent]()
+        let table = EventsManager.meditationEventTable
+        do {
+            let results = try db.prepare(table.table)
+            for row in results {
+                events.append(MeditationEvent(row))
+            }
+        } catch {
+            debugPrint(error.localizedDescription)
+        }
+
+        return events
+    }
+
+    func meditationEvents(forMonth: Int) -> [Int: [MeditationEvent]] {
+        var events: [Int: [MeditationEvent]] = [:]
+
+        let table = EventsManager.meditationEventTable
+        let query = table.table.filter(table.colMonth == forMonth)
+        do {
+
+            let results = try db.prepare(query)
+            for row in results {
+                let event = MeditationEvent(row)
+
+                if var eventsOnDay = events[event.day] {
+                    eventsOnDay.append(event)
+                } else {
+                    events[event.day] = [event]
+                }
+            }
+        } catch {
+            
+        }
         return events
     }
 

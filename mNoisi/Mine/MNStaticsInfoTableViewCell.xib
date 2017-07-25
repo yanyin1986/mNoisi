@@ -55,7 +55,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UO-pu-Snd">
                         <rect key="frame" x="125" y="0.0" width="125" height="79.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meditating time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdg-da-5Nz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditating time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdg-da-5Nz">
                                 <rect key="frame" x="24" y="35" width="75.5" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.72156862749999995" green="0.91372549020000005" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -102,8 +102,8 @@
                                 <color key="textColor" red="0.4941176471" green="0.66666666669999997" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total sessions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZY-5q-0l1">
-                                <rect key="frame" x="29" y="35" width="66.5" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total sessions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZY-5q-0l1">
+                                <rect key="frame" x="28" y="35" width="68.5" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.4941176471" green="0.66666666669999997" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -156,8 +156,11 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="breathImageView" destination="wEa-VC-Gf5" id="VmD-Um-nhl"/>
+                <outlet property="longestStreakLabel" destination="l37-P9-HAM" id="gRp-5X-9zV"/>
                 <outlet property="meditationImageView" destination="Eua-Yg-0Nv" id="H4o-Ch-qgR"/>
+                <outlet property="meditationLabel" destination="Wgp-LA-5m8" id="ZU7-5z-DVn"/>
                 <outlet property="natrualSoundImageView" destination="Gxu-9Q-vzy" id="yjB-aU-URO"/>
+                <outlet property="sessionLabel" destination="AOz-5D-qKC" id="hk8-zP-ezG"/>
             </connections>
         </tableViewCell>
     </objects>

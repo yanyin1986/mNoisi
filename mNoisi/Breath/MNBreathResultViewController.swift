@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MNBreathResultViewController: MNBaseViewController {
 
     /// seconds
     var time: Int = 0
     var duration: TimeInterval = -1
+    var type: BMType = .breath
     
     @IBOutlet weak var againButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
@@ -24,9 +26,21 @@ class MNBreathResultViewController: MNBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if type == .breath {
+            // .breath
+            completeLabel.text = "Breath Completed"
+        } else {
+            // .meditation
+            completeLabel.text = "Meditation Completed"
+        }
         timeLabel.text = timeText(time)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            if let url = Bundle.main.url(forResource: "meditation_finish", withExtension: "mp3") {
+                let audioPlayer = try? AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            }
+
             self.doneImageView.alpha = 0.0
             self.doneImageView.isHidden = false
             UIView.animate(withDuration: 1.0, animations: {
@@ -62,11 +76,11 @@ class MNBreathResultViewController: MNBaseViewController {
     
     func timeText(_ time: Int) -> String {
         if time < 60 {
-            return "\(time) s"
+            return "Duration \(time) seconds"
         } else {
             let min = time / 60
             let seconds = time - min * 60
-            return "\(min) m \(seconds) s"
+            return "Duration \(min) m \(seconds) s"
         }
     }
 

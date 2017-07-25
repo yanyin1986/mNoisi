@@ -11,7 +11,11 @@ import UIKit
 extension UIBezierPath {
     
     convenience init(arcCenter: CGPoint, radius: CGFloat, clockwise: Bool = true) {
-        self.init(arcCenter: arcCenter, radius: radius, startAngle: CGFloat(-Double.pi / 2.0), endAngle: CGFloat(Double.pi / 2.0 * 3.0), clockwise: clockwise)
+        self.init(arcCenter: arcCenter,
+                  radius: radius,
+                  startAngle: CGFloat(-Double.pi / 2.0),
+                  endAngle: CGFloat(Double.pi / 2.0 * 3.0),
+                  clockwise: clockwise)
     }
 }
 
@@ -35,7 +39,7 @@ class MNCountDownView: UIView {
     private func _commonInit() {
         let side = min(self.bounds.size.width, self.bounds.size.height)
         let center = CGPoint(x: self.bounds.width / 2.0, y: self.bounds.height / 2.0)
-        let borderWidth: CGFloat = 2.0
+        let borderWidth: CGFloat = 3.0
         let radius = (side - borderWidth) / 2.0
 
         let path: UIBezierPath = UIBezierPath(arcCenter: center, radius: radius)
@@ -43,11 +47,13 @@ class MNCountDownView: UIView {
         _bgTimeLayer.fillRule = kCAFillRuleNonZero
         _bgTimeLayer.fillColor = UIColor.clear.cgColor
         _bgTimeLayer.frame = self.bounds
-        _bgTimeLayer.lineWidth = 1
-        _bgTimeLayer.strokeColor = UIColor(white: 0.77, alpha: 1.0).cgColor
+        _bgTimeLayer.lineWidth = 2.0
+        _bgTimeLayer.contentsScale = UIScreen.main.scale
+        _bgTimeLayer.strokeColor = UIColor(white: 1.0, alpha: 0.1).cgColor
         
-        let innerPath: UIBezierPath = UIBezierPath(arcCenter: center, radius: radius - 18)
+        let innerPath: UIBezierPath = UIBezierPath(arcCenter: center, radius: radius - 15)
         _unspentTimeLayer.path = innerPath.cgPath
+        _unspentTimeLayer.lineCap = kCALineCapRound
         _unspentTimeLayer.fillRule = kCAFillRuleNonZero
         _unspentTimeLayer.fillColor = UIColor.clear.cgColor
         _unspentTimeLayer.frame = self.bounds
@@ -55,6 +61,7 @@ class MNCountDownView: UIView {
         _unspentTimeLayer.strokeColor = UIColor(white: 0.77, alpha: 1.0).cgColor
 
         _spentTimeLayer.path = innerPath.cgPath
+        _spentTimeLayer.lineCap = kCALineCapRound
         _spentTimeLayer.fillRule = kCAFillRuleNonZero
         _spentTimeLayer.fillColor = UIColor.clear.cgColor
         _spentTimeLayer.frame = self.bounds
@@ -83,10 +90,10 @@ class MNCountDownView: UIView {
         didSet {
             CATransaction.begin()
             CATransaction.setAnimationDuration(0.0)
-            _unspentTimeLayer.strokeStart = progress // 0.75
+            _unspentTimeLayer.strokeStart = progress + 0.01 // 0.75
             _unspentTimeLayer.strokeEnd = 0.99
             _spentTimeLayer.strokeEnd = progress - 0.01
-            _spentTimeLayer.strokeStart = 0.00
+            _spentTimeLayer.strokeStart = 0.01
             CATransaction.commit()
         }
     }

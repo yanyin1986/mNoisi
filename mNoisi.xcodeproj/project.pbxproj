@@ -49,12 +49,12 @@
 		2C9D41ED1F1623E1005901CD /* MNBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D41EC1F1623E1005901CD /* MNBaseViewController.swift */; };
 		2CB0215D1F0F700800470AD3 /* MNRelaxPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0215C1F0F700800470AD3 /* MNRelaxPlayerViewController.xib */; };
 		2CB6164A1F0F8A0F00575747 /* MNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB616491F0F8A0F00575747 /* MNNavigationController.swift */; };
+		2CBDD62B1F26E0E400F56D1D /* meditation_finish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CBDD62A1F26E0E400F56D1D /* meditation_finish.mp3 */; };
 		2CE447F51F14BBDE007AD3CD /* MNCountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE447F41F14BBDE007AD3CD /* MNCountDownView.swift */; };
 		2CE447F71F14BE72007AD3CD /* MNBreathViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CE447F61F14BE72007AD3CD /* MNBreathViewController.xib */; };
 		659D868629E656A5440F44EB /* Pods_mNoisi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061546CF2EB2617C79F9CBD2 /* Pods_mNoisi.framework */; };
 		BA98F9671F222BBE001288D3 /* MNRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA98F9661F222BBE001288D3 /* MNRadiusButton.swift */; };
 		BAAEBC801F24E2C1005E30BF /* BMCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAEBC7F1F24E2C1005E30BF /* BMCommon.swift */; };
-		BAEEF2DE1F1A47BD00EADAF6 /* _BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEEF2DD1F1A47BD00EADAF6 /* _BaseViewController.m */; };
 		BAEEF2E51F1A57F000EADAF6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAEEF2E41F1A57F000EADAF6 /* Localizable.strings */; };
 		BAEEF2F61F1A64CB00EADAF6 /* MNMeditationStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEEF2F41F1A64CB00EADAF6 /* MNMeditationStartViewController.swift */; };
 		BAEEF2F71F1A64CB00EADAF6 /* MNMeditationStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAEEF2F51F1A64CB00EADAF6 /* MNMeditationStartViewController.xib */; };
@@ -153,15 +153,14 @@
 		2C6F52001F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNSoundTrackCollectionViewCell.xib; sourceTree = "<group>"; };
 		2C9D41E81F161A83005901CD /* MNBreathResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNBreathResultViewController.swift; sourceTree = "<group>"; };
 		2C9D41E91F161A83005901CD /* MNBreathResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNBreathResultViewController.xib; sourceTree = "<group>"; };
-		2C9D41EC1F1623E1005901CD /* MNBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNBaseViewController.swift; sourceTree = "<group>"; };
+		2C9D41EC1F1623E1005901CD /* MNBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNBaseViewController.swift; path = ../MNBaseViewController.swift; sourceTree = "<group>"; };
 		2CB0215C1F0F700800470AD3 /* MNRelaxPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNRelaxPlayerViewController.xib; sourceTree = "<group>"; };
-		2CB616491F0F8A0F00575747 /* MNNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNNavigationController.swift; sourceTree = "<group>"; };
+		2CB616491F0F8A0F00575747 /* MNNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MNNavigationController.swift; path = ../MNNavigationController.swift; sourceTree = "<group>"; };
+		2CBDD62A1F26E0E400F56D1D /* meditation_finish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meditation_finish.mp3; sourceTree = "<group>"; };
 		2CE447F41F14BBDE007AD3CD /* MNCountDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNCountDownView.swift; sourceTree = "<group>"; };
 		2CE447F61F14BE72007AD3CD /* MNBreathViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNBreathViewController.xib; sourceTree = "<group>"; };
 		BA98F9661F222BBE001288D3 /* MNRadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNRadiusButton.swift; sourceTree = "<group>"; };
 		BAAEBC7F1F24E2C1005E30BF /* BMCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCommon.swift; sourceTree = "<group>"; };
-		BAEEF2DC1F1A47BD00EADAF6 /* _BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BaseViewController.h; sourceTree = "<group>"; };
-		BAEEF2DD1F1A47BD00EADAF6 /* _BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BaseViewController.m; sourceTree = "<group>"; };
 		BAEEF2E41F1A57F000EADAF6 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BAEEF2F41F1A64CB00EADAF6 /* MNMeditationStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNMeditationStartViewController.swift; sourceTree = "<group>"; };
 		BAEEF2F51F1A64CB00EADAF6 /* MNMeditationStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNMeditationStartViewController.xib; sourceTree = "<group>"; };
@@ -260,6 +259,7 @@
 		2C6280B01F1E02EF00EABBA3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F78B60D81ED5BC3500D5468F /* MNTrack.swift */,
 				2C6280B11F1E030500EABBA3 /* BreathEvent.swift */,
 				2C663C521F1F4B1500F0E547 /* BreathEventTable.swift */,
 				2C6280B31F1E0A1200EABBA3 /* EventsManager.swift */,
@@ -287,6 +287,7 @@
 		2C8DFEA21EDEBFD20068540D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CBDD62A1F26E0E400F56D1D /* meditation_finish.mp3 */,
 				2C11D2231F248C6200EE03B6 /* a1.mp3 */,
 				2C11D2241F248C6200EE03B6 /* a2.mp3 */,
 				2C11D2251F248C6200EE03B6 /* a3.mp3 */,
@@ -307,12 +308,34 @@
 		2CB0215E1F0F706500470AD3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2CB616491F0F8A0F00575747 /* MNNavigationController.swift */,
+				2C9D41EC1F1623E1005901CD /* MNBaseViewController.swift */,
 				F709DCA01EF54CB10016C409 /* MNDefaults.swift */,
 				2C4CC2B01F15E70A00FED7A7 /* MNTimer.h */,
 				2C4CC2B11F15E70A00FED7A7 /* MNTimer.m */,
 				2C1AD0F11F1C9FA000C7C994 /* TTRateKit.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		2CBDD6281F26E03700F56D1D /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				BAEEF2E41F1A57F000EADAF6 /* Localizable.strings */,
+				2C1AD0F31F1CA6AA00C7C994 /* Rate.strings */,
+			);
+			name = Localizable;
+			sourceTree = "<group>";
+		};
+		2CBDD6291F26E0A600F56D1D /* AppInfo */ = {
+			isa = PBXGroup;
+			children = (
+				F7FB6EDE1EC8F8DA0086E576 /* Info.plist */,
+				2C1AD0F91F1CC95700C7C994 /* eula.html */,
+				2C1AD0FA1F1CC95700C7C994 /* privacy.html */,
+				F70910641EE82E7B00B7A699 /* mNoisi.entitlements */,
+			);
+			name = AppInfo;
 			sourceTree = "<group>";
 		};
 		2CC2C9D81EDEC20A004C115C /* Mine */ = {
@@ -460,19 +483,10 @@
 				2C24A4301EDEBEC2008CD172 /* Player */,
 				F7FB6ED21EC8F8DA0086E576 /* AppDelegate.swift */,
 				F7BD9DCB1F10796100DD6932 /* mNoisi-Bridging-Header.h */,
-				F78B60D81ED5BC3500D5468F /* MNTrack.swift */,
 				F7FB6EDB1EC8F8DA0086E576 /* LaunchScreen.storyboard */,
-				F7FB6EDE1EC8F8DA0086E576 /* Info.plist */,
-				2C1AD0F91F1CC95700C7C994 /* eula.html */,
-				2C1AD0FA1F1CC95700C7C994 /* privacy.html */,
-				F70910641EE82E7B00B7A699 /* mNoisi.entitlements */,
 				F7FB6ED91EC8F8DA0086E576 /* Assets.xcassets */,
-				2CB616491F0F8A0F00575747 /* MNNavigationController.swift */,
-				2C9D41EC1F1623E1005901CD /* MNBaseViewController.swift */,
-				BAEEF2DC1F1A47BD00EADAF6 /* _BaseViewController.h */,
-				BAEEF2DD1F1A47BD00EADAF6 /* _BaseViewController.m */,
-				BAEEF2E41F1A57F000EADAF6 /* Localizable.strings */,
-				2C1AD0F31F1CA6AA00C7C994 /* Rate.strings */,
+				2CBDD6281F26E03700F56D1D /* Localizable */,
+				2CBDD6291F26E0A600F56D1D /* AppInfo */,
 			);
 			path = mNoisi;
 			sourceTree = "<group>";
@@ -552,6 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C11D2361F248C6200EE03B6 /* a7.mp3 in Resources */,
+				2CBDD62B1F26E0E400F56D1D /* meditation_finish.mp3 in Resources */,
 				2C11D2311F248C6200EE03B6 /* a2.mp3 in Resources */,
 				F7FB6EDD1EC8F8DA0086E576 /* LaunchScreen.storyboard in Resources */,
 				2C9D41EB1F161A83005901CD /* MNBreathResultViewController.xib in Resources */,
@@ -702,7 +717,6 @@
 				2C57AC721F146DA000C080A1 /* MNShadowButton.swift in Sources */,
 				BAEEF2F61F1A64CB00EADAF6 /* MNMeditationStartViewController.swift in Sources */,
 				F7FB6ED31EC8F8DA0086E576 /* AppDelegate.swift in Sources */,
-				BAEEF2DE1F1A47BD00EADAF6 /* _BaseViewController.m in Sources */,
 				F78722DA1ECFD7F400A60FB1 /* MNMineViewController.swift in Sources */,
 				F7BD9DF11F10796200DD6932 /* FSCalendarCollectionView.m in Sources */,
 				F7442F491EDB82E9008FFF3D /* MNButton.swift in Sources */,

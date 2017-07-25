@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MNBreathViewController: _BaseViewController, MNTimerViewControllerDelegate {
+class MNBreathViewController: MNBaseViewController, MNTimerViewControllerDelegate {
 
     var type: BMType = .breath
     var time: Int = 1
@@ -16,7 +16,6 @@ class MNBreathViewController: _BaseViewController, MNTimerViewControllerDelegate
     private struct Meta {
         var imageName: String
         var title: String
-        var colors: [UIColor]
         var defaultTime: Int
         var lastTime: Int?
     }
@@ -36,14 +35,10 @@ class MNBreathViewController: _BaseViewController, MNTimerViewControllerDelegate
     private let metas: [BMType: Meta] = [
         BMType.breath     : Meta(imageName: "bg_breath",
                                  title: "Breath",
-                                 colors: [ UIColor(red: 36.0/255.0, green: 34.0/255.0, blue: 127.0/255.0, alpha: 1.0),
-                                           UIColor(red: 38.0/255.0, green: 60.0/255.0, blue: 92.0/255.0, alpha: 1.0) ],
                                  defaultTime: 1,
                                  lastTime: Defaults[.lastBreathTime]),
         BMType.meditation : Meta(imageName: "bg_meditation",
                                  title: "Meditation",
-                                 colors: [ UIColor(red: 36.0/255.0, green: 34.0/255.0, blue: 127.0/255.0, alpha: 1.0),
-                                           UIColor(red: 38.0/255.0, green: 60.0/255.0, blue: 92.0/255.0, alpha: 1.0) ],
                                  defaultTime: 5,
                                  lastTime: Defaults[.lastMeditationTime]),
     ]

@@ -131,7 +131,7 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 280
+            return 300 * tableView.frame.width / 360
         } else if indexPath.row == 1 {
             // 1
             return 120

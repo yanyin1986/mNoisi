@@ -28,10 +28,10 @@ class MNBreathResultViewController: MNBaseViewController {
         // Do any additional setup after loading the view.
         if type == .breath {
             // .breath
-            completeLabel.text = "Breath Completed"
+            completeLabel.text = NSLocalizedString("Breath Completed", comment: "")
         } else {
             // .meditation
-            completeLabel.text = "Meditation Completed"
+            completeLabel.text = NSLocalizedString("Meditation Completed", comment: "")
         }
         timeLabel.text = timeText(time)
 
@@ -76,11 +76,11 @@ class MNBreathResultViewController: MNBaseViewController {
     
     func timeText(_ time: Int) -> String {
         if time < 60 {
-            return "Duration \(time) seconds"
+            return String(format: NSLocalizedString("Duration %d seconds", comment: ""), time)
         } else {
             let min = time / 60
             let seconds = time - min * 60
-            return "Duration \(min) m \(seconds) s"
+            return String(format: NSLocalizedString("Duration %d min %d seconds", comment: ""), min, seconds)
         }
     }
 
@@ -99,14 +99,5 @@ class MNBreathResultViewController: MNBaseViewController {
         breathViewController.duration = duration
         self.navigationController?.setViewControllers([breathViewController], animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

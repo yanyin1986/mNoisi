@@ -7,4 +7,56 @@
 */
 
 
+"Done"="Done";
 "Breath" = "Breath";
+"Meditation"="Meditation";
+
+"Breath in ..."="Breath in ...";
+"Hold..."="Hold...";
+"Breath out..."="Breath out...";
+
+"Breath Completed"="Breath Completed";
+"Meditation Completed"="Meditation Completed";
+"Duration %d seconds"="Duration %d seconds";
+"Duration %d min %d seconds"="Duration %d min %d seconds";
+
+"Take Deep Breath"="Take Deep Breath";
+"%d min"="%d min";
+"%d M"="%d M";
+"%d Days"="%d Days";
+
+"Today %d seconds"="Today %d seconds";
+"Today %d minutes"="Today %d minutes";
+"Today %d hours"="Today %d hours";
+
+"Last time %d seconds ago"="Last time %d seconds ago";
+"Last time %d minutes ago"="Last time %d minutes ago";
+"Last time %d hours ago"="Last time %d hours ago";
+"Last time %d days ago"="Last time %d days ago";
+"Last time %d weeks ago"="Last time %d weeks ago";
+
+// Setting
+"Share with your friends"="Share with your friends";
+"Rate us with 5 starts"="Rate us with 5 starts";
+"Feedback"="Feedback";
+"Privacy Policy"="Privacy Policy";
+"EULA"="EULA";
+
+"Playing: "="Playing: ";
+
+/// feed, rate
+"Check out Relax"="Check out Relax";
+"Download Relax on AppStore: "="Download Relax on AppStore: ";
+
+"rate_rate"="Rate it 5-Star";
+"rate_message"="How do you feel about Relax?";
+"rate_cancel"="Later";
+"rate_feedback" = "Send Feedback";
+
+"Describe your issues/suggestions below"="Describe your issues/suggestions below";
+"Long press to add screenshot here"="Long press to add screenshot here";
+"App Name:"="App Name:";
+"App Version:"="App Version:";
+"Device:"="Device:";
+"OS Version:"="OS Version:";
+"TTSC_Feedback"="TTSC_Feedback";

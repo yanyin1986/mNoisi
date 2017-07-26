@@ -171,19 +171,19 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
             switch indexPath.row {
             case 0:
                 // share with your friends
-                cell.titleLabel.text = "Share with your friends"
+                cell.titleLabel.text = NSLocalizedString("Share with your friends", comment: "")
             case 1:
                 // rate us with 5 stars
-                cell.titleLabel.text = "Rate us with 5 starts"
+                cell.titleLabel.text = NSLocalizedString("Rate us with 5 starts", comment: "")
             case 2:
                 // feedback
-                cell.titleLabel.text = "Feedback"
+                cell.titleLabel.text = NSLocalizedString("Feedback", comment: "")
             case 3:
                 // privacy policy
-                cell.titleLabel.text = "Privacy Policy"
+                cell.titleLabel.text = NSLocalizedString("Privacy Policy", comment: "")
             case 4:
                 // EULA
-                cell.titleLabel.text = "EULA"
+                cell.titleLabel.text = NSLocalizedString("EULA", comment: "")
             default: break
             }
             return cell
@@ -203,12 +203,12 @@ class MNMineViewController: MNBaseViewController, UITableViewDataSource, UITable
             TTRateKit.shared.showFeedbackEmail(self.navigationController)
         case 3:
             let webVC = MNLocalWebViewController()
-            webVC.title = "Privacy Policy"
+            webVC.title = NSLocalizedString("Privacy Policy", comment: "")
             webVC.webURL = Bundle.main.url(forResource: "privacy", withExtension: "html")
             self.navigationController?.pushViewController(webVC, animated: true)
         case 4:
             let webVC = MNLocalWebViewController()
-            webVC.title = "EULA"
+            webVC.title = NSLocalizedString("EULA", comment: "")
             webVC.webURL = Bundle.main.url(forResource: "eula", withExtension: "html")
             self.navigationController?.pushViewController(webVC, animated: true)
         default:

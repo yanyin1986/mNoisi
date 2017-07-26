@@ -429,7 +429,7 @@ class MNRelaxPlayerViewController: MNBaseViewController, UICollectionViewDataSou
         self.playButton.isSelected = true
         MNPlayer.shared.reset(withTrack: track)
 
-        self.hudView.label.text = "Playing: \(track.name)"
+        self.hudView.label.text = NSLocalizedString("Playing: ", comment: "") + track.name
         if self.hudView.superview == nil {
             self.view.addSubview(self.hudView)
         }

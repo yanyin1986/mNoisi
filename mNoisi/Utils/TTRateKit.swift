@@ -87,8 +87,10 @@ class TTRateKit: NSObject, MFMailComposeViewControllerDelegate, MFMessageCompose
 
     func showRate(_ inViewController: UIViewController?) {
         let vc = inViewController ?? UIApplication.shared.keyWindow?.rootViewController
-        let alertVC = UIAlertController(title: nil, message: NSLocalizedString("rate_message", tableName: "Rate", comment: ""), preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: NSLocalizedString("rate_rate", tableName: "Rate", comment: ""),
+        let alertVC = UIAlertController(title: nil,
+                                        message: NSLocalizedString("rate_message", comment: ""),
+                                        preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: NSLocalizedString("rate_rate", comment: ""),
                                         style: .default,
                                         handler: { (_) in
                                             //
@@ -97,7 +99,7 @@ class TTRateKit: NSObject, MFMailComposeViewControllerDelegate, MFMessageCompose
                                             guard let url = self.rateURL() else { return }
                                             UIApplication.shared.open(url)
         }))
-        alertVC.addAction(UIAlertAction(title: NSLocalizedString("rate_feedback", tableName: "Rate", comment: ""),
+        alertVC.addAction(UIAlertAction(title: NSLocalizedString("rate_feedback", comment: ""),
                                         style: .default,
                                         handler: { (_) in
                                             // show feedback 
@@ -105,7 +107,7 @@ class TTRateKit: NSObject, MFMailComposeViewControllerDelegate, MFMessageCompose
                                             self.rateState = .rated
                                             self.synchronize()
         }))
-        alertVC.addAction(UIAlertAction(title: NSLocalizedString("rate_cancel", tableName: "Rate", comment: ""),
+        alertVC.addAction(UIAlertAction(title: NSLocalizedString("rate_cancel", comment: ""),
                                         style: .default,
                                         handler: { (_) in
                                             // cancel rate
@@ -176,17 +178,17 @@ class TTRateKit: NSObject, MFMailComposeViewControllerDelegate, MFMessageCompose
         "</html>"
 
         mail = mail.replacingOccurrences(of: "Describe your issues/suggestions below",
-                                         with: NSLocalizedString("Describe your issues/suggestions below", tableName: "Rate", comment: ""))
+                                         with: NSLocalizedString("Describe your issues/suggestions below", comment: ""))
         mail = mail.replacingOccurrences(of: "Long press to add screenshot here",
-                                         with: NSLocalizedString("Long press to add screenshot here", tableName: "Rate", comment: ""))
+                                         with: NSLocalizedString("Long press to add screenshot here", comment: ""))
         mail = mail.replacingOccurrences(of: "App Name:",
-                                         with: NSLocalizedString("App Name:", tableName: "Rate", comment: ""))
+                                         with: NSLocalizedString("App Name:", comment: ""))
         mail = mail.replacingOccurrences(of: "App Version:",
-                                         with: NSLocalizedString("App Version:", tableName: "Rate", comment: ""))
+                                         with: NSLocalizedString("App Version:", comment: ""))
         mail = mail.replacingOccurrences(of: "Device:",
-                                         with: NSLocalizedString("Device:", tableName: "Rate", comment: ""))
+                                         with: NSLocalizedString("Device:", comment: ""))
         mail = mail.replacingOccurrences(of: "OS Version:",
-                                         with: NSLocalizedString("OS Version:", tableName: "Rate", comment: ""))
+                                         with: NSLocalizedString("OS Version:", comment: ""))
         mail = mail.replacingOccurrences(of: "APP-NAME", with: appName)
         mail = mail.replacingOccurrences(of: "APP_VER", with: appVersion)
         mail = mail.replacingOccurrences(of: "DEV-NAME", with: deviceName)
@@ -206,7 +208,7 @@ class TTRateKit: NSObject, MFMailComposeViewControllerDelegate, MFMessageCompose
             debugPrint(error.localizedDescription)
         }
 
-        let subject = String(format: NSLocalizedString("TTSC_Feedback", tableName: "Rate", comment: ""), appName) + " " + appVersion
+        let subject = String(format: NSLocalizedString("TTSC_Feedback", comment: ""), appName) + " " + appVersion
 
         let mailComposeVC = MFMailComposeViewController()
         mailComposeVC.mailComposeDelegate = self
@@ -226,17 +228,18 @@ class TTRateKit: NSObject, MFMailComposeViewControllerDelegate, MFMessageCompose
         if MFMailComposeViewController.canSendMail() {
             let mailVC = MFMailComposeViewController()
             mailVC.mailComposeDelegate = self
-            mailVC.setSubject("Check out Relax")
-            mailVC.setMessageBody("Download Relax on Google Play: \n<br/><br/><a href=\"https://play.google.com/store/apps/details?id=relaxmelodies.sleepsounds.meditation&amp;eferrer=utm_source%3Dshare\">https://play.google.com/store/apps/details?id=relaxmelodies.sleepsounds.meditation&amp;eferrer=utm_source%3Dshare</a>", isHTML: true)
+            mailVC.setSubject(NSLocalizedString("Check out Relax", comment: ""))
+            let messageBody = NSLocalizedString("Download Relax on AppStore: ", comment: "") + "\n<br/><br/><a href=\"https://play.google.com/store/apps/details?id=relaxmelodies.sleepsounds.meditation&amp;eferrer=utm_source%3Dshare\">https://play.google.com/store/apps/details?id=relaxmelodies.sleepsounds.meditation&amp;eferrer=utm_source%3Dshare</a>"
+            mailVC.setMessageBody(messageBody, isHTML: true)
             vc?.present(mailVC, animated: true, completion: nil)
         } else if MFMessageComposeViewController.canSendText() {
             let messageVC = MFMessageComposeViewController()
             messageVC.messageComposeDelegate = self
-            messageVC.subject = "Check out Relax"
-            messageVC.body = "Download Relax on Google Play: \nhttps://play.google.com/store/apps/details?id=relaxmelodies.sleepsounds.meditation&amp;eferrer=utm_source%3Dshare"
+            messageVC.subject = NSLocalizedString("Check out Relax", comment: "")
+            messageVC.body = NSLocalizedString("Download Relax on AppStore: ", comment: "") + "\nhttps://play.google.com/store/apps/details?id=relaxmelodies.sleepsounds.meditation&amp;eferrer=utm_source%3Dshare"
             vc?.present(messageVC, animated: true, completion: nil)
         } else {
-            let text = "Download Relax on Google Play: \nhttps://play.google.com/store/apps/details?id=relaxmelodies.sleepsounds.meditation&amp;eferrer=utm_source%3Dshare"
+            let text = NSLocalizedString("Download Relax on AppStore: ", comment: "") + "\nhttps://play.google.com/store/apps/details?id=relaxmelodies.sleepsounds.meditation&amp;eferrer=utm_source%3Dshare"
             let activity = UIActivityViewController(activityItems: [text], applicationActivities: nil)
             vc?.present(activity, animated: true, completion: nil)
         }

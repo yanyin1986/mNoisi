@@ -34,11 +34,11 @@ class MNBreathViewController: MNBaseViewController, MNTimerViewControllerDelegat
     
     private let metas: [BMType: Meta] = [
         BMType.breath     : Meta(imageName: "bg_breath",
-                                 title: "Breath",
+                                 title: NSLocalizedString("Breath", comment: ""),
                                  defaultTime: 1,
                                  lastTime: Defaults[.lastBreathTime]),
         BMType.meditation : Meta(imageName: "bg_meditation",
-                                 title: "Meditation",
+                                 title: NSLocalizedString("Meditation", comment: ""),
                                  defaultTime: 5,
                                  lastTime: Defaults[.lastMeditationTime]),
     ]
@@ -69,8 +69,8 @@ class MNBreathViewController: MNBaseViewController, MNTimerViewControllerDelegat
                 /// last time
                 tip2Label.text = description(forLastTime: lastBreathEvent.startTime)
             } else {
-                tip1Label.text = "Take Deep Breath"
-                tip2Label.text = String(format: "%d min", time)
+                tip1Label.text = NSLocalizedString("Take Deep Breath", comment: "")
+                tip2Label.text = String(format: NSLocalizedString("%d min", comment: ""), time)
             }
         } else {
             // .meditation
@@ -81,19 +81,19 @@ class MNBreathViewController: MNBaseViewController, MNTimerViewControllerDelegat
                 /// last time
                 tip2Label.text = description(forLastTime: lastMeditationEvent.startTime)
             } else {
-                tip1Label.text = "Meditation"
-                tip2Label.text = String(format: "%d min", time)
+                tip1Label.text = NSLocalizedString("Meditation", comment: "")
+                tip2Label.text = String(format: NSLocalizedString("%d min", comment: ""), time)
             }
         }
     }
 
     func todayDescription(forDuration duration: TimeInterval) -> String {
         if duration < 60 {
-            return String(format: "Today %d seconds", Int(max(0, duration)))
+            return String(format: NSLocalizedString("Today %d seconds", comment: ""), Int(max(0, duration)))
         } else if duration < 3600 {
-            return String(format: "Today %d minutes", Int(duration/60.0))
+            return String(format: NSLocalizedString("Today %d minutes", comment: ""), Int(duration/60.0))
         } else if duration < 86400 {
-            return String(format: "Today %d hours", Int(duration/3600.0))
+            return String(format: NSLocalizedString("Today %d hours", comment: ""), Int(duration/3600.0))
         } else {
             return ""
         }
@@ -102,15 +102,15 @@ class MNBreathViewController: MNBaseViewController, MNTimerViewControllerDelegat
     func description(forLastTime lastTime: TimeInterval) -> String {
         let diff = Date().timeIntervalSince1970 - lastTime
         if diff < 60 {
-            return String(format: "Last time %d seconds ago", Int(max(0, diff)))
+            return String(format: NSLocalizedString("Last time %d seconds ago", comment: ""), Int(max(0, diff)))
         } else if diff < 3600 {
-            return String(format: "Last time %d minutes ago", Int(diff / 60))
+            return String(format: NSLocalizedString("Last time %d minutes ago", comment: ""), Int(diff / 60))
         } else if diff < 86400 {
-            return String(format: "Last time %d hours ago", Int(diff / 3600))
+            return String(format: NSLocalizedString("Last time %d hours ago", comment: ""), Int(diff / 3600))
         } else if diff < 604800 {
-            return String(format: "Last time %d days ago", Int(diff / 86400))
+            return String(format: NSLocalizedString("Last time %d days ago", comment: ""), Int(diff / 86400))
         } else {
-            return String(format: "Last time %d weeks ago", Int(diff / 604800))
+            return String(format: NSLocalizedString("Last time %d weeks ago", comment: ""), Int(diff / 604800))
         }
     }
 
@@ -153,8 +153,8 @@ class MNBreathViewController: MNBaseViewController, MNTimerViewControllerDelegat
     // MARK: MNTimerViewControllerDelegate
     func timerViewController(_ viewController: MNTimerViewController!, didChooseTime time: Int) {
         self.time = time
-        self.tip2Label.text = "\(time) M"
-        
+        self.tip2Label.text = String(format: NSLocalizedString("%d min", comment: ""), time)
+
         if type == .breath {
             Defaults[.lastBreathTime] = time
         } else {

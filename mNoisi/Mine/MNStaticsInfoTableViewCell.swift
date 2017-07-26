@@ -28,7 +28,7 @@ class MNStaticsInfoTableViewCell: UITableViewCell {
         didSet {
             guard let info = self.info else { return }
 
-            self.longestStreakLabel.text = String.init(format: "%d Days", info.longestStreakCount)
+            self.longestStreakLabel.text = String(format: "%d Days", info.longestStreakCount)
             self.meditationLabel.text = self.stringFor(time: Int(info.meditationTime))
             self.sessionLabel.text = String.init(format: "%d", info.sessionCount)
         }

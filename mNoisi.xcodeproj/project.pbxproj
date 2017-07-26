@@ -21,7 +21,6 @@
 		2C11D23B1F248C6200EE03B6 /* a12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C11D22E1F248C6200EE03B6 /* a12.mp3 */; };
 		2C11D23C1F248C6200EE03B6 /* a13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C11D22F1F248C6200EE03B6 /* a13.mp3 */; };
 		2C1AD0F21F1C9FA000C7C994 /* TTRateKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1AD0F11F1C9FA000C7C994 /* TTRateKit.swift */; };
-		2C1AD0F41F1CA6AA00C7C994 /* Rate.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C1AD0F31F1CA6AA00C7C994 /* Rate.strings */; };
 		2C1AD0F71F1CC0E700C7C994 /* MNLocalWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1AD0F51F1CC0E700C7C994 /* MNLocalWebViewController.swift */; };
 		2C1AD0F81F1CC0E700C7C994 /* MNLocalWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1AD0F61F1CC0E700C7C994 /* MNLocalWebViewController.xib */; };
 		2C1AD0FB1F1CC95700C7C994 /* eula.html in Resources */ = {isa = PBXBuildFile; fileRef = 2C1AD0F91F1CC95700C7C994 /* eula.html */; };
@@ -125,7 +124,6 @@
 		2C11D22E1F248C6200EE03B6 /* a12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = a12.mp3; sourceTree = "<group>"; };
 		2C11D22F1F248C6200EE03B6 /* a13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = a13.mp3; sourceTree = "<group>"; };
 		2C1AD0F11F1C9FA000C7C994 /* TTRateKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTRateKit.swift; sourceTree = "<group>"; };
-		2C1AD0F31F1CA6AA00C7C994 /* Rate.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Rate.strings; sourceTree = "<group>"; };
 		2C1AD0F51F1CC0E700C7C994 /* MNLocalWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNLocalWebViewController.swift; sourceTree = "<group>"; };
 		2C1AD0F61F1CC0E700C7C994 /* MNLocalWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MNLocalWebViewController.xib; sourceTree = "<group>"; };
 		2C1AD0F91F1CC95700C7C994 /* eula.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = eula.html; sourceTree = "<group>"; };
@@ -320,7 +318,6 @@
 			isa = PBXGroup;
 			children = (
 				BAEEF2E41F1A57F000EADAF6 /* Localizable.strings */,
-				2C1AD0F31F1CA6AA00C7C994 /* Rate.strings */,
 			);
 			name = Localizable;
 			sourceTree = "<group>";
@@ -568,7 +565,6 @@
 				F7FB6EDD1EC8F8DA0086E576 /* LaunchScreen.storyboard in Resources */,
 				2C9D41EB1F161A83005901CD /* MNBreathResultViewController.xib in Resources */,
 				2CE447F71F14BE72007AD3CD /* MNBreathViewController.xib in Resources */,
-				2C1AD0F41F1CA6AA00C7C994 /* Rate.strings in Resources */,
 				2C11D23A1F248C6200EE03B6 /* a11.mp3 in Resources */,
 				2C11D2351F248C6200EE03B6 /* a6.mp3 in Resources */,
 				2C6F52011F0F8C13006D2387 /* MNSoundTrackCollectionViewCell.xib in Resources */,

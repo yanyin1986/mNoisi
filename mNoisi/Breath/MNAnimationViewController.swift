@@ -210,7 +210,7 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
 
         if remainTime >= 0.0 && remainTime < 3.5 && status != .breathIn {
             status = .breathIn
-            breathTipLabel.text = "Breath in ..."
+            breathTipLabel.text = NSLocalizedString("Breath in ...", comment: "")
             breathTipLabel.alpha = 0.0
             UIView.animate(withDuration: 0.3, animations: {
                 self.breathTipLabel.alpha = 1.0
@@ -220,7 +220,7 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
             UIView.animate(withDuration: 0.3, animations: {
                 self.breathTipLabel.alpha = 0.0
             }, completion: { (_) in
-                self.breathTipLabel.text = "Hold..."
+                self.breathTipLabel.text = NSLocalizedString("Hold...", comment: "")
                 UIView.animate(withDuration: 0.3, animations: {
                     self.breathTipLabel.alpha = 1.0
                 }, completion: nil)
@@ -230,7 +230,7 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
             UIView.animate(withDuration: 0.3, animations: {
                 self.breathTipLabel.alpha = 0.0
             }, completion: { (_) in
-                self.breathTipLabel.text = "Breath out..."
+                self.breathTipLabel.text = NSLocalizedString("Breath out...", comment: "")
                 UIView.animate(withDuration: 0.3, animations: {
                     self.breathTipLabel.alpha = 1.0
                 }, completion: nil)

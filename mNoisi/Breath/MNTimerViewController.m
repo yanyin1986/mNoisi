@@ -72,7 +72,7 @@
 - (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     int value = (int) [_times[row] integerValue];
-    NSString *title = [NSString stringWithFormat:@"%d M", value];
+    NSString *title = [NSString stringWithFormat:NSLocalizedString(@"%d M", nil), value];
     NSDictionary *attributes = @{ NSForegroundColorAttributeName : UIColor.whiteColor};
     return [[NSAttributedString alloc] initWithString:title attributes:attributes];
     

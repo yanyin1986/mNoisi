@@ -146,6 +146,7 @@ class MNBreathViewController: MNBaseViewController, MNTimerViewControllerDelegat
             self.navigationController?.pushViewController(animationViewController, animated: true)
         } else {
             let vc = MNMeditationStartViewController()
+            vc.duration = 60.0 * TimeInterval(time)
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

@@ -95,9 +95,15 @@ class MNBreathResultViewController: MNBaseViewController {
     }
 
     @IBAction func redo(_ sender: Any) {
-        let breathViewController = MNAnimationViewController()
-        breathViewController.duration = duration
-        self.navigationController?.setViewControllers([breathViewController], animated: true)
+        if type == .breath {
+            let breathViewController = MNAnimationViewController()
+            breathViewController.duration = duration
+            self.navigationController?.setViewControllers([breathViewController], animated: true)
+        } else { // meditation
+            let meditationVC = MNMeditationStartViewController()
+            meditationVC.duration = duration
+            self.navigationController?.setViewControllers([meditationVC], animated: true)
+        }
     }
 
 }

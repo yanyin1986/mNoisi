@@ -11,8 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MNMeditationStartViewController" customModule="mNoisi" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="ChG-vX-0pE" id="11o-3X-7bs"/>
                 <outlet property="countDownLabel" destination="OYA-ca-vhe" id="OJ2-SP-XnX"/>
                 <outlet property="countDownView" destination="HmM-ds-Dl0" id="WTQ-XB-CEk"/>
+                <outlet property="doneButton" destination="0rp-0b-1iI" id="ESr-qG-QGK"/>
+                <outlet property="playButton" destination="WUV-D2-Yc9" id="5sh-ha-3aG"/>
                 <outlet property="tipLabel" destination="fdq-LA-hEW" id="fl2-6Z-oXq"/>
                 <outlet property="view" destination="7ab-nq-kGd" id="1Qt-l5-4Xg"/>
             </connections>
@@ -59,19 +62,57 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rp-0b-1iI">
+                    <rect key="frame" x="151" y="518" width="73" height="38"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <inset key="contentEdgeInsets" minX="15" minY="8" maxX="15" maxY="8"/>
+                    <state key="normal" title="Done"/>
+                    <connections>
+                        <action selector="doneButtonPressed:" destination="-1" eventType="touchUpInside" id="XfR-ly-k6u"/>
+                    </connections>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdq-LA-hEW">
                     <rect key="frame" x="187" y="465" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUV-D2-Yc9" customClass="MNRadiusButton" customModule="mNoisi" customModuleProvider="target">
+                    <rect key="frame" x="111" y="466" width="152" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="ija-dH-12a"/>
+                        <constraint firstAttribute="width" constant="152" id="xvY-3g-9ti"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <inset key="contentEdgeInsets" minX="30" minY="8" maxX="30" maxY="8"/>
+                    <state key="normal" title="Play"/>
+                    <state key="selected" title="Pause"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="border">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                            <real key="value" value="21"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="playButtonPressed:" destination="-1" eventType="touchUpInside" id="owO-Rb-Jx2"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="OYA-ca-vhe" firstAttribute="centerX" secondItem="7ab-nq-kGd" secondAttribute="centerX" id="4DC-St-kUI"/>
+                <constraint firstItem="WUV-D2-Yc9" firstAttribute="top" secondItem="OYA-ca-vhe" secondAttribute="bottom" constant="20" id="Ij4-zJ-cGs"/>
                 <constraint firstItem="HmM-ds-Dl0" firstAttribute="centerX" secondItem="7ab-nq-kGd" secondAttribute="centerX" id="JCy-6X-gch"/>
+                <constraint firstItem="0rp-0b-1iI" firstAttribute="top" secondItem="WUV-D2-Yc9" secondAttribute="bottom" constant="10" id="KnN-Kr-K1h"/>
                 <constraint firstItem="fdq-LA-hEW" firstAttribute="top" secondItem="HmM-ds-Dl0" secondAttribute="bottom" constant="95" id="NFX-ID-xgA"/>
                 <constraint firstItem="XuC-UI-NIS" firstAttribute="top" secondItem="7ab-nq-kGd" secondAttribute="top" id="RRz-Ea-Vpn"/>
+                <constraint firstItem="0rp-0b-1iI" firstAttribute="centerX" secondItem="7ab-nq-kGd" secondAttribute="centerX" id="TGt-Ax-JHZ"/>
+                <constraint firstItem="WUV-D2-Yc9" firstAttribute="centerX" secondItem="7ab-nq-kGd" secondAttribute="centerX" id="V0g-Dh-10j"/>
                 <constraint firstItem="fdq-LA-hEW" firstAttribute="centerX" secondItem="7ab-nq-kGd" secondAttribute="centerX" id="eUJ-hL-6p2"/>
                 <constraint firstItem="HmM-ds-Dl0" firstAttribute="top" secondItem="XuC-UI-NIS" secondAttribute="bottom" constant="60" id="hWf-ds-31m"/>
                 <constraint firstItem="OYA-ca-vhe" firstAttribute="top" secondItem="HmM-ds-Dl0" secondAttribute="bottom" constant="40" id="msI-fc-em7"/>
@@ -93,7 +134,15 @@
                     <point key="value" x="1" y="0.5"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="CPh-YV-ue1" appends="YES" id="IDo-bE-mx0"/>
+            </connections>
         </view>
+        <tapGestureRecognizer id="CPh-YV-ue1">
+            <connections>
+                <action selector="showButtons:" destination="-1" id="ikH-We-fyX"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="exit-white" width="24" height="24"/>

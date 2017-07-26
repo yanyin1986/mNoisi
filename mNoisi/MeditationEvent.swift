@@ -40,6 +40,12 @@ struct MeditationEvent {
         self.user = user
     }
 
+    init() {
+        self.year = 0
+        self.month = 0
+        self.day = 0
+    }
+
     init(_ row: Row) {
         let table = EventsManager.meditationEventTable
 
@@ -68,10 +74,8 @@ struct MeditationEvent {
         self.day = components.year! * 10000 + components.month! * 100 + components.day!
     }
 
-    mutating func end() {
-        let endDate = Date()
-        self.endTime = endDate.timeIntervalSince1970
-        self.duration = endTime - startTime
+    mutating func end(withDuration duration: TimeInterval = -1) {
+        self.endTime = Date().timeIntervalSince1970
+        self.duration = duration
     }
-    
 }

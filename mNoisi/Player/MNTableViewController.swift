@@ -74,21 +74,27 @@ class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, U
 
     @IBAction func selectedTagChanged(_ sender: MNSegmentControl) {
         if sender.selectedItem == 0 {
+            /*
             let newTracks = MNTrackManager.shared.liked
             var diffIndexPaths = [IndexPath]()
             for i in 1 ... MNTrackManager.shared.tracks.count {
                 if newTracks.first(where: { $0.id == Int64(i) }) == nil {
                     diffIndexPaths.append(IndexPath.init(row: i - 1, section: 0))
                 }
-            }
-            tracks = MNTrackManager.shared.tracks
+            }*/
+            /*
             collectionView.performBatchUpdates({
                 self.collectionView.insertItems(at: diffIndexPaths)
             }, completion: { (finish) in
 
             })
+            */
+            tracks = MNTrackManager.shared.tracks
+            collectionView.reloadData()
+            scrollToPlayingTrack()
         } else {
             // selectedItem = 1
+            /*
             let newTracks = MNTrackManager.shared.liked
 
             var diffIndexPaths = [IndexPath]()
@@ -97,12 +103,14 @@ class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, U
                     diffIndexPaths.append(IndexPath.init(row: i - 1, section: 0))
                 }
             }
-            tracks = newTracks
+            tracks =  newTracks
             collectionView.performBatchUpdates({
                 self.collectionView.deleteItems(at: diffIndexPaths)
             }, completion: { (finish) in
 
-            })
+            }) */
+            tracks = MNTrackManager.shared.liked
+            collectionView.reloadData()
         }
     }
     

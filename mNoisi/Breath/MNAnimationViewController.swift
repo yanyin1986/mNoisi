@@ -189,7 +189,12 @@ class MNAnimationViewController: MNBaseViewController, MNTimerDelegate {
 
     @IBAction func dismiss(_ sender: Any) {
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(countDown(_:)), object: nil)
-        self.navigationController?.popViewController(animated: true)
+        
+        if let count = self.navigationController?.viewControllers.count, count > 1 {
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        }
     }
 
     private func showResult(withTime time: Int, duration: TimeInterval) {

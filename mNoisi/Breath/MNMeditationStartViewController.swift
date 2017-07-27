@@ -8,6 +8,34 @@
 
 import UIKit
 
+extension UIColor {
+    convenience init(hex: UInt, alpha: CGFloat = 1.0) {
+        let red: CGFloat = CGFloat((hex & 0xFF0000) >> 16) / 255.0
+        let green: CGFloat = CGFloat((hex & 0x00FF00) >> 8) / 255.0
+        let blue: CGFloat = CGFloat(hex & 0x0000FF) / 255.0
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
+    }
+}
+
+extension UIColor {
+    struct Meditation {
+        /// 0x614385 -> 0x516395
+        static var gradientColors_1: [UIColor] { return [#colorLiteral(red: 0.3803921569, green: 0.262745098, blue: 0.5215686275, alpha: 1), #colorLiteral(red: 0.3176470588, green: 0.3882352941, blue: 0.5843137255, alpha: 1)] }
+        /// 0x5F2C82 -> 0x49A09D
+        static var gradientColors_2: [UIColor] { return [#colorLiteral(red: 0.3725490196, green: 0.1725490196, blue: 0.5098039216, alpha: 1), #colorLiteral(red: 0.2862745098, green: 0.6274509804, blue: 0.6156862745, alpha: 1)] }
+        /// 0x4776E6 -> 0x8E54E9
+        static var gradientColors_3: [UIColor] { return [#colorLiteral(red: 0.2784313725, green: 0.462745098, blue: 0.9019607843, alpha: 1), #colorLiteral(red: 0.5568627451, green: 0.3294117647, blue: 0.9137254902, alpha: 1)] }
+        /// 0x7141e2 -> 0xd46cb3
+        static var gradientColors_4: [UIColor] { return [#colorLiteral(red: 0.4431372549, green: 0.2549019608, blue: 0.8862745098, alpha: 1), #colorLiteral(red: 0.831372549, green: 0.4235294118, blue: 0.7019607843, alpha: 1)] }
+
+        /// CGColors
+        static var gradientCGColors_1 : [CGColor] { return gradientColors_1.map{ $0.cgColor } }
+        static var gradientCGColors_2 : [CGColor] { return gradientColors_2.map{ $0.cgColor } }
+        static var gradientCGColors_3 : [CGColor] { return gradientColors_3.map{ $0.cgColor } }
+        static var gradientCGColors_4 : [CGColor] { return gradientColors_4.map{ $0.cgColor } }
+    }
+}
+
 class MNMeditationStartViewController: MNBaseViewController, MNTimerDelegate {
 
     enum ProgressStatus {
@@ -83,6 +111,7 @@ class MNMeditationStartViewController: MNBaseViewController, MNTimerDelegate {
             _progress = .prepare
             self.perform(#selector(countDown(_:)), with: nil, afterDelay: 1.0)
             self.countDownAnimation()
+
         }
     }
     
@@ -103,6 +132,7 @@ class MNMeditationStartViewController: MNBaseViewController, MNTimerDelegate {
                     self.timer.delegate = self
                     self.timer.start()
                     self.playButton.isSelected = true
+                    self.startGradientAnimation()
                 }
             })
         } else {
@@ -117,6 +147,41 @@ class MNMeditationStartViewController: MNBaseViewController, MNTimerDelegate {
         UIView.animate(withDuration: 0.95) {
             self.countDownLabel.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
         }
+    }
+
+    func startGradientAnimation() {
+        guard let gradientView = self.view as? MNGradientView else { return }
+
+        let anim1 = CABasicAnimation(keyPath: "colors")
+        anim1.fromValue = UIColor.Meditation.gradientCGColors_1
+        anim1.toValue = UIColor.Meditation.gradientCGColors_2
+        anim1.duration = 12
+        anim1.beginTime = 0
+
+        let anim2 = CABasicAnimation(keyPath: "colors")
+        anim2.fromValue = UIColor.Meditation.gradientCGColors_2
+        anim2.toValue = UIColor.Meditation.gradientCGColors_3
+        anim2.duration = 12
+        anim2.beginTime = 12.0
+
+        let anim3 = CABasicAnimation(keyPath: "colors")
+        anim3.fromValue = UIColor.Meditation.gradientCGColors_3
+        anim3.toValue = UIColor.Meditation.gradientCGColors_4
+        anim3.duration = 12
+        anim3.beginTime = 24.0
+
+        let anim4 = CABasicAnimation(keyPath: "colors")
+        anim4.fromValue = UIColor.Meditation.gradientCGColors_4
+        anim4.toValue = UIColor.Meditation.gradientCGColors_1
+        anim4.duration = 12
+        anim4.beginTime = 36.0
+
+        let anim = CAAnimationGroup()
+        anim.animations = [anim1, anim2, anim3, anim4]
+        anim.repeatCount = 9999
+        anim.duration = 48.0
+        
+        gradientView.gradientLayer.add(anim, forKey: "anim")
     }
 
     override func didReceiveMemoryWarning() {

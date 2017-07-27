@@ -64,7 +64,7 @@ class MNGradientView: UIView {
         return CAGradientLayer.self
     }
 
-    private var gradientLayer: CAGradientLayer {
+    var gradientLayer: CAGradientLayer {
         return self.layer as! CAGradientLayer
     }
 

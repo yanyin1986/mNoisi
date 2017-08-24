@@ -190,7 +190,8 @@ class MNTableViewController: MNBaseViewController, UICollectionViewDataSource, U
 
         let track = tracks[indexPath.row]
         playingTrack = track
-        collectionView.reloadItems(at: reloadIndexPaths)
+        collectionView.reloadData()
+//        collectionView.reloadItems(at: reloadIndexPaths)
         delegate?.playerListDidSelectTrack(track)
 
         /*
